@@ -67,7 +67,7 @@ function Sql-Table([string]$Db,[string]$Sql) {
         $da = New-Object System.Data.SqlClient.SqlDataAdapter $cmd
         $dt = New-Object System.Data.DataTable
         [void]$da.Fill($dt)
-        return $dt
+        return ,$dt
     } finally { $c.Close() }
 }
 
