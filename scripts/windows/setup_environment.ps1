@@ -74,6 +74,19 @@ function Download([string]$Url,[string]$Path) {
     throw ('Download failed: ' + $Url)
 }
 
+function Resolve-VSPath {
+    $vw = "${env:ProgramFiles(x86)}\Microsoft Visual Studio\Installer\vswhere.exe"
+    if (-not (Test-Path $vw)) { return $null }
+
+    $p = & $vw -latest -products * -requires Microsoft.VisualStudio.Workload.Data -property installationPath 2>$null
+    if ([string]::IsNullOrWhiteSpace($p)) {
+        $p = & $vw -latest -products * -property installationPath 2>$null
+    }
+
+    if ([string]::IsNullOrWhiteSpace($p)) { return $null }
+    return ($p | Select-Object -First 1).Trim()
+}
+
 function Sql-Table([string]$Db,[string]$Sql) {
     $cs = 'Server=.;Database=' + $Db + ';Integrated Security=True;Encrypt=False;TrustServerCertificate=True;'
     $c = New-Object System.Data.SqlClient.SqlConnection $cs
@@ -234,13 +247,49 @@ try {
     Stage '5. VISUAL STUDIO 2022 COMMUNITY'
     $vs = Join-Path $Root 'vs_Community.exe'
     Download 'https://aka.ms/vs/17/release/vs_community.exe' $vs
-    $vsPath = 'C:\Program Files\Microsoft Visual Studio\2022\Community'
-    $devenv = Join-Path $vsPath 'Common7\IDE\devenv.exe'
-    if (-not (Test-Path $devenv)) {
-        $p = Start-Process $vs -ArgumentList @('--installPath',$vsPath,'--add','Microsoft.VisualStudio.Workload.Data','--includeRecommended','--quiet','--wait','--norestart') -Wait -PassThru
-        if ($p.ExitCode -eq 3010) {$RebootNeeded=$true} elseif ($p.ExitCode -ne 0) {throw ('VS install failed: '+$p.ExitCode)}
+
+    $vsPath = Resolve-VSPath
+    if ($vsPath) {
+        Write-Host ('Visual Studio detected at: ' + $vsPath)
+    } else {
+        # Do not pass --installPath here. PowerShell Start-Process can split paths with spaces
+        # unless manually quoted, which previously created an unintended C:\Program install.
+        $p = Start-Process $vs -ArgumentList @(
+            '--add','Microsoft.VisualStudio.Workload.Data',
+            '--includeRecommended','--quiet','--wait','--norestart'
+        ) -Wait -PassThru
+        if ($p.ExitCode -eq 3010) {
+            $RebootNeeded=$true
+        } elseif ($p.ExitCode -ne 0) {
+            throw ('VS install failed: '+$p.ExitCode)
+        }
+        $vsPath = Resolve-VSPath
     }
-    if (-not (Test-Path $devenv)) { throw 'Visual Studio devenv.exe not found.' }
+
+    if (-not $vsPath) { throw 'Visual Studio instance not found by vswhere.' }
+    $devenv = Join-Path $vsPath 'Common7\IDE\devenv.exe'
+    if (-not (Test-Path $devenv)) { throw ('Visual Studio devenv.exe not found at ' + $devenv) }
+
+    $vw = "${env:ProgramFiles(x86)}\Microsoft Visual Studio\Installer\vswhere.exe"
+    $dataPath = & $vw -latest -products * -requires Microsoft.VisualStudio.Workload.Data -property installationPath 2>$null
+    if ([string]::IsNullOrWhiteSpace($dataPath)) {
+        Write-Warning 'Visual Studio exists but the Data workload is not confirmed. Adding it to the detected instance.'
+        $setup = "${env:ProgramFiles(x86)}\Microsoft Visual Studio\Installer\setup.exe"
+        if (-not (Test-Path $setup)) { throw 'Visual Studio Installer setup.exe not found.' }
+        $args = @(
+            'modify',
+            '--installPath', ('"' + $vsPath + '"'),
+            '--add','Microsoft.VisualStudio.Workload.Data',
+            '--includeRecommended','--quiet','--norestart'
+        )
+        $p = Start-Process $setup -ArgumentList $args -Wait -PassThru
+        if ($p.ExitCode -eq 3010) {
+            $RebootNeeded=$true
+        } elseif ($p.ExitCode -ne 0) {
+            throw ('VS Data workload modify failed: '+$p.ExitCode)
+        }
+    }
+
     Mark 'Visual Studio 2022' 'PASS'
 
     Stage '6. CURRENT SSIS PROJECTS EXTENSION'
