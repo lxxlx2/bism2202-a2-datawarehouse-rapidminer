@@ -78,11 +78,14 @@ Verified as of the latest check:
 - SQL Server Database Engine service `MSSQLSERVER`: RUNNING / Automatic
 - SQL Server Integration Services runtime service `MsDtsServer160`: RUNNING / Automatic
 - SQL Server service creation/startup: PASS
-- Local SQL client validation from the automation script: FAIL
-- `SELECT @@VERSION`: not yet confirmed
-- `ozmart_db` restore: not yet attempted because the script stopped at local SQL connection validation
+- Local SQL client validation using `Server=.`: PASS
+- `SELECT @@VERSION`: PASS
+- Verified SQL Server build: Microsoft SQL Server 2022 RTM 16.0.1000.6 Developer Edition (64-bit)
+- Verified Windows login used for the successful SQL connection: `WIN-LR4ELCKRUA0\Administrator`
+- SQL ERRORLOG reported `SQL Server is now ready for client connections`: PASS
+- `ozmart_db` restore: not yet completed
 
-Current issue: the SQL Server installer itself completed successfully and both core services are running, but the PowerShell validation connection to the local default instance failed after setup. The next step is to capture the exact client connection exception and SQL Server ERRORLOG state before changing installation or authentication settings.
+Observed root cause of the script stop: the first automation version validated the local instance via `localhost`, while a direct connection to the default local instance via `Server=.` succeeded. The setup script has now been updated to use `Server=.` for local validation and database operations.
 
 ## Remaining environment work
 
@@ -109,4 +112,4 @@ Required remaining validation:
 READY_FOR_ASSIGNMENT = NO
 ```
 
-Current blocker: SQL Server 2022 setup completed successfully and both MSSQLSERVER and MsDtsServer160 are running, but the automation script cannot yet establish a local SQL client connection. Diagnose the exact connection error before proceeding to database restore.
+Current blocker: database restore and the remaining SSMS / Visual Studio / SSIS Projects installation stages have not yet completed. SQL Server 2022 itself is installed, running, and locally queryable.
