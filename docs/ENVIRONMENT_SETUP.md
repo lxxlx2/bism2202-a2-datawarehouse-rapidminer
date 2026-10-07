@@ -86,6 +86,8 @@ Verified as of the latest check:
 - `ozmart_db` restore: not yet completed
 
 Observed root cause of the script stop: the first automation version validated the local instance via `localhost`, while a direct connection to the default local instance via `Server=.` succeeded. The setup script has now been updated to use `Server=.` for local validation and database operations.
+Additional script fix: the SQL query helper now returns the `DataTable` object without PowerShell pipeline enumeration (`return ,$dt`). This prevents the readiness loop from waiting even when a local SQL connection is already successful.
+
 
 ## Remaining environment work
 
