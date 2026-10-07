@@ -127,3 +127,5 @@ READY_FOR_ASSIGNMENT = NO
 Current blocker: Windows restart and GUI validation of SSMS are still pending, followed by Visual Studio / SSIS Projects installation and final smoke tests. SQL Server 2022 and the teacher `ozmart_db` database are already working.
 
 - Visual Studio 2022 was successfully installed, but the first automation passed an unquoted `--installPath` containing spaces through `Start-Process`, so the instance landed at `C:\Program`. `vswhere` and a recursive search confirmed `C:\Program\Common7\IDE\devenv.exe`. The setup script now discovers the actual instance path with `vswhere`, verifies/adds `Microsoft.VisualStudio.Workload.Data`, and no longer hard-codes the expected Visual Studio path.
+
+- SSIS Projects Marketplace discovery failed because the scripted `extensionquery` path did not return a usable package asset. The automation now pins the current GA `SQL Server Integration Services Projects 2022+` release 2.2 and downloads it through the direct Visual Studio Marketplace `vspackage` endpoint. Microsoft lists 2.2 as released 2026-04-01 and tested against Visual Studio 2022 17.14.
