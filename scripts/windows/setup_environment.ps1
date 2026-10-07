@@ -130,19 +130,11 @@ function Wait-Sql([int]$Seconds=180) {
 }
 
 function Latest-SSIS {
-    $body = @{
-        filters = @(@{
-            criteria = @(@{ filterType = 7; value = 'SSIS.MicrosoftDataToolsIntegrationServices' })
-            pageNumber = 1; pageSize = 1; sortBy = 0; sortOrder = 0
-        })
-        assetTypes = @('Microsoft.VisualStudio.Services.VSIXPackage')
-        flags = 914
-    } | ConvertTo-Json -Depth 8
-    $r = Invoke-RestMethod -Method Post -Uri 'https://marketplace.visualstudio.com/_apis/public/gallery/extensionquery' -Headers @{Accept='application/json;api-version=3.0-preview.1'} -ContentType 'application/json' -Body $body
-    $v = $r.results[0].extensions[0].versions | Select-Object -First 1
-    $f = $v.files | Where-Object { $_.assetType -eq 'Microsoft.VisualStudio.Services.VSIXPackage' } | Select-Object -First 1
-    if (-not $f.source) { throw 'Could not resolve current SSIS package from Visual Studio Marketplace.' }
-    return [pscustomobject]@{ Version=$v.version; Url=$f.source }
+    # The Marketplace extensionquery response is not stable enough for unattended
+    # setup here. Pin the current GA release confirmed on the official Marketplace.
+    $version = '2.2'
+    $url = 'https://marketplace.visualstudio.com/_apis/public/gallery/publishers/SSIS/vsextensions/MicrosoftDataToolsIntegrationServices/' + $version + '/vspackage'
+    return [pscustomobject]@{ Version=$version; Url=$url }
 }
 
 try {
