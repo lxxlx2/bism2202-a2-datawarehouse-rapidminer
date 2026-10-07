@@ -86,7 +86,12 @@ Verified as of the latest check:
 - `ozmart_db` restore: PASS
 - Source tables query after restore: PASS
 - Verified restored base tables include `address_type`, `customer_address`, `customer_table`, `order_items_table`, `orders_table`, `product_category`, `product_subcategory`, `product_table`, `sellers_table`, and `sysdiagrams`
-- SSMS stage: in progress; installer download from `https://aka.ms/ssmsfullsetup` has started
+- SSMS 22 installation: PASS (confirmed by collected Visual Studio Installer state and setup logs)
+- Installed SSMS version: 22.10.2 (`22.10.12217.157`)
+- SSMS installation path: `C:\Program Files\Microsoft SQL Server Management Studio 22\Release`
+- SSMS launch executable: `Common7\IDE\SSMS.exe`
+- Initial SSMS install completed successfully; installer returned `3010` indicating restart required
+- Later `exit code 1` reruns were not install failures: the installer log explicitly reports `SQL Server Management Studio 22 is already installed.`
 
 Observed root cause of the script stop: the first automation version validated the local instance via `localhost`, while a direct connection to the default local instance via `Server=.` succeeded. The setup script has now been updated to use `Server=.` for local validation and database operations.
 Additional script fix: the SQL query helper now returns the `DataTable` object without PowerShell pipeline enumeration (`return ,$dt`). This prevents the readiness loop from waiting even when a local SQL connection is already successful.
@@ -103,7 +108,9 @@ Required remaining validation:
 - [ ] `SELECT @@VERSION` confirms SQL Server 2022
 - [x] `ozmart_db` restores successfully and is ONLINE
 - [x] Teacher source tables can be queried
-- [ ] SSMS installs and connects to `localhost` with Windows Authentication
+- [x] SSMS 22 installs successfully
+- [ ] Reboot Windows to clear the installer restart-required state
+- [ ] Launch SSMS and connect to local SQL Server with Windows Authentication
 - [ ] Visual Studio 2022 Community installs
 - [ ] Integration Services Project template is available
 - [ ] A real SSIS Data Flow executes successfully with actual row counts
@@ -117,4 +124,4 @@ Required remaining validation:
 READY_FOR_ASSIGNMENT = NO
 ```
 
-Current blocker: SSMS / Visual Studio / SSIS Projects installation and final GUI smoke tests are still pending. SQL Server 2022 is installed, running, locally queryable, and the teacher `ozmart_db` database has been restored successfully.
+Current blocker: Windows restart and GUI validation of SSMS are still pending, followed by Visual Studio / SSIS Projects installation and final smoke tests. SQL Server 2022 and the teacher `ozmart_db` database are already working.
