@@ -99,19 +99,20 @@ Additional script fix: the SQL query helper now returns the `DataTable` object w
 
 ## Remaining environment work
 
-The environment is **not yet ready for assignment work**.
+The core Windows-side installation is complete, but final GUI smoke validation is still required before assignment work is considered fully ready.
 
 Required remaining validation:
 
-- [ ] SQL Server 2022 Database Engine installation completes successfully
-- [ ] `MSSQLSERVER` service exists and runs
-- [ ] `SELECT @@VERSION` confirms SQL Server 2022
+- [x] SQL Server 2022 Database Engine installation completes successfully
+- [x] `MSSQLSERVER` service exists and runs
+- [x] `SELECT @@VERSION` confirms SQL Server 2022
 - [x] `ozmart_db` restores successfully and is ONLINE
 - [x] Teacher source tables can be queried
 - [x] SSMS 22 installs successfully
-- [ ] Reboot Windows to clear the installer restart-required state
+- [x] Reboot Windows to clear the installer restart-required state
 - [ ] Launch SSMS and connect to local SQL Server with Windows Authentication
-- [ ] Visual Studio 2022 Community installs
+- [x] Visual Studio 2022 Community installs
+- [x] SSIS Projects 2.2 package installs successfully
 - [ ] Integration Services Project template is available
 - [ ] A real SSIS Data Flow executes successfully with actual row counts
 - [ ] SSIS destination row count is verified
@@ -124,8 +125,24 @@ Required remaining validation:
 READY_FOR_ASSIGNMENT = NO
 ```
 
-Current blocker: Windows restart and GUI validation of SSMS are still pending, followed by Visual Studio / SSIS Projects installation and final smoke tests. SQL Server 2022 and the teacher `ozmart_db` database are already working.
+Current blocker: final GUI validation only. SQL Server 2022, SSIS runtime, `ozmart_db`, SSMS 22, Visual Studio 2022 Community, and the SSIS Projects 2.2 package are installed. Remaining work is to launch SSMS, confirm the local database connection, confirm the Integration Services Project template in Visual Studio, run a real SSIS Data Flow with row-count verification, and complete the macOS Altair AI Studio smoke test.
 
 - Visual Studio 2022 was successfully installed, but the first automation passed an unquoted `--installPath` containing spaces through `Start-Process`, so the instance landed at `C:\Program`. `vswhere` and a recursive search confirmed `C:\Program\Common7\IDE\devenv.exe`. The setup script now discovers the actual instance path with `vswhere`, verifies/adds `Microsoft.VisualStudio.Workload.Data`, and no longer hard-codes the expected Visual Studio path.
 
 - SSIS Projects Marketplace discovery failed because the scripted `extensionquery` path did not return a usable package asset. The automation now pins the current GA `SQL Server Integration Services Projects 2022+` release 2.2 and downloads it through the direct Visual Studio Marketplace `vspackage` endpoint. Microsoft lists 2.2 as released 2026-04-01 and tested against Visual Studio 2022 17.14.
+
+
+## Latest automated setup completion
+
+The Windows setup script reached its final result stage successfully.
+
+Observed terminal output:
+
+```text
+[PASS] SSIS Projects package install
+7. RESULT
+DONE. Result: C:\BISM2202\environment-result.txt
+Log: C:\BISM2202\logs\setup-20261007-114406.log
+```
+
+This confirms the scripted installation sequence completed through the SSIS Projects package stage. It does **not** yet prove that the SSIS project template opens correctly or that a real Data Flow executes successfully; those remain explicit GUI smoke-test gates.
