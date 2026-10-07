@@ -67,7 +67,8 @@ function Sql-Table([string]$Db,[string]$Sql) {
         $da = New-Object System.Data.SqlClient.SqlDataAdapter $cmd
         $dt = New-Object System.Data.DataTable
         [void]$da.Fill($dt)
-        return ,$dt
+        Write-Output -NoEnumerate $dt
+        return
     } finally { $c.Close() }
 }
 
@@ -84,11 +85,17 @@ function Sql-Exec([string]$Db,[string]$Sql) {
 function Wait-Sql([int]$Seconds=180) {
     $end = (Get-Date).AddSeconds($Seconds)
     do {
+        $c = $null
         try {
-            $x = Sql-Table 'master' 'SELECT 1 AS ok;'
-            if ($x.Rows.Count -eq 1) { return $true }
-        } catch {}
-        Start-Sleep -Seconds 3
+            $cs = 'Server=.;Database=master;Integrated Security=True;Encrypt=False;TrustServerCertificate=True;Connection Timeout=5;'
+            $c = New-Object System.Data.SqlClient.SqlConnection $cs
+            $c.Open()
+            return $true
+        } catch {
+            Start-Sleep -Seconds 3
+        } finally {
+            if ($c) { try { $c.Close() } catch {} }
+        }
     } while ((Get-Date) -lt $end)
     return $false
 }
