@@ -212,11 +212,24 @@ try {
     Mark 'Source tables query' 'PASS'
 
     Stage '4. SSMS'
-    $ssms = Join-Path $Root 'vs_SSMS.exe'
-    Download 'https://aka.ms/ssmsfullsetup' $ssms
-    $p = Start-Process $ssms -ArgumentList @('--quiet','--wait','--norestart') -Wait -PassThru
-    if ($p.ExitCode -eq 3010) {$RebootNeeded=$true} elseif ($p.ExitCode -ne 0) {throw ('SSMS install failed: '+$p.ExitCode)}
-    Mark 'SSMS installer' 'PASS'
+    $ssmsExe = 'C:\Program Files\Microsoft SQL Server Management Studio 22\Release\Common7\IDE\SSMS.exe'
+    if (Test-Path $ssmsExe) {
+        Write-Host ('SSMS already installed: ' + $ssmsExe)
+        Mark 'SSMS installer' 'PASS'
+    } else {
+        $ssms = Join-Path $Root 'vs_SSMS.exe'
+        Download 'https://aka.ms/ssmsfullsetup' $ssms
+        $p = Start-Process $ssms -ArgumentList @('--quiet','--wait','--norestart') -Wait -PassThru
+        if ($p.ExitCode -eq 3010) {
+            $RebootNeeded=$true
+        } elseif ($p.ExitCode -eq 1 -and (Test-Path $ssmsExe)) {
+            Write-Host 'SSMS bootstrapper returned 1 because SSMS is already installed.'
+        } elseif ($p.ExitCode -ne 0) {
+            throw ('SSMS install failed: '+$p.ExitCode)
+        }
+        if (-not (Test-Path $ssmsExe)) { throw 'SSMS executable not found after installation.' }
+        Mark 'SSMS installer' 'PASS'
+    }
 
     Stage '5. VISUAL STUDIO 2022 COMMUNITY'
     $vs = Join-Path $Root 'vs_Community.exe'
