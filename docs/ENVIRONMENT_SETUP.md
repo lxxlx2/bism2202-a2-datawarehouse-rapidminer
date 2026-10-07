@@ -110,7 +110,7 @@ Required remaining validation:
 - [x] Teacher source tables can be queried
 - [x] SSMS 22 installs successfully
 - [x] Reboot Windows to clear the installer restart-required state
-- [ ] Launch SSMS and connect to local SQL Server with Windows Authentication
+- [ ] Launch SSMS and connect to local SQL Server with Windows Authentication (SSMS launches; equivalent local Windows-auth connection to `ozmart_db` has been independently verified via `System.Data.SqlClient`, but the GUI connection dialog itself has not been completed)
 - [x] Visual Studio 2022 Community installs
 - [x] SSIS Projects 2.2 package installs successfully
 - [ ] Integration Services Project template is available
@@ -146,3 +146,28 @@ Log: C:\BISM2202\logs\setup-20261007-114406.log
 ```
 
 This confirms the scripted installation sequence completed through the SSIS Projects package stage. It does **not** yet prove that the SSIS project template opens correctly or that a real Data Flow executes successfully; those remain explicit GUI smoke-test gates.
+
+
+## Display / guest integration status
+
+Verified after installing UTM Windows Guest Tools:
+
+- Windows display driver: `Red Hat VirtIO GPU DOD controller`
+- Driver version: `22.8.5.664`
+- Display resolution improved from `800x600` to `1024x768`
+- Windows DPI: `LogPixels=96` / 100% scaling
+- UTM Guest Tools ISO mounted and guest display driver installed successfully
+- Current display is usable for assignment work; no further resolution tuning is required unless screenshot quality becomes a problem
+
+## Local database connectivity re-check
+
+A direct Windows-authenticated connection to `Server=.;Database=ozmart_db` was re-validated successfully after setup:
+
+```text
+DATABASE = ozmart_db
+LOGIN    = WIN-LR4ELCKRUA0\Administrator
+TABLES   = 10
+SSMS/SQL CONNECTION CHECK = PASS
+```
+
+This confirms the database engine, restored source database, and Windows authentication path are working. The remaining SSIS readiness gates are template visibility and execution of a real Data Flow with verified row counts.
