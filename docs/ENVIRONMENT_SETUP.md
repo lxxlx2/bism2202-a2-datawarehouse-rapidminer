@@ -74,17 +74,15 @@ Verified as of the latest check:
 
 - SQL Server 2022 Developer installation media download: PASS
 - SQL Server installation ISO mounted in Windows: PASS
-- SQL Server `setup.exe` launched in unattended mode: PASS
-- SQL Server setup process is still active
-- Setup is running from mounted media at `E:\setup.exe`
-- Integration Services runtime service `MsDtsServer160` now exists
-- `MsDtsServer160` is currently `Stopped`, startup type `Automatic`
-- SQL Server Database Engine service `MSSQLSERVER`: not yet confirmed
-- SQL Server install completion: PENDING
-- `SELECT @@VERSION`: PENDING
-- `ozmart_db` restore: PENDING
+- SQL Server unattended setup completed with exit code `0`: PASS
+- SQL Server Database Engine service `MSSQLSERVER`: RUNNING / Automatic
+- SQL Server Integration Services runtime service `MsDtsServer160`: RUNNING / Automatic
+- SQL Server service creation/startup: PASS
+- Local SQL client validation from the automation script: FAIL
+- `SELECT @@VERSION`: not yet confirmed
+- `ozmart_db` restore: not yet attempted because the script stopped at local SQL connection validation
 
-The setup log was observed continuing to update during installation, including Integration Services package activity. No final SQL Server setup success result has yet been recorded.
+Current issue: the SQL Server installer itself completed successfully and both core services are running, but the PowerShell validation connection to the local default instance failed after setup. The next step is to capture the exact client connection exception and SQL Server ERRORLOG state before changing installation or authentication settings.
 
 ## Remaining environment work
 
@@ -111,4 +109,4 @@ Required remaining validation:
 READY_FOR_ASSIGNMENT = NO
 ```
 
-Current blocker: SQL Server 2022 unattended installation is still in progress. The next status update should be based on the actual installer exit result and service/database validation, not on elapsed time.
+Current blocker: SQL Server 2022 setup completed successfully and both MSSQLSERVER and MsDtsServer160 are running, but the automation script cannot yet establish a local SQL client connection. Diagnose the exact connection error before proceeding to database restore.
