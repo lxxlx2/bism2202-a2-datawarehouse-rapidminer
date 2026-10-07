@@ -59,7 +59,7 @@ function Download([string]$Url,[string]$Path) {
 }
 
 function Sql-Table([string]$Db,[string]$Sql) {
-    $cs = 'Server=localhost;Database=' + $Db + ';Integrated Security=True;TrustServerCertificate=True;'
+    $cs = 'Server=.;Database=' + $Db + ';Integrated Security=True;Encrypt=False;TrustServerCertificate=True;'
     $c = New-Object System.Data.SqlClient.SqlConnection $cs
     $c.Open()
     try {
@@ -72,7 +72,7 @@ function Sql-Table([string]$Db,[string]$Sql) {
 }
 
 function Sql-Exec([string]$Db,[string]$Sql) {
-    $cs = 'Server=localhost;Database=' + $Db + ';Integrated Security=True;TrustServerCertificate=True;'
+    $cs = 'Server=.;Database=' + $Db + ';Integrated Security=True;Encrypt=False;TrustServerCertificate=True;'
     $c = New-Object System.Data.SqlClient.SqlConnection $cs
     $c.Open()
     try {
