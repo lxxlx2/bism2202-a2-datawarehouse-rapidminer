@@ -83,7 +83,10 @@ Verified as of the latest check:
 - Verified SQL Server build: Microsoft SQL Server 2022 RTM 16.0.1000.6 Developer Edition (64-bit)
 - Verified Windows login used for the successful SQL connection: `WIN-LR4ELCKRUA0\Administrator`
 - SQL ERRORLOG reported `SQL Server is now ready for client connections`: PASS
-- `ozmart_db` restore: not yet completed
+- `ozmart_db` restore: PASS
+- Source tables query after restore: PASS
+- Verified restored base tables include `address_type`, `customer_address`, `customer_table`, `order_items_table`, `orders_table`, `product_category`, `product_subcategory`, `product_table`, `sellers_table`, and `sysdiagrams`
+- SSMS stage: in progress; installer download from `https://aka.ms/ssmsfullsetup` has started
 
 Observed root cause of the script stop: the first automation version validated the local instance via `localhost`, while a direct connection to the default local instance via `Server=.` succeeded. The setup script has now been updated to use `Server=.` for local validation and database operations.
 Additional script fix: the SQL query helper now returns the `DataTable` object without PowerShell pipeline enumeration (`return ,$dt`). This prevents the readiness loop from waiting even when a local SQL connection is already successful.
@@ -98,8 +101,8 @@ Required remaining validation:
 - [ ] SQL Server 2022 Database Engine installation completes successfully
 - [ ] `MSSQLSERVER` service exists and runs
 - [ ] `SELECT @@VERSION` confirms SQL Server 2022
-- [ ] `ozmart_db` restores successfully and is ONLINE
-- [ ] Teacher source tables can be queried
+- [x] `ozmart_db` restores successfully and is ONLINE
+- [x] Teacher source tables can be queried
 - [ ] SSMS installs and connects to `localhost` with Windows Authentication
 - [ ] Visual Studio 2022 Community installs
 - [ ] Integration Services Project template is available
@@ -114,4 +117,4 @@ Required remaining validation:
 READY_FOR_ASSIGNMENT = NO
 ```
 
-Current blocker: database restore and the remaining SSMS / Visual Studio / SSIS Projects installation stages have not yet completed. SQL Server 2022 itself is installed, running, and locally queryable.
+Current blocker: SSMS / Visual Studio / SSIS Projects installation and final GUI smoke tests are still pending. SQL Server 2022 is installed, running, locally queryable, and the teacher `ozmart_db` database has been restored successfully.
