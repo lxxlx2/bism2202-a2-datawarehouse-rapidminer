@@ -36,25 +36,41 @@ function Stage([string]$Name) {
 }
 
 function Download([string]$Url,[string]$Path) {
-    if ((Test-Path $Path) -and ((Get-Item $Path).Length -gt 0)) {
+    if ((Test-Path $Path) -and ((Get-Item $Path).Length -ge 102400)) {
         Write-Host ('Using existing file: ' + $Path)
         return
     }
+
     if (Test-Path $Path) { Remove-Item $Path -Force }
+    $part = $Path + '.part'
+    if (Test-Path $part) { Remove-Item $part -Force }
+
     Write-Host ('Downloading: ' + $Url)
+
     for ($i=1; $i -le 3; $i++) {
         try {
-            if (Get-Command Start-BitsTransfer -ErrorAction SilentlyContinue) {
-                Start-BitsTransfer -Source $Url -Destination $Path -ErrorAction Stop
+            if (Get-Command curl.exe -ErrorAction SilentlyContinue) {
+                & curl.exe -L --fail --retry 3 --retry-delay 2 --connect-timeout 20 --output $part $Url
+                if ($LASTEXITCODE -ne 0) {
+                    throw ('curl.exe failed with exit code ' + $LASTEXITCODE)
+                }
             } else {
-                Invoke-WebRequest -Uri $Url -OutFile $Path -UseBasicParsing
+                Invoke-WebRequest -Uri $Url -OutFile $part -UseBasicParsing -MaximumRedirection 10
             }
-            if ((Test-Path $Path) -and ((Get-Item $Path).Length -gt 0)) { return }
+
+            if ((Test-Path $part) -and ((Get-Item $part).Length -ge 102400)) {
+                Move-Item $part $Path -Force
+                return
+            }
+
+            throw 'Downloaded file is missing or unexpectedly small.'
         } catch {
             Write-Warning ('Attempt ' + $i + ' failed: ' + $_.Exception.Message)
+            if (Test-Path $part) { Remove-Item $part -Force }
             Start-Sleep -Seconds (3*$i)
         }
     }
+
     throw ('Download failed: ' + $Url)
 }
 
