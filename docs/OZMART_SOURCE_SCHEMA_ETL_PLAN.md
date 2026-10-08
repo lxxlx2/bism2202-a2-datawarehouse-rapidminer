@@ -145,3 +145,24 @@ Failure: COMException HRESULT 0xC0048021 during CManagedComponentWrapperClass.Pr
 Microsoft defines 0xC0048021 as a missing, unregistered, or incompatible component. The earlier script used unversioned ComponentClassID values with SQL Server 2016 and 2022 installed side-by-side, which MAY select an older component; this cause remains unconfirmed until the next run.
 Existing SSIS smoke script now consults Application.PipelineComponentInfos, selects installed CreationName per component, and emits SSIS_COMPONENT_CANDIDATE, SSIS_COMPONENT_SELECTED, and SSIS_STAGE progress markers.
 STATUS: script patch committed; runtime rerun pending. No source-to-destination Data Flow or destination row count has been verified.
+
+
+### 2026-10-08 isolated real Data Flow: PASS
+
+The user-provided Windows VM screenshot now confirms an actual execution of the existing SSIS Data Flow smoke script. It is no longer a pending rerun:
+
+```text
+CSHARP_COMPILE = PASS
+SSIS_STAGE=SOURCE INITIALIZED
+SSIS_STAGE=ROWCOUNT INITIALIZED
+SSIS_STAGE=DESTINATION INITIALIZED
+SSIS_PACKAGE_EXECUTION = PASS
+SSIS_ROW_COUNT = 19
+DESTINATION_ROWS = 19
+DATA_FLOW_SMOKE = PASS
+SCRIPT EXIT CODE = 0
+```
+
+The installed SSIS component catalog selected `DTSAdapter.OLEDBSource.8`, `DTSTransform.RowCount.8`, `DTSAdapter.OLEDBDestination.8`, resolving the COM initialization error from the preceding runs. Source `ozmart_db.dbo.product_category` and sandbox destination `BISM2202_ETL_SANDBOX.dbo.ProductCategorySmoke` each have 19 rows, and the runtime Row Count variable reports 19. Package file: `C:\BISM2202\analysis\product_category_dataflow_smoke.dtsx`.
+
+**Verified outcome**: basic, isolated Source → Row Count → Destination SSIS pipeline, including database row counts. **Not yet verified**: complete Kimball dimensions, fact loading, formal SSIS screenshots, full assignment query outputs, or macOS RapidMiner/Altair deliverable. Historical notes above describe earlier attempts and are retained as diagnostic history. Next work should go directly to rubric-specific SSIS warehouse ETL; do not repeat the environment installation loop.
