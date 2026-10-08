@@ -30,14 +30,56 @@ IF OBJECT_ID(N'dbo.ProductCategorySmoke',N'U') IS NULL
 TRUNCATE TABLE dbo.ProductCategorySmoke;
 SELECT 1;
 '@)
-  $roots=@('C:\Program Files\Microsoft SQL Server\160','C:\Program Files (x86)\Microsoft SQL Server\160')|Where-Object{Test-Path $_}
-  $names=@('Microsoft.SqlServer.ManagedDTS.dll','Microsoft.SqlServer.DTSRuntimeWrap.dll','Microsoft.SqlServer.DTSPipelineWrap.dll','Microsoft.SqlServer.PipelineHost.dll')
+  # Microsoft installs SSIS interop/programming DLLs in the .NET 4 GAC on many
+  # installations, *not* inside the SQL Server 160 directory. Look in both.
+  # Do not silently select an older SSIS binary installed side-by-side.
+  $names=@(
+    'Microsoft.SqlServer.ManagedDTS.dll',
+    'Microsoft.SqlServer.DTSRuntimeWrap.dll',
+    'Microsoft.SqlServer.DTSPipelineWrap.dll',
+    'Microsoft.SqlServer.PipelineHost.dll'
+  )
+  $sdk=@(
+    'C:\Program Files\Microsoft SQL Server\160\SDK\Assemblies',
+    'C:\Program Files (x86)\Microsoft SQL Server\160\SDK\Assemblies'
+  )
+  $gacRoots=@(
+    (Join-Path $env:windir 'Microsoft.NET\assembly\GAC_MSIL'),
+    (Join-Path $env:windir 'Microsoft.NET\assembly\GAC_64'),
+    (Join-Path $env:windir 'assembly\GAC_MSIL'),
+    (Join-Path $env:windir 'assembly\GAC_64')
+  )
   $refs=@()
   foreach($name in $names){
-    $dll=Get-ChildItem $roots -Filter $name -File -Recurse -ErrorAction SilentlyContinue|Select-Object -First 1
-    if(-not $dll){throw "Missing SQL 2022 SSIS programming assembly: $name"}
-    $refs+= $dll.FullName
-    Say "DLL = $($dll.FullName)"
+    $baseName=[IO.Path]::GetFileNameWithoutExtension($name)
+    $possible=New-Object 'System.Collections.Generic.List[System.IO.FileInfo]'
+    foreach($dir in $sdk){
+      $p=Join-Path $dir $name
+      if(Test-Path -LiteralPath $p){$possible.Add((Get-Item -LiteralPath $p))}
+    }
+    foreach($rootDir in $gacRoots){
+      $sub=Join-Path $rootDir $baseName
+      if(Test-Path -LiteralPath $sub){
+        foreach($item in (Get-ChildItem -LiteralPath $sub -Filter $name -File -Recurse -ErrorAction SilentlyContinue)){
+          $possible.Add($item)
+        }
+      }
+    }
+    $choices=@(foreach($item in $possible){
+      try {
+        $major=[Reflection.AssemblyName]::GetAssemblyName($item.FullName).Version.Major
+        [pscustomobject]@{File=$item.FullName;Major=$major}
+      } catch {
+        Say "WARNING unreadable assembly version: $($item.FullName)"
+      }
+    })
+    $chosen=$choices|Where-Object{$_.Major -eq 16}|Select-Object -First 1
+    if(-not $chosen){
+      Say "FOUND_ASSEMBLY_VERSIONS_$($baseName) = $((($choices|ForEach-Object{ "$($_.Major):$($_.File)" }) -join ' | '))"
+      throw "Missing SQL Server 2022 (major version 16) assembly $name in SDK and .NET GAC. Do not reinstall SQL Server yet; review this log."
+    }
+    $refs+= $chosen.File
+    Say "DLL = $($chosen.File)"
   }
   $provider=$null
   foreach($candidate in @('MSOLEDBSQL','MSOLEDBSQL19','SQLNCLI11','SQLOLEDB')){
