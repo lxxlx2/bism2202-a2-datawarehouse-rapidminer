@@ -137,3 +137,11 @@ The user provided `ozmart-source-profile(1).json`, generated 2026-10-08 12:45:09
 - User's next run: all four assemblies were discovered from GAC; `OLEDB_PROVIDER = MSOLEDBSQL`. Actual failure was **C# compile-time**: `'Package' is an ambiguous reference between Microsoft.SqlServer.Dts.Runtime.Package and Microsoft.SqlServer.Dts.Runtime.Wrapper.Package`.
 - Existing script is now patched on main to avoid importing `Runtime.Wrapper` and instantiate `Microsoft.SqlServer.Dts.Runtime.Package` explicitly. Emits `CSHARP_COMPILE = PASS` only if compilation completes.
 - **Neither of the two observed runs executed a real SSIS Data Flow.** The new patch has not yet been run in the user's Windows VM. Do not mark the Data Flow smoke test PASS on the basis of DLL discovery or successful C# compilation alone.
+
+### 2026-10-08 third SSIS smoke attempt: COM component initialization failure (pending rerun)
+
+Observed user screenshot: source 19 rows; 64-bit SQL Server 2022 assemblies resolved; MSOLEDBSQL available; C# compiled successfully.
+Failure: COMException HRESULT 0xC0048021 during CManagedComponentWrapperClass.ProvideComponentProperties(). Actual SSIS data-flow execution has NOT succeeded.
+Microsoft defines 0xC0048021 as a missing, unregistered, or incompatible component. The earlier script used unversioned ComponentClassID values with SQL Server 2016 and 2022 installed side-by-side, which MAY select an older component; this cause remains unconfirmed until the next run.
+Existing SSIS smoke script now consults Application.PipelineComponentInfos, selects installed CreationName per component, and emits SSIS_COMPONENT_CANDIDATE, SSIS_COMPONENT_SELECTED, and SSIS_STAGE progress markers.
+STATUS: script patch committed; runtime rerun pending. No source-to-destination Data Flow or destination row count has been verified.
