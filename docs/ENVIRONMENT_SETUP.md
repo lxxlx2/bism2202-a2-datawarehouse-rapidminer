@@ -114,18 +114,18 @@ Required remaining validation:
 - [x] Visual Studio 2022 Community installs
 - [x] SSIS Projects 2.2 package installs successfully
 - [x] Integration Services Project template is available (observed in Visual Studio 2022 Create a new project)
-- [ ] A real SSIS Data Flow executes successfully with actual row counts
-- [ ] SSIS destination row count is verified
+- [x] An isolated real SSIS Data Flow executed with actual row counts (product_category smoke test, 19 source and 19 destination rows)
+- [x] SSIS smoke-test destination row count verified (19), assignment warehouse counts pending
 - [ ] macOS Altair AI Studio classification smoke test executes
 - [ ] AI Studio process can be saved and reopened as `.rmp`
 
 ## Readiness
 
 ```text
-READY_FOR_ASSIGNMENT = NO
+READY_FOR_ASSIGNMENT = PARTIAL
 ```
 
-Current blocker: final GUI validation only. SQL Server 2022, SSIS runtime, `ozmart_db`, SSMS 22, Visual Studio 2022 Community, and the SSIS Projects 2.2 package are installed. Remaining work is to launch SSMS, confirm the local database connection, confirm the Integration Services Project template in Visual Studio, run a real SSIS Data Flow with row-count verification, and complete the macOS Altair AI Studio smoke test.
+Current status: Windows SQL Server, SSIS project designer, SSIS components, and an isolated real Data Flow with 19 transferred rows have passed. Remaining: build the rubric-specific dimensional warehouse ETL with SSIS screenshots, validate warehouse totals, separately complete macOS Altair AI Studio smoke test, and capture any required GUI evidence.
 
 - Visual Studio 2022 was successfully installed, but the first automation passed an unquoted `--installPath` containing spaces through `Start-Process`, so the instance landed at `C:\Program`. `vswhere` and a recursive search confirmed `C:\Program\Common7\IDE\devenv.exe`. The setup script now discovers the actual instance path with `vswhere`, verifies/adds `Microsoft.VisualStudio.Workload.Data`, and no longer hard-codes the expected Visual Studio path.
 
@@ -196,3 +196,18 @@ Scope limitation: the executed package was an empty starter package. This passes
 - macOS Altair AI Studio process executed and `.rmp` saved/reopened: PENDING
 
 `READY_FOR_ASSIGNMENT = PARTIAL`. Core Windows tooling works; full rubric-specific ETL and Altair capability remain to be verified.
+
+
+## 2026-10-08 real SSIS Data Flow execution VERIFIED
+
+Evidence: user-supplied Windows VM PowerShell screenshot, 2026-10-08 (7:46 AM on VM). The code was run on the user's VM; this is a screenshot-supported result, not an independent GitHub CI run.
+
+- Script: `scripts/windows/ssis_category_dataflow_smoke.ps1` (previous code patch `1984192f7192e67d6f0308352c611e04bf2d24b4`).
+- Dynamically resolved locally registered components as `DTSAdapter.OLEDBSource.8`, `DTSTransform.RowCount.8`, and `DTSAdapter.OLEDBDestination.8` (as reported in the terminal).
+- Observed: `CSHARP_COMPILE = PASS`; each of SOURCE, ROWCOUNT, and DESTINATION initialization passed.
+- Observed: `SSIS_PACKAGE_EXECUTION = PASS`, `SSIS_ROW_COUNT = 19`, `DESTINATION_ROWS = 19`, `DATA_FLOW_SMOKE = PASS`, `SCRIPT EXIT CODE = 0`.
+- Package output: `C:\BISM2202\analysis\product_category_dataflow_smoke.dtsx`.
+- Log output: `C:\BISM2202\analysis\product_category_dataflow_result.txt`.
+- Target: isolated `BISM2202_ETL_SANDBOX.dbo.ProductCategorySmoke`; source was `ozmart_db.dbo.product_category` (19 rows, verified in prior profile).
+
+**Windows SSIS runtime + source/transform/destination pipeline smoke-test gate: PASS.** This resolves the prior COM `0xC0048021` blocker. The native runtime 2022 catalog resolves the versioned `.8` component class names. No software reinstall needed. This test does not prove that the rubric-specific dimensional Data Flows, assignments, screenshot evidence, or Altair task are complete.
