@@ -1,0 +1,48 @@
+Model [com.rapidminer.operator.preprocessing.filter.ValueReplenishmentModel@6b52a40, com.rapidminer.operator.preprocessing.RemoveUnusedNominalValuesModel@178ba69f, com.rapidminer.operator.preprocessing.filter.NominalToNumericModel@1e4c4fda, com.rapidminer.operator.preprocessing.normalization.ZTransformationModel@2f58f492, Total number of Support Vectors: 7999
+Bias (offset): -2.289
+
+w[Education = 10th] = 0.060
+w[Education = 11th] = -0.017
+w[Education = 12th] = 0.030
+w[Education = 1st-4th] = 0.139
+w[Education = 5th-6th] = 0.173
+w[Education = 7th-8th] = 0.067
+w[Education = 9th] = 0.071
+w[Education = Assoc-acdm] = -0.235
+w[Education = Assoc-voc] = -0.024
+w[Education = Bachelors] = 0.094
+w[Education = Doctorate] = -0.112
+w[Education = HS-grad] = 0.037
+w[Education = Masters] = -0.181
+w[Education = Preschool] = 0.106
+w[Education = Prof-school] = -0.077
+w[Education = Some-college] = 0.033
+w[Income = 50K–250K] = 0.120
+w[Income = <50K] = 0.065
+w[Income = >250K] = -0.129
+w[Loan_purpose = Business Loan] = -0.043
+w[Loan_purpose = Buy House] = -0.019
+w[Loan_purpose = Buy a Car] = 0.005
+w[Loan_purpose = Debt Consolidation] = 0.009
+w[Loan_purpose = Educational Expenses] = 0.024
+w[Loan_purpose = Home Improvements] = -0.002
+w[Loan_purpose = Medical Bills] = -0.123
+w[Loan_purpose = Other] = 0.049
+w[Loan_purpose = Take a Trip] = -0.013
+w[Loan_purpose = major_purchase] = 0.063
+w[Loan_purpose = moving] = -0.000
+w[Loan_purpose = small_business] = 0.013
+w[Loan_purpose = vacation] = -0.022
+w[Loan_purpose = wedding] = -0.122
+w[Age] = -0.214
+w[Loan_amount] = -0.005
+w[Capital_gain] = -0.021
+w[Capital_loss] = -0.009
+w[Weekly_work_hours] = -0.015
+w[Current_mortgage] = 0.012
+w[Student_debt] = 0.016
+w[Number_of_homes_owned] = 0.090
+w[Bank_balance] = 0.050
+w[Credit_history] = -0.002
+w[Past_bankruptcy] = 0.022
+]

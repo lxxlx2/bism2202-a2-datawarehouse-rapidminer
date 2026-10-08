@@ -1,46 +1,14 @@
-# Initial formal warehouse DimSeller milestone, NOT the complete assignment.
-# Shared correct base load for A/B; independent full ETL designs are still pending.
-# Real SSIS: OLE DB Source -> Data Conversion -> Row Count -> OLE DB Destination.
-# SQL creates target schema, clears only this dimension when FactSales is empty, and verifies.
-# No source writes and no modification of the existing Visual Studio project.
-# Initial DimSeller runtime passed for both targets; full assignment ETL remains pending.
-# Run in a fresh 64-bit Windows PowerShell process.
-param([ValidateSet('A','B')][string]$Student='A', [string]$OutRoot='C:\BISM2202\submission')
+param([ValidateSet('A','B')][string]$Student='A')
 $ErrorActionPreference='Stop'
-$targetDB="STUDENT_${Student}_ID_dw"
-$root=Join-Path $OutRoot "Student_$Student\ssis\initial_seller"
-New-Item -Force -ItemType Directory $root | Out-Null
-$packageFile=Join-Path $root '01_DimSeller.dtsx'
-$resultFile=Join-Path $root '01_DimSeller_result.txt'
-Start-Transcript -Path (Join-Path $root ('execution-'+(Get-Date -Format 'yyyyMMdd-HHmmss')+'.log')) -Force | Out-Null
-$log = New-Object 'System.Collections.Generic.List[string]'
-function Say([string]$message){Write-Host $message;$script:log.Add($message)}
-function Scalar([string]$db,[string]$sql) {
-    $c=New-Object System.Data.SqlClient.SqlConnection("Server=.;Database=$db;Integrated Security=True;Encrypt=False;TrustServerCertificate=True;Connection Timeout=15")
-    try {
-        $c.Open()
-        $q=$c.CreateCommand()
-        try {$q.CommandText=$sql;$q.CommandTimeout=120;return $q.ExecuteScalar()}
-        finally {$q.Dispose()}
-    } finally {$c.Dispose()}
+$out="C:\BISM2202\submission\Student_$Student\ssis\references"
+New-Item -ItemType Directory -Force $out | Out-Null
+$log=New-Object 'System.Collections.Generic.List[string]'
+function Say([string]$m){Write-Host $m;$script:log.Add($m)}
+function Sql([string]$q){
+ $c=New-Object System.Data.SqlClient.SqlConnection("Server=.;Database=STUDENT_${Student}_ID_dw;Integrated Security=True;Encrypt=False")
+ try {$c.Open();$cmd=$c.CreateCommand();$cmd.CommandText=$q;$cmd.CommandTimeout=120;return $cmd.ExecuteScalar()} finally {$c.Dispose()}
 }
 try {
-  if(-not [Environment]::Is64BitProcess){throw 'Use 64-bit Windows PowerShell.'}
-  $expected=[long](Scalar 'ozmart_db' 'SELECT COUNT_BIG(*) FROM dbo.sellers_table')
-  if($expected -ne 100){throw "Unexpected seller source count: $expected; expected 100."}
-  Say "SOURCE_ROWS = $expected"
-  [void](Scalar 'master' ("IF DB_ID(N'"+$targetDB+"') IS NULL EXEC(N'CREATE DATABASE ["+$targetDB+"]'); SELECT 1;"))
-  $ddl=Join-Path $PSScriptRoot 'schema.sql'
-  if(-not (Test-Path -LiteralPath $ddl)){throw "Missing schema.sql next to this script."}
-  [void](Scalar $targetDB ((Get-Content -Raw -LiteralPath $ddl)+"`nSELECT 1;"))
-  # An initial milestone only. Never erase an already populated assignment fact.
-  if([long](Scalar $targetDB 'SELECT COUNT_BIG(*) FROM dbo.FactSales') -ne 0){
-    throw 'FactSales is populated; refuse initial dimension reset. Use the reviewed full ETL project.'
-  }
-  [void](Scalar $targetDB 'DELETE FROM dbo.DimSeller; ALTER TABLE dbo.DimSeller ALTER COLUMN EndAt nvarchar(100) NULL; DBCC CHECKIDENT ("dbo.DimSeller", RESEED, 0) WITH NO_INFOMSGS; SELECT 1;')
-  # Microsoft installs SSIS interop/programming DLLs in the .NET 4 GAC on many
-  # installations, *not* inside the SQL Server 160 directory. Look in both.
-  # Do not silently select an older SSIS binary installed side-by-side.
   $names=@(
     'Microsoft.SqlServer.ManagedDTS.dll',
     'Microsoft.SqlServer.DTSRuntimeWrap.dll',
@@ -89,19 +57,8 @@ try {
     $refs+= $chosen.File
     Say "DLL = $($chosen.File)"
   }
-  $provider=$null
-  foreach($candidate in @('MSOLEDBSQL','MSOLEDBSQL19','SQLNCLI11','SQLOLEDB')){
-    try {
-      $probe=New-Object -ComObject ADODB.Connection
-      $probe.ConnectionTimeout=8
-      $probe.Open("Provider=$candidate;Data Source=.;Initial Catalog=ozmart_db;Integrated Security=SSPI;TrustServerCertificate=Yes;")
-      if($probe.State -eq 1){$probe.Close();$provider=$candidate;break}
-    } catch {}
-  }
-  if(-not $provider){throw 'No working OLE DB provider (MSOLEDBSQL or SQLOLEDB).'}
-  Say "OLEDB_PROVIDER = $provider"
 
-  $sourceCode=@'
+$sourceCode=@'
 using System;
 using Microsoft.SqlServer.Dts.Runtime;
 // Managed package APIs live in Microsoft.SqlServer.Dts.Runtime.
@@ -109,9 +66,7 @@ using Microsoft.SqlServer.Dts.Runtime;
 using Microsoft.SqlServer.Dts.Pipeline;
 using Microsoft.SqlServer.Dts.Pipeline.Wrapper;
 
-public class Bism2202InitialSeller {
-  // Use the component catalog installed on THIS VM, not an unversioned ProgID
-  // that can resolve to a 2016 component on a side-by-side 2016/2022 machine.
+public class BismReferenceLoader {
   private static string ResolveComponent(Application app, string displayName, string progId) {
     string chosen=null;
     int rank=-1;
@@ -139,34 +94,43 @@ public class Bism2202InitialSeller {
     catch(Exception ex){throw new InvalidOperationException("SSIS "+stage+" component initialization failed; ComponentClassID="+classId,ex);}
     Console.WriteLine("SSIS_STAGE="+stage+" INITIALIZED");
   }
-  public static long Execute(string srcString, string dstString, string dtsx) {
+  public static long Execute(string csv, string headers, string table, string dstString, string dtsx) {
     var pkg=new Microsoft.SqlServer.Dts.Runtime.Package();
-    pkg.Name="BISM2202_Initial_DimSeller";
+    pkg.Name="BISM2202_Reference_"+table;
     pkg.ProtectionLevel=DTSProtectionLevel.DontSaveSensitive;
     var rows=pkg.Variables.Add("RowsCopied",false,"User",0L);
-    var srcConn=pkg.Connections.Add("OLEDB");
-    srcConn.Name="OzMart";
-    srcConn.ConnectionString=srcString;
+    var srcConn=pkg.Connections.Add("FLATFILE");
+    srcConn.Name="Teacher CSV - "+table;
+    srcConn.ConnectionString=csv;
+    var ff=(Microsoft.SqlServer.Dts.Runtime.Wrapper.IDTSConnectionManagerFlatFile100)srcConn.InnerObject;
+    ff.Format="Delimited";ff.CodePage=65001;ff.Unicode=false;
+    ff.ColumnNamesInFirstDataRow=true;ff.HeaderRowDelimiter="\r\n";
+    ff.RowDelimiter="\r\n";ff.TextQualifier="\"";
+    string[] fields=headers.Split(',');
+    for(int n=0;n<fields.Length;n++) {
+      var col=ff.Columns.Add();
+      col.ColumnType="Delimited";col.ColumnDelimiter=n==fields.Length-1 ? "\r\n" : ",";
+      col.DataType=Microsoft.SqlServer.Dts.Runtime.Wrapper.DataType.DT_WSTR;col.MaximumWidth=256;
+      ((Microsoft.SqlServer.Dts.Runtime.Wrapper.IDTSName100)col).Name=fields[n];
+    }
     var dstConn=pkg.Connections.Add("OLEDB");
     dstConn.Name="Assignment Warehouse";
     dstConn.ConnectionString=dstString;
     var task=(TaskHost)pkg.Executables.Add("STOCK:PipelineTask");
-    task.Name="DFT DimSeller";
+    task.Name="DFT "+table;
     var pipe=(MainPipe)task.InnerObject;
     var components=new Application();
-    string sourceId=ResolveComponent(components,"OLE DB Source","DTSAdapter.OleDbSource");
+    string sourceId=ResolveComponent(components,"Flat File Source","DTSAdapter.FlatFileSource");
     string countId=ResolveComponent(components,"Row Count","DTSTransform.RowCount");
     string destinationId=ResolveComponent(components,"OLE DB Destination","DTSAdapter.OleDbDestination");
 
     IDTSComponentMetaData100 source=pipe.ComponentMetaDataCollection.New();
     source.ComponentClassID=sourceId;
-    source.Name="OLE DB Source - sellers_table";
+    source.Name="Flat File Source - "+table;
     CManagedComponentWrapper src=source.Instantiate();
     Initialize(src,"SOURCE",sourceId);
     source.RuntimeConnectionCollection[0].ConnectionManager=DtsConvert.GetExtendedInterface(srcConn);
     source.RuntimeConnectionCollection[0].ConnectionManagerID=srcConn.ID;
-    src.SetComponentProperty("AccessMode",2);
-    src.SetComponentProperty("SqlCommand","SELECT seller_id AS SellerID, name AS SellerName, location_id AS SellerLocationID, creation_date AS CreatedAt, end_date AS EndAt FROM dbo.sellers_table");
     src.AcquireConnections(null);src.ReinitializeMetaData();src.ReleaseConnections();
 
     IDTSComponentMetaData100 transform=pipe.ComponentMetaDataCollection.New();
@@ -178,13 +142,13 @@ public class Bism2202InitialSeller {
 
     IDTSComponentMetaData100 destination=pipe.ComponentMetaDataCollection.New();
     destination.ComponentClassID=destinationId;
-    destination.Name="OLE DB Destination - DimSeller";
+    destination.Name="OLE DB Destination - "+table;
     CManagedComponentWrapper dst=destination.Instantiate();
     Initialize(dst,"DESTINATION",destinationId);
     destination.RuntimeConnectionCollection[0].ConnectionManager=DtsConvert.GetExtendedInterface(dstConn);
     destination.RuntimeConnectionCollection[0].ConnectionManagerID=dstConn.ID;
     dst.SetComponentProperty("AccessMode",3);
-    dst.SetComponentProperty("OpenRowset","[dbo].[DimSeller]");
+    dst.SetComponentProperty("OpenRowset","[dbo].["+table+"]");
     dst.AcquireConnections(null);dst.ReinitializeMetaData();dst.ReleaseConnections();
 
     var conv=pipe.ComponentMetaDataCollection.New();
@@ -199,11 +163,8 @@ public class Bism2202InitialSeller {
       converter.SetUsageType(ci.ID,cv,vc.LineageID,DTSUsageType.UT_READONLY);
       var oc=converter.InsertOutputColumnAt(conv.OutputCollection[0].ID,conv.OutputCollection[0].OutputColumnCollection.Count,"Target_"+vc.Name,"Explicit target type conversion");
       converter.SetOutputColumnProperty(conv.OutputCollection[0].ID,oc.ID,"SourceInputColumnLineageID",vc.LineageID);
-      bool text=vc.Name=="SellerID" || vc.Name=="SellerName" || vc.Name=="SellerLocationID" || vc.Name=="EndAt";
-      int length=vc.Name=="SellerName" ? 256 : (vc.Name=="EndAt" ? 100 : 64);
       converter.SetOutputColumnDataTypeProperties(conv.OutputCollection[0].ID,oc.ID,
-        text ? Microsoft.SqlServer.Dts.Runtime.Wrapper.DataType.DT_WSTR : Microsoft.SqlServer.Dts.Runtime.Wrapper.DataType.DT_DBTIMESTAMP2,
-        text ? length : 0,0,text ? 0 : 7,0);
+        Microsoft.SqlServer.Dts.Runtime.Wrapper.DataType.DT_WSTR,256,0,0,0);
       oc.ErrorRowDisposition=DTSRowDisposition.RD_FailComponent;
       oc.TruncationRowDisposition=DTSRowDisposition.RD_FailComponent;
     }
@@ -229,50 +190,31 @@ public class Bism2202InitialSeller {
   }
 }
 '@
-  Add-Type -TypeDefinition $sourceCode -ReferencedAssemblies $refs -ErrorAction Stop
-  Say 'CSHARP_COMPILE = PASS'
-  $prefix="Provider=$provider;Data Source=.;Integrated Security=SSPI;TrustServerCertificate=Yes;"
-  # Export exact source catalog for subsequent Data Flow design; read only.
-  $sc=New-Object System.Data.SqlClient.SqlConnection('Server=.;Database=ozmart_db;Integrated Security=True;Encrypt=False;TrustServerCertificate=True')
-  try {
-    $sc.Open();$cmd=$sc.CreateCommand()
-    $cmd.CommandText="SELECT t.name AS table_name,c.column_id,c.name AS column_name,ty.name AS data_type,c.max_length,c.precision,c.scale,c.is_nullable FROM sys.tables t JOIN sys.columns c ON c.object_id=t.object_id JOIN sys.types ty ON ty.user_type_id=c.user_type_id ORDER BY t.name,c.column_id"
-    $ad=New-Object System.Data.SqlClient.SqlDataAdapter($cmd);$dt=New-Object System.Data.DataTable
-    [void]$ad.Fill($dt)
-    $catalog=@(foreach($r in $dt.Rows){[pscustomobject]@{table_name=$r.table_name;column_name=$r.column_name;data_type=$r.data_type;max_length=$r.max_length;precision=$r.precision;scale=$r.scale;is_nullable=$r.is_nullable}})
-    $catalog|ConvertTo-Json -Depth 4|Set-Content -LiteralPath (Join-Path $root 'source-catalog.json') -Encoding UTF8
-    $ad.Dispose();$cmd.Dispose();$dt.Dispose()
-  } finally {$sc.Dispose()}
+Add-Type -TypeDefinition $sourceCode -ReferencedAssemblies $refs
 
-  $count=[long][Bism2202InitialSeller]::Execute(
-    ($prefix+'Initial Catalog=ozmart_db;'),
-    ($prefix+'Initial Catalog='+$targetDB+';'),
-    $packageFile
-  )
-  Say 'SSIS_PACKAGE_EXECUTION = PASS'
-  $actual=[long](Scalar $targetDB 'SELECT COUNT_BIG(*) FROM dbo.DimSeller')
-  Say "SSIS_ROW_COUNT = $count"
-  Say "DESTINATION_ROWS = $actual"
-  if($count -ne $expected -or $actual -ne $expected){throw "Count mismatch: source $expected; SSIS $count; destination $actual"}
-  $diff=[long](Scalar $targetDB @'
-SELECT COUNT_BIG(*) FROM (
- SELECT SellerID,SellerName,SellerLocationID,CreatedAt,EndAt FROM dbo.DimSeller
- EXCEPT
- SELECT seller_id,name,location_id,creation_date,end_date FROM ozmart_db.dbo.sellers_table
-) d;
-'@)
-  if($diff -ne 0){throw "DimSeller values differ from immutable source: $diff"}
-  Say 'DIMSELLER_NATURAL_FIELDS_RECONCILIATION = PASS'
-  Say 'INITIAL_DIMSELLER_RUNTIME = PASS'
-  Say 'FULL_ASSIGNMENT_ETL = PENDING'
-  Say 'SSIS_DESIGNER_SCREENSHOTS = PENDING'
-  $good=$true
-} catch {
-  $good=$false
-  Say ("INITIAL_DIMSELLER_RUNTIME = FAIL: "+$_.Exception.ToString())
+$specs=@(
+ @('Age_Table.csv','RefAge','Age_Id,Age',78),
+ @('Customer_Education.csv','RefEducation','EDU_ID,Education_level',6),
+ @('State_code.csv','RefState','state_name,state_code',8),
+ @('seller_location.csv','RefSellerLocation','location_id,unit,street,postcode,suburb,state,type,status,region',100)
+)
+foreach($spec in $specs) {
+ $table=$spec[1];$headers=$spec[2];$cols=($headers.Split(',')|ForEach-Object{"[$_] nvarchar(256) NULL"}) -join ','
+ [void](Sql "IF OBJECT_ID('dbo.$table','U') IS NULL CREATE TABLE dbo.$table ($cols); DELETE FROM dbo.$table; SELECT 1;")
+ $rows=[BismReferenceLoader]::Execute("C:\BISM2202\assignment_work\csv\"+$spec[0],$headers,$table,"Provider=MSOLEDBSQL;Data Source=.;Initial Catalog=STUDENT_${Student}_ID_dw;Integrated Security=SSPI;TrustServerCertificate=Yes;",(Join-Path $out "$table.dtsx"))
+ $actual=Sql "SELECT COUNT_BIG(*) FROM dbo.$table"
+ Say "$table SSIS_ROWS=$rows TARGET_ROWS=$actual EXPECTED=$($spec[3])"
+ if($rows -ne $spec[3] -or $actual -ne $spec[3]){throw "Count mismatch $table"}
 }
-Say "PACKAGE = $packageFile"
-Say "LOG = $resultFile"
-$log|Set-Content -LiteralPath $resultFile -Encoding UTF8
-Stop-Transcript | Out-Null
-if(-not $good){exit 1}
+$c=New-Object System.Data.SqlClient.SqlConnection("Server=.;Database=STUDENT_${Student}_ID_dw;Integrated Security=True;Encrypt=False")
+try {
+ $c.Open();$export=@{}
+ foreach($spec in $specs) {
+  $cmd=$c.CreateCommand();$cmd.CommandText="SELECT * FROM dbo."+$spec[1];$r=$cmd.ExecuteReader();$data=@()
+  while($r.Read()){$row=[ordered]@{};for($i=0;$i -lt $r.FieldCount;$i++){$row[$r.GetName($i)]=$r.GetValue($i)};$data+= [pscustomobject]$row};$r.Close();$export[$spec[1]]=$data
+ }
+ $export | ConvertTo-Json -Depth 5 | Set-Content (Join-Path $out 'reference_rows.json') -Encoding UTF8
+} finally {$c.Dispose()}
+Say 'REFERENCE_DATAFLOWS=PASS' 
+} catch {Say ('REFERENCE_DATAFLOWS=FAIL '+$_.Exception.ToString())}
+$log | Set-Content (Join-Path $out 'reference_results.txt') -Encoding UTF8

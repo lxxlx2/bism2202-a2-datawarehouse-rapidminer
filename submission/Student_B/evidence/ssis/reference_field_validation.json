@@ -1,0 +1,18 @@
+{
+  "RefAge": {
+    "rows": 78,
+    "all_source_fields_multiset": "PASS"
+  },
+  "RefEducation": {
+    "rows": 6,
+    "all_source_fields_multiset": "PASS"
+  },
+  "RefState": {
+    "rows": 8,
+    "all_source_fields_multiset": "PASS"
+  },
+  "RefSellerLocation": {
+    "rows": 100,
+    "all_source_fields_multiset": "PASS"
+  }
+}

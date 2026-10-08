@@ -1,0 +1,12 @@
+Class=com.rapidminer.example.set.SimpleExampleSet
+Rows=2999
+SimpleExampleSet:
+2999 examples,
+27 regular attributes,
+special attributes = {
+    label = #0: Loan_defaulted (binominal/single_value)
+    id = #13: Customer_id (polynominal/single_value)/values=[C_1, C_2, C_3, C_4, C_5, C_6, C_7, C_8, C_9, C_10, C_11, C_12, C_13, C_14, C_15, C_16, C_17, C_18, C_19, C_20, C_21, C_22, C_23, C_24, C_25, C_26, C_27, C_28, C_29, C_30, C_31, C_32, C_33, C_34, C_35, C_36, C_37, C_38, C_39, C_40, C_41, C_42, C_43, C_44, C_45, C_46, C_47, C_48, C_49, C_50, C_51, C_52, C_53, C_54, C_55, C_56, C_57, C_58, C_59, C_60, C_61, C_62, C_63, C_64, C_65, C_66, C_67, C_68, C_69, C_70, C_71, C_72, C_73, C_74, C_75, C_76, C_77, C_78, C_79, C_80, C_81, C_82, C_83, C_84, C_85, C_86, C_87, C_88, C_89, C_90, C_91, C_92, C_93, C_94, C_95, C_96, C_97, C_98, C_99, C_100, ... (14899 values) ...]
+    confidence_false = #61: confidence(false) (real/single_value)
+    confidence_true = #62: confidence(true) (real/single_value)
+    prediction = #60: prediction(Loan_defaulted) (binominal/single_value)
+}

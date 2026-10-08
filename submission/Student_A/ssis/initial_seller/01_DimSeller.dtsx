@@ -1,0 +1,669 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="10/8/2026 3:01:49 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="WIN-LR4ELCKRUA0"
+  DTS:CreatorName="WIN-LR4ELCKRUA0\Administrator"
+  DTS:DTSID="{3585C092-6A28-4DAC-91DE-F963C9B876C5}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.1000.6"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="BISM2202_Initial_DimSeller"
+  DTS:ProtectionLevel="0"
+  DTS:VersionGUID="{363EC8F2-E652-42EA-9C93-483324F2C12D}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Assignment Warehouse]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{56ECC6E4-186D-43B0-A68C-CDD09EEAE1CD}"
+      DTS:ObjectName="Assignment Warehouse">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=.;Initial Catalog=STUDENT_A_ID_dw;Provider=MSOLEDBSQL;Integrated Security=SSPI;TrustServerCertificate=Yes;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[OzMart]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{E701DEFD-3F9A-43CB-A3FF-1AB5C21AA91A}"
+      DTS:ObjectName="OzMart">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=.;Initial Catalog=ozmart_db;Provider=MSOLEDBSQL;Integrated Security=SSPI;TrustServerCertificate=Yes;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{DAFC9EC4-3D0C-4498-AC0C-927E582D757D}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="RowsCopied">
+      <DTS:VariableValue
+        DTS:DataType="20">0</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\DFT DimSeller"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:DTSID="{69430B80-D1C3-4375-96E1-DE9B49342550}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DFT DimSeller"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\DFT DimSeller\Data Conversion"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Data Conversion"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\DFT DimSeller\Data Conversion.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT DimSeller\Data Conversion.Inputs[Data Conversion Input].Columns[SellerID]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="SellerID"
+                      lineageId="Package\DFT DimSeller\OLE DB Source.Outputs[OLE DB Source Output].Columns[SellerID]" />
+                    <inputColumn
+                      refId="Package\DFT DimSeller\Data Conversion.Inputs[Data Conversion Input].Columns[SellerName]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="SellerName"
+                      lineageId="Package\DFT DimSeller\OLE DB Source.Outputs[OLE DB Source Output].Columns[SellerName]" />
+                    <inputColumn
+                      refId="Package\DFT DimSeller\Data Conversion.Inputs[Data Conversion Input].Columns[SellerLocationID]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="SellerLocationID"
+                      lineageId="Package\DFT DimSeller\OLE DB Source.Outputs[OLE DB Source Output].Columns[SellerLocationID]" />
+                    <inputColumn
+                      refId="Package\DFT DimSeller\Data Conversion.Inputs[Data Conversion Input].Columns[CreatedAt]"
+                      cachedDataType="dbTimeStamp2"
+                      cachedName="CreatedAt"
+                      cachedScale="7"
+                      lineageId="Package\DFT DimSeller\OLE DB Source.Outputs[OLE DB Source Output].Columns[CreatedAt]" />
+                    <inputColumn
+                      refId="Package\DFT DimSeller\Data Conversion.Inputs[Data Conversion Input].Columns[EndAt]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="EndAt"
+                      lineageId="Package\DFT DimSeller\OLE DB Source.Outputs[OLE DB Source Output].Columns[EndAt]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT DimSeller\Data Conversion.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\DFT DimSeller\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT DimSeller\Data Conversion.Outputs[Data Conversion Output].Columns[Target_SellerID]"
+                      dataType="wstr"
+                      description="Explicit target type conversion"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="64"
+                      lineageId="Package\DFT DimSeller\Data Conversion.Outputs[Data Conversion Output].Columns[Target_SellerID]"
+                      name="Target_SellerID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\DFT DimSeller\OLE DB Source.Outputs[OLE DB Source Output].Columns[SellerID]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT DimSeller\Data Conversion.Outputs[Data Conversion Output].Columns[Target_SellerName]"
+                      dataType="wstr"
+                      description="Explicit target type conversion"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="256"
+                      lineageId="Package\DFT DimSeller\Data Conversion.Outputs[Data Conversion Output].Columns[Target_SellerName]"
+                      name="Target_SellerName"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\DFT DimSeller\OLE DB Source.Outputs[OLE DB Source Output].Columns[SellerName]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT DimSeller\Data Conversion.Outputs[Data Conversion Output].Columns[Target_SellerLocationID]"
+                      dataType="wstr"
+                      description="Explicit target type conversion"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="64"
+                      lineageId="Package\DFT DimSeller\Data Conversion.Outputs[Data Conversion Output].Columns[Target_SellerLocationID]"
+                      name="Target_SellerLocationID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\DFT DimSeller\OLE DB Source.Outputs[OLE DB Source Output].Columns[SellerLocationID]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT DimSeller\Data Conversion.Outputs[Data Conversion Output].Columns[Target_CreatedAt]"
+                      dataType="dbTimeStamp2"
+                      description="Explicit target type conversion"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\DFT DimSeller\Data Conversion.Outputs[Data Conversion Output].Columns[Target_CreatedAt]"
+                      name="Target_CreatedAt"
+                      scale="7"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\DFT DimSeller\OLE DB Source.Outputs[OLE DB Source Output].Columns[CreatedAt]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT DimSeller\Data Conversion.Outputs[Data Conversion Output].Columns[Target_EndAt]"
+                      dataType="wstr"
+                      description="Explicit target type conversion"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="100"
+                      lineageId="Package\DFT DimSeller\Data Conversion.Outputs[Data Conversion Output].Columns[Target_EndAt]"
+                      name="Target_EndAt"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\DFT DimSeller\OLE DB Source.Outputs[OLE DB Source Output].Columns[EndAt]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT DimSeller\Data Conversion.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\DFT DimSeller\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT DimSeller\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT DimSeller\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT DimSeller\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT DimSeller\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT DimSeller\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[DimSeller]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT DimSeller\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Assignment Warehouse]"
+                  connectionManagerRefId="Package.ConnectionManagers[Assignment Warehouse]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DFT DimSeller\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT DimSeller\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Target_SellerID]"
+                      cachedDataType="wstr"
+                      cachedLength="64"
+                      cachedName="Target_SellerID"
+                      externalMetadataColumnId="Package\DFT DimSeller\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SellerID]"
+                      lineageId="Package\DFT DimSeller\Data Conversion.Outputs[Data Conversion Output].Columns[Target_SellerID]" />
+                    <inputColumn
+                      refId="Package\DFT DimSeller\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Target_SellerName]"
+                      cachedDataType="wstr"
+                      cachedLength="256"
+                      cachedName="Target_SellerName"
+                      externalMetadataColumnId="Package\DFT DimSeller\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SellerName]"
+                      lineageId="Package\DFT DimSeller\Data Conversion.Outputs[Data Conversion Output].Columns[Target_SellerName]" />
+                    <inputColumn
+                      refId="Package\DFT DimSeller\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Target_SellerLocationID]"
+                      cachedDataType="wstr"
+                      cachedLength="64"
+                      cachedName="Target_SellerLocationID"
+                      externalMetadataColumnId="Package\DFT DimSeller\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SellerLocationID]"
+                      lineageId="Package\DFT DimSeller\Data Conversion.Outputs[Data Conversion Output].Columns[Target_SellerLocationID]" />
+                    <inputColumn
+                      refId="Package\DFT DimSeller\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Target_CreatedAt]"
+                      cachedDataType="dbTimeStamp2"
+                      cachedName="Target_CreatedAt"
+                      cachedScale="7"
+                      externalMetadataColumnId="Package\DFT DimSeller\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CreatedAt]"
+                      lineageId="Package\DFT DimSeller\Data Conversion.Outputs[Data Conversion Output].Columns[Target_CreatedAt]" />
+                    <inputColumn
+                      refId="Package\DFT DimSeller\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Target_EndAt]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="Target_EndAt"
+                      externalMetadataColumnId="Package\DFT DimSeller\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[EndAt]"
+                      lineageId="Package\DFT DimSeller\Data Conversion.Outputs[Data Conversion Output].Columns[Target_EndAt]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT DimSeller\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SellerKey]"
+                      dataType="i4"
+                      name="SellerKey" />
+                    <externalMetadataColumn
+                      refId="Package\DFT DimSeller\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SellerID]"
+                      dataType="wstr"
+                      length="64"
+                      name="SellerID" />
+                    <externalMetadataColumn
+                      refId="Package\DFT DimSeller\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SellerName]"
+                      dataType="wstr"
+                      length="256"
+                      name="SellerName" />
+                    <externalMetadataColumn
+                      refId="Package\DFT DimSeller\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SellerLocationID]"
+                      dataType="wstr"
+                      length="64"
+                      name="SellerLocationID" />
+                    <externalMetadataColumn
+                      refId="Package\DFT DimSeller\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CreatedAt]"
+                      dataType="dbTimeStamp2"
+                      name="CreatedAt"
+                      scale="7" />
+                    <externalMetadataColumn
+                      refId="Package\DFT DimSeller\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[EndAt]"
+                      dataType="wstr"
+                      length="100"
+                      name="EndAt" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT DimSeller\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\DFT DimSeller\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT DimSeller\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT DimSeller\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT DimSeller\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT DimSeller\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT DimSeller\OLE DB Source"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="OLE DB Source"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT seller_id AS SellerID, name AS SellerName, location_id AS SellerLocationID, creation_date AS CreatedAt, end_date AS EndAt FROM dbo.sellers_table</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT DimSeller\OLE DB Source.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[OzMart]"
+                  connectionManagerRefId="Package.ConnectionManagers[OzMart]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\DFT DimSeller\OLE DB Source.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT DimSeller\OLE DB Source.Outputs[OLE DB Source Output].Columns[SellerID]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT DimSeller\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SellerID]"
+                      length="50"
+                      lineageId="Package\DFT DimSeller\OLE DB Source.Outputs[OLE DB Source Output].Columns[SellerID]"
+                      name="SellerID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT DimSeller\OLE DB Source.Outputs[OLE DB Source Output].Columns[SellerName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT DimSeller\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SellerName]"
+                      length="50"
+                      lineageId="Package\DFT DimSeller\OLE DB Source.Outputs[OLE DB Source Output].Columns[SellerName]"
+                      name="SellerName"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT DimSeller\OLE DB Source.Outputs[OLE DB Source Output].Columns[SellerLocationID]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT DimSeller\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SellerLocationID]"
+                      length="50"
+                      lineageId="Package\DFT DimSeller\OLE DB Source.Outputs[OLE DB Source Output].Columns[SellerLocationID]"
+                      name="SellerLocationID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT DimSeller\OLE DB Source.Outputs[OLE DB Source Output].Columns[CreatedAt]"
+                      dataType="dbTimeStamp2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT DimSeller\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CreatedAt]"
+                      lineageId="Package\DFT DimSeller\OLE DB Source.Outputs[OLE DB Source Output].Columns[CreatedAt]"
+                      name="CreatedAt"
+                      scale="7"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT DimSeller\OLE DB Source.Outputs[OLE DB Source Output].Columns[EndAt]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT DimSeller\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[EndAt]"
+                      length="50"
+                      lineageId="Package\DFT DimSeller\OLE DB Source.Outputs[OLE DB Source Output].Columns[EndAt]"
+                      name="EndAt"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT DimSeller\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SellerID]"
+                      dataType="wstr"
+                      length="50"
+                      name="SellerID" />
+                    <externalMetadataColumn
+                      refId="Package\DFT DimSeller\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SellerName]"
+                      dataType="wstr"
+                      length="50"
+                      name="SellerName" />
+                    <externalMetadataColumn
+                      refId="Package\DFT DimSeller\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SellerLocationID]"
+                      dataType="wstr"
+                      length="50"
+                      name="SellerLocationID" />
+                    <externalMetadataColumn
+                      refId="Package\DFT DimSeller\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CreatedAt]"
+                      dataType="dbTimeStamp2"
+                      name="CreatedAt"
+                      scale="7" />
+                    <externalMetadataColumn
+                      refId="Package\DFT DimSeller\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[EndAt]"
+                      dataType="wstr"
+                      length="50"
+                      name="EndAt" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\DFT DimSeller\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT DimSeller\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SellerID]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\DFT DimSeller\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SellerID]"
+                      name="SellerID" />
+                    <outputColumn
+                      refId="Package\DFT DimSeller\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SellerName]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\DFT DimSeller\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SellerName]"
+                      name="SellerName" />
+                    <outputColumn
+                      refId="Package\DFT DimSeller\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SellerLocationID]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\DFT DimSeller\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SellerLocationID]"
+                      name="SellerLocationID" />
+                    <outputColumn
+                      refId="Package\DFT DimSeller\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CreatedAt]"
+                      dataType="dbTimeStamp2"
+                      lineageId="Package\DFT DimSeller\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CreatedAt]"
+                      name="CreatedAt"
+                      scale="7" />
+                    <outputColumn
+                      refId="Package\DFT DimSeller\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[EndAt]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\DFT DimSeller\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[EndAt]"
+                      name="EndAt" />
+                    <outputColumn
+                      refId="Package\DFT DimSeller\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT DimSeller\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT DimSeller\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT DimSeller\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT DimSeller\Row Count"
+              componentClassID="Microsoft.RowCount"
+              contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Counts rows as they pass through a data flow. For example, use the number of rows processed to determine whether or not to perform cleanup operations, or update text in an e-mail message to communicate processing status."
+              name="Row Count">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable to hold the row count."
+                  name="VariableName">User::RowsCopied</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\DFT DimSeller\Row Count.Inputs[Row Count Input 1]"
+                  hasSideEffects="true"
+                  name="Row Count Input 1">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT DimSeller\Row Count.Outputs[Row Count Output 1]"
+                  name="Row Count Output 1"
+                  synchronousInputId="Package\DFT DimSeller\Row Count.Inputs[Row Count Input 1]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\DFT DimSeller.Paths[Data Conversion Output]"
+              endId="Package\DFT DimSeller\Row Count.Inputs[Row Count Input 1]"
+              name="Data Conversion Output"
+              startId="Package\DFT DimSeller\Data Conversion.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\DFT DimSeller.Paths[OLE DB Source Output]"
+              endId="Package\DFT DimSeller\Data Conversion.Inputs[Data Conversion Input]"
+              name="OLE DB Source Output"
+              startId="Package\DFT DimSeller\OLE DB Source.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\DFT DimSeller.Paths[Row Count Output 1]"
+              endId="Package\DFT DimSeller\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Row Count Output 1"
+              startId="Package\DFT DimSeller\Row Count.Outputs[Row Count Output 1]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+</DTS:Executable>

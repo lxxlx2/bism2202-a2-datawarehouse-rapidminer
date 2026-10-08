@@ -1,0 +1,248 @@
+{
+  "status": "NATIVE_ENGINE_RUN_AND_IDENTITY_VALIDATION_PASS_GUI_ACCEPTANCE_PENDING",
+  "pre_holdout_lock_commit": "7afc833dca81d220f0801c79ac723c4aaf092b23",
+  "results": [
+    {
+      "student": "A",
+      "model": "logistic_regression",
+      "train_rows": 7999,
+      "holdout_rows": 1999,
+      "split_overlap": 0,
+      "cohort_union_rows": 9998,
+      "positive_class": "true = original Loan_defaulted 1",
+      "native_accuracy": 0.8934467233616809,
+      "native_precision": 0.0,
+      "native_recall": 0.0,
+      "native_f1": null,
+      "native_auc": 0.6245869012047127,
+      "confusion": {
+        "TN": 1786,
+        "FP": 1,
+        "FN": 212,
+        "TP": 0
+      },
+      "confusion_formula_f1": 0.0,
+      "metric_definition_note": "Native f_measure is undefined in these outputs; direct count formula 2TP/(2TP+FP+FN) is independently 0. Preserve both; do not replace native output.",
+      "majority_nondefault_holdout_baseline": 0.8939469734867433,
+      "frozen_cv_exact_text_match": true
+    },
+    {
+      "student": "A",
+      "model": "decision_tree",
+      "train_rows": 7999,
+      "holdout_rows": 1999,
+      "split_overlap": 0,
+      "cohort_union_rows": 9998,
+      "positive_class": "true = original Loan_defaulted 1",
+      "native_accuracy": 0.8939469734867433,
+      "native_precision": null,
+      "native_recall": 0.0,
+      "native_f1": null,
+      "native_auc": 0.5,
+      "confusion": {
+        "TN": 1787,
+        "FP": 0,
+        "FN": 212,
+        "TP": 0
+      },
+      "confusion_formula_f1": 0.0,
+      "metric_definition_note": "Native f_measure is undefined in these outputs; direct count formula 2TP/(2TP+FP+FN) is independently 0. Preserve both; do not replace native output.",
+      "majority_nondefault_holdout_baseline": 0.8939469734867433,
+      "frozen_cv_exact_text_match": true
+    },
+    {
+      "student": "B",
+      "model": "logistic_regression",
+      "train_rows": 6999,
+      "holdout_rows": 2999,
+      "split_overlap": 0,
+      "cohort_union_rows": 9998,
+      "positive_class": "true = original Loan_defaulted 1",
+      "native_accuracy": 0.8939646548849617,
+      "native_precision": null,
+      "native_recall": 0.0,
+      "native_f1": null,
+      "native_auc": 0.5948111448136097,
+      "confusion": {
+        "TN": 2681,
+        "FP": 0,
+        "FN": 318,
+        "TP": 0
+      },
+      "confusion_formula_f1": 0.0,
+      "metric_definition_note": "Native f_measure is undefined in these outputs; direct count formula 2TP/(2TP+FP+FN) is independently 0. Preserve both; do not replace native output.",
+      "majority_nondefault_holdout_baseline": 0.8939646548849617,
+      "frozen_cv_exact_text_match": true
+    },
+    {
+      "student": "B",
+      "model": "random_forest",
+      "train_rows": 6999,
+      "holdout_rows": 2999,
+      "split_overlap": 0,
+      "cohort_union_rows": 9998,
+      "positive_class": "true = original Loan_defaulted 1",
+      "native_accuracy": 0.8939646548849617,
+      "native_precision": null,
+      "native_recall": 0.0,
+      "native_f1": null,
+      "native_auc": 0.5,
+      "confusion": {
+        "TN": 2681,
+        "FP": 0,
+        "FN": 318,
+        "TP": 0
+      },
+      "confusion_formula_f1": 0.0,
+      "metric_definition_note": "Native f_measure is undefined in these outputs; direct count formula 2TP/(2TP+FP+FN) is independently 0. Preserve both; do not replace native output.",
+      "majority_nondefault_holdout_baseline": 0.8939646548849617,
+      "frozen_cv_exact_text_match": true
+    }
+  ],
+  "files": [
+    {
+      "file": "submission/Student_A/evidence/native/logistic_regression_holdout_result_3_identities.csv",
+      "sha256": "fee12226cb1d448dd7573f33480b660225c8759ed9e15a87fb3efc7d4d40c1af"
+    },
+    {
+      "file": "submission/Student_A/evidence/native/logistic_regression_holdout_result_4_identities.csv",
+      "sha256": "9f4ddd40ff703be09f79c5ee49d01938f96807df62e912e0083ef24170c84da1"
+    },
+    {
+      "file": "submission/Student_A/evidence/native/logistic_regression_holdout_result_4_summary.txt",
+      "sha256": "72ef57caae937bb5fa74b98189abc338a2df3f9163a020797f1e7e4e8c9c5c4f"
+    },
+    {
+      "file": "submission/Student_A/evidence/native/logistic_regression_holdout_result_0_metrics.csv",
+      "sha256": "6e930ac0d50fd3cc3a8ee3bd0f1eb4d31f0e8f71db79d24e3355882e961b6425"
+    },
+    {
+      "file": "submission/Student_A/evidence/native/logistic_regression_holdout_result_1_metrics.csv",
+      "sha256": "56c46122e73c8da8284beb7d73de2583222e078a56b868a4aef4726091bb21ff"
+    },
+    {
+      "file": "submission/Student_A/evidence/native/logistic_regression_holdout_result_0.txt",
+      "sha256": "c97e997d8d918ef315f069e776c13a5e73a4797466d4d973acea3920515faff0"
+    },
+    {
+      "file": "submission/Student_A/evidence/native/logistic_regression_holdout_result_3_summary.txt",
+      "sha256": "fa7bab6b41b2ee75f5966e251d4e4c2f0a782be27a8378270bae1a571f686c23"
+    },
+    {
+      "file": "submission/Student_A/evidence/native/logistic_regression_holdout_result_1.txt",
+      "sha256": "0cef2b5b056a8c9b2e0a171c0cfb822531dd6a16f3694e8d9446d84511d67c32"
+    },
+    {
+      "file": "submission/Student_A/evidence/native/logistic_regression_holdout_result_2.txt",
+      "sha256": "1a0c732c3bb52f2c48c28db0142964c1694e25507f1ea5b5c51e9514615abb91"
+    },
+    {
+      "file": "submission/Student_A/evidence/native/decision_tree_holdout_result_3_identities.csv",
+      "sha256": "e0f66e224adf7c66867939e69ad1ef6067d120dab250074138d6dd1eeade0135"
+    },
+    {
+      "file": "submission/Student_A/evidence/native/decision_tree_holdout_result_4_identities.csv",
+      "sha256": "9f4ddd40ff703be09f79c5ee49d01938f96807df62e912e0083ef24170c84da1"
+    },
+    {
+      "file": "submission/Student_A/evidence/native/decision_tree_holdout_result_4_summary.txt",
+      "sha256": "72ef57caae937bb5fa74b98189abc338a2df3f9163a020797f1e7e4e8c9c5c4f"
+    },
+    {
+      "file": "submission/Student_A/evidence/native/decision_tree_holdout_result_0_metrics.csv",
+      "sha256": "d7b25efbfd404a2088ff1e1a131ebe8b64b94c8432d3a6da92ee6dc3ec0bf9c8"
+    },
+    {
+      "file": "submission/Student_A/evidence/native/decision_tree_holdout_result_1_metrics.csv",
+      "sha256": "9c3f718283ec85e2c2de3a67854c50e73ae50ff64783992aac2cc87853cf7162"
+    },
+    {
+      "file": "submission/Student_A/evidence/native/decision_tree_holdout_result_0.txt",
+      "sha256": "1ec9bdb45a4c3e9ce055c4e323cc4efc466d9b540dcbfefbd65e83681318cb9b"
+    },
+    {
+      "file": "submission/Student_A/evidence/native/decision_tree_holdout_result_3_summary.txt",
+      "sha256": "27b76113073d1c3c46105fc3e29148a029fc17adf2a064f9df64610e3df32ca8"
+    },
+    {
+      "file": "submission/Student_A/evidence/native/decision_tree_holdout_result_1.txt",
+      "sha256": "e57bff1ed2ce20e46f717f2d9f0c9474310433584bcbd2e28d879c4afe70491c"
+    },
+    {
+      "file": "submission/Student_A/evidence/native/decision_tree_holdout_result_2.txt",
+      "sha256": "2fd8a63fde88128224769f06f62a8e0521c220469a47a64705032c160de80b74"
+    },
+    {
+      "file": "submission/Student_B/evidence/native/logistic_regression_holdout_result_3_identities.csv",
+      "sha256": "ddfd9624109a14308af065e1e8c1b2ab84556727fb45d3eb692338e30071c539"
+    },
+    {
+      "file": "submission/Student_B/evidence/native/logistic_regression_holdout_result_4_identities.csv",
+      "sha256": "bc271cdc71abe0d4fa167194e97dc114c602a8cde48f83924053cdea0a89f901"
+    },
+    {
+      "file": "submission/Student_B/evidence/native/logistic_regression_holdout_result_4_summary.txt",
+      "sha256": "63f53fc437af6400e83958b023071f9df00bd7a6962cfefca6101ce5337e295c"
+    },
+    {
+      "file": "submission/Student_B/evidence/native/logistic_regression_holdout_result_0_metrics.csv",
+      "sha256": "1b6acc538a2c2deb67bd95e573e61258b3e0982fa11f6891480c8d7a49a38958"
+    },
+    {
+      "file": "submission/Student_B/evidence/native/logistic_regression_holdout_result_1_metrics.csv",
+      "sha256": "38d45359a34538c74a7c3955d8b39c39db39caac46ac9e579b250a4a81d84683"
+    },
+    {
+      "file": "submission/Student_B/evidence/native/logistic_regression_holdout_result_0.txt",
+      "sha256": "ed16ff46e1894577ce0657d073e698beaa09786055ded5fef3feea8c89a9d29f"
+    },
+    {
+      "file": "submission/Student_B/evidence/native/logistic_regression_holdout_result_3_summary.txt",
+      "sha256": "ce260276ea0af3915ad96a5f68b0cfc9695e9be35fd25e365bf376691823bc01"
+    },
+    {
+      "file": "submission/Student_B/evidence/native/logistic_regression_holdout_result_1.txt",
+      "sha256": "8829ee7f76bc53b823748d53a76d97d4bc9b817bb9c2a597c25a220c14025b74"
+    },
+    {
+      "file": "submission/Student_B/evidence/native/logistic_regression_holdout_result_2.txt",
+      "sha256": "88d944be6652d4dda0d5f1ae4d5c30f265fa72fd195c6c39fafb6535a634f472"
+    },
+    {
+      "file": "submission/Student_B/evidence/native/random_forest_holdout_result_3_identities.csv",
+      "sha256": "881a3fff3607297225e304e99809b1186c20614c0ff289f4a556075c3192f42b"
+    },
+    {
+      "file": "submission/Student_B/evidence/native/random_forest_holdout_result_4_identities.csv",
+      "sha256": "bc271cdc71abe0d4fa167194e97dc114c602a8cde48f83924053cdea0a89f901"
+    },
+    {
+      "file": "submission/Student_B/evidence/native/random_forest_holdout_result_4_summary.txt",
+      "sha256": "63f53fc437af6400e83958b023071f9df00bd7a6962cfefca6101ce5337e295c"
+    },
+    {
+      "file": "submission/Student_B/evidence/native/random_forest_holdout_result_0_metrics.csv",
+      "sha256": "550b7fbe92f98746945f0bf57760acab6f1d752db6671803d12599e1c138d871"
+    },
+    {
+      "file": "submission/Student_B/evidence/native/random_forest_holdout_result_1_metrics.csv",
+      "sha256": "68d5dec0f42968137824699eed38ea8d6798d71b5e163945692b8f71e71c321d"
+    },
+    {
+      "file": "submission/Student_B/evidence/native/random_forest_holdout_result_0.txt",
+      "sha256": "6cfcb674464f7ca19965d7540cd88749ddc3859c685c47dff71ec40c64925e46"
+    },
+    {
+      "file": "submission/Student_B/evidence/native/random_forest_holdout_result_3_summary.txt",
+      "sha256": "5f5f03290d5d1dddf2c4780473d3a6f34e8294ca743a935a64f1311902056d63"
+    },
+    {
+      "file": "submission/Student_B/evidence/native/random_forest_holdout_result_1.txt",
+      "sha256": "78e9c8a8ea4be09878818f2ba84a6e73781dc7c051ffc744d565799b9c6493cc"
+    },
+    {
+      "file": "submission/Student_B/evidence/native/random_forest_holdout_result_2.txt",
+      "sha256": "8ae9cd71867ae9ee3ddd823a92301b84cfd9d42cf9877e5755cd0eefd7b4a2ce"
+    }
+  ]
+}

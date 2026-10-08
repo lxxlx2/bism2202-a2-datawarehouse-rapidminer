@@ -34,3 +34,15 @@ Create empty schema with DDL, load four raw CSV references through Flat File Sou
 ## Acceptance
 
 Each package must save/open in designer, execute with SSIS 160, reconcile source/SSIS/destination counts and measures, rerun with identical natural-key facts and totals, capture native designer execution evidence, and subsequently backup and restore the completed DB. Design and prepared scripts alone do not satisfy these gates.
+
+## Seller end date preservation (verified 2026-10-09 host session)
+
+The live SQL catalog identifies `sellers_table.end_date` as nvarchar, unlike
+`creation_date` (datetime2). A read-only source probe found day/month/year
+values such as `15/1/2023 10:04` and the literal `None`. Default SQL date
+conversion misinterprets ambiguous dates and fails on others. DimSeller.EndAt
+therefore preserves the exact source text in nvarchar(100), including `None`;
+it is not used as a calendar or activity-status filter. CreatedAt remains
+datetime2. The SSIS Data Conversion explicitly preserves EndAt as Unicode.
+No source field was changed. A future parsed attribute must specify day-first
+format and preserve the original field separately.

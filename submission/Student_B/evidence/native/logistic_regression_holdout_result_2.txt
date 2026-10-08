@@ -1,0 +1,31 @@
+Model [com.rapidminer.operator.preprocessing.filter.ValueReplenishmentModel@178ba69f, com.rapidminer.operator.preprocessing.RemoveUnusedNominalValuesModel@1e4c4fda, com.rapidminer.operator.preprocessing.filter.NominalToNumericModel@2f58f492, com.rapidminer.operator.preprocessing.normalization.ZTransformationModel@903c13, Total number of Support Vectors: 6999
+Bias (offset): -2.227
+
+w[Income = 50K–250K] = 0.164
+w[Income = <50K] = 0.066
+w[Income = >250K] = -0.174
+w[Loan_purpose = Business Loan] = -0.096
+w[Loan_purpose = Buy House] = -0.006
+w[Loan_purpose = Buy a Car] = 0.020
+w[Loan_purpose = Debt Consolidation] = 0.033
+w[Loan_purpose = Educational Expenses] = -0.004
+w[Loan_purpose = Home Improvements] = 0.052
+w[Loan_purpose = Medical Bills] = -0.076
+w[Loan_purpose = Other] = 0.028
+w[Loan_purpose = Take a Trip] = -0.029
+w[Loan_purpose = major_purchase] = 0.031
+w[Loan_purpose = moving] = 0.027
+w[Loan_purpose = small_business] = -0.235
+w[Loan_purpose = vacation] = -0.004
+w[Loan_purpose = wedding] = -0.150
+w[Age] = -0.142
+w[Loan_amount] = -0.008
+w[Capital_gain] = -0.096
+w[Capital_loss] = -0.030
+w[Current_mortgage] = 0.012
+w[Student_debt] = 0.057
+w[Number_of_homes_owned] = 0.042
+w[Bank_balance] = 0.036
+w[Credit_history] = -0.018
+w[Past_bankruptcy] = 0.035
+]

@@ -6,7 +6,7 @@ Intake date: 2026-10-08 Asia/Bangkok. Authoritative baseline: the four immutable
 |---|---|---|---|---|---|
 | R01 | Executive Summary, 2 | Report section 1 | PENDING | PENDING | <=250 words; evidence from both tasks; business audience |
 | R02 | Star schema and Kimball four steps, 6 | Section 2.1 image, 2.2 rationale, DDL | PENDING | PENDING | Process, grain, keys, all dimension attributes, facts and hierarchies; <=400 words; no snowflake required |
-| R03 | All dimensions integrated in SSIS, part of 6 | Section 3.1: one genuine Data Flow image per dimension; .dtsx and project | PENDING | PENDING | Toolbox transforms; no SQL substitute; successful execution and reconciled target records |
+| R03 | All dimensions integrated in SSIS, part of 6 | Section 3.1: one genuine Data Flow image per dimension; .dtsx and project | PARTIAL: seller + CSV refs runtime PASS | PARTIAL: seller + CSV refs runtime PASS | Toolbox transforms; no SQL substitute; successful execution and reconciled target records |
 | R04 | Fact integrated in SSIS, part of 6 | Section 3.2 fact Data Flow image; .dtsx | PENDING | PENDING | Real source, transformations, destination; grain unique; no heavy SQL ingestion |
 | R05 | ETL screenshots | Every dimension and fact screenshot | PENDING | PENDING | Green ticks, components, columns, row numbers/data; show any source query used |
 | R06 | Implementation explanation | Section 3.3 | PENDING | PENDING | <=300 words; corresponds to actual SSIS implementation |
@@ -15,13 +15,13 @@ Intake date: 2026-10-08 Asia/Bangkok. Authoritative baseline: the four immutable
 | R09 | Q4.2 top five product types per state, part of 6 | SQL text and actual output screenshot in 4.2; .sql and result | PENDING | PENDING | Query DW; product type and best-selling measure explicit; partition by state |
 | R10 | Q4.3 top five suppliers in NSW each year, part of 6 | SQL text and actual output screenshot in 4.3; .sql and result | PENDING | PENDING | Query DW; quantity measure; explicit NSW role; partition by year |
 | R11 | Backup/restore validation | student ID DW .bak; restore log and restored queries | PENDING | PENDING | Actual restore to isolated DB successful; counts and measures equal; VERIFYONLY alone insufficient |
-| R12 | Explore original loan data, relevant preparation, part of 10 | Data audit; native RapidMiner process | PENDING | PENDING | Target 1=default, 0=fully paid; types/missingness/relevance checked; no leakage |
-| R13 | Two supervised models and train/test split, part of 10 | A LR/DT 80/20, B LR/RF 70/30 preference; independent .rmp/results | PENDING | PENDING | Actual native runs; only two best models reported; models switched by connecting/enabling operators as teacher instructs |
+| R12 | Explore original loan data, relevant preparation, part of 10 | Data audit; native RapidMiner process | Data audit + native prep PASS | Data audit + native prep PASS | Target 1=default, 0=fully paid; types/missingness/relevance checked; no leakage |
+| R13 | Two supervised models and train/test split, part of 10 | A LR/DT 80/20, B LR/RF 70/30 preference; independent .rmp/results | Native LR/DT CV + holdout PASS; GUI pending | Native LR/RF CV + holdout PASS; GUI pending | Actual native runs; only two best models reported; models switched by connecting/enabling operators as teacher instructs |
 | R14 | Overall process and CV subprocess for model 1 | Section 5 two screenshots | PENDING | PENDING | Genuine RapidMiner screenshots; CV training uses training partition only |
 | R15 | Overall process and CV subprocess for model 2 | Section 5 two screenshots | PENDING | PENDING | Genuine RapidMiner screenshots; fold-fit preprocessing; untouched holdout |
 | R16 | Preparation/process description | Section 5 | PENDING | PENDING | <=100 words total |
 | R17 | Results of both models | Section 5 two native result screenshots | PENDING | PENDING | Real output traceable to seeds, split, process and model |
-| R18 | Decisive predictor interpretation | Section 5 | PENDING | PENDING | <=100 words total; actual model evidence and business significance |
+| R18 | Decisive predictor interpretation | Section 5 | Verified draft; report pending | Verified draft; report pending | <=100 words total; actual model evidence and business significance |
 | R19 | Comparison and recommended bank model, 5 | Section 6 two performance screenshots and explanation | PENDING | PENDING | <=150 words total; justified by correct classification metrics and limitations |
 | R20 | Recommendations and further analysis, part of 3 | Section 7.1 | PENDING | PENDING | <=200 words total; findings-based actions and validation/additional data |
 | R21 | Ethical implications of selected model, part of 3 | Section 7.2 | PENDING | PENDING | <=250 words total; referenced and specific to actual selected model |

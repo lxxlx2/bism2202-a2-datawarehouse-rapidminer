@@ -1,0 +1,16 @@
+﻿SOURCE_ROWS = 100
+DLL = C:\WINDOWS\Microsoft.NET\assembly\GAC_MSIL\Microsoft.SqlServer.ManagedDTS\v4.0_16.0.0.0__89845dcd8080cc91\Microsoft.SqlServer.ManagedDTS.dll
+DLL = C:\WINDOWS\Microsoft.NET\assembly\GAC_64\Microsoft.SqlServer.DTSRuntimeWrap\v4.0_16.0.0.0__89845dcd8080cc91\Microsoft.SqlServer.DTSRuntimeWrap.dll
+DLL = C:\WINDOWS\Microsoft.NET\assembly\GAC_MSIL\Microsoft.SqlServer.DTSPipelineWrap\v4.0_16.0.0.0__89845dcd8080cc91\Microsoft.SQLServer.DTSPipelineWrap.dll
+DLL = C:\WINDOWS\Microsoft.NET\assembly\GAC_MSIL\Microsoft.SqlServer.PipelineHost\v4.0_16.0.0.0__89845dcd8080cc91\Microsoft.SQLServer.PipelineHost.dll
+OLEDB_PROVIDER = MSOLEDBSQL
+CSHARP_COMPILE = PASS
+SSIS_PACKAGE_EXECUTION = PASS
+SSIS_ROW_COUNT = 100
+DESTINATION_ROWS = 100
+DIMSELLER_NATURAL_FIELDS_RECONCILIATION = PASS
+INITIAL_DIMSELLER_RUNTIME = PASS
+FULL_ASSIGNMENT_ETL = PENDING
+SSIS_DESIGNER_SCREENSHOTS = PENDING
+PACKAGE = C:\BISM2202\submission\Student_B\ssis\initial_seller\01_DimSeller.dtsx
+LOG = C:\BISM2202\submission\Student_B\ssis\initial_seller\01_DimSeller_result.txt

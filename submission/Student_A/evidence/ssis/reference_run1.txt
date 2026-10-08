@@ -1,0 +1,9 @@
+﻿DLL = C:\WINDOWS\Microsoft.NET\assembly\GAC_MSIL\Microsoft.SqlServer.ManagedDTS\v4.0_16.0.0.0__89845dcd8080cc91\Microsoft.SqlServer.ManagedDTS.dll
+DLL = C:\WINDOWS\Microsoft.NET\assembly\GAC_64\Microsoft.SqlServer.DTSRuntimeWrap\v4.0_16.0.0.0__89845dcd8080cc91\Microsoft.SqlServer.DTSRuntimeWrap.dll
+DLL = C:\WINDOWS\Microsoft.NET\assembly\GAC_MSIL\Microsoft.SqlServer.DTSPipelineWrap\v4.0_16.0.0.0__89845dcd8080cc91\Microsoft.SQLServer.DTSPipelineWrap.dll
+DLL = C:\WINDOWS\Microsoft.NET\assembly\GAC_MSIL\Microsoft.SqlServer.PipelineHost\v4.0_16.0.0.0__89845dcd8080cc91\Microsoft.SQLServer.PipelineHost.dll
+RefAge SSIS_ROWS=78 TARGET_ROWS=78 EXPECTED=78
+RefEducation SSIS_ROWS=6 TARGET_ROWS=6 EXPECTED=6
+RefState SSIS_ROWS=8 TARGET_ROWS=8 EXPECTED=8
+RefSellerLocation SSIS_ROWS=100 TARGET_ROWS=100 EXPECTED=100
+REFERENCE_DATAFLOWS=PASS

@@ -1,0 +1,560 @@
+﻿[
+    {
+        "table_name":  "address_type",
+        "column_name":  "type_id",
+        "data_type":  "tinyint",
+        "max_length":  1,
+        "precision":  3,
+        "scale":  0,
+        "is_nullable":  false
+    },
+    {
+        "table_name":  "address_type",
+        "column_name":  "location_type",
+        "data_type":  "nvarchar",
+        "max_length":  100,
+        "precision":  0,
+        "scale":  0,
+        "is_nullable":  false
+    },
+    {
+        "table_name":  "customer_address",
+        "column_name":  "address_id",
+        "data_type":  "nvarchar",
+        "max_length":  100,
+        "precision":  0,
+        "scale":  0,
+        "is_nullable":  false
+    },
+    {
+        "table_name":  "customer_address",
+        "column_name":  "unit",
+        "data_type":  "nvarchar",
+        "max_length":  100,
+        "precision":  0,
+        "scale":  0,
+        "is_nullable":  true
+    },
+    {
+        "table_name":  "customer_address",
+        "column_name":  "street",
+        "data_type":  "nvarchar",
+        "max_length":  100,
+        "precision":  0,
+        "scale":  0,
+        "is_nullable":  false
+    },
+    {
+        "table_name":  "customer_address",
+        "column_name":  "postcode",
+        "data_type":  "smallint",
+        "max_length":  2,
+        "precision":  5,
+        "scale":  0,
+        "is_nullable":  false
+    },
+    {
+        "table_name":  "customer_address",
+        "column_name":  "suburb",
+        "data_type":  "nvarchar",
+        "max_length":  100,
+        "precision":  0,
+        "scale":  0,
+        "is_nullable":  false
+    },
+    {
+        "table_name":  "customer_address",
+        "column_name":  "state",
+        "data_type":  "nvarchar",
+        "max_length":  100,
+        "precision":  0,
+        "scale":  0,
+        "is_nullable":  false
+    },
+    {
+        "table_name":  "customer_address",
+        "column_name":  "type",
+        "data_type":  "tinyint",
+        "max_length":  1,
+        "precision":  3,
+        "scale":  0,
+        "is_nullable":  true
+    },
+    {
+        "table_name":  "customer_address",
+        "column_name":  "status",
+        "data_type":  "nvarchar",
+        "max_length":  100,
+        "precision":  0,
+        "scale":  0,
+        "is_nullable":  true
+    },
+    {
+        "table_name":  "customer_address",
+        "column_name":  "region",
+        "data_type":  "money",
+        "max_length":  8,
+        "precision":  19,
+        "scale":  4,
+        "is_nullable":  false
+    },
+    {
+        "table_name":  "customer_table",
+        "column_name":  "customer_id",
+        "data_type":  "nvarchar",
+        "max_length":  100,
+        "precision":  0,
+        "scale":  0,
+        "is_nullable":  false
+    },
+    {
+        "table_name":  "customer_table",
+        "column_name":  "location_id",
+        "data_type":  "nvarchar",
+        "max_length":  100,
+        "precision":  0,
+        "scale":  0,
+        "is_nullable":  false
+    },
+    {
+        "table_name":  "customer_table",
+        "column_name":  "First_Name",
+        "data_type":  "nvarchar",
+        "max_length":  100,
+        "precision":  0,
+        "scale":  0,
+        "is_nullable":  false
+    },
+    {
+        "table_name":  "customer_table",
+        "column_name":  "Last_Name",
+        "data_type":  "nvarchar",
+        "max_length":  100,
+        "precision":  0,
+        "scale":  0,
+        "is_nullable":  false
+    },
+    {
+        "table_name":  "customer_table",
+        "column_name":  "Gender",
+        "data_type":  "bit",
+        "max_length":  1,
+        "precision":  1,
+        "scale":  0,
+        "is_nullable":  false
+    },
+    {
+        "table_name":  "customer_table",
+        "column_name":  "Age_key",
+        "data_type":  "nvarchar",
+        "max_length":  100,
+        "precision":  0,
+        "scale":  0,
+        "is_nullable":  false
+    },
+    {
+        "table_name":  "customer_table",
+        "column_name":  "EDU_id",
+        "data_type":  "nvarchar",
+        "max_length":  100,
+        "precision":  0,
+        "scale":  0,
+        "is_nullable":  false
+    },
+    {
+        "table_name":  "customer_table",
+        "column_name":  "created_date",
+        "data_type":  "datetime2",
+        "max_length":  8,
+        "precision":  27,
+        "scale":  7,
+        "is_nullable":  false
+    },
+    {
+        "table_name":  "order_items_table",
+        "column_name":  "order_item_id",
+        "data_type":  "nvarchar",
+        "max_length":  100,
+        "precision":  0,
+        "scale":  0,
+        "is_nullable":  false
+    },
+    {
+        "table_name":  "order_items_table",
+        "column_name":  "order_id",
+        "data_type":  "nvarchar",
+        "max_length":  100,
+        "precision":  0,
+        "scale":  0,
+        "is_nullable":  false
+    },
+    {
+        "table_name":  "order_items_table",
+        "column_name":  "product_id",
+        "data_type":  "nvarchar",
+        "max_length":  100,
+        "precision":  0,
+        "scale":  0,
+        "is_nullable":  false
+    },
+    {
+        "table_name":  "order_items_table",
+        "column_name":  "seller_id",
+        "data_type":  "nvarchar",
+        "max_length":  100,
+        "precision":  0,
+        "scale":  0,
+        "is_nullable":  false
+    },
+    {
+        "table_name":  "order_items_table",
+        "column_name":  "item_sequence",
+        "data_type":  "tinyint",
+        "max_length":  1,
+        "precision":  3,
+        "scale":  0,
+        "is_nullable":  false
+    },
+    {
+        "table_name":  "order_items_table",
+        "column_name":  "item_quantity",
+        "data_type":  "tinyint",
+        "max_length":  1,
+        "precision":  3,
+        "scale":  0,
+        "is_nullable":  false
+    },
+    {
+        "table_name":  "order_items_table",
+        "column_name":  "sales_price",
+        "data_type":  "float",
+        "max_length":  8,
+        "precision":  53,
+        "scale":  0,
+        "is_nullable":  false
+    },
+    {
+        "table_name":  "order_items_table",
+        "column_name":  "line_total",
+        "data_type":  "float",
+        "max_length":  8,
+        "precision":  53,
+        "scale":  0,
+        "is_nullable":  false
+    },
+    {
+        "table_name":  "order_items_table",
+        "column_name":  "freight_price",
+        "data_type":  "nvarchar",
+        "max_length":  2,
+        "precision":  0,
+        "scale":  0,
+        "is_nullable":  true
+    },
+    {
+        "table_name":  "order_items_table",
+        "column_name":  "shipping_limit_date",
+        "data_type":  "datetime2",
+        "max_length":  8,
+        "precision":  27,
+        "scale":  7,
+        "is_nullable":  false
+    },
+    {
+        "table_name":  "orders_table",
+        "column_name":  "order_id",
+        "data_type":  "nvarchar",
+        "max_length":  100,
+        "precision":  0,
+        "scale":  0,
+        "is_nullable":  false
+    },
+    {
+        "table_name":  "orders_table",
+        "column_name":  "customer_id",
+        "data_type":  "nvarchar",
+        "max_length":  100,
+        "precision":  0,
+        "scale":  0,
+        "is_nullable":  false
+    },
+    {
+        "table_name":  "orders_table",
+        "column_name":  "status",
+        "data_type":  "nvarchar",
+        "max_length":  100,
+        "precision":  0,
+        "scale":  0,
+        "is_nullable":  false
+    },
+    {
+        "table_name":  "orders_table",
+        "column_name":  "purchase_timestamp",
+        "data_type":  "datetime2",
+        "max_length":  8,
+        "precision":  27,
+        "scale":  7,
+        "is_nullable":  false
+    },
+    {
+        "table_name":  "orders_table",
+        "column_name":  "approved_at",
+        "data_type":  "datetime2",
+        "max_length":  8,
+        "precision":  27,
+        "scale":  7,
+        "is_nullable":  true
+    },
+    {
+        "table_name":  "orders_table",
+        "column_name":  "delivered_carrier_date",
+        "data_type":  "nvarchar",
+        "max_length":  2,
+        "precision":  0,
+        "scale":  0,
+        "is_nullable":  true
+    },
+    {
+        "table_name":  "orders_table",
+        "column_name":  "estimated_delivery_date",
+        "data_type":  "datetime2",
+        "max_length":  8,
+        "precision":  27,
+        "scale":  7,
+        "is_nullable":  false
+    },
+    {
+        "table_name":  "orders_table",
+        "column_name":  "delivered_customer_date",
+        "data_type":  "nvarchar",
+        "max_length":  2,
+        "precision":  0,
+        "scale":  0,
+        "is_nullable":  true
+    },
+    {
+        "table_name":  "product_category",
+        "column_name":  "Product_Categorey_ID",
+        "data_type":  "nvarchar",
+        "max_length":  100,
+        "precision":  0,
+        "scale":  0,
+        "is_nullable":  false
+    },
+    {
+        "table_name":  "product_category",
+        "column_name":  "Product_Category",
+        "data_type":  "nvarchar",
+        "max_length":  100,
+        "precision":  0,
+        "scale":  0,
+        "is_nullable":  false
+    },
+    {
+        "table_name":  "product_subcategory",
+        "column_name":  "Product_Category_ID",
+        "data_type":  "nvarchar",
+        "max_length":  100,
+        "precision":  0,
+        "scale":  0,
+        "is_nullable":  false
+    },
+    {
+        "table_name":  "product_subcategory",
+        "column_name":  "Product_Subcategorey_ID",
+        "data_type":  "nvarchar",
+        "max_length":  100,
+        "precision":  0,
+        "scale":  0,
+        "is_nullable":  false
+    },
+    {
+        "table_name":  "product_subcategory",
+        "column_name":  "Product_Subcategory",
+        "data_type":  "nvarchar",
+        "max_length":  100,
+        "precision":  0,
+        "scale":  0,
+        "is_nullable":  false
+    },
+    {
+        "table_name":  "product_table",
+        "column_name":  "product_id",
+        "data_type":  "nvarchar",
+        "max_length":  100,
+        "precision":  0,
+        "scale":  0,
+        "is_nullable":  false
+    },
+    {
+        "table_name":  "product_table",
+        "column_name":  "product_name",
+        "data_type":  "nvarchar",
+        "max_length":  400,
+        "precision":  0,
+        "scale":  0,
+        "is_nullable":  false
+    },
+    {
+        "table_name":  "product_table",
+        "column_name":  "poduct_descriptions",
+        "data_type":  "nvarchar",
+        "max_length":  6100,
+        "precision":  0,
+        "scale":  0,
+        "is_nullable":  false
+    },
+    {
+        "table_name":  "product_table",
+        "column_name":  "shipping_weight",
+        "data_type":  "nvarchar",
+        "max_length":  100,
+        "precision":  0,
+        "scale":  0,
+        "is_nullable":  false
+    },
+    {
+        "table_name":  "product_table",
+        "column_name":  "image",
+        "data_type":  "nvarchar",
+        "max_length":  6100,
+        "precision":  0,
+        "scale":  0,
+        "is_nullable":  true
+    },
+    {
+        "table_name":  "product_table",
+        "column_name":  "product_url",
+        "data_type":  "nvarchar",
+        "max_length":  6100,
+        "precision":  0,
+        "scale":  0,
+        "is_nullable":  false
+    },
+    {
+        "table_name":  "product_table",
+        "column_name":  "product_subcategorey_id",
+        "data_type":  "nvarchar",
+        "max_length":  100,
+        "precision":  0,
+        "scale":  0,
+        "is_nullable":  false
+    },
+    {
+        "table_name":  "product_table",
+        "column_name":  "cost_price",
+        "data_type":  "float",
+        "max_length":  8,
+        "precision":  53,
+        "scale":  0,
+        "is_nullable":  false
+    },
+    {
+        "table_name":  "product_table",
+        "column_name":  "sales_price",
+        "data_type":  "float",
+        "max_length":  8,
+        "precision":  53,
+        "scale":  0,
+        "is_nullable":  false
+    },
+    {
+        "table_name":  "sellers_table",
+        "column_name":  "seller_id",
+        "data_type":  "nvarchar",
+        "max_length":  100,
+        "precision":  0,
+        "scale":  0,
+        "is_nullable":  false
+    },
+    {
+        "table_name":  "sellers_table",
+        "column_name":  "location_id",
+        "data_type":  "nvarchar",
+        "max_length":  100,
+        "precision":  0,
+        "scale":  0,
+        "is_nullable":  false
+    },
+    {
+        "table_name":  "sellers_table",
+        "column_name":  "name",
+        "data_type":  "nvarchar",
+        "max_length":  100,
+        "precision":  0,
+        "scale":  0,
+        "is_nullable":  false
+    },
+    {
+        "table_name":  "sellers_table",
+        "column_name":  "email_address",
+        "data_type":  "nvarchar",
+        "max_length":  100,
+        "precision":  0,
+        "scale":  0,
+        "is_nullable":  false
+    },
+    {
+        "table_name":  "sellers_table",
+        "column_name":  "creation_date",
+        "data_type":  "datetime2",
+        "max_length":  8,
+        "precision":  27,
+        "scale":  7,
+        "is_nullable":  false
+    },
+    {
+        "table_name":  "sellers_table",
+        "column_name":  "end_date",
+        "data_type":  "nvarchar",
+        "max_length":  100,
+        "precision":  0,
+        "scale":  0,
+        "is_nullable":  true
+    },
+    {
+        "table_name":  "sysdiagrams",
+        "column_name":  "name",
+        "data_type":  "sysname",
+        "max_length":  256,
+        "precision":  0,
+        "scale":  0,
+        "is_nullable":  false
+    },
+    {
+        "table_name":  "sysdiagrams",
+        "column_name":  "principal_id",
+        "data_type":  "int",
+        "max_length":  4,
+        "precision":  10,
+        "scale":  0,
+        "is_nullable":  false
+    },
+    {
+        "table_name":  "sysdiagrams",
+        "column_name":  "diagram_id",
+        "data_type":  "int",
+        "max_length":  4,
+        "precision":  10,
+        "scale":  0,
+        "is_nullable":  false
+    },
+    {
+        "table_name":  "sysdiagrams",
+        "column_name":  "version",
+        "data_type":  "int",
+        "max_length":  4,
+        "precision":  10,
+        "scale":  0,
+        "is_nullable":  true
+    },
+    {
+        "table_name":  "sysdiagrams",
+        "column_name":  "definition",
+        "data_type":  "varbinary",
+        "max_length":  -1,
+        "precision":  0,
+        "scale":  0,
+        "is_nullable":  true
+    }
+]

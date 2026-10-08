@@ -1,0 +1,10 @@
+criterion,native_average,native_macro,native_micro,standard_deviation
+"accuracy",0.8939646548849617,NaN,0.8939646548849617,NaN
+"AUC",0.5948111448136097,NaN,0.5948111448136097,NaN
+"precision",NaN,NaN,NaN,NaN
+"recall",0.0,NaN,0.0,NaN
+"f_measure",NaN,NaN,NaN,NaN
+"false_positive",0.0,NaN,0.0,NaN
+"false_negative",318.0,NaN,318.0,NaN
+"true_positive",0.0,NaN,0.0,NaN
+"true_negative",2681.0,NaN,2681.0,NaN

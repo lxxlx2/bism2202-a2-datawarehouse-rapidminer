@@ -10,7 +10,7 @@ CREATE TABLE dbo.DimSeller (
  SellerName nvarchar(256) NULL,
  SellerLocationID nvarchar(64) NOT NULL,
  CreatedAt datetime2 NULL,
- EndAt datetime2 NULL
+ EndAt nvarchar(100) NULL
 );
 IF OBJECT_ID('dbo.DimCustomer','U') IS NULL
 CREATE TABLE dbo.DimCustomer (

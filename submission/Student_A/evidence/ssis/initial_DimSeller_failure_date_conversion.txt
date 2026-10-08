@@ -1,0 +1,17 @@
+﻿SOURCE_ROWS = 100
+DLL = C:\WINDOWS\Microsoft.NET\assembly\GAC_MSIL\Microsoft.SqlServer.ManagedDTS\v4.0_16.0.0.0__89845dcd8080cc91\Microsoft.SqlServer.ManagedDTS.dll
+DLL = C:\WINDOWS\Microsoft.NET\assembly\GAC_64\Microsoft.SqlServer.DTSRuntimeWrap\v4.0_16.0.0.0__89845dcd8080cc91\Microsoft.SqlServer.DTSRuntimeWrap.dll
+DLL = C:\WINDOWS\Microsoft.NET\assembly\GAC_MSIL\Microsoft.SqlServer.DTSPipelineWrap\v4.0_16.0.0.0__89845dcd8080cc91\Microsoft.SQLServer.DTSPipelineWrap.dll
+DLL = C:\WINDOWS\Microsoft.NET\assembly\GAC_MSIL\Microsoft.SqlServer.PipelineHost\v4.0_16.0.0.0__89845dcd8080cc91\Microsoft.SQLServer.PipelineHost.dll
+OLEDB_PROVIDER = MSOLEDBSQL
+CSHARP_COMPILE = PASS
+INITIAL_DIMSELLER_RUNTIME = FAIL: System.Management.Automation.MethodInvocationException: Exception calling "Execute" with "3" argument(s): "SSIS package returned Failure" ---> System.Exception: SSIS package returned Failure
+   at Bism2202InitialSeller.Execute(String srcString, String dstString, String dtsx)
+   at CallSite.Target(Closure , CallSite , Type , Object , Object , Object )
+   --- End of inner exception stack trace ---
+   at System.Management.Automation.ExceptionHandlingOps.CheckActionPreference(FunctionContext funcContext, Exception exception)
+   at System.Management.Automation.Interpreter.ActionCallInstruction`2.Run(InterpretedFrame frame)
+   at System.Management.Automation.Interpreter.EnterTryCatchFinallyInstruction.Run(InterpretedFrame frame)
+   at System.Management.Automation.Interpreter.EnterTryCatchFinallyInstruction.Run(InterpretedFrame frame)
+PACKAGE = C:\BISM2202\submission\Student_A\ssis\initial_seller\01_DimSeller.dtsx
+LOG = C:\BISM2202\submission\Student_A\ssis\initial_seller\01_DimSeller_result.txt
