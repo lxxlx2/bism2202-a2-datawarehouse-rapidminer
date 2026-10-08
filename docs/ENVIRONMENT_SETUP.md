@@ -113,7 +113,7 @@ Required remaining validation:
 - [ ] Launch SSMS and connect to local SQL Server with Windows Authentication (SSMS launches; equivalent local Windows-auth connection to `ozmart_db` has been independently verified via `System.Data.SqlClient`, but the GUI connection dialog itself has not been completed)
 - [x] Visual Studio 2022 Community installs
 - [x] SSIS Projects 2.2 package installs successfully
-- [ ] Integration Services Project template is available
+- [x] Integration Services Project template is available (observed in Visual Studio 2022 Create a new project)
 - [ ] A real SSIS Data Flow executes successfully with actual row counts
 - [ ] SSIS destination row count is verified
 - [ ] macOS Altair AI Studio classification smoke test executes
@@ -171,3 +171,28 @@ SSMS/SQL CONNECTION CHECK = PASS
 ```
 
 This confirms the database engine, restored source database, and Windows authentication path are working. The remaining SSIS readiness gates are template visibility and execution of a real Data Flow with verified row counts.
+
+
+## 2026-10-08 Visual Studio SSIS project and blank-package execution
+
+Observed in the Windows VM screenshots on 2026-10-08:
+
+- Visual Studio 2022 displayed the ordinary `Integration Services Project` template as well as the Azure-enabled variant and import wizard.
+- A solution named `BISM2202_SSIS` was created. Its Solution Explorer displayed `Package.dtsx` and SSIS designer.
+- Actual package file executed: `C:\BISM2202\teacher\SSIS\BISM2202_SSIS\BISM2202_SSIS\Package.dtsx`.
+- Execution explicitly invoked `C:\Program Files\Microsoft SQL Server\160\DTS\Binn\DTExec.exe` with `/FILE`.
+- Observed result: `The package execution returned DTSER_SUCCESS (0).`, `DTEXEC EXIT CODE = 0`, elapsed `2.984 seconds`.
+
+Scope limitation: the executed package was an empty starter package. This passes the SSIS project creation and basic package runtime smoke test, **not** the required Data Flow ETL test. No actual ETL row counts or destination counts were verified.
+
+### Updated readiness gates
+
+- SSIS Projects 2.2 installed: PASS
+- Visual Studio SSIS project template visible: PASS
+- SSIS project created and designer launched: PASS
+- Blank SSIS package executed with SQL Server 2022 DTExec 160: PASS
+- Real OLE DB source/transformation/destination Data Flow execution: PENDING
+- Destination row counts verified: PENDING
+- macOS Altair AI Studio process executed and `.rmp` saved/reopened: PENDING
+
+`READY_FOR_ASSIGNMENT = PARTIAL`. Core Windows tooling works; full rubric-specific ETL and Altair capability remain to be verified.
