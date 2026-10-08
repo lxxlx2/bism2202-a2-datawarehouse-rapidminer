@@ -102,6 +102,35 @@ using Microsoft.SqlServer.Dts.Pipeline;
 using Microsoft.SqlServer.Dts.Pipeline.Wrapper;
 
 public class Bism2202SsisCategorySmoke {
+  // Use the component catalog installed on THIS VM, not an unversioned ProgID
+  // that can resolve to a 2016 component on a side-by-side 2016/2022 machine.
+  private static string ResolveComponent(Application app, string displayName, string progId) {
+    string chosen=null;
+    int rank=-1;
+    foreach(PipelineComponentInfo info in app.PipelineComponentInfos) {
+      string name=info.Name ?? "";
+      string id=info.CreationName ?? "";
+      if(name.Equals(displayName,StringComparison.OrdinalIgnoreCase)
+          || id.StartsWith(progId,StringComparison.OrdinalIgnoreCase)) {
+        Console.WriteLine("SSIS_COMPONENT_CANDIDATE " + displayName + " : " + name + " : " + id);
+        int n=0;
+        if(id.StartsWith(progId+".",StringComparison.OrdinalIgnoreCase)) {
+          if(!Int32.TryParse(id.Substring(progId.Length+1),out n)) n=0;
+        }
+        if(chosen==null || n>rank){chosen=id;rank=n;}
+      }
+    }
+    if(String.IsNullOrEmpty(chosen))
+      throw new InvalidOperationException("SSIS component missing from 64-bit runtime catalog: "+displayName+". Check SSIS 160 component registration, not the SQL service.");
+    Console.WriteLine("SSIS_COMPONENT_SELECTED "+displayName+" : "+chosen);
+    return chosen;
+  }
+  private static void Initialize(CManagedComponentWrapper wrapper,string stage,string classId) {
+    Console.WriteLine("SSIS_STAGE="+stage+" PROVIDE_PROPERTIES; ID="+classId);
+    try {wrapper.ProvideComponentProperties();}
+    catch(Exception ex){throw new InvalidOperationException("SSIS "+stage+" component initialization failed; ComponentClassID="+classId,ex);}
+    Console.WriteLine("SSIS_STAGE="+stage+" INITIALIZED");
+  }
   public static long Execute(string srcString, string dstString, string dtsx) {
     var pkg=new Microsoft.SqlServer.Dts.Runtime.Package();
     pkg.Name="BISM2202_ProductCategory_DataFlow_Smoke";
@@ -116,12 +145,16 @@ public class Bism2202SsisCategorySmoke {
     var task=(TaskHost)pkg.Executables.Add("STOCK:PipelineTask");
     task.Name="DFT Category";
     var pipe=(MainPipe)task.InnerObject;
+    var components=new Application();
+    string sourceId=ResolveComponent(components,"OLE DB Source","DTSAdapter.OleDbSource");
+    string countId=ResolveComponent(components,"Row Count","DTSTransform.RowCount");
+    string destinationId=ResolveComponent(components,"OLE DB Destination","DTSAdapter.OleDbDestination");
 
     IDTSComponentMetaData100 source=pipe.ComponentMetaDataCollection.New();
-    source.ComponentClassID="DTSAdapter.OleDbSource";
+    source.ComponentClassID=sourceId;
     source.Name="OLE DB Source - product_category";
     CManagedComponentWrapper src=source.Instantiate();
-    src.ProvideComponentProperties();
+    Initialize(src,"SOURCE",sourceId);
     source.RuntimeConnectionCollection[0].ConnectionManager=DtsConvert.GetExtendedInterface(srcConn);
     source.RuntimeConnectionCollection[0].ConnectionManagerID=srcConn.ID;
     src.SetComponentProperty("AccessMode",0);
@@ -129,17 +162,17 @@ public class Bism2202SsisCategorySmoke {
     src.AcquireConnections(null);src.ReinitializeMetaData();src.ReleaseConnections();
 
     IDTSComponentMetaData100 transform=pipe.ComponentMetaDataCollection.New();
-    transform.ComponentClassID="DTSTransform.RowCount";
+    transform.ComponentClassID=countId;
     transform.Name="Row Count - audit";
     CManagedComponentWrapper counter=transform.Instantiate();
-    counter.ProvideComponentProperties();
+    Initialize(counter,"ROWCOUNT",countId);
     counter.SetComponentProperty("VariableName","User::RowsCopied");
 
     IDTSComponentMetaData100 destination=pipe.ComponentMetaDataCollection.New();
-    destination.ComponentClassID="DTSAdapter.OleDbDestination";
+    destination.ComponentClassID=destinationId;
     destination.Name="OLE DB Destination - CategorySmoke";
     CManagedComponentWrapper dst=destination.Instantiate();
-    dst.ProvideComponentProperties();
+    Initialize(dst,"DESTINATION",destinationId);
     destination.RuntimeConnectionCollection[0].ConnectionManager=DtsConvert.GetExtendedInterface(dstConn);
     destination.RuntimeConnectionCollection[0].ConnectionManagerID=dstConn.ID;
     dst.SetComponentProperty("AccessMode",3);
