@@ -1,0 +1,20 @@
+# Locally extracted immutable teacher assets already exist in the source ZIPs.
+requirements/extracted/
+work/
+# Runtime and binary deliveries remain local with manifests and checksums.
+submission/**/*.bak
+submission/**/*.zip
+submission/**/report/*.docx
+submission/**/report/*.pdf
+submission/**/evidence/*.png
+submission/**/evidence/*.jpg
+**/bin/
+**/obj/
+**/.vs/
+*.user
+*.suo
+.DS_Store
+# Raw native logs and complete AI transcripts may include private local context.
+submission/**/evidence/native/*.log
+submission/shared/academic_integrity/transcript*.jsonl
+submission/shared/academic_integrity/complete_ai_record.md

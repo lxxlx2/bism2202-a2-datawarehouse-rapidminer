@@ -1,0 +1,23 @@
+# Frozen native RapidMiner experiment protocol
+
+Frozen before any model execution on 2026-10-08. CSV import smoke completed in installed AI Studio 2026.1.1 native engine with 9,998 labeled rows. This is data import verification, not classification model acceptance.
+
+Teacher CSV is immutable (SHA-256 b333abef401d01dce2b0115b65649400238c01d9362b328c8ca1c4c19876d00a). Read with windows-1252 and explicit types. Invalid numeric label 0+T4261 is parsed as missing under the explicit import setting; exclude missing labels in native Filter Examples. Independent static audit preserves its identity (CSV line 5823, C_5822) and 5,000 unlabeled rows. Do not relabel them. Numeric label conversion: 0 maps false, 1 maps true; explicitly set positive class true in performance operators.
+
+A: stratified 80/20 split, seed 2202. Models native logistic_regression (linear kernel, C=1, scale=false after explicit fold normalization) and decision_tree (gain_ratio, max depth 10, minimum leaf 8, other documented native defaults). Predictors: Age, Loan_amount, Education, Capital_gain, Capital_loss, Weekly_work_hours, Income, Current_mortgage, Student_debt, Number_of_homes_owned, Bank_balance, Loan_purpose, Credit_history, Past_bankruptcy.
+
+B: stratified 70/30 split, seed 2203. Models native logistic_regression (same basic regularization, independent preprocessing and training partition) and random_forest (50 trees, gain_ratio, max depth 10, min leaf 8, fixed seed 2203, other native defaults). Predictors: same financial predictors as A, excluding Education and Weekly_work_hours. No undersampling by default; optional undersampling is not introduced after results. IDs, Race, Gender, country of origin, Marital_status, location State and redundant/anomalous Years_of_education are excluded from predictors. This does not prove fairness: subsequent real-world review must evaluate proxy bias.
+
+Each candidate uses five-fold stratified Cross Validation within training data only (A CV seed 5501, B 5502). Training-fold operations: training-fitted mean imputation, removal of unused nominal values (training vocabulary only); LR additionally uses training-fitted dummy coding and Z normalization. Group preprocessing models in exact application order with the learner, so CV testing and holdout apply training-fitted transformations. Native tree/forest retain nominal predictors. Classifier threshold is the native default; no holdout tuning.
+
+Stage 1 executes CV only and does not connect the holdout to any scoring operator. Select one candidate per student using mean CV F1 of default class first, then AUC, then recall; exact remaining ties prefer logistic regression for interpretability. If F1 is undefined, do not substitute zero or select from holdout: stop for a disclosed methodology decision before holdout. Record the choice and result hashes before Stage 2. Stage 2 evaluates both preselected candidates on their untouched holdout for the teacher's comparison; the recommendation remains locked to the prior CV decision. No retuning or selecting after holdout.
+
+Report accuracy, default precision, default recall, F1, AUC and native confusion matrix with class orientation. Majority always-nondefault baseline for all 9,998 labeled rows is 89.3879%; each holdout baseline must be calculated from that holdout. Transfer from this teaching loan dataset to OzMart is unvalidated; all native results remain educational prototypes.
+
+Native Java API execution is real AI Studio engine execution, but does not satisfy GUI reopen and screenshot requirements. Preserve .rmp, metrics/model text and full logs; require native GUI evidence before final PASS. No automated visuals are generated.
+
+## Pre-holdout methodological resolution
+
+Observed native performance aggregation reports pooled confusion-derived precision and F1 (no fold SD), while AUC is reported with fold mean and SD. Preserve this distinction; do not describe the native pooled F1 as a fold mean. All four CV executions succeeded. A LR produced finite F1 1.40%, recall 0.71%, AUC 0.647; A tree F1 undefined, recall 0%, AUC 0.500. A investigative preference is LR, with no operational lending acceptance.
+
+Both B models have undefined precision/F1 and 0% recall. The primary selection remains unresolved; no value is imputed and no lending model is recommended. B LR's CV AUC 0.601 versus RF 0.500 is only an investigative observation. Proceed to untouched holdout for descriptive coursework comparison of the same fixed candidates, retaining the unresolved primary selection. Holdout may not choose a B model, rescue an acceptance gate or cause any retuning. This decision and result/process hashes are frozen in submission/shared/validation/pre_holdout_decision.json before any holdout scoring.

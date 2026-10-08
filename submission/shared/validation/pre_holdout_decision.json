@@ -1,0 +1,67 @@
+{
+  "frozen_before_holdout_utc": "2026-10-08T15:18:14.804192+00:00",
+  "status": "PRE_HOLDOUT_DECISION",
+  "student_A": {
+    "investigative_preference": "logistic_regression",
+    "basis": "Only candidate with defined native CV F1 (1.40%) and any positive predictions; AUC 0.647 versus 0.500; default recall remains only 0.71%.",
+    "operational_acceptance": "NO_MODEL_VALIDATED_FOR_LENDING"
+  },
+  "student_B": {
+    "selected_model": null,
+    "investigative_preference_only": "logistic_regression",
+    "basis": "Both candidates have undefined native CV precision and F1, recall 0%; primary selection is unresolved. LR native CV AUC 0.601 versus RF 0.500 is a secondary investigative observation only.",
+    "operational_acceptance": "NO_MODEL_VALIDATED_FOR_LENDING"
+  },
+  "holdout_policy": "Evaluate both fixed candidates for descriptive assignment comparison only. Do not resolve B primary selection from holdout, change default threshold, tune models or switch bank recommendation after holdout. Preserve undefined metrics.",
+  "software_aggregation_note": "Native CV reported F1/precision use pooled confusion counts in the observed output; record this as native pooled CV performance, not a fold-mean statistic. Native AUC reports mean +/- standard deviation.",
+  "source_stage_hashes": [
+    {
+      "file": "submission/Student_A/evidence/native/logistic_regression_cv_result_0.txt",
+      "sha256": "c97e997d8d918ef315f069e776c13a5e73a4797466d4d973acea3920515faff0"
+    },
+    {
+      "file": "submission/Student_A/evidence/native/logistic_regression_cv_result_1.txt",
+      "sha256": "8b562f33ce0bfabcb734ec4dfc8af919969fc548f0f0b87757202ada55622bc8"
+    },
+    {
+      "file": "submission/Student_A/rapidminer/cv_only_logistic_regression.rmp",
+      "sha256": "22a95e1b19a89320a923ae9e2827f20bc27dac13787a6bfa696f299b87ed7382"
+    },
+    {
+      "file": "submission/Student_A/evidence/native/decision_tree_cv_result_0.txt",
+      "sha256": "1ec9bdb45a4c3e9ce055c4e323cc4efc466d9b540dcbfefbd65e83681318cb9b"
+    },
+    {
+      "file": "submission/Student_A/evidence/native/decision_tree_cv_result_1.txt",
+      "sha256": "cccdbda623820e3cf90c9382dace3f6a2fd202d60d66a7634778032d082b930c"
+    },
+    {
+      "file": "submission/Student_A/rapidminer/cv_only_decision_tree.rmp",
+      "sha256": "c85d648edb74bb67d956c6d0b65a098013ab944b24353771a0c41ce4a94f069b"
+    },
+    {
+      "file": "submission/Student_B/evidence/native/logistic_regression_cv_result_0.txt",
+      "sha256": "ed16ff46e1894577ce0657d073e698beaa09786055ded5fef3feea8c89a9d29f"
+    },
+    {
+      "file": "submission/Student_B/evidence/native/logistic_regression_cv_result_1.txt",
+      "sha256": "e05724aa35dc83be614540db5a360a51ac1062e16028f09c1cd84d7ee1453d19"
+    },
+    {
+      "file": "submission/Student_B/rapidminer/cv_only_logistic_regression.rmp",
+      "sha256": "9716c9cc1d44d73add256ca64d08b03b77e7419505875fca2a59855845d28ae1"
+    },
+    {
+      "file": "submission/Student_B/evidence/native/random_forest_cv_result_0.txt",
+      "sha256": "6cfcb674464f7ca19965d7540cd88749ddc3859c685c47dff71ec40c64925e46"
+    },
+    {
+      "file": "submission/Student_B/evidence/native/random_forest_cv_result_1.txt",
+      "sha256": "de3815e9725a509139d69b6ee25932ce4860ddabd100c03682a70f71d01a49ba"
+    },
+    {
+      "file": "submission/Student_B/rapidminer/cv_only_random_forest.rmp",
+      "sha256": "5cc2cc0461089a280c76bf10a34fbab76174d55805455aefa305104cb0ff0703"
+    }
+  ]
+}

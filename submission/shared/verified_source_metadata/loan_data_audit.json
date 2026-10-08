@@ -1,0 +1,317 @@
+{
+  "status": "CSV_STATIC_AUDIT_ONLY_NO_MODEL_EXECUTION",
+  "encoding": "cp1252",
+  "source_sha256": "b333abef401d01dce2b0115b65649400238c01d9362b328c8ca1c4c19876d00a",
+  "rows": 14999,
+  "columns": {
+    "Customer_id": {
+      "missing_markers": 0,
+      "distinct": 14999,
+      "numeric_parse_count": 0
+    },
+    "Age": {
+      "missing_markers": 68,
+      "distinct": 72,
+      "numeric_parse_count": 14931
+    },
+    "Work_class": {
+      "missing_markers": 829,
+      "distinct": 10,
+      "numeric_parse_count": 0,
+      "values": {
+        "Private": 10286,
+        "Federal-gov": 450,
+        "": 551,
+        "Self-emp-inc": 599,
+        "Self-emp-not-inc": 1228,
+        "State-gov": 612,
+        "Local-gov": 989,
+        "Without-pay": 4,
+        "Never-worked": 2,
+        "?": 278
+      }
+    },
+    "Loan_amount": {
+      "missing_markers": 0,
+      "distinct": 14997,
+      "numeric_parse_count": 14999,
+      "min": 1262196.0,
+      "max": 494553840.0
+    },
+    "Education": {
+      "missing_markers": 0,
+      "distinct": 16,
+      "numeric_parse_count": 0,
+      "values": {
+        "HS-grad": 4692,
+        "Some-college": 3297,
+        "Assoc-voc": 629,
+        "Assoc-acdm": 478,
+        "7th-8th": 289,
+        "10th": 400,
+        "Bachelors": 2640,
+        "11th": 487,
+        "1st-4th": 69,
+        "Masters": 924,
+        "Doctorate": 226,
+        "9th": 203,
+        "Prof-school": 341,
+        "5th-6th": 140,
+        "12th": 165,
+        "Preschool": 19
+      }
+    },
+    "Years_of_education": {
+      "missing_markers": 0,
+      "distinct": 17,
+      "numeric_parse_count": 14999,
+      "min": 1.0,
+      "max": 99.0
+    },
+    "Marital_status": {
+      "missing_markers": 0,
+      "distinct": 7,
+      "numeric_parse_count": 0,
+      "values": {
+        "Divorced": 1979,
+        "Married-civ-spouse": 7402,
+        "Never-married": 4532,
+        "Separated": 453,
+        "Widowed": 439,
+        "Married-spouse-absent": 182,
+        "Married-AF-spouse": 12
+      }
+    },
+    "Occupation": {
+      "missing_markers": 830,
+      "distinct": 16,
+      "numeric_parse_count": 0,
+      "values": {
+        "Exec-managerial": 2045,
+        "Prof-specialty": 2084,
+        "Craft-repair": 1858,
+        "Other-service": 1371,
+        "Transport-moving": 720,
+        "": 551,
+        "Sales": 1754,
+        "Adm-clerical": 1694,
+        "Tech-support": 404,
+        "Machine-op-inspct": 885,
+        "Handlers-cleaners": 552,
+        "Protective-serv": 297,
+        "Priv-house-serv": 71,
+        "Farming-fishing": 431,
+        "Armed-Forces": 3,
+        "?": 279
+      }
+    },
+    "Race": {
+      "missing_markers": 0,
+      "distinct": 5,
+      "numeric_parse_count": 0,
+      "values": {
+        "Amer-Indian-Eskimo": 130,
+        "Asian-Pac-Islander": 483,
+        "Black": 1363,
+        "Other": 113,
+        "White": 12910
+      }
+    },
+    "Gender": {
+      "missing_markers": 0,
+      "distinct": 2,
+      "numeric_parse_count": 0,
+      "values": {
+        "Female": 4685,
+        "Male": 10314
+      }
+    },
+    "State": {
+      "missing_markers": 0,
+      "distinct": 8,
+      "numeric_parse_count": 0,
+      "values": {
+        "ACT": 1846,
+        "SA": 1866,
+        "QLD": 1859,
+        "NT": 1841,
+        "VIC": 1852,
+        "WA": 1921,
+        "NSW": 1918,
+        "TAS": 1896
+      }
+    },
+    "Capital_gain": {
+      "missing_markers": 0,
+      "distinct": 119,
+      "numeric_parse_count": 14999,
+      "min": 0.0,
+      "max": 99999.0
+    },
+    "Capital_loss": {
+      "missing_markers": 0,
+      "distinct": 92,
+      "numeric_parse_count": 14999,
+      "min": 0.0,
+      "max": 4356.0
+    },
+    "Weekly_work_hours": {
+      "missing_markers": 0,
+      "distinct": 87,
+      "numeric_parse_count": 14999,
+      "min": 1.0,
+      "max": 99.0
+    },
+    "Country/area_of_origin": {
+      "missing_markers": 266,
+      "distinct": 43,
+      "numeric_parse_count": 0,
+      "values": {
+        "Australia": 9002,
+        "Mexico": 262,
+        "Philippines": 85,
+        "Cambodia": 11,
+        "China": 40,
+        "India": 50,
+        "Japan": 34,
+        "Laos": 4,
+        "South": 40,
+        "Poland": 54,
+        "Thailand": 6,
+        "Vietnam": 33,
+        "": 190,
+        "Cuba": 41,
+        "England": 43,
+        "Haiti": 19,
+        "Jamaica": 37,
+        "Trinadad&Tobago": 8,
+        "Puerto-Rico": 59,
+        "Dominican-Republic": 25,
+        "Guatemala": 30,
+        "Canada": 61,
+        "Germany": 69,
+        "Greece": 19,
+        "Ireland": 12,
+        "Nicaragua": 13,
+        "Portugal": 16,
+        "Colombia": 20,
+        "El-Salvador": 47,
+        "France": 10,
+        "Hungary": 5,
+        "Iran": 22,
+        "Italy": 32,
+        "Scotland": 4,
+        "Outlying-US(Guam-USVI-etc)": 3,
+        "Hong Kong": 5,
+        "Ecuador": 11,
+        "Honduras": 4,
+        "Peru": 11,
+        "Yugoslavia": 6,
+        "Holland-Netherlands": 1,
+        "United-States": 4479,
+        "?": 76
+      }
+    },
+    "Income": {
+      "missing_markers": 0,
+      "distinct": 3,
+      "numeric_parse_count": 0,
+      "values": {
+        "50K\u2013250K": 10457,
+        ">250K": 4502,
+        "<50K": 40
+      }
+    },
+    "Current_mortgage": {
+      "missing_markers": 0,
+      "distinct": 2,
+      "numeric_parse_count": 14999,
+      "min": 0.0,
+      "max": 1.0
+    },
+    "Student_debt": {
+      "missing_markers": 0,
+      "distinct": 2,
+      "numeric_parse_count": 14999,
+      "min": 0.0,
+      "max": 1.0
+    },
+    "Number_of_homes_owned": {
+      "missing_markers": 0,
+      "distinct": 6,
+      "numeric_parse_count": 14999,
+      "min": 0.0,
+      "max": 5.0
+    },
+    "Bank_balance": {
+      "missing_markers": 0,
+      "distinct": 9226,
+      "numeric_parse_count": 14999,
+      "min": 0.0,
+      "max": 31851.84
+    },
+    "Loan_purpose": {
+      "missing_markers": 0,
+      "distinct": 15,
+      "numeric_parse_count": 0,
+      "values": {
+        "Home Improvements": 835,
+        "Debt Consolidation": 11867,
+        "Buy House": 100,
+        "Other": 1358,
+        "Business Loan": 220,
+        "Buy a Car": 204,
+        "major_purchase": 63,
+        "Take a Trip": 76,
+        "small_business": 41,
+        "Medical Bills": 163,
+        "wedding": 11,
+        "vacation": 21,
+        "Educational Expenses": 20,
+        "moving": 19,
+        "renewable_energy": 1
+      }
+    },
+    "Credit_history": {
+      "missing_markers": 0,
+      "distinct": 439,
+      "numeric_parse_count": 14999,
+      "min": 3.6,
+      "max": 57.5
+    },
+    "Past_bankruptcy": {
+      "missing_markers": 0,
+      "distinct": 6,
+      "numeric_parse_count": 14999,
+      "min": 0.0,
+      "max": 5.0
+    },
+    "Loan_defaulted": {
+      "missing_markers": 5000,
+      "distinct": 4,
+      "numeric_parse_count": 9998,
+      "values": {
+        "0": 8937,
+        "1": 1061,
+        "0+T4261": 1,
+        "": 5000
+      }
+    }
+  },
+  "target_counts": {
+    "0": 8937,
+    "1": 1061,
+    "0+T4261": 1,
+    "": 5000
+  },
+  "supervised_eligible_rows": 9998,
+  "default_prevalence_labeled": 0.10612122424484897,
+  "quarantined_invalid_labels": [
+    {
+      "csv_line": 5823,
+      "customer_id": "C_5822",
+      "target": "0+T4261"
+    }
+  ],
+  "duplicate_rows": 0
+}
