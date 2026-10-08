@@ -96,13 +96,14 @@ SELECT 1;
   $sourceCode=@'
 using System;
 using Microsoft.SqlServer.Dts.Runtime;
-using Microsoft.SqlServer.Dts.Runtime.Wrapper;
+// Managed package APIs live in Microsoft.SqlServer.Dts.Runtime.
+// Importing Runtime.Wrapper here introduces a different COM Package type.
 using Microsoft.SqlServer.Dts.Pipeline;
 using Microsoft.SqlServer.Dts.Pipeline.Wrapper;
 
 public class Bism2202SsisCategorySmoke {
   public static long Execute(string srcString, string dstString, string dtsx) {
-    var pkg=new Package();
+    var pkg=new Microsoft.SqlServer.Dts.Runtime.Package();
     pkg.Name="BISM2202_ProductCategory_DataFlow_Smoke";
     pkg.ProtectionLevel=DTSProtectionLevel.DontSaveSensitive;
     var rows=pkg.Variables.Add("RowsCopied",false,"User",0L);
@@ -166,12 +167,14 @@ public class Bism2202SsisCategorySmoke {
 }
 '@
   Add-Type -TypeDefinition $sourceCode -ReferencedAssemblies $refs -ErrorAction Stop
+  Say 'CSHARP_COMPILE = PASS'
   $prefix="Provider=$provider;Data Source=.;Integrated Security=SSPI;TrustServerCertificate=Yes;"
   $count=[long][Bism2202SsisCategorySmoke]::Execute(
     ($prefix+'Initial Catalog=ozmart_db;'),
     ($prefix+'Initial Catalog=BISM2202_ETL_SANDBOX;'),
     $packageFile
   )
+  Say 'SSIS_PACKAGE_EXECUTION = PASS'
   $actual=[long](Scalar 'BISM2202_ETL_SANDBOX' 'SELECT COUNT_BIG(*) FROM dbo.ProductCategorySmoke')
   Say "SSIS_ROW_COUNT = $count"
   Say "DESTINATION_ROWS = $actual"
