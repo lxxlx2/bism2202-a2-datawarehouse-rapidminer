@@ -119,3 +119,14 @@ The user provided `ozmart-source-profile(1).json`, generated 2026-10-08 12:45:09
 **Next action:** build a first real SSIS Data Flow with OLE DB Source → Row Count transformation → OLE DB Destination into isolated sandbox tables and run with SSIS 160. Do not mark this or the assignment ETL PASS until actual package execution returns success **and** destination row counts match. Include proper SSIS transformation steps for each dimension and fact in the final project.
 
 **Academic policy:** teacher's brief says all AI prompts and outputs must be disclosed and AI use is discouraged beyond proofreading. User must review original instructions and submissions.
+
+
+## Isolated SSIS Data Flow smoke runner available (execution pending)
+
+- Script: `scripts/windows/ssis_category_dataflow_smoke.ps1`, committed on main.
+- Designed to create `BISM2202_ETL_SANDBOX.dbo.ProductCategorySmoke` using schema only, then load 19 real `ozmart_db.dbo.product_category` rows through an actual SSIS task: **OLE DB Source → Row Count transformation → OLE DB Destination**.
+- It saves `C:\BISM2202\analysis\product_category_dataflow_smoke.dtsx` and `...\product_category_dataflow_result.txt`.
+- It checks both the SSIS Row Count variable and physical SQL destination row count.
+- The script intentionally does not modify `ozmart_db` or overwrite the Visual Studio `Package.dtsx`.
+- **UNTESTED ON WINDOWS VM**: Do not report PASS until the user returns actual `DATA_FLOW_SMOKE = PASS` and `SOURCE_ROWS = SSIS_ROW_COUNT = DESTINATION_ROWS = 19`.
+- This checks the runtime pipeline but does not constitute completed dimensional warehouse ETL or the required final screenshots.
