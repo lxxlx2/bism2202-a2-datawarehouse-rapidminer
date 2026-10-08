@@ -130,3 +130,10 @@ The user provided `ozmart-source-profile(1).json`, generated 2026-10-08 12:45:09
 - The script intentionally does not modify `ozmart_db` or overwrite the Visual Studio `Package.dtsx`.
 - **UNTESTED ON WINDOWS VM**: Do not report PASS until the user returns actual `DATA_FLOW_SMOKE = PASS` and `SOURCE_ROWS = SSIS_ROW_COUNT = DESTINATION_ROWS = 19`.
 - This checks the runtime pipeline but does not constitute completed dimensional warehouse ETL or the required final screenshots.
+
+### 2026-10-08 diagnostic and patch status
+
+- User's first sandbox Data Flow run: `SOURCE_ROWS = 19`, `DATA_FLOW_SMOKE = FAIL` because SDK DLLs were searched only under SQL Server `160` directories. Script was patched to search and select .NET GAC assembly version 16.
+- User's next run: all four assemblies were discovered from GAC; `OLEDB_PROVIDER = MSOLEDBSQL`. Actual failure was **C# compile-time**: `'Package' is an ambiguous reference between Microsoft.SqlServer.Dts.Runtime.Package and Microsoft.SqlServer.Dts.Runtime.Wrapper.Package`.
+- Existing script is now patched on main to avoid importing `Runtime.Wrapper` and instantiate `Microsoft.SqlServer.Dts.Runtime.Package` explicitly. Emits `CSHARP_COMPILE = PASS` only if compilation completes.
+- **Neither of the two observed runs executed a real SSIS Data Flow.** The new patch has not yet been run in the user's Windows VM. Do not mark the Data Flow smoke test PASS on the basis of DLL discovery or successful C# compilation alone.
