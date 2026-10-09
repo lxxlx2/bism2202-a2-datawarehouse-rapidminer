@@ -1,0 +1,314 @@
+{
+  "status": "PARTIAL",
+  "scope": "Current local file integrity; prior runtime evidence remains separate",
+  "students": {
+    "A": {
+      "status": "PARTIAL",
+      "backup_hash_matches_actual_restore_record": true,
+      "backup": {
+        "file": "submission/Student_A/database/STUDENT_A_ID_dw.bak",
+        "exists": true,
+        "bytes": 28447232,
+        "sha256": "dd92262915ce8c0426582ce0c50a7fdb06fd838d74d24d378b55ba4207db5ec1"
+      },
+      "ssis_project_zip": {
+        "file": "submission/Student_A/ssis/STUDENT_A_ID_ssis.zip",
+        "exists": true,
+        "bytes": 121778,
+        "sha256": "c8f0f2dc3fb54a519affb6881df0d7234a1f0ec761037dd88ed3f4c6008db1ef"
+      },
+      "ssis_project_zip_crc": "PASS",
+      "rmp_xml_readability": "PASS_NOT_GUI_ACCEPTANCE",
+      "rmp_files": [
+        {
+          "file": "submission/Student_A/rapidminer/STUDENT_A_ID_rapidminer.rmp",
+          "exists": true,
+          "bytes": 17622,
+          "sha256": "66d08cc7bd846af1bee75347018088669967d7eb25d977db22faeb431d0f9230"
+        },
+        {
+          "file": "submission/Student_A/rapidminer/cv_only_decision_tree.rmp",
+          "exists": true,
+          "bytes": 11189,
+          "sha256": "c85d648edb74bb67d956c6d0b65a098013ab944b24353771a0c41ce4a94f069b"
+        },
+        {
+          "file": "submission/Student_A/rapidminer/cv_only_logistic_regression.rmp",
+          "exists": true,
+          "bytes": 12852,
+          "sha256": "22a95e1b19a89320a923ae9e2827f20bc27dac13787a6bfa696f299b87ed7382"
+        },
+        {
+          "file": "submission/Student_A/rapidminer/holdout_decision_tree.rmp",
+          "exists": true,
+          "bytes": 12997,
+          "sha256": "b592c42eb8a093037e3da1373aed5eb73c378c0663a1789922d97cdf130880a2"
+        },
+        {
+          "file": "submission/Student_A/rapidminer/holdout_logistic_regression.rmp",
+          "exists": true,
+          "bytes": 14660,
+          "sha256": "588718b9000012fdb2bc74ddb64257eb1275059a1d29721d606ed21bd238da23"
+        }
+      ],
+      "unchanged_support_copies": 24,
+      "support_hashes": "PASS",
+      "required_report_images": [
+        {
+          "file": "submission/Student_A/evidence/schema/STUDENT_A_ID_dm.png",
+          "exists": true,
+          "bytes": 283900,
+          "sha256": "848eb012295875d22379d2b69d99ec9bc4ebb57504c04ae6cc0baecd64cbecd8"
+        },
+        {
+          "file": "submission/Student_A/evidence/gui/ssis_dimcustomer.png",
+          "exists": true,
+          "bytes": 1102940,
+          "sha256": "9325cb9ad5cfb67bc61890beebddcb33ef8fe5406d10b23e9363338a572830ec"
+        },
+        {
+          "file": "submission/Student_A/evidence/gui/ssis_dimproduct.png",
+          "exists": false
+        },
+        {
+          "file": "submission/Student_A/evidence/gui/ssis_dimseller.png",
+          "exists": false
+        },
+        {
+          "file": "submission/Student_A/evidence/gui/ssis_dimdate.png",
+          "exists": false
+        },
+        {
+          "file": "submission/Student_A/evidence/gui/ssis_geography_customer.png",
+          "exists": false
+        },
+        {
+          "file": "submission/Student_A/evidence/gui/ssis_geography_seller.png",
+          "exists": false
+        },
+        {
+          "file": "submission/Student_A/evidence/gui/ssis_fact.png",
+          "exists": false
+        },
+        {
+          "file": "submission/Student_A/evidence/gui/sql_Q4_1.png",
+          "exists": false
+        },
+        {
+          "file": "submission/Student_A/evidence/gui/sql_Q4_2.png",
+          "exists": false
+        },
+        {
+          "file": "submission/Student_A/evidence/gui/sql_Q4_3.png",
+          "exists": false
+        },
+        {
+          "file": "submission/Student_A/evidence/gui/model1_process.png",
+          "exists": false
+        },
+        {
+          "file": "submission/Student_A/evidence/gui/model1_cv.png",
+          "exists": false
+        },
+        {
+          "file": "submission/Student_A/evidence/gui/model2_process.png",
+          "exists": false
+        },
+        {
+          "file": "submission/Student_A/evidence/gui/model2_cv.png",
+          "exists": false
+        },
+        {
+          "file": "submission/Student_A/evidence/gui/model1_result.png",
+          "exists": false
+        },
+        {
+          "file": "submission/Student_A/evidence/gui/model2_result.png",
+          "exists": false
+        },
+        {
+          "file": "submission/Student_A/evidence/gui/model1_performance.png",
+          "exists": false
+        },
+        {
+          "file": "submission/Student_A/evidence/gui/model2_performance.png",
+          "exists": false
+        }
+      ],
+      "missing_report_images": 17,
+      "final_report_files": [
+        {
+          "file": "submission/Student_A/report/STUDENT_A_ID.docx",
+          "exists": false
+        },
+        {
+          "file": "submission/Student_A/report/STUDENT_A_ID.pdf",
+          "exists": false
+        }
+      ],
+      "final_assignment_zip": {
+        "file": "submission/BISM2202_Student_A_FINAL.zip",
+        "exists": false
+      },
+      "pending": [
+        "remaining native screenshots",
+        "image-filled final report and page review",
+        "final AI disclosure snapshot and student review",
+        "final packaging and acceptance"
+      ]
+    },
+    "B": {
+      "status": "PARTIAL",
+      "backup_hash_matches_actual_restore_record": true,
+      "backup": {
+        "file": "submission/Student_B/database/STUDENT_B_ID_dw.bak",
+        "exists": true,
+        "bytes": 28497408,
+        "sha256": "f2d9d08c6da0eea3112ecc6359b29262b370e0e3634cf235b30a1cab2927bb77"
+      },
+      "ssis_project_zip": {
+        "file": "submission/Student_B/ssis/STUDENT_B_ID_ssis.zip",
+        "exists": true,
+        "bytes": 125863,
+        "sha256": "2213106a5c55ed9ca58e856b85752b881a062297f47ab6e9b5f98fd22cb787f0"
+      },
+      "ssis_project_zip_crc": "PASS",
+      "rmp_xml_readability": "PASS_NOT_GUI_ACCEPTANCE",
+      "rmp_files": [
+        {
+          "file": "submission/Student_B/rapidminer/STUDENT_B_ID_rapidminer.rmp",
+          "exists": true,
+          "bytes": 17780,
+          "sha256": "cf36047fcab40a23d91251c8cff9d81637921013c7ccca9ec6687bd527c3bf50"
+        },
+        {
+          "file": "submission/Student_B/rapidminer/cv_only_logistic_regression.rmp",
+          "exists": true,
+          "bytes": 12824,
+          "sha256": "9716c9cc1d44d73add256ca64d08b03b77e7419505875fca2a59855845d28ae1"
+        },
+        {
+          "file": "submission/Student_B/rapidminer/cv_only_random_forest.rmp",
+          "exists": true,
+          "bytes": 11347,
+          "sha256": "5cc2cc0461089a280c76bf10a34fbab76174d55805455aefa305104cb0ff0703"
+        },
+        {
+          "file": "submission/Student_B/rapidminer/holdout_logistic_regression.rmp",
+          "exists": true,
+          "bytes": 14632,
+          "sha256": "2299c6b071acea03edeca9b991491cd3005be64a146ba90d825013f1148c993b"
+        },
+        {
+          "file": "submission/Student_B/rapidminer/holdout_random_forest.rmp",
+          "exists": true,
+          "bytes": 13155,
+          "sha256": "531ec4943b4ab9af10e3f07b64a53e037779e1c507b1979c2a42b8dc5f5428fe"
+        }
+      ],
+      "unchanged_support_copies": 24,
+      "support_hashes": "PASS",
+      "required_report_images": [
+        {
+          "file": "submission/Student_B/evidence/schema/STUDENT_B_ID_dm.png",
+          "exists": true,
+          "bytes": 283777,
+          "sha256": "c8426dd1755f409834576d24b68793c2be6537e2e46de8bda65f8e76d89b07bb"
+        },
+        {
+          "file": "submission/Student_B/evidence/gui/ssis_dimcustomer.png",
+          "exists": false
+        },
+        {
+          "file": "submission/Student_B/evidence/gui/ssis_dimproduct.png",
+          "exists": false
+        },
+        {
+          "file": "submission/Student_B/evidence/gui/ssis_dimseller.png",
+          "exists": false
+        },
+        {
+          "file": "submission/Student_B/evidence/gui/ssis_dimdate.png",
+          "exists": false
+        },
+        {
+          "file": "submission/Student_B/evidence/gui/ssis_geography_customer.png",
+          "exists": false
+        },
+        {
+          "file": "submission/Student_B/evidence/gui/ssis_geography_seller.png",
+          "exists": false
+        },
+        {
+          "file": "submission/Student_B/evidence/gui/ssis_fact.png",
+          "exists": false
+        },
+        {
+          "file": "submission/Student_B/evidence/gui/sql_Q4_1.png",
+          "exists": false
+        },
+        {
+          "file": "submission/Student_B/evidence/gui/sql_Q4_2.png",
+          "exists": false
+        },
+        {
+          "file": "submission/Student_B/evidence/gui/sql_Q4_3.png",
+          "exists": false
+        },
+        {
+          "file": "submission/Student_B/evidence/gui/model1_process.png",
+          "exists": false
+        },
+        {
+          "file": "submission/Student_B/evidence/gui/model1_cv.png",
+          "exists": false
+        },
+        {
+          "file": "submission/Student_B/evidence/gui/model2_process.png",
+          "exists": false
+        },
+        {
+          "file": "submission/Student_B/evidence/gui/model2_cv.png",
+          "exists": false
+        },
+        {
+          "file": "submission/Student_B/evidence/gui/model1_result.png",
+          "exists": false
+        },
+        {
+          "file": "submission/Student_B/evidence/gui/model2_result.png",
+          "exists": false
+        },
+        {
+          "file": "submission/Student_B/evidence/gui/model1_performance.png",
+          "exists": false
+        },
+        {
+          "file": "submission/Student_B/evidence/gui/model2_performance.png",
+          "exists": false
+        }
+      ],
+      "missing_report_images": 18,
+      "final_report_files": [
+        {
+          "file": "submission/Student_B/report/STUDENT_B_ID.docx",
+          "exists": false
+        },
+        {
+          "file": "submission/Student_B/report/STUDENT_B_ID.pdf",
+          "exists": false
+        }
+      ],
+      "final_assignment_zip": {
+        "file": "submission/BISM2202_Student_B_FINAL.zip",
+        "exists": false
+      },
+      "pending": [
+        "remaining native screenshots",
+        "image-filled final report and page review",
+        "final AI disclosure snapshot and student review",
+        "final packaging and acceptance"
+      ]
+    }
+  }
+}
