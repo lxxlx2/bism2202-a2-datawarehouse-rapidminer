@@ -1,9 +1,13 @@
 param([ValidateSet('A','B')][string]$Student='A')
 $ErrorActionPreference='Stop'
-$out="C:\BISM2202\submission\Student_$Student\ssis\customer_lookup"
+$flowFolder=if($Student -eq 'B'){'customer_merge_join'}else{'customer_lookup'}
+$out="C:\BISM2202\submission\Student_$Student\ssis\$flowFolder"
 New-Item -ItemType Directory -Force $out | Out-Null
+$progress=Join-Path $out 'customer_progress.txt'
+('START '+(Get-Date -Format o)) | Set-Content $progress -Encoding UTF8
+$success=$false
 $log=New-Object 'System.Collections.Generic.List[string]'
-function Say([string]$m){Write-Host $m;$script:log.Add($m)}
+function Say([string]$m){Write-Host $m;$script:log.Add($m);Add-Content $script:progress $m -Encoding UTF8}
 function Sql([string]$q){
  $c=New-Object System.Data.SqlClient.SqlConnection("Server=.;Database=STUDENT_${Student}_ID_dw;Integrated Security=True;Encrypt=False")
  try {$c.Open();$cmd=$c.CreateCommand();$cmd.CommandText=$q;$cmd.CommandTimeout=120;return $cmd.ExecuteScalar()} finally {$c.Dispose()}
@@ -78,6 +82,8 @@ SELECT COUNT_BIG(*) FROM (
 '@
 if($diff -ne 0){throw "Customer field mismatch $diff"}
 Say 'DIMCUSTOMER_RECONCILIATION=PASS'
+$success=$true
 Say 'DIMCUSTOMER_RUNTIME=PASS'
 } catch {Say ('DIMCUSTOMER_RUNTIME=FAIL '+$_.Exception.ToString())}
 $log | Set-Content (Join-Path $out 'customer_results.txt') -Encoding UTF8
+if(-not $success){exit 1}

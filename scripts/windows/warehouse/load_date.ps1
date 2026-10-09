@@ -1,8 +1,8 @@
 param([ValidateSet('A','B')][string]$Student='A')
 $ErrorActionPreference='Stop'
-$out="C:\BISM2202\submission\Student_$Student\ssis\product_geography"
+$out="C:\BISM2202\submission\Student_$Student\ssis\date"
 New-Item -ItemType Directory -Force $out | Out-Null
-$progress=Join-Path $out 'product_geography_progress.txt'
+$progress=Join-Path $out 'date_progress.txt'
 ('START '+(Get-Date -Format o)) | Set-Content $progress -Encoding UTF8
 $success=$false
 $log=New-Object 'System.Collections.Generic.List[string]'
@@ -62,24 +62,26 @@ try {
   }
 
 Add-Type -TypeDefinition (Get-Content -Raw (Join-Path $PSScriptRoot 'CustomerFlow.cs')) -ReferencedAssemblies $refs
-if((Sql 'SELECT COUNT_BIG(*) FROM dbo.FactSales') -ne 0){throw 'Refuse dimension reset when FactSales is populated'}
-[void](Sql "DELETE FROM dbo.DimProduct; DELETE FROM dbo.DimGeography; ALTER TABLE dbo.DimGeography DROP CONSTRAINT CK_DimGeography_State; ALTER TABLE dbo.DimGeography ADD CONSTRAINT CK_DimGeography_State CHECK (StateCode IN ('ACT','NSW','NT','QLD','SA','TAS','VIC','WA') OR (GeographyRole='Seller' AND StateCode='UNK')); SELECT 1;")
+if((Sql 'SELECT COUNT_BIG(*) FROM dbo.FactSales') -ne 0){throw 'Refuse date reset when FactSales is populated'}
+[void](Sql 'DELETE FROM dbo.DimDate; SELECT 1;')
 $prefix='Provider=MSOLEDBSQL;Data Source=.;Integrated Security=SSPI;TrustServerCertificate=Yes;Initial Catalog='
-$src=$prefix+'ozmart_db;';$dst=$prefix+"STUDENT_${Student}_ID_dw;"
-$rows=[BismCustomerFlow]::Product($src,$dst,(Join-Path $out '03_DimProduct.dtsx'),$Student)
-$actual=Sql 'SELECT COUNT_BIG(*) FROM dbo.DimProduct'
-Say "DIMPRODUCT SSIS_ROWS=$rows TARGET_ROWS=$actual EXPECTED=2199"
-if($rows -ne 2199 -or $actual -ne 2199){throw 'Product count mismatch'}
-$rows=[BismCustomerFlow]::Geography($src,$dst,(Join-Path $out '04_DimGeography_Customer.dtsx'),$Student,$false)
-$actual=Sql "SELECT COUNT_BIG(*) FROM dbo.DimGeography WHERE GeographyRole='Customer'"
-Say "CUSTOMER_GEOGRAPHY SSIS_ROWS=$rows TARGET_ROWS=$actual EXPECTED=1500"
-if($rows -ne 1500 -or $actual -ne 1500){throw 'Customer geography count mismatch'}
-$rows=[BismCustomerFlow]::Geography($src,$dst,(Join-Path $out '04_DimGeography_Seller.dtsx'),$Student,$true)
-$actual=Sql "SELECT COUNT_BIG(*) FROM dbo.DimGeography WHERE GeographyRole='Seller'"
-Say "SELLER_GEOGRAPHY SSIS_ROWS=$rows TARGET_ROWS=$actual EXPECTED=99"
-if($rows -ne 99 -or $actual -ne 99){throw 'Seller geography count mismatch'}
+$rows=[BismCustomerFlow]::Date(($prefix+'ozmart_db;'),($prefix+"STUDENT_${Student}_ID_dw;"),(Join-Path $out '05_DimDate.dtsx'),$Student)
+$actual=Sql 'SELECT COUNT_BIG(*) FROM dbo.DimDate'
+$expected=Sql 'SELECT COUNT_BIG(*) FROM (SELECT CAST(purchase_timestamp AS date) AS d FROM ozmart_db.dbo.orders_table GROUP BY CAST(purchase_timestamp AS date)) t'
+Say "DIMDATE SSIS_ROWS=$rows TARGET_ROWS=$actual EXPECTED=$expected"
+if($rows -ne $expected -or $actual -ne $expected){throw 'Date count mismatch'}
+$diff=Sql @'
+SELECT COUNT_BIG(*) FROM (
+ SELECT DateKey,CalendarDate,CalendarYear,CalendarQuarter,CalendarMonth,DayOfMonth FROM dbo.DimDate
+ EXCEPT
+ SELECT YEAR(purchase_timestamp)*10000+MONTH(purchase_timestamp)*100+DAY(purchase_timestamp),CAST(purchase_timestamp AS date),YEAR(purchase_timestamp),DATEPART(quarter,purchase_timestamp),MONTH(purchase_timestamp),DAY(purchase_timestamp)
+ FROM ozmart_db.dbo.orders_table
+) t;
+'@
+if($diff -ne 0){throw 'Date fields mismatch'}
+Say 'DIMDATE_RECONCILIATION=PASS'
 $success=$true
-Say 'PRODUCT_GEOGRAPHY_RUNTIME=PASS'
-} catch {Say ('PRODUCT_GEOGRAPHY_RUNTIME=FAIL '+$_.Exception.ToString())}
-$log | Set-Content (Join-Path $out 'product_geography_results.txt') -Encoding UTF8
+Say 'DIMDATE_RUNTIME=PASS'
+} catch {Say ('DIMDATE_RUNTIME=FAIL '+$_.Exception.ToString())}
+$log | Set-Content (Join-Path $out 'date_results.txt') -Encoding UTF8
 if(-not $success){exit 1}

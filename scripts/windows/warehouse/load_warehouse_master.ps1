@@ -1,8 +1,8 @@
 param([ValidateSet('A','B')][string]$Student='A')
 $ErrorActionPreference='Stop'
-$out="C:\BISM2202\submission\Student_$Student\ssis\product_geography"
+$out="C:\BISM2202\submission\Student_$Student\ssis\STUDENT_${Student}_ID_SSIS"
 New-Item -ItemType Directory -Force $out | Out-Null
-$progress=Join-Path $out 'product_geography_progress.txt'
+$progress=Join-Path $out 'warehouse_progress.txt'
 ('START '+(Get-Date -Format o)) | Set-Content $progress -Encoding UTF8
 $success=$false
 $log=New-Object 'System.Collections.Generic.List[string]'
@@ -62,24 +62,34 @@ try {
   }
 
 Add-Type -TypeDefinition (Get-Content -Raw (Join-Path $PSScriptRoot 'CustomerFlow.cs')) -ReferencedAssemblies $refs
-if((Sql 'SELECT COUNT_BIG(*) FROM dbo.FactSales') -ne 0){throw 'Refuse dimension reset when FactSales is populated'}
-[void](Sql "DELETE FROM dbo.DimProduct; DELETE FROM dbo.DimGeography; ALTER TABLE dbo.DimGeography DROP CONSTRAINT CK_DimGeography_State; ALTER TABLE dbo.DimGeography ADD CONSTRAINT CK_DimGeography_State CHECK (StateCode IN ('ACT','NSW','NT','QLD','SA','TAS','VIC','WA') OR (GeographyRole='Seller' AND StateCode='UNK')); SELECT 1;")
+[void](Sql ((Get-Content -Raw (Join-Path $PSScriptRoot 'schema.sql'))+"`nSELECT 1;"))
+foreach($spec in @(
+ @('RefAge','Age_Id,Age'),@('RefEducation','EDU_ID,Education_level'),@('RefState','state_name,state_code'),
+ @('RefSellerLocation','location_id,unit,street,postcode,suburb,state,type,status,region')
+)) {
+ $table=$spec[0];$cols=($spec[1].Split(',')|ForEach-Object{"[$_] nvarchar(256) NULL"}) -join ','
+ [void](Sql "IF OBJECT_ID('dbo.$table','U') IS NULL CREATE TABLE dbo.$table ($cols); SELECT 1;")
+}
 $prefix='Provider=MSOLEDBSQL;Data Source=.;Integrated Security=SSPI;TrustServerCertificate=Yes;Initial Catalog='
-$src=$prefix+'ozmart_db;';$dst=$prefix+"STUDENT_${Student}_ID_dw;"
-$rows=[BismCustomerFlow]::Product($src,$dst,(Join-Path $out '03_DimProduct.dtsx'),$Student)
-$actual=Sql 'SELECT COUNT_BIG(*) FROM dbo.DimProduct'
-Say "DIMPRODUCT SSIS_ROWS=$rows TARGET_ROWS=$actual EXPECTED=2199"
-if($rows -ne 2199 -or $actual -ne 2199){throw 'Product count mismatch'}
-$rows=[BismCustomerFlow]::Geography($src,$dst,(Join-Path $out '04_DimGeography_Customer.dtsx'),$Student,$false)
-$actual=Sql "SELECT COUNT_BIG(*) FROM dbo.DimGeography WHERE GeographyRole='Customer'"
-Say "CUSTOMER_GEOGRAPHY SSIS_ROWS=$rows TARGET_ROWS=$actual EXPECTED=1500"
-if($rows -ne 1500 -or $actual -ne 1500){throw 'Customer geography count mismatch'}
-$rows=[BismCustomerFlow]::Geography($src,$dst,(Join-Path $out '04_DimGeography_Seller.dtsx'),$Student,$true)
-$actual=Sql "SELECT COUNT_BIG(*) FROM dbo.DimGeography WHERE GeographyRole='Seller'"
-Say "SELLER_GEOGRAPHY SSIS_ROWS=$rows TARGET_ROWS=$actual EXPECTED=99"
-if($rows -ne 99 -or $actual -ne 99){throw 'Seller geography count mismatch'}
+$audit=[BismCustomerFlow]::Warehouse(($prefix+'ozmart_db;'),($prefix+"STUDENT_${Student}_ID_dw;"),'C:\BISM2202\assignment_work\csv',(Join-Path $out 'Master.dtsx'),$Student)
+Say $audit
+$expected=@{DimSeller=100;DimCustomer=21000;DimProduct=2199;DimGeography=1599;FactSales=137901;RefAge=78;RefEducation=6;RefState=8;RefSellerLocation=100}
+foreach($table in $expected.Keys) {
+ $actual=Sql "SELECT COUNT_BIG(*) FROM dbo.$table"
+ Say "$table ROWS=$actual EXPECTED=$($expected[$table])"
+ if($actual -ne $expected[$table]){throw "Warehouse count mismatch: $table"}
+}
+$sourceqty=Sql 'SELECT SUM(CONVERT(bigint,item_quantity)) FROM ozmart_db.dbo.order_items_table'
+$qty=Sql 'SELECT SUM(CONVERT(bigint,ItemQuantity)) FROM dbo.FactSales'
+if($sourceqty -ne $qty){throw 'Quantity mismatch'}
+Say "QUANTITY=$qty"
+$dates=Sql 'SELECT COUNT_BIG(*) FROM dbo.DimDate'
+$expectedDates=Sql 'SELECT COUNT_BIG(*) FROM (SELECT CAST(purchase_timestamp AS date) d FROM ozmart_db.dbo.orders_table GROUP BY CAST(purchase_timestamp AS date)) t'
+if($dates -ne $expectedDates){throw 'Date count mismatch'}
+Say "DIMDATE_ROWS=$dates EXPECTED=$expectedDates"
 $success=$true
-Say 'PRODUCT_GEOGRAPHY_RUNTIME=PASS'
-} catch {Say ('PRODUCT_GEOGRAPHY_RUNTIME=FAIL '+$_.Exception.ToString())}
-$log | Set-Content (Join-Path $out 'product_geography_results.txt') -Encoding UTF8
+Say 'WAREHOUSE_MASTER_RUNTIME=PASS'
+Say 'DESIGNER_PROJECT_AND_SCREENSHOTS=PENDING'
+} catch {Say ('WAREHOUSE_MASTER_RUNTIME=FAIL '+$_.Exception.ToString())}
+$log | Set-Content (Join-Path $out 'warehouse_results.txt') -Encoding UTF8
 if(-not $success){exit 1}

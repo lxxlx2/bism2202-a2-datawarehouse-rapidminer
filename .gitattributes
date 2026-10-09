@@ -1,0 +1,5 @@
+# Preserve exact native results and SSIS XML bytes, including CRLF and native padding.
+submission/**/evidence/native/* -text -whitespace
+submission/**/evidence/ssis/*.txt -text -whitespace
+submission/**/*.dtsx -text whitespace=cr-at-eol
+submission/shared/verified_source_metadata/live_sql_catalog.json -text whitespace=cr-at-eol

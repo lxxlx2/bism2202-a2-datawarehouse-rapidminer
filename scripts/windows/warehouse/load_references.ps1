@@ -2,8 +2,11 @@ param([ValidateSet('A','B')][string]$Student='A')
 $ErrorActionPreference='Stop'
 $out="C:\BISM2202\submission\Student_$Student\ssis\references"
 New-Item -ItemType Directory -Force $out | Out-Null
+$progress=Join-Path $out 'reference_progress.txt'
+('START '+(Get-Date -Format o)) | Set-Content $progress -Encoding UTF8
+$success=$false
 $log=New-Object 'System.Collections.Generic.List[string]'
-function Say([string]$m){Write-Host $m;$script:log.Add($m)}
+function Say([string]$m){Write-Host $m;$script:log.Add($m);Add-Content $script:progress $m -Encoding UTF8}
 function Sql([string]$q){
  $c=New-Object System.Data.SqlClient.SqlConnection("Server=.;Database=STUDENT_${Student}_ID_dw;Integrated Security=True;Encrypt=False")
  try {$c.Open();$cmd=$c.CreateCommand();$cmd.CommandText=$q;$cmd.CommandTimeout=120;return $cmd.ExecuteScalar()} finally {$c.Dispose()}
@@ -215,6 +218,8 @@ try {
  }
  $export | ConvertTo-Json -Depth 5 | Set-Content (Join-Path $out 'reference_rows.json') -Encoding UTF8
 } finally {$c.Dispose()}
-Say 'REFERENCE_DATAFLOWS=PASS' 
+$success=$true
+Say 'REFERENCE_DATAFLOWS=PASS'
 } catch {Say ('REFERENCE_DATAFLOWS=FAIL '+$_.Exception.ToString())}
 $log | Set-Content (Join-Path $out 'reference_results.txt') -Encoding UTF8
+if(-not $success){exit 1}

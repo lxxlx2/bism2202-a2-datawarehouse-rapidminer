@@ -2,17 +2,16 @@
 USE [STUDENT_B_ID_dw];
 GO
 SET NOCOUNT ON;
--- NSW means supplier location in seller_location.csv (seller geography role).
--- Year is purchase year; completed-sales proxy uses delivered order status.
--- Conflicting seller geography remains UNK and is disclosed separately.
+-- NSW means customer-address sales destination, not supplier registration location.
+-- Year is purchase year. Seller-location NSW is a separate sensitivity analysis.
 WITH grouped AS (
  SELECT d.CalendarYear,s.SellerID,s.SellerName,
  SUM(CONVERT(bigint,f.ItemQuantity)) AS UnitsSold,SUM(f.LineAmount) AS Revenue
  FROM dbo.FactSales f
  JOIN dbo.DimDate d ON d.DateKey=f.PurchaseDateKey
  JOIN dbo.DimSeller s ON s.SellerKey=f.SellerKey
- JOIN dbo.DimGeography g ON g.GeographyKey=f.SellerGeographyKey
- WHERE f.OrderStatus=N'delivered' AND g.StateCode=N'NSW' AND g.GeographyRole=N'Seller'
+ JOIN dbo.DimGeography g ON g.GeographyKey=f.CustomerGeographyKey
+ WHERE f.OrderStatus=N'delivered' AND g.StateCode=N'NSW' AND g.GeographyRole=N'Customer'
  GROUP BY d.CalendarYear,s.SellerID,s.SellerName
 ), ranked AS (
  SELECT *,ROW_NUMBER() OVER(PARTITION BY CalendarYear ORDER BY UnitsSold DESC, SellerID ASC) AS Position

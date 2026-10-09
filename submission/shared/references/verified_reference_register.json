@@ -1,0 +1,94 @@
+{
+  "verified_host_date": "2026-10-09",
+  "references": [
+    {
+      "key": "kimball_ross",
+      "task": 1,
+      "apa": "Kimball, R., & Ross, M. (2013). The data warehouse toolkit: The definitive guide to dimensional modeling (3rd ed.). Wiley.",
+      "url": "https://uat.store.wiley.com/en-us/the-data-warehouse-toolkit-the-definitive-guide-to-dimensional-modeling-3rd-edition-p-9781118530801",
+      "use": "General dimensional modelling framework. Publisher metadata verified; no page-specific quotation claimed."
+    },
+    {
+      "key": "four_steps",
+      "task": 1,
+      "apa": "Kimball Group. (n.d.-a). Four-step dimensional design process.",
+      "url": "https://www.kimballgroup.com/data-warehouse-business-intelligence-resources/kimball-techniques/dimensional-modeling-techniques/four-4-step-design-process/",
+      "use": "Business process, grain, dimensions, facts."
+    },
+    {
+      "key": "grain",
+      "task": 1,
+      "apa": "Kimball Group. (n.d.-b). Grain.",
+      "url": "https://www.kimballgroup.com/data-warehouse-business-intelligence-resources/kimball-techniques/dimensional-modeling-techniques/grain/",
+      "use": "Atomic order-item grain and consistent measures."
+    },
+    {
+      "key": "ssis_properties",
+      "task": 1,
+      "apa": "Microsoft. (n.d.). Transformation custom properties. Microsoft Learn.",
+      "url": "https://learn.microsoft.com/en-us/sql/integration-services/data-flow/transformations/transformation-custom-properties?view=sql-server-ver16",
+      "use": "Native Lookup, Merge Join, Sort, Derived Column and Data Conversion semantics."
+    },
+    {
+      "key": "dense_rank",
+      "task": 1,
+      "student": "A",
+      "apa": "Microsoft. (2026, September 21). DENSE_RANK (Transact-SQL). Microsoft Learn.",
+      "url": "https://learn.microsoft.com/en-us/sql/t-sql/functions/dense-rank-transact-sql?view=sql-server-ver16",
+      "use": "Preserve ties within state/year partitions."
+    },
+    {
+      "key": "row_number",
+      "task": 1,
+      "student": "B",
+      "apa": "Microsoft. (n.d.). ROW_NUMBER (Transact-SQL). Microsoft Learn.",
+      "url": "https://learn.microsoft.com/en-us/sql/t-sql/functions/row-number-transact-sql?view=sql-server-ver16",
+      "use": "Exactly five rows where available, unique deterministic secondary ordering."
+    },
+    {
+      "key": "logistic_operator",
+      "task": 2,
+      "apa": "RapidMiner. (n.d.). Logistic regression (SVM). RapidMiner Studio 10.0 documentation.",
+      "url": "https://docs.rapidminer.com/10.0/studio/operators/modeling/predictive/logistic_regression/logistic_regression.html",
+      "use": "The native kernel-logistic learner, numeric inputs, dot-kernel weights. Documentation version differs from installed engine; actual installed operator probe and process runs confirm chosen parameters."
+    },
+    {
+      "key": "quinlan",
+      "task": 2,
+      "student": "A",
+      "apa": "Quinlan, J. R. (1986). Induction of decision trees. Machine Learning, 1, 81–106. https://doi.org/10.1007/BF00116251",
+      "url": "https://doi.org/10.1007/BF00116251",
+      "use": "Decision-tree induction as modelling rationale; actual A fit is a single leaf."
+    },
+    {
+      "key": "breiman",
+      "task": 2,
+      "student": "B",
+      "apa": "Breiman, L. (2001). Random forests. Machine Learning, 45, 5–32. https://doi.org/10.1023/A:1010933404324",
+      "url": "https://doi.org/10.1023/A:1010933404324",
+      "use": "Randomised tree ensemble rationale; actual B fit has 50 non-default leaves."
+    },
+    {
+      "key": "kohavi",
+      "task": 2,
+      "apa": "Kohavi, R. (1995). A study of cross-validation and bootstrap for accuracy estimation and model selection. Proceedings of the 14th International Joint Conference on Artificial Intelligence.",
+      "url": "https://ai.stanford.edu/~ronnyk/accEst.pdf",
+      "use": "Stratified evaluation rationale. The paper does not mandate the chosen five-fold coursework protocol.",
+      "pagination_status": "Omitted rather than choosing between conflicting secondary metadata."
+    },
+    {
+      "key": "saito_rehmsmeier",
+      "task": 2,
+      "apa": "Saito, T., & Rehmsmeier, M. (2015). The precision-recall plot is more informative than the ROC plot when evaluating binary classifiers on imbalanced datasets. PLOS ONE, 10(3), Article e0118432. https://doi.org/10.1371/journal.pone.0118432",
+      "url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0118432",
+      "use": "Interpret default-class precision and recall alongside ROC AUC and majority-class accuracy."
+    },
+    {
+      "key": "mehrabi",
+      "task": 2,
+      "apa": "Mehrabi, N., Morstatter, F., Saxena, N., Lerman, K., & Galstyan, A. (2019). A survey on bias and fairness in machine learning [Preprint]. arXiv. https://arxiv.org/abs/1908.09635",
+      "url": "https://arxiv.org/abs/1908.09635",
+      "use": "Proxy bias, subgroup review and fairness limitations; no legal compliance claim."
+    }
+  ]
+}

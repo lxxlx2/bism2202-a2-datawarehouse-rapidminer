@@ -1,0 +1,8 @@
+﻿START 2026-10-08T15:23:28.8524279-07:00
+DLL = C:\WINDOWS\Microsoft.NET\assembly\GAC_MSIL\Microsoft.SqlServer.ManagedDTS\v4.0_16.0.0.0__89845dcd8080cc91\Microsoft.SqlServer.ManagedDTS.dll
+DLL = C:\WINDOWS\Microsoft.NET\assembly\GAC_64\Microsoft.SqlServer.DTSRuntimeWrap\v4.0_16.0.0.0__89845dcd8080cc91\Microsoft.SqlServer.DTSRuntimeWrap.dll
+DLL = C:\WINDOWS\Microsoft.NET\assembly\GAC_MSIL\Microsoft.SqlServer.DTSPipelineWrap\v4.0_16.0.0.0__89845dcd8080cc91\Microsoft.SQLServer.DTSPipelineWrap.dll
+DLL = C:\WINDOWS\Microsoft.NET\assembly\GAC_MSIL\Microsoft.SqlServer.PipelineHost\v4.0_16.0.0.0__89845dcd8080cc91\Microsoft.SQLServer.PipelineHost.dll
+DIMDATE SSIS_ROWS=493 TARGET_ROWS=493 EXPECTED=493
+DIMDATE_RECONCILIATION=PASS
+DIMDATE_RUNTIME=PASS

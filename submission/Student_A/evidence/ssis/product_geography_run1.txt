@@ -1,0 +1,9 @@
+﻿START 2026-10-08T15:20:57.7986616-07:00
+DLL = C:\WINDOWS\Microsoft.NET\assembly\GAC_MSIL\Microsoft.SqlServer.ManagedDTS\v4.0_16.0.0.0__89845dcd8080cc91\Microsoft.SqlServer.ManagedDTS.dll
+DLL = C:\WINDOWS\Microsoft.NET\assembly\GAC_64\Microsoft.SqlServer.DTSRuntimeWrap\v4.0_16.0.0.0__89845dcd8080cc91\Microsoft.SqlServer.DTSRuntimeWrap.dll
+DLL = C:\WINDOWS\Microsoft.NET\assembly\GAC_MSIL\Microsoft.SqlServer.DTSPipelineWrap\v4.0_16.0.0.0__89845dcd8080cc91\Microsoft.SQLServer.DTSPipelineWrap.dll
+DLL = C:\WINDOWS\Microsoft.NET\assembly\GAC_MSIL\Microsoft.SqlServer.PipelineHost\v4.0_16.0.0.0__89845dcd8080cc91\Microsoft.SQLServer.PipelineHost.dll
+DIMPRODUCT SSIS_ROWS=2199 TARGET_ROWS=2199 EXPECTED=2199
+CUSTOMER_GEOGRAPHY SSIS_ROWS=1500 TARGET_ROWS=1500 EXPECTED=1500
+SELLER_GEOGRAPHY SSIS_ROWS=99 TARGET_ROWS=99 EXPECTED=99
+PRODUCT_GEOGRAPHY_RUNTIME=PASS

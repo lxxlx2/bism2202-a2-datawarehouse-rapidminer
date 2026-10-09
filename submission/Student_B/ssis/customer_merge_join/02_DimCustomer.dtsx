@@ -1,0 +1,1796 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="10/8/2026 3:21:05 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="WIN-LR4ELCKRUA0"
+  DTS:CreatorName="WIN-LR4ELCKRUA0\Administrator"
+  DTS:DTSID="{419ADFFB-D4CA-44B7-9B98-36648E2634E9}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.1000.6"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Student_B_DimCustomer_MergeJoin"
+  DTS:ProtectionLevel="0"
+  DTS:VersionGUID="{0E407096-9488-445E-9C51-E3B77288FB44}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Read only OzMart]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{7958418C-1951-40F8-9D5D-E34E391E461C}"
+      DTS:ObjectName="Read only OzMart">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=.;Initial Catalog=ozmart_db;Provider=MSOLEDBSQL;Integrated Security=SSPI;TrustServerCertificate=Yes;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Student warehouse and CSV references]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{CEBC30B2-5E72-4368-B28D-41979AF9E295}"
+      DTS:ObjectName="Student warehouse and CSV references">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=.;Initial Catalog=STUDENT_B_ID_dw;Provider=MSOLEDBSQL;Integrated Security=SSPI;TrustServerCertificate=Yes;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{FE952083-D2CC-4E09-9AE0-28849AC09052}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="RowsCopied">
+      <DTS:VariableValue
+        DTS:DataType="20">0</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\DFT DimCustomer - two CSV lookups"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:DTSID="{5D89A575-EE29-48AA-94F1-0D9C621EFC1E}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DFT DimCustomer - two CSV lookups"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\DFT DimCustomer - two CSV lookups\Audit loaded rows"
+              componentClassID="Microsoft.RowCount"
+              contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Counts rows as they pass through a data flow. For example, use the number of rows processed to determine whether or not to perform cleanup operations, or update text in an e-mail message to communicate processing status."
+              name="Audit loaded rows">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable to hold the row count."
+                  name="VariableName">User::RowsCopied</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\DFT DimCustomer - two CSV lookups\Audit loaded rows.Inputs[Row Count Input 1]"
+                  hasSideEffects="true"
+                  name="Row Count Input 1">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT DimCustomer - two CSV lookups\Audit loaded rows.Outputs[Row Count Output 1]"
+                  name="Row Count Output 1"
+                  synchronousInputId="Package\DFT DimCustomer - two CSV lookups\Audit loaded rows.Inputs[Row Count Input 1]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT DimCustomer - two CSV lookups\Derive EducationCode"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derive EducationCode"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\DFT DimCustomer - two CSV lookups\Derive EducationCode.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT DimCustomer - two CSV lookups\Derive EducationCode.Inputs[Derived Column Input].Columns[CustomerID]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="CustomerID"
+                      lineageId="Package\DFT DimCustomer - two CSV lookups\Read OzMart fields 0.Outputs[OLE DB Source Output].Columns[CustomerID]" />
+                    <inputColumn
+                      refId="Package\DFT DimCustomer - two CSV lookups\Derive EducationCode.Inputs[Derived Column Input].Columns[Gender]"
+                      cachedDataType="bool"
+                      cachedName="Gender"
+                      lineageId="Package\DFT DimCustomer - two CSV lookups\Read OzMart fields 0.Outputs[OLE DB Source Output].Columns[Gender]" />
+                    <inputColumn
+                      refId="Package\DFT DimCustomer - two CSV lookups\Derive EducationCode.Inputs[Derived Column Input].Columns[AgeSourceKey]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="AgeSourceKey"
+                      lineageId="Package\DFT DimCustomer - two CSV lookups\Read OzMart fields 0.Outputs[OLE DB Source Output].Columns[AgeSourceKey]" />
+                    <inputColumn
+                      refId="Package\DFT DimCustomer - two CSV lookups\Derive EducationCode.Inputs[Derived Column Input].Columns[EducationSourceCode]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="EducationSourceCode"
+                      lineageId="Package\DFT DimCustomer - two CSV lookups\Read OzMart fields 0.Outputs[OLE DB Source Output].Columns[EducationSourceCode]" />
+                    <inputColumn
+                      refId="Package\DFT DimCustomer - two CSV lookups\Derive EducationCode.Inputs[Derived Column Input].Columns[CustomerLocationID]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="CustomerLocationID"
+                      lineageId="Package\DFT DimCustomer - two CSV lookups\Read OzMart fields 0.Outputs[OLE DB Source Output].Columns[CustomerLocationID]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT DimCustomer - two CSV lookups\Derive EducationCode.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\DFT DimCustomer - two CSV lookups\Derive EducationCode.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT DimCustomer - two CSV lookups\Derive EducationCode.Outputs[Derived Column Output].Columns[EducationCode]"
+                      dataType="wstr"
+                      description="Explicit derived field"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="256"
+                      lineageId="Package\DFT DimCustomer - two CSV lookups\Derive EducationCode.Outputs[Derived Column Output].Columns[EducationCode]"
+                      name="EducationCode"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_WSTR,256)("EDU_" + [RIGHT]("00" + (DT_WSTR,4)(DT_I4)[SUBSTRING](#{Package\DFT DimCustomer - two CSV lookups\Read OzMart fields 0.Outputs[OLE DB Source Output].Columns[EducationSourceCode]},5,8),2))</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_WSTR,256)("EDU_" + RIGHT("00" + (DT_WSTR,4)(DT_I4)SUBSTRING(EducationSourceCode,5,8),2))</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT DimCustomer - two CSV lookups\Derive EducationCode.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\DFT DimCustomer - two CSV lookups\Derive EducationCode.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT DimCustomer - two CSV lookups\Derive EducationCode.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT DimCustomer - two CSV lookups\Derive EducationCode.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT DimCustomer - two CSV lookups\Derive EducationCode.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT DimCustomer - two CSV lookups\Derive EducationCode.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT DimCustomer - two CSV lookups\Explicit target column types"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Explicit target column types"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\DFT DimCustomer - two CSV lookups\Explicit target column types.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT DimCustomer - two CSV lookups\Explicit target column types.Inputs[Data Conversion Input].Columns[CustomerID]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="CustomerID"
+                      lineageId="Package\DFT DimCustomer - two CSV lookups\Merge education CSV on normalised key.Outputs[Merge Join Output].Columns[CustomerID]" />
+                    <inputColumn
+                      refId="Package\DFT DimCustomer - two CSV lookups\Explicit target column types.Inputs[Data Conversion Input].Columns[Gender]"
+                      cachedDataType="bool"
+                      cachedName="Gender"
+                      lineageId="Package\DFT DimCustomer - two CSV lookups\Merge education CSV on normalised key.Outputs[Merge Join Output].Columns[Gender]" />
+                    <inputColumn
+                      refId="Package\DFT DimCustomer - two CSV lookups\Explicit target column types.Inputs[Data Conversion Input].Columns[Age]"
+                      cachedDataType="wstr"
+                      cachedLength="256"
+                      cachedName="Age"
+                      lineageId="Package\DFT DimCustomer - two CSV lookups\Merge education CSV on normalised key.Outputs[Merge Join Output].Columns[Age]" />
+                    <inputColumn
+                      refId="Package\DFT DimCustomer - two CSV lookups\Explicit target column types.Inputs[Data Conversion Input].Columns[AgeSourceKey]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="AgeSourceKey"
+                      lineageId="Package\DFT DimCustomer - two CSV lookups\Merge education CSV on normalised key.Outputs[Merge Join Output].Columns[AgeSourceKey]" />
+                    <inputColumn
+                      refId="Package\DFT DimCustomer - two CSV lookups\Explicit target column types.Inputs[Data Conversion Input].Columns[EducationSourceCode]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="EducationSourceCode"
+                      lineageId="Package\DFT DimCustomer - two CSV lookups\Merge education CSV on normalised key.Outputs[Merge Join Output].Columns[EducationSourceCode]" />
+                    <inputColumn
+                      refId="Package\DFT DimCustomer - two CSV lookups\Explicit target column types.Inputs[Data Conversion Input].Columns[EducationCode]"
+                      cachedDataType="wstr"
+                      cachedLength="256"
+                      cachedName="EducationCode"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\DFT DimCustomer - two CSV lookups\Merge education CSV on normalised key.Outputs[Merge Join Output].Columns[EducationCode]" />
+                    <inputColumn
+                      refId="Package\DFT DimCustomer - two CSV lookups\Explicit target column types.Inputs[Data Conversion Input].Columns[EducationLevel]"
+                      cachedDataType="wstr"
+                      cachedLength="256"
+                      cachedName="EducationLevel"
+                      lineageId="Package\DFT DimCustomer - two CSV lookups\Merge education CSV on normalised key.Outputs[Merge Join Output].Columns[EducationLevel]" />
+                    <inputColumn
+                      refId="Package\DFT DimCustomer - two CSV lookups\Explicit target column types.Inputs[Data Conversion Input].Columns[CustomerLocationID]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="CustomerLocationID"
+                      lineageId="Package\DFT DimCustomer - two CSV lookups\Merge education CSV on normalised key.Outputs[Merge Join Output].Columns[CustomerLocationID]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT DimCustomer - two CSV lookups\Explicit target column types.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\DFT DimCustomer - two CSV lookups\Explicit target column types.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT DimCustomer - two CSV lookups\Explicit target column types.Outputs[Data Conversion Output].Columns[Load_CustomerID]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="64"
+                      lineageId="Package\DFT DimCustomer - two CSV lookups\Explicit target column types.Outputs[Data Conversion Output].Columns[Load_CustomerID]"
+                      name="Load_CustomerID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\DFT DimCustomer - two CSV lookups\Merge education CSV on normalised key.Outputs[Merge Join Output].Columns[CustomerID]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT DimCustomer - two CSV lookups\Explicit target column types.Outputs[Data Conversion Output].Columns[Load_Gender]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="32"
+                      lineageId="Package\DFT DimCustomer - two CSV lookups\Explicit target column types.Outputs[Data Conversion Output].Columns[Load_Gender]"
+                      name="Load_Gender"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\DFT DimCustomer - two CSV lookups\Merge education CSV on normalised key.Outputs[Merge Join Output].Columns[Gender]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT DimCustomer - two CSV lookups\Explicit target column types.Outputs[Data Conversion Output].Columns[Load_Age]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\DFT DimCustomer - two CSV lookups\Explicit target column types.Outputs[Data Conversion Output].Columns[Load_Age]"
+                      name="Load_Age"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\DFT DimCustomer - two CSV lookups\Merge education CSV on normalised key.Outputs[Merge Join Output].Columns[Age]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT DimCustomer - two CSV lookups\Explicit target column types.Outputs[Data Conversion Output].Columns[Load_AgeSourceKey]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="32"
+                      lineageId="Package\DFT DimCustomer - two CSV lookups\Explicit target column types.Outputs[Data Conversion Output].Columns[Load_AgeSourceKey]"
+                      name="Load_AgeSourceKey"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\DFT DimCustomer - two CSV lookups\Merge education CSV on normalised key.Outputs[Merge Join Output].Columns[AgeSourceKey]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT DimCustomer - two CSV lookups\Explicit target column types.Outputs[Data Conversion Output].Columns[Load_EducationSourceCode]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="32"
+                      lineageId="Package\DFT DimCustomer - two CSV lookups\Explicit target column types.Outputs[Data Conversion Output].Columns[Load_EducationSourceCode]"
+                      name="Load_EducationSourceCode"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\DFT DimCustomer - two CSV lookups\Merge education CSV on normalised key.Outputs[Merge Join Output].Columns[EducationSourceCode]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT DimCustomer - two CSV lookups\Explicit target column types.Outputs[Data Conversion Output].Columns[Load_EducationCode]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="32"
+                      lineageId="Package\DFT DimCustomer - two CSV lookups\Explicit target column types.Outputs[Data Conversion Output].Columns[Load_EducationCode]"
+                      name="Load_EducationCode"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\DFT DimCustomer - two CSV lookups\Merge education CSV on normalised key.Outputs[Merge Join Output].Columns[EducationCode]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT DimCustomer - two CSV lookups\Explicit target column types.Outputs[Data Conversion Output].Columns[Load_EducationLevel]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="128"
+                      lineageId="Package\DFT DimCustomer - two CSV lookups\Explicit target column types.Outputs[Data Conversion Output].Columns[Load_EducationLevel]"
+                      name="Load_EducationLevel"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\DFT DimCustomer - two CSV lookups\Merge education CSV on normalised key.Outputs[Merge Join Output].Columns[EducationLevel]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT DimCustomer - two CSV lookups\Explicit target column types.Outputs[Data Conversion Output].Columns[Load_CustomerLocationID]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="64"
+                      lineageId="Package\DFT DimCustomer - two CSV lookups\Explicit target column types.Outputs[Data Conversion Output].Columns[Load_CustomerLocationID]"
+                      name="Load_CustomerLocationID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\DFT DimCustomer - two CSV lookups\Merge education CSV on normalised key.Outputs[Merge Join Output].Columns[CustomerLocationID]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT DimCustomer - two CSV lookups\Explicit target column types.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\DFT DimCustomer - two CSV lookups\Explicit target column types.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT DimCustomer - two CSV lookups\Explicit target column types.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT DimCustomer - two CSV lookups\Explicit target column types.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT DimCustomer - two CSV lookups\Explicit target column types.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT DimCustomer - two CSV lookups\Explicit target column types.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT DimCustomer - two CSV lookups\Load DimCustomer"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Load DimCustomer"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[DimCustomer]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT DimCustomer - two CSV lookups\Load DimCustomer.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Student warehouse and CSV references]"
+                  connectionManagerRefId="Package.ConnectionManagers[Student warehouse and CSV references]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DFT DimCustomer - two CSV lookups\Load DimCustomer.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT DimCustomer - two CSV lookups\Load DimCustomer.Inputs[OLE DB Destination Input].Columns[Load_CustomerID]"
+                      cachedDataType="wstr"
+                      cachedLength="64"
+                      cachedName="Load_CustomerID"
+                      externalMetadataColumnId="Package\DFT DimCustomer - two CSV lookups\Load DimCustomer.Inputs[OLE DB Destination Input].ExternalColumns[CustomerID]"
+                      lineageId="Package\DFT DimCustomer - two CSV lookups\Explicit target column types.Outputs[Data Conversion Output].Columns[Load_CustomerID]" />
+                    <inputColumn
+                      refId="Package\DFT DimCustomer - two CSV lookups\Load DimCustomer.Inputs[OLE DB Destination Input].Columns[Load_Gender]"
+                      cachedDataType="wstr"
+                      cachedLength="32"
+                      cachedName="Load_Gender"
+                      externalMetadataColumnId="Package\DFT DimCustomer - two CSV lookups\Load DimCustomer.Inputs[OLE DB Destination Input].ExternalColumns[Gender]"
+                      lineageId="Package\DFT DimCustomer - two CSV lookups\Explicit target column types.Outputs[Data Conversion Output].Columns[Load_Gender]" />
+                    <inputColumn
+                      refId="Package\DFT DimCustomer - two CSV lookups\Load DimCustomer.Inputs[OLE DB Destination Input].Columns[Load_Age]"
+                      cachedDataType="i2"
+                      cachedName="Load_Age"
+                      externalMetadataColumnId="Package\DFT DimCustomer - two CSV lookups\Load DimCustomer.Inputs[OLE DB Destination Input].ExternalColumns[Age]"
+                      lineageId="Package\DFT DimCustomer - two CSV lookups\Explicit target column types.Outputs[Data Conversion Output].Columns[Load_Age]" />
+                    <inputColumn
+                      refId="Package\DFT DimCustomer - two CSV lookups\Load DimCustomer.Inputs[OLE DB Destination Input].Columns[Load_AgeSourceKey]"
+                      cachedDataType="wstr"
+                      cachedLength="32"
+                      cachedName="Load_AgeSourceKey"
+                      externalMetadataColumnId="Package\DFT DimCustomer - two CSV lookups\Load DimCustomer.Inputs[OLE DB Destination Input].ExternalColumns[AgeSourceKey]"
+                      lineageId="Package\DFT DimCustomer - two CSV lookups\Explicit target column types.Outputs[Data Conversion Output].Columns[Load_AgeSourceKey]" />
+                    <inputColumn
+                      refId="Package\DFT DimCustomer - two CSV lookups\Load DimCustomer.Inputs[OLE DB Destination Input].Columns[Load_EducationSourceCode]"
+                      cachedDataType="wstr"
+                      cachedLength="32"
+                      cachedName="Load_EducationSourceCode"
+                      externalMetadataColumnId="Package\DFT DimCustomer - two CSV lookups\Load DimCustomer.Inputs[OLE DB Destination Input].ExternalColumns[EducationSourceCode]"
+                      lineageId="Package\DFT DimCustomer - two CSV lookups\Explicit target column types.Outputs[Data Conversion Output].Columns[Load_EducationSourceCode]" />
+                    <inputColumn
+                      refId="Package\DFT DimCustomer - two CSV lookups\Load DimCustomer.Inputs[OLE DB Destination Input].Columns[Load_EducationCode]"
+                      cachedDataType="wstr"
+                      cachedLength="32"
+                      cachedName="Load_EducationCode"
+                      externalMetadataColumnId="Package\DFT DimCustomer - two CSV lookups\Load DimCustomer.Inputs[OLE DB Destination Input].ExternalColumns[EducationCode]"
+                      lineageId="Package\DFT DimCustomer - two CSV lookups\Explicit target column types.Outputs[Data Conversion Output].Columns[Load_EducationCode]" />
+                    <inputColumn
+                      refId="Package\DFT DimCustomer - two CSV lookups\Load DimCustomer.Inputs[OLE DB Destination Input].Columns[Load_EducationLevel]"
+                      cachedDataType="wstr"
+                      cachedLength="128"
+                      cachedName="Load_EducationLevel"
+                      externalMetadataColumnId="Package\DFT DimCustomer - two CSV lookups\Load DimCustomer.Inputs[OLE DB Destination Input].ExternalColumns[EducationLevel]"
+                      lineageId="Package\DFT DimCustomer - two CSV lookups\Explicit target column types.Outputs[Data Conversion Output].Columns[Load_EducationLevel]" />
+                    <inputColumn
+                      refId="Package\DFT DimCustomer - two CSV lookups\Load DimCustomer.Inputs[OLE DB Destination Input].Columns[Load_CustomerLocationID]"
+                      cachedDataType="wstr"
+                      cachedLength="64"
+                      cachedName="Load_CustomerLocationID"
+                      externalMetadataColumnId="Package\DFT DimCustomer - two CSV lookups\Load DimCustomer.Inputs[OLE DB Destination Input].ExternalColumns[CustomerLocationID]"
+                      lineageId="Package\DFT DimCustomer - two CSV lookups\Explicit target column types.Outputs[Data Conversion Output].Columns[Load_CustomerLocationID]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT DimCustomer - two CSV lookups\Load DimCustomer.Inputs[OLE DB Destination Input].ExternalColumns[CustomerKey]"
+                      dataType="i4"
+                      name="CustomerKey" />
+                    <externalMetadataColumn
+                      refId="Package\DFT DimCustomer - two CSV lookups\Load DimCustomer.Inputs[OLE DB Destination Input].ExternalColumns[CustomerID]"
+                      dataType="wstr"
+                      length="64"
+                      name="CustomerID" />
+                    <externalMetadataColumn
+                      refId="Package\DFT DimCustomer - two CSV lookups\Load DimCustomer.Inputs[OLE DB Destination Input].ExternalColumns[Gender]"
+                      dataType="wstr"
+                      length="32"
+                      name="Gender" />
+                    <externalMetadataColumn
+                      refId="Package\DFT DimCustomer - two CSV lookups\Load DimCustomer.Inputs[OLE DB Destination Input].ExternalColumns[Age]"
+                      dataType="i2"
+                      name="Age" />
+                    <externalMetadataColumn
+                      refId="Package\DFT DimCustomer - two CSV lookups\Load DimCustomer.Inputs[OLE DB Destination Input].ExternalColumns[AgeSourceKey]"
+                      dataType="wstr"
+                      length="32"
+                      name="AgeSourceKey" />
+                    <externalMetadataColumn
+                      refId="Package\DFT DimCustomer - two CSV lookups\Load DimCustomer.Inputs[OLE DB Destination Input].ExternalColumns[EducationSourceCode]"
+                      dataType="wstr"
+                      length="32"
+                      name="EducationSourceCode" />
+                    <externalMetadataColumn
+                      refId="Package\DFT DimCustomer - two CSV lookups\Load DimCustomer.Inputs[OLE DB Destination Input].ExternalColumns[EducationCode]"
+                      dataType="wstr"
+                      length="32"
+                      name="EducationCode" />
+                    <externalMetadataColumn
+                      refId="Package\DFT DimCustomer - two CSV lookups\Load DimCustomer.Inputs[OLE DB Destination Input].ExternalColumns[EducationLevel]"
+                      dataType="wstr"
+                      length="128"
+                      name="EducationLevel" />
+                    <externalMetadataColumn
+                      refId="Package\DFT DimCustomer - two CSV lookups\Load DimCustomer.Inputs[OLE DB Destination Input].ExternalColumns[CustomerLocationID]"
+                      dataType="wstr"
+                      length="64"
+                      name="CustomerLocationID" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT DimCustomer - two CSV lookups\Load DimCustomer.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\DFT DimCustomer - two CSV lookups\Load DimCustomer.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT DimCustomer - two CSV lookups\Load DimCustomer.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT DimCustomer - two CSV lookups\Load DimCustomer.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT DimCustomer - two CSV lookups\Load DimCustomer.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT DimCustomer - two CSV lookups\Load DimCustomer.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT DimCustomer - two CSV lookups\Lookup Age (fail unmatched)"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="Lookup Age (fail unmatched)"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT Age_Id,Age FROM dbo.RefAge</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="Age_Id" dataType="DT_WSTR" length="256" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Age" dataType="DT_WSTR" length="256" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">true</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT DimCustomer - two CSV lookups\Lookup Age (fail unmatched).Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Student warehouse and CSV references]"
+                  connectionManagerRefId="Package.ConnectionManagers[Student warehouse and CSV references]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DFT DimCustomer - two CSV lookups\Lookup Age (fail unmatched).Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT DimCustomer - two CSV lookups\Lookup Age (fail unmatched).Inputs[Lookup Input].Columns[AgeSourceKey]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="AgeSourceKey"
+                      lineageId="Package\DFT DimCustomer - two CSV lookups\Read OzMart fields 0.Outputs[OLE DB Source Output].Columns[AgeSourceKey]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">Age_Id</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT DimCustomer - two CSV lookups\Lookup Age (fail unmatched).Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\DFT DimCustomer - two CSV lookups\Lookup Age (fail unmatched).Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT DimCustomer - two CSV lookups\Lookup Age (fail unmatched).Outputs[Lookup Match Output].Columns[Age]"
+                      dataType="wstr"
+                      description="Reference attribute"
+                      errorOrTruncationOperation="Copy Column"
+                      length="256"
+                      lineageId="Package\DFT DimCustomer - two CSV lookups\Lookup Age (fail unmatched).Outputs[Lookup Match Output].Columns[Age]"
+                      name="Age"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">Age</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT DimCustomer - two CSV lookups\Lookup Age (fail unmatched).Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\DFT DimCustomer - two CSV lookups\Lookup Age (fail unmatched).Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT DimCustomer - two CSV lookups\Lookup Age (fail unmatched).Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\DFT DimCustomer - two CSV lookups\Lookup Age (fail unmatched).Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT DimCustomer - two CSV lookups\Lookup Age (fail unmatched).Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT DimCustomer - two CSV lookups\Lookup Age (fail unmatched).Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT DimCustomer - two CSV lookups\Lookup Age (fail unmatched).Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT DimCustomer - two CSV lookups\Lookup Age (fail unmatched).Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT DimCustomer - two CSV lookups\Merge education CSV on normalised key"
+              componentClassID="Microsoft.MergeJoin"
+              contactInfo="Merge Join;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Combine two sorted data flows into one using the FULL, LEFT, or INNER join. We recommend this transformation when data flows can be sorted at their sources."
+              name="Merge education CSV on normalised key"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of join to perform."
+                  name="JoinType"
+                  typeConverter="JoinType">2</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the number of columns in the ordering key."
+                  name="NumKeyColumns">1</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the null values are treated as equal values."
+                  name="TreatNullsAsEqual">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Indicates the requested maximum buffers per input before blocking."
+                  name="MaxBuffersPerInput">5</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\DFT DimCustomer - two CSV lookups\Merge education CSV on normalised key.Inputs[Merge Join Left Input]"
+                  hasSideEffects="true"
+                  name="Merge Join Left Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT DimCustomer - two CSV lookups\Merge education CSV on normalised key.Inputs[Merge Join Left Input].Columns[EducationCode]"
+                      cachedDataType="wstr"
+                      cachedLength="256"
+                      cachedName="EducationCode"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\DFT DimCustomer - two CSV lookups\Sort by EducationCode.Outputs[Sort Output].Columns[EducationCode]" />
+                    <inputColumn
+                      refId="Package\DFT DimCustomer - two CSV lookups\Merge education CSV on normalised key.Inputs[Merge Join Left Input].Columns[CustomerID]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="CustomerID"
+                      lineageId="Package\DFT DimCustomer - two CSV lookups\Sort by EducationCode.Outputs[Sort Output].Columns[CustomerID]" />
+                    <inputColumn
+                      refId="Package\DFT DimCustomer - two CSV lookups\Merge education CSV on normalised key.Inputs[Merge Join Left Input].Columns[Gender]"
+                      cachedDataType="bool"
+                      cachedName="Gender"
+                      lineageId="Package\DFT DimCustomer - two CSV lookups\Sort by EducationCode.Outputs[Sort Output].Columns[Gender]" />
+                    <inputColumn
+                      refId="Package\DFT DimCustomer - two CSV lookups\Merge education CSV on normalised key.Inputs[Merge Join Left Input].Columns[AgeSourceKey]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="AgeSourceKey"
+                      lineageId="Package\DFT DimCustomer - two CSV lookups\Sort by EducationCode.Outputs[Sort Output].Columns[AgeSourceKey]" />
+                    <inputColumn
+                      refId="Package\DFT DimCustomer - two CSV lookups\Merge education CSV on normalised key.Inputs[Merge Join Left Input].Columns[EducationSourceCode]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="EducationSourceCode"
+                      lineageId="Package\DFT DimCustomer - two CSV lookups\Sort by EducationCode.Outputs[Sort Output].Columns[EducationSourceCode]" />
+                    <inputColumn
+                      refId="Package\DFT DimCustomer - two CSV lookups\Merge education CSV on normalised key.Inputs[Merge Join Left Input].Columns[CustomerLocationID]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="CustomerLocationID"
+                      lineageId="Package\DFT DimCustomer - two CSV lookups\Sort by EducationCode.Outputs[Sort Output].Columns[CustomerLocationID]" />
+                    <inputColumn
+                      refId="Package\DFT DimCustomer - two CSV lookups\Merge education CSV on normalised key.Inputs[Merge Join Left Input].Columns[Age]"
+                      cachedDataType="wstr"
+                      cachedLength="256"
+                      cachedName="Age"
+                      lineageId="Package\DFT DimCustomer - two CSV lookups\Sort by EducationCode.Outputs[Sort Output].Columns[Age]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\DFT DimCustomer - two CSV lookups\Merge education CSV on normalised key.Inputs[Merge Join Right Input]"
+                  hasSideEffects="true"
+                  name="Merge Join Right Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT DimCustomer - two CSV lookups\Merge education CSV on normalised key.Inputs[Merge Join Right Input].Columns[EducationJoinKey]"
+                      cachedDataType="wstr"
+                      cachedLength="256"
+                      cachedName="EducationJoinKey"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\DFT DimCustomer - two CSV lookups\Sort by EducationJoinKey.Outputs[Sort Output].Columns[EducationJoinKey]" />
+                    <inputColumn
+                      refId="Package\DFT DimCustomer - two CSV lookups\Merge education CSV on normalised key.Inputs[Merge Join Right Input].Columns[EducationLevel]"
+                      cachedDataType="wstr"
+                      cachedLength="256"
+                      cachedName="EducationLevel"
+                      lineageId="Package\DFT DimCustomer - two CSV lookups\Sort by EducationJoinKey.Outputs[Sort Output].Columns[EducationLevel]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT DimCustomer - two CSV lookups\Merge education CSV on normalised key.Outputs[Merge Join Output]"
+                  isSorted="true"
+                  name="Merge Join Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT DimCustomer - two CSV lookups\Merge education CSV on normalised key.Outputs[Merge Join Output].Columns[CustomerID]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\DFT DimCustomer - two CSV lookups\Merge education CSV on normalised key.Outputs[Merge Join Output].Columns[CustomerID]"
+                      name="CustomerID">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\DFT DimCustomer - two CSV lookups\Merge education CSV on normalised key.Inputs[Merge Join Left Input].Columns[CustomerID]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT DimCustomer - two CSV lookups\Merge education CSV on normalised key.Outputs[Merge Join Output].Columns[Gender]"
+                      dataType="bool"
+                      lineageId="Package\DFT DimCustomer - two CSV lookups\Merge education CSV on normalised key.Outputs[Merge Join Output].Columns[Gender]"
+                      name="Gender">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\DFT DimCustomer - two CSV lookups\Merge education CSV on normalised key.Inputs[Merge Join Left Input].Columns[Gender]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT DimCustomer - two CSV lookups\Merge education CSV on normalised key.Outputs[Merge Join Output].Columns[AgeSourceKey]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\DFT DimCustomer - two CSV lookups\Merge education CSV on normalised key.Outputs[Merge Join Output].Columns[AgeSourceKey]"
+                      name="AgeSourceKey">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\DFT DimCustomer - two CSV lookups\Merge education CSV on normalised key.Inputs[Merge Join Left Input].Columns[AgeSourceKey]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT DimCustomer - two CSV lookups\Merge education CSV on normalised key.Outputs[Merge Join Output].Columns[EducationSourceCode]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\DFT DimCustomer - two CSV lookups\Merge education CSV on normalised key.Outputs[Merge Join Output].Columns[EducationSourceCode]"
+                      name="EducationSourceCode">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\DFT DimCustomer - two CSV lookups\Merge education CSV on normalised key.Inputs[Merge Join Left Input].Columns[EducationSourceCode]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT DimCustomer - two CSV lookups\Merge education CSV on normalised key.Outputs[Merge Join Output].Columns[CustomerLocationID]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\DFT DimCustomer - two CSV lookups\Merge education CSV on normalised key.Outputs[Merge Join Output].Columns[CustomerLocationID]"
+                      name="CustomerLocationID">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\DFT DimCustomer - two CSV lookups\Merge education CSV on normalised key.Inputs[Merge Join Left Input].Columns[CustomerLocationID]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT DimCustomer - two CSV lookups\Merge education CSV on normalised key.Outputs[Merge Join Output].Columns[EducationCode]"
+                      dataType="wstr"
+                      description="Explicit derived field"
+                      length="256"
+                      lineageId="Package\DFT DimCustomer - two CSV lookups\Merge education CSV on normalised key.Outputs[Merge Join Output].Columns[EducationCode]"
+                      name="EducationCode"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\DFT DimCustomer - two CSV lookups\Merge education CSV on normalised key.Inputs[Merge Join Left Input].Columns[EducationCode]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT DimCustomer - two CSV lookups\Merge education CSV on normalised key.Outputs[Merge Join Output].Columns[Age]"
+                      dataType="wstr"
+                      description="Reference attribute"
+                      length="256"
+                      lineageId="Package\DFT DimCustomer - two CSV lookups\Merge education CSV on normalised key.Outputs[Merge Join Output].Columns[Age]"
+                      name="Age">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\DFT DimCustomer - two CSV lookups\Merge education CSV on normalised key.Inputs[Merge Join Left Input].Columns[Age]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT DimCustomer - two CSV lookups\Merge education CSV on normalised key.Outputs[Merge Join Output].Columns[EducationJoinKey]"
+                      dataType="wstr"
+                      length="256"
+                      lineageId="Package\DFT DimCustomer - two CSV lookups\Merge education CSV on normalised key.Outputs[Merge Join Output].Columns[EducationJoinKey]"
+                      name="EducationJoinKey">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\DFT DimCustomer - two CSV lookups\Merge education CSV on normalised key.Inputs[Merge Join Right Input].Columns[EducationJoinKey]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT DimCustomer - two CSV lookups\Merge education CSV on normalised key.Outputs[Merge Join Output].Columns[EducationLevel]"
+                      dataType="wstr"
+                      length="256"
+                      lineageId="Package\DFT DimCustomer - two CSV lookups\Merge education CSV on normalised key.Outputs[Merge Join Output].Columns[EducationLevel]"
+                      name="EducationLevel">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\DFT DimCustomer - two CSV lookups\Merge education CSV on normalised key.Inputs[Merge Join Right Input].Columns[EducationLevel]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT DimCustomer - two CSV lookups\Read OzMart fields 0"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Read OzMart fields 0"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT customer_id AS CustomerID, Gender, Age_key AS AgeSourceKey, EDU_id AS EducationSourceCode, location_id AS CustomerLocationID FROM dbo.customer_table</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT DimCustomer - two CSV lookups\Read OzMart fields 0.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Read only OzMart]"
+                  connectionManagerRefId="Package.ConnectionManagers[Read only OzMart]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\DFT DimCustomer - two CSV lookups\Read OzMart fields 0.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT DimCustomer - two CSV lookups\Read OzMart fields 0.Outputs[OLE DB Source Output].Columns[CustomerID]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT DimCustomer - two CSV lookups\Read OzMart fields 0.Outputs[OLE DB Source Output].ExternalColumns[CustomerID]"
+                      length="50"
+                      lineageId="Package\DFT DimCustomer - two CSV lookups\Read OzMart fields 0.Outputs[OLE DB Source Output].Columns[CustomerID]"
+                      name="CustomerID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT DimCustomer - two CSV lookups\Read OzMart fields 0.Outputs[OLE DB Source Output].Columns[Gender]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT DimCustomer - two CSV lookups\Read OzMart fields 0.Outputs[OLE DB Source Output].ExternalColumns[Gender]"
+                      lineageId="Package\DFT DimCustomer - two CSV lookups\Read OzMart fields 0.Outputs[OLE DB Source Output].Columns[Gender]"
+                      name="Gender"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT DimCustomer - two CSV lookups\Read OzMart fields 0.Outputs[OLE DB Source Output].Columns[AgeSourceKey]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT DimCustomer - two CSV lookups\Read OzMart fields 0.Outputs[OLE DB Source Output].ExternalColumns[AgeSourceKey]"
+                      length="50"
+                      lineageId="Package\DFT DimCustomer - two CSV lookups\Read OzMart fields 0.Outputs[OLE DB Source Output].Columns[AgeSourceKey]"
+                      name="AgeSourceKey"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT DimCustomer - two CSV lookups\Read OzMart fields 0.Outputs[OLE DB Source Output].Columns[EducationSourceCode]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT DimCustomer - two CSV lookups\Read OzMart fields 0.Outputs[OLE DB Source Output].ExternalColumns[EducationSourceCode]"
+                      length="50"
+                      lineageId="Package\DFT DimCustomer - two CSV lookups\Read OzMart fields 0.Outputs[OLE DB Source Output].Columns[EducationSourceCode]"
+                      name="EducationSourceCode"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT DimCustomer - two CSV lookups\Read OzMart fields 0.Outputs[OLE DB Source Output].Columns[CustomerLocationID]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT DimCustomer - two CSV lookups\Read OzMart fields 0.Outputs[OLE DB Source Output].ExternalColumns[CustomerLocationID]"
+                      length="50"
+                      lineageId="Package\DFT DimCustomer - two CSV lookups\Read OzMart fields 0.Outputs[OLE DB Source Output].Columns[CustomerLocationID]"
+                      name="CustomerLocationID"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT DimCustomer - two CSV lookups\Read OzMart fields 0.Outputs[OLE DB Source Output].ExternalColumns[CustomerID]"
+                      dataType="wstr"
+                      length="50"
+                      name="CustomerID" />
+                    <externalMetadataColumn
+                      refId="Package\DFT DimCustomer - two CSV lookups\Read OzMart fields 0.Outputs[OLE DB Source Output].ExternalColumns[Gender]"
+                      dataType="bool"
+                      name="Gender" />
+                    <externalMetadataColumn
+                      refId="Package\DFT DimCustomer - two CSV lookups\Read OzMart fields 0.Outputs[OLE DB Source Output].ExternalColumns[AgeSourceKey]"
+                      dataType="wstr"
+                      length="50"
+                      name="AgeSourceKey" />
+                    <externalMetadataColumn
+                      refId="Package\DFT DimCustomer - two CSV lookups\Read OzMart fields 0.Outputs[OLE DB Source Output].ExternalColumns[EducationSourceCode]"
+                      dataType="wstr"
+                      length="50"
+                      name="EducationSourceCode" />
+                    <externalMetadataColumn
+                      refId="Package\DFT DimCustomer - two CSV lookups\Read OzMart fields 0.Outputs[OLE DB Source Output].ExternalColumns[CustomerLocationID]"
+                      dataType="wstr"
+                      length="50"
+                      name="CustomerLocationID" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\DFT DimCustomer - two CSV lookups\Read OzMart fields 0.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT DimCustomer - two CSV lookups\Read OzMart fields 0.Outputs[OLE DB Source Error Output].Columns[CustomerID]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\DFT DimCustomer - two CSV lookups\Read OzMart fields 0.Outputs[OLE DB Source Error Output].Columns[CustomerID]"
+                      name="CustomerID" />
+                    <outputColumn
+                      refId="Package\DFT DimCustomer - two CSV lookups\Read OzMart fields 0.Outputs[OLE DB Source Error Output].Columns[Gender]"
+                      dataType="bool"
+                      lineageId="Package\DFT DimCustomer - two CSV lookups\Read OzMart fields 0.Outputs[OLE DB Source Error Output].Columns[Gender]"
+                      name="Gender" />
+                    <outputColumn
+                      refId="Package\DFT DimCustomer - two CSV lookups\Read OzMart fields 0.Outputs[OLE DB Source Error Output].Columns[AgeSourceKey]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\DFT DimCustomer - two CSV lookups\Read OzMart fields 0.Outputs[OLE DB Source Error Output].Columns[AgeSourceKey]"
+                      name="AgeSourceKey" />
+                    <outputColumn
+                      refId="Package\DFT DimCustomer - two CSV lookups\Read OzMart fields 0.Outputs[OLE DB Source Error Output].Columns[EducationSourceCode]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\DFT DimCustomer - two CSV lookups\Read OzMart fields 0.Outputs[OLE DB Source Error Output].Columns[EducationSourceCode]"
+                      name="EducationSourceCode" />
+                    <outputColumn
+                      refId="Package\DFT DimCustomer - two CSV lookups\Read OzMart fields 0.Outputs[OLE DB Source Error Output].Columns[CustomerLocationID]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\DFT DimCustomer - two CSV lookups\Read OzMart fields 0.Outputs[OLE DB Source Error Output].Columns[CustomerLocationID]"
+                      name="CustomerLocationID" />
+                    <outputColumn
+                      refId="Package\DFT DimCustomer - two CSV lookups\Read OzMart fields 0.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT DimCustomer - two CSV lookups\Read OzMart fields 0.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT DimCustomer - two CSV lookups\Read OzMart fields 0.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT DimCustomer - two CSV lookups\Read OzMart fields 0.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT DimCustomer - two CSV lookups\Read warehouse references 4"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Read warehouse references 4"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT EDU_ID AS EducationJoinKey,Education_level AS EducationLevel FROM dbo.RefEducation</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT DimCustomer - two CSV lookups\Read warehouse references 4.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Student warehouse and CSV references]"
+                  connectionManagerRefId="Package.ConnectionManagers[Student warehouse and CSV references]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\DFT DimCustomer - two CSV lookups\Read warehouse references 4.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT DimCustomer - two CSV lookups\Read warehouse references 4.Outputs[OLE DB Source Output].Columns[EducationJoinKey]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT DimCustomer - two CSV lookups\Read warehouse references 4.Outputs[OLE DB Source Output].ExternalColumns[EducationJoinKey]"
+                      length="256"
+                      lineageId="Package\DFT DimCustomer - two CSV lookups\Read warehouse references 4.Outputs[OLE DB Source Output].Columns[EducationJoinKey]"
+                      name="EducationJoinKey"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT DimCustomer - two CSV lookups\Read warehouse references 4.Outputs[OLE DB Source Output].Columns[EducationLevel]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT DimCustomer - two CSV lookups\Read warehouse references 4.Outputs[OLE DB Source Output].ExternalColumns[EducationLevel]"
+                      length="256"
+                      lineageId="Package\DFT DimCustomer - two CSV lookups\Read warehouse references 4.Outputs[OLE DB Source Output].Columns[EducationLevel]"
+                      name="EducationLevel"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT DimCustomer - two CSV lookups\Read warehouse references 4.Outputs[OLE DB Source Output].ExternalColumns[EducationJoinKey]"
+                      dataType="wstr"
+                      length="256"
+                      name="EducationJoinKey" />
+                    <externalMetadataColumn
+                      refId="Package\DFT DimCustomer - two CSV lookups\Read warehouse references 4.Outputs[OLE DB Source Output].ExternalColumns[EducationLevel]"
+                      dataType="wstr"
+                      length="256"
+                      name="EducationLevel" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\DFT DimCustomer - two CSV lookups\Read warehouse references 4.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT DimCustomer - two CSV lookups\Read warehouse references 4.Outputs[OLE DB Source Error Output].Columns[EducationJoinKey]"
+                      dataType="wstr"
+                      length="256"
+                      lineageId="Package\DFT DimCustomer - two CSV lookups\Read warehouse references 4.Outputs[OLE DB Source Error Output].Columns[EducationJoinKey]"
+                      name="EducationJoinKey" />
+                    <outputColumn
+                      refId="Package\DFT DimCustomer - two CSV lookups\Read warehouse references 4.Outputs[OLE DB Source Error Output].Columns[EducationLevel]"
+                      dataType="wstr"
+                      length="256"
+                      lineageId="Package\DFT DimCustomer - two CSV lookups\Read warehouse references 4.Outputs[OLE DB Source Error Output].Columns[EducationLevel]"
+                      name="EducationLevel" />
+                    <outputColumn
+                      refId="Package\DFT DimCustomer - two CSV lookups\Read warehouse references 4.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT DimCustomer - two CSV lookups\Read warehouse references 4.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT DimCustomer - two CSV lookups\Read warehouse references 4.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT DimCustomer - two CSV lookups\Read warehouse references 4.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT DimCustomer - two CSV lookups\Sort by EducationCode"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="Sort by EducationCode"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\DFT DimCustomer - two CSV lookups\Sort by EducationCode.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT DimCustomer - two CSV lookups\Sort by EducationCode.Inputs[Sort Input].Columns[CustomerID]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="CustomerID"
+                      lineageId="Package\DFT DimCustomer - two CSV lookups\Read OzMart fields 0.Outputs[OLE DB Source Output].Columns[CustomerID]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT DimCustomer - two CSV lookups\Sort by EducationCode.Inputs[Sort Input].Columns[Gender]"
+                      cachedDataType="bool"
+                      cachedName="Gender"
+                      lineageId="Package\DFT DimCustomer - two CSV lookups\Read OzMart fields 0.Outputs[OLE DB Source Output].Columns[Gender]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT DimCustomer - two CSV lookups\Sort by EducationCode.Inputs[Sort Input].Columns[AgeSourceKey]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="AgeSourceKey"
+                      lineageId="Package\DFT DimCustomer - two CSV lookups\Read OzMart fields 0.Outputs[OLE DB Source Output].Columns[AgeSourceKey]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT DimCustomer - two CSV lookups\Sort by EducationCode.Inputs[Sort Input].Columns[EducationSourceCode]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="EducationSourceCode"
+                      lineageId="Package\DFT DimCustomer - two CSV lookups\Read OzMart fields 0.Outputs[OLE DB Source Output].Columns[EducationSourceCode]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT DimCustomer - two CSV lookups\Sort by EducationCode.Inputs[Sort Input].Columns[CustomerLocationID]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="CustomerLocationID"
+                      lineageId="Package\DFT DimCustomer - two CSV lookups\Read OzMart fields 0.Outputs[OLE DB Source Output].Columns[CustomerLocationID]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT DimCustomer - two CSV lookups\Sort by EducationCode.Inputs[Sort Input].Columns[EducationCode]"
+                      cachedDataType="wstr"
+                      cachedLength="256"
+                      cachedName="EducationCode"
+                      lineageId="Package\DFT DimCustomer - two CSV lookups\Derive EducationCode.Outputs[Derived Column Output].Columns[EducationCode]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT DimCustomer - two CSV lookups\Sort by EducationCode.Inputs[Sort Input].Columns[Age]"
+                      cachedDataType="wstr"
+                      cachedLength="256"
+                      cachedName="Age"
+                      lineageId="Package\DFT DimCustomer - two CSV lookups\Lookup Age (fail unmatched).Outputs[Lookup Match Output].Columns[Age]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT DimCustomer - two CSV lookups\Sort by EducationCode.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT DimCustomer - two CSV lookups\Sort by EducationCode.Outputs[Sort Output].Columns[CustomerID]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\DFT DimCustomer - two CSV lookups\Sort by EducationCode.Outputs[Sort Output].Columns[CustomerID]"
+                      name="CustomerID">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\DFT DimCustomer - two CSV lookups\Read OzMart fields 0.Outputs[OLE DB Source Output].Columns[CustomerID]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT DimCustomer - two CSV lookups\Sort by EducationCode.Outputs[Sort Output].Columns[Gender]"
+                      dataType="bool"
+                      lineageId="Package\DFT DimCustomer - two CSV lookups\Sort by EducationCode.Outputs[Sort Output].Columns[Gender]"
+                      name="Gender">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\DFT DimCustomer - two CSV lookups\Read OzMart fields 0.Outputs[OLE DB Source Output].Columns[Gender]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT DimCustomer - two CSV lookups\Sort by EducationCode.Outputs[Sort Output].Columns[AgeSourceKey]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\DFT DimCustomer - two CSV lookups\Sort by EducationCode.Outputs[Sort Output].Columns[AgeSourceKey]"
+                      name="AgeSourceKey">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\DFT DimCustomer - two CSV lookups\Read OzMart fields 0.Outputs[OLE DB Source Output].Columns[AgeSourceKey]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT DimCustomer - two CSV lookups\Sort by EducationCode.Outputs[Sort Output].Columns[EducationSourceCode]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\DFT DimCustomer - two CSV lookups\Sort by EducationCode.Outputs[Sort Output].Columns[EducationSourceCode]"
+                      name="EducationSourceCode">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\DFT DimCustomer - two CSV lookups\Read OzMart fields 0.Outputs[OLE DB Source Output].Columns[EducationSourceCode]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT DimCustomer - two CSV lookups\Sort by EducationCode.Outputs[Sort Output].Columns[CustomerLocationID]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\DFT DimCustomer - two CSV lookups\Sort by EducationCode.Outputs[Sort Output].Columns[CustomerLocationID]"
+                      name="CustomerLocationID">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\DFT DimCustomer - two CSV lookups\Read OzMart fields 0.Outputs[OLE DB Source Output].Columns[CustomerLocationID]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT DimCustomer - two CSV lookups\Sort by EducationCode.Outputs[Sort Output].Columns[EducationCode]"
+                      dataType="wstr"
+                      description="Explicit derived field"
+                      length="256"
+                      lineageId="Package\DFT DimCustomer - two CSV lookups\Sort by EducationCode.Outputs[Sort Output].Columns[EducationCode]"
+                      name="EducationCode"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\DFT DimCustomer - two CSV lookups\Derive EducationCode.Outputs[Derived Column Output].Columns[EducationCode]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT DimCustomer - two CSV lookups\Sort by EducationCode.Outputs[Sort Output].Columns[Age]"
+                      dataType="wstr"
+                      description="Reference attribute"
+                      length="256"
+                      lineageId="Package\DFT DimCustomer - two CSV lookups\Sort by EducationCode.Outputs[Sort Output].Columns[Age]"
+                      name="Age">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\DFT DimCustomer - two CSV lookups\Lookup Age (fail unmatched).Outputs[Lookup Match Output].Columns[Age]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT DimCustomer - two CSV lookups\Sort by EducationJoinKey"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="Sort by EducationJoinKey"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\DFT DimCustomer - two CSV lookups\Sort by EducationJoinKey.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT DimCustomer - two CSV lookups\Sort by EducationJoinKey.Inputs[Sort Input].Columns[EducationJoinKey]"
+                      cachedDataType="wstr"
+                      cachedLength="256"
+                      cachedName="EducationJoinKey"
+                      lineageId="Package\DFT DimCustomer - two CSV lookups\Read warehouse references 4.Outputs[OLE DB Source Output].Columns[EducationJoinKey]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT DimCustomer - two CSV lookups\Sort by EducationJoinKey.Inputs[Sort Input].Columns[EducationLevel]"
+                      cachedDataType="wstr"
+                      cachedLength="256"
+                      cachedName="EducationLevel"
+                      lineageId="Package\DFT DimCustomer - two CSV lookups\Read warehouse references 4.Outputs[OLE DB Source Output].Columns[EducationLevel]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT DimCustomer - two CSV lookups\Sort by EducationJoinKey.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT DimCustomer - two CSV lookups\Sort by EducationJoinKey.Outputs[Sort Output].Columns[EducationJoinKey]"
+                      dataType="wstr"
+                      length="256"
+                      lineageId="Package\DFT DimCustomer - two CSV lookups\Sort by EducationJoinKey.Outputs[Sort Output].Columns[EducationJoinKey]"
+                      name="EducationJoinKey"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\DFT DimCustomer - two CSV lookups\Read warehouse references 4.Outputs[OLE DB Source Output].Columns[EducationJoinKey]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT DimCustomer - two CSV lookups\Sort by EducationJoinKey.Outputs[Sort Output].Columns[EducationLevel]"
+                      dataType="wstr"
+                      length="256"
+                      lineageId="Package\DFT DimCustomer - two CSV lookups\Sort by EducationJoinKey.Outputs[Sort Output].Columns[EducationLevel]"
+                      name="EducationLevel">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\DFT DimCustomer - two CSV lookups\Read warehouse references 4.Outputs[OLE DB Source Output].Columns[EducationLevel]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\DFT DimCustomer - two CSV lookups.Paths[Data Conversion Output]"
+              endId="Package\DFT DimCustomer - two CSV lookups\Audit loaded rows.Inputs[Row Count Input 1]"
+              name="Data Conversion Output"
+              startId="Package\DFT DimCustomer - two CSV lookups\Explicit target column types.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\DFT DimCustomer - two CSV lookups.Paths[Derived Column Output]"
+              endId="Package\DFT DimCustomer - two CSV lookups\Lookup Age (fail unmatched).Inputs[Lookup Input]"
+              name="Derived Column Output"
+              startId="Package\DFT DimCustomer - two CSV lookups\Derive EducationCode.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\DFT DimCustomer - two CSV lookups.Paths[Lookup Match Output]"
+              endId="Package\DFT DimCustomer - two CSV lookups\Sort by EducationCode.Inputs[Sort Input]"
+              name="Lookup Match Output"
+              startId="Package\DFT DimCustomer - two CSV lookups\Lookup Age (fail unmatched).Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\DFT DimCustomer - two CSV lookups.Paths[Merge Join Output]"
+              endId="Package\DFT DimCustomer - two CSV lookups\Explicit target column types.Inputs[Data Conversion Input]"
+              name="Merge Join Output"
+              startId="Package\DFT DimCustomer - two CSV lookups\Merge education CSV on normalised key.Outputs[Merge Join Output]" />
+            <path
+              refId="Package\DFT DimCustomer - two CSV lookups.Paths[OLE DB Source Output]"
+              endId="Package\DFT DimCustomer - two CSV lookups\Derive EducationCode.Inputs[Derived Column Input]"
+              name="OLE DB Source Output"
+              startId="Package\DFT DimCustomer - two CSV lookups\Read OzMart fields 0.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\DFT DimCustomer - two CSV lookups.Paths[OLE DB Source Output1]"
+              endId="Package\DFT DimCustomer - two CSV lookups\Sort by EducationJoinKey.Inputs[Sort Input]"
+              name="OLE DB Source Output"
+              startId="Package\DFT DimCustomer - two CSV lookups\Read warehouse references 4.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\DFT DimCustomer - two CSV lookups.Paths[Row Count Output 1]"
+              endId="Package\DFT DimCustomer - two CSV lookups\Load DimCustomer.Inputs[OLE DB Destination Input]"
+              name="Row Count Output 1"
+              startId="Package\DFT DimCustomer - two CSV lookups\Audit loaded rows.Outputs[Row Count Output 1]" />
+            <path
+              refId="Package\DFT DimCustomer - two CSV lookups.Paths[Sort Output]"
+              endId="Package\DFT DimCustomer - two CSV lookups\Merge education CSV on normalised key.Inputs[Merge Join Left Input]"
+              name="Sort Output"
+              startId="Package\DFT DimCustomer - two CSV lookups\Sort by EducationCode.Outputs[Sort Output]" />
+            <path
+              refId="Package\DFT DimCustomer - two CSV lookups.Paths[Sort Output1]"
+              endId="Package\DFT DimCustomer - two CSV lookups\Merge education CSV on normalised key.Inputs[Merge Join Right Input]"
+              name="Sort Output"
+              startId="Package\DFT DimCustomer - two CSV lookups\Sort by EducationJoinKey.Outputs[Sort Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+</DTS:Executable>

@@ -1,0 +1,32 @@
+{
+  "source_sha256": "ba7fec836774b59692342e371597fff9f7006267dae01b8fb68c62f2bdc9b7e7",
+  "raw_rows": 100,
+  "unique_location_ids": 99,
+  "conflicts": {
+    "ece22fa5b9e06f5b": [
+      {
+        "location_id": "ece22fa5b9e06f5b",
+        "unit": "UNIT 50",
+        "street": "COLLINS STREET",
+        "postcode": "7109",
+        "suburb": "HUONVILLE",
+        "state": "TAS",
+        "type": "Private",
+        "status": "Updated 6-Feb-2020",
+        "region": "R2"
+      },
+      {
+        "location_id": "ece22fa5b9e06f5b",
+        "unit": "8",
+        "street": "Patterson Street",
+        "postcode": "6317",
+        "suburb": "SOUTH GLENCOE",
+        "state": "WA",
+        "type": "Business",
+        "status": "Updated 6-Feb-2020",
+        "region": "R3"
+      }
+    ]
+  },
+  "warehouse_policy": "Preserve raw rows in RefSellerLocation. One geography row per location. Conflicting location has UNK state and NULL contradictory descriptive attributes; no state assignment is inferred."
+}

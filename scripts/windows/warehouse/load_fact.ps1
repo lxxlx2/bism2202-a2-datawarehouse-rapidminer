@@ -1,8 +1,8 @@
 param([ValidateSet('A','B')][string]$Student='A')
 $ErrorActionPreference='Stop'
-$out="C:\BISM2202\submission\Student_$Student\ssis\product_geography"
+$out="C:\BISM2202\submission\Student_$Student\ssis\fact"
 New-Item -ItemType Directory -Force $out | Out-Null
-$progress=Join-Path $out 'product_geography_progress.txt'
+$progress=Join-Path $out 'fact_progress.txt'
 ('START '+(Get-Date -Format o)) | Set-Content $progress -Encoding UTF8
 $success=$false
 $log=New-Object 'System.Collections.Generic.List[string]'
@@ -62,24 +62,28 @@ try {
   }
 
 Add-Type -TypeDefinition (Get-Content -Raw (Join-Path $PSScriptRoot 'CustomerFlow.cs')) -ReferencedAssemblies $refs
-if((Sql 'SELECT COUNT_BIG(*) FROM dbo.FactSales') -ne 0){throw 'Refuse dimension reset when FactSales is populated'}
-[void](Sql "DELETE FROM dbo.DimProduct; DELETE FROM dbo.DimGeography; ALTER TABLE dbo.DimGeography DROP CONSTRAINT CK_DimGeography_State; ALTER TABLE dbo.DimGeography ADD CONSTRAINT CK_DimGeography_State CHECK (StateCode IN ('ACT','NSW','NT','QLD','SA','TAS','VIC','WA') OR (GeographyRole='Seller' AND StateCode='UNK')); SELECT 1;")
+# The assignment target is an isolated rebuildable warehouse. No source writes.
+[void](Sql 'DELETE FROM dbo.FactSales; DBCC CHECKIDENT ("dbo.FactSales", RESEED, 0) WITH NO_INFOMSGS; SELECT 1;')
 $prefix='Provider=MSOLEDBSQL;Data Source=.;Integrated Security=SSPI;TrustServerCertificate=Yes;Initial Catalog='
-$src=$prefix+'ozmart_db;';$dst=$prefix+"STUDENT_${Student}_ID_dw;"
-$rows=[BismCustomerFlow]::Product($src,$dst,(Join-Path $out '03_DimProduct.dtsx'),$Student)
-$actual=Sql 'SELECT COUNT_BIG(*) FROM dbo.DimProduct'
-Say "DIMPRODUCT SSIS_ROWS=$rows TARGET_ROWS=$actual EXPECTED=2199"
-if($rows -ne 2199 -or $actual -ne 2199){throw 'Product count mismatch'}
-$rows=[BismCustomerFlow]::Geography($src,$dst,(Join-Path $out '04_DimGeography_Customer.dtsx'),$Student,$false)
-$actual=Sql "SELECT COUNT_BIG(*) FROM dbo.DimGeography WHERE GeographyRole='Customer'"
-Say "CUSTOMER_GEOGRAPHY SSIS_ROWS=$rows TARGET_ROWS=$actual EXPECTED=1500"
-if($rows -ne 1500 -or $actual -ne 1500){throw 'Customer geography count mismatch'}
-$rows=[BismCustomerFlow]::Geography($src,$dst,(Join-Path $out '04_DimGeography_Seller.dtsx'),$Student,$true)
-$actual=Sql "SELECT COUNT_BIG(*) FROM dbo.DimGeography WHERE GeographyRole='Seller'"
-Say "SELLER_GEOGRAPHY SSIS_ROWS=$rows TARGET_ROWS=$actual EXPECTED=99"
-if($rows -ne 99 -or $actual -ne 99){throw 'Seller geography count mismatch'}
+$rows=[BismCustomerFlow]::Fact(($prefix+'ozmart_db;'),($prefix+"STUDENT_${Student}_ID_dw;"),(Join-Path $out '06_FactSales.dtsx'),$Student)
+$actual=Sql 'SELECT COUNT_BIG(*) FROM dbo.FactSales'
+Say "FACTSALES SSIS_ROWS=$rows TARGET_ROWS=$actual EXPECTED=137901"
+if($rows -ne 137901 -or $actual -ne 137901){throw 'Fact grain count mismatch'}
+$diff=Sql @'
+SELECT COUNT_BIG(*) FROM (
+ SELECT OrderItemID,OrderID,ItemSequence,ItemQuantity,SourceUnitSalesPrice,SourceLineTotal FROM dbo.FactSales
+ EXCEPT
+ SELECT order_item_id,order_id,item_sequence,item_quantity,sales_price,line_total FROM ozmart_db.dbo.order_items_table
+) t;
+'@
+if($diff -ne 0){throw 'Fact raw source fields differ'}
+$qty=Sql 'SELECT SUM(CONVERT(bigint,ItemQuantity)) FROM dbo.FactSales'
+$sourceqty=Sql 'SELECT SUM(CONVERT(bigint,item_quantity)) FROM ozmart_db.dbo.order_items_table'
+if($qty -ne $sourceqty){throw 'Fact quantity differs'}
+Say "QUANTITY=$qty"
+Say 'FACT_RAW_FIELDS_RECONCILIATION=PASS'
 $success=$true
-Say 'PRODUCT_GEOGRAPHY_RUNTIME=PASS'
-} catch {Say ('PRODUCT_GEOGRAPHY_RUNTIME=FAIL '+$_.Exception.ToString())}
-$log | Set-Content (Join-Path $out 'product_geography_results.txt') -Encoding UTF8
+Say 'FACT_RUNTIME=PASS'
+} catch {Say ('FACT_RUNTIME=FAIL '+$_.Exception.ToString())}
+$log | Set-Content (Join-Path $out 'fact_results.txt') -Encoding UTF8
 if(-not $success){exit 1}

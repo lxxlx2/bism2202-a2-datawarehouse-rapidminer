@@ -49,7 +49,7 @@ CREATE TABLE dbo.DimGeography (
  RegionCode nvarchar(16) NULL, LocationType nvarchar(32) NULL,
  CONSTRAINT UQ_DimGeography_NK UNIQUE(GeographyRole,LocationID),
  CONSTRAINT CK_DimGeography_Role CHECK (GeographyRole IN ('Customer','Seller')),
- CONSTRAINT CK_DimGeography_State CHECK (StateCode IN ('ACT','NSW','NT','QLD','SA','TAS','VIC','WA'))
+ CONSTRAINT CK_DimGeography_State CHECK (StateCode IN ('ACT','NSW','NT','QLD','SA','TAS','VIC','WA') OR (GeographyRole='Seller' AND StateCode='UNK'))
 );
 IF OBJECT_ID('dbo.FactSales','U') IS NULL
 CREATE TABLE dbo.FactSales (
