@@ -1,0 +1,126 @@
+{
+  "status": "SUPPORT_COPY_HASH_CHECK_PASS_NOT_FINAL_ACCEPTANCE",
+  "student": "B",
+  "files": [
+    {
+      "file": "code/scripts/windows/warehouse/CustomerFlow.cs",
+      "source": "scripts/windows/warehouse/CustomerFlow.cs",
+      "sha256": "556437f07e8b065a12f8d985520de6615582d4f771cd08c37f5dab0ef300e0db"
+    },
+    {
+      "file": "code/scripts/windows/warehouse/backup_restore.ps1",
+      "source": "scripts/windows/warehouse/backup_restore.ps1",
+      "sha256": "62ecd5c5a2aa929e9c3d7a7927218c5bcbf9d62043bbc191aa3aa228f757ab2c"
+    },
+    {
+      "file": "code/scripts/windows/warehouse/build_project.ps1",
+      "source": "scripts/windows/warehouse/build_project.ps1",
+      "sha256": "ce0fc4d1f110745e652a5a61d08913732647b310a533b7843d6f61c5ff0496d3"
+    },
+    {
+      "file": "code/scripts/windows/warehouse/build_project.py",
+      "source": "scripts/windows/warehouse/build_project.py",
+      "sha256": "63dad0f84f543cb87ce31583862e5292f91e793b68b31969c30d1404c4428f6e"
+    },
+    {
+      "file": "code/scripts/windows/warehouse/initial_dimseller.ps1",
+      "source": "scripts/windows/warehouse/initial_dimseller.ps1",
+      "sha256": "c39aa68a88aab6a3cdab6d3748074e503c4269c61e10efc59107df1445323b84"
+    },
+    {
+      "file": "code/scripts/windows/warehouse/load_customer.ps1",
+      "source": "scripts/windows/warehouse/load_customer.ps1",
+      "sha256": "92b12e3ab62a9c1d2ae443d0fc5f93c5608cf430a69eacff9a12e1cbecc24ae5"
+    },
+    {
+      "file": "code/scripts/windows/warehouse/load_date.ps1",
+      "source": "scripts/windows/warehouse/load_date.ps1",
+      "sha256": "d53cff4fe5f89f45b828649d808c2a26c42ba365d60ccb540f1d0ea7c3cf795c"
+    },
+    {
+      "file": "code/scripts/windows/warehouse/load_dimension_batch.ps1",
+      "source": "scripts/windows/warehouse/load_dimension_batch.ps1",
+      "sha256": "bf61f09607a834e0fd456890ae864639eac1abef8430d7abc98f3ae30acb76ae"
+    },
+    {
+      "file": "code/scripts/windows/warehouse/load_fact.ps1",
+      "source": "scripts/windows/warehouse/load_fact.ps1",
+      "sha256": "0d623c873c53d0b36b621047201bc619c32b7745223d8b4bffbc5ceed7edaf0e"
+    },
+    {
+      "file": "code/scripts/windows/warehouse/load_product_geography.ps1",
+      "source": "scripts/windows/warehouse/load_product_geography.ps1",
+      "sha256": "97edbe3c1ce03c36e258aab72209122dea1c0abc5c14547c5607805e2638e681"
+    },
+    {
+      "file": "code/scripts/windows/warehouse/load_references.ps1",
+      "source": "scripts/windows/warehouse/load_references.ps1",
+      "sha256": "909358ff25c3addb68f5abe9b1cb62ba92cbe280bc4ac21a8507ebade588e74c"
+    },
+    {
+      "file": "code/scripts/windows/warehouse/load_warehouse_master.ps1",
+      "source": "scripts/windows/warehouse/load_warehouse_master.ps1",
+      "sha256": "cd3d34aae92680516f125da9a5957e9234352d7bfed634d65b1ee938a5c729c6"
+    },
+    {
+      "file": "code/scripts/windows/warehouse/probe_components.ps1",
+      "source": "scripts/windows/warehouse/probe_components.ps1",
+      "sha256": "3e458c494a1b1a6060ba6b7501f1a657ac8eb15b41df69eef83f37a3d594d4da"
+    },
+    {
+      "file": "code/scripts/windows/warehouse/schema.sql",
+      "source": "scripts/windows/warehouse/schema.sql",
+      "sha256": "38fc9aad1a8822d2e31ad58135b5f3307053f2ae73452b9ff7b9e61d5dbb73a0"
+    },
+    {
+      "file": "code/scripts/windows/warehouse/validate_and_query.ps1",
+      "source": "scripts/windows/warehouse/validate_and_query.ps1",
+      "sha256": "d1906d8a7b0c5899040964715409ed00b2da29344b6c8d1358a25067f56d2de5"
+    },
+    {
+      "file": "code/scripts/rapidminer/NativeOperatorProbe.java",
+      "source": "scripts/rapidminer/NativeOperatorProbe.java",
+      "sha256": "68e7a3cbafe6df6e1bb4232407dab7907500c7715d09f34e2bdcbbd45d599e5a"
+    },
+    {
+      "file": "code/scripts/rapidminer/NativeProcessRunner.java",
+      "source": "scripts/rapidminer/NativeProcessRunner.java",
+      "sha256": "793a126fcc2b6fb3c9c4c453f9379625b25b3db0f4f15cd37504d24a953151d7"
+    },
+    {
+      "file": "code/scripts/rapidminer/build_processes.py",
+      "source": "scripts/rapidminer/build_processes.py",
+      "sha256": "d9524fea60f7f56c2ccc7059ef15937c0e926fb86a08d018cdaea8601205bfeb"
+    },
+    {
+      "file": "code/scripts/rapidminer/build_submission_process.py",
+      "source": "scripts/rapidminer/build_submission_process.py",
+      "sha256": "652e525eb7c2893b4fa4f75fbaf7accd4f64b9c319b7678e91ba789e37a9a842"
+    },
+    {
+      "file": "code/scripts/rapidminer/probe_native.sh",
+      "source": "scripts/rapidminer/probe_native.sh",
+      "sha256": "05ac4ecaf1cc8ed523e0764f932b99daee2b62df852d8eacef1beab2f765a9a7"
+    },
+    {
+      "file": "code/scripts/rapidminer/run_native.sh",
+      "source": "scripts/rapidminer/run_native.sh",
+      "sha256": "a252007e09b65031e50fb9cb404980c2fb93c4b18deac4de10acf5473fa82785"
+    },
+    {
+      "file": "code/scripts/rapidminer/verify_native_results.py",
+      "source": "scripts/rapidminer/verify_native_results.py",
+      "sha256": "a2b4eb5c1bbfd67d75081d82e6911b3bbefdaec4474dcb534ca1fface83d4311"
+    },
+    {
+      "file": "code/scripts/analysis/audit_loan_csv.py",
+      "source": "scripts/analysis/audit_loan_csv.py",
+      "sha256": "d663231b71e9951e4a621440a1c9765bda8537404c170dadf33f3260047ef160"
+    },
+    {
+      "file": "rapidminer/data/BISM2202_A2_Loan_Data_Set_RapidMiner2026S2.csv",
+      "source": "requirements/extracted/RapidMiner/BISM2202_A2_Loan_Data_Set_RapidMiner2026S2.csv",
+      "sha256": "b333abef401d01dce2b0115b65649400238c01d9362b328c8ca1c4c19876d00a"
+    }
+  ]
+}

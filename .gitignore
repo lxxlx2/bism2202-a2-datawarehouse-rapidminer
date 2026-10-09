@@ -24,3 +24,7 @@ __pycache__/
 
 # Complete local AI prompt/output record is for student review, not public Git.
 submission/shared/ai_disclosure/*_record.md
+
+# Unchanged teacher dataset accompanies local delivery without public duplication.
+submission/**/rapidminer/data/*.csv
+submission/**/code/scripts/

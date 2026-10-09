@@ -1,0 +1,11 @@
+{
+  "status": "GENUINE_NATIVE_CUSTOMER_CAPTURE_SAVED_OTHER_GUI_GATES_PENDING",
+  "capture_method": "UTM screenshot through cua_repl, unchanged bytes",
+  "file": "ssis_dimcustomer.png",
+  "sha256": "9325cb9ad5cfb67bc61890beebddcb33ef8fe5406d10b23e9363338a572830ec",
+  "student": "A",
+  "data_flow": "DFT Student_A_DimCustomer_Lookup",
+  "path_rows": 21000,
+  "package_success_bar_visible": true,
+  "native_visual_note": "Components grey after completed execution; Derived Column warning preserved. No green component colour was invented."
+}
