@@ -1,0 +1,25 @@
+{
+  "status": "NATIVE_SCREENSHOT_VISUAL_REVIEW_PASS",
+  "reviewed_at_utc": "2026-10-09T21:35:45.552340+00:00",
+  "images": [
+    {
+      "file": "ssis_geography_customer.png",
+      "sha256": "08f9214925790eba89fef13bd57b3af17510264f39b9117c51fd2fbd59272c45",
+      "native_task": "DFT Student_A_DimGeography_Customer",
+      "native_zoom_percent": 80,
+      "native_path_rows": 1500,
+      "complete_components": [
+        "Read OzMart fields 0",
+        "Lookup StateName (fail unmatched)",
+        "Derive GeographyRole",
+        "Explicit target column types",
+        "Audit loaded rows",
+        "Load DimGeography"
+      ],
+      "package_success_visible": true,
+      "method": "Actual Windows desktop pixels captured with System.Drawing.Graphics.CopyFromScreen; no screenshot redrawing or pixel changes",
+      "visuals_preserved": "Grey completed components, native unused-column warning, row labels and package success bar retained"
+    }
+  ],
+  "rejected_attempts": "Selector-only changes and captures with an RPC error dialog were excluded from delivery evidence. Script exit success alone is not visual acceptance."
+}

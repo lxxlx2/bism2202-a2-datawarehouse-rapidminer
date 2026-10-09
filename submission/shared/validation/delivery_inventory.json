@@ -51,7 +51,7 @@
           "sha256": "588718b9000012fdb2bc74ddb64257eb1275059a1d29721d606ed21bd238da23"
         }
       ],
-      "unchanged_support_copies": 24,
+      "unchanged_support_copies": 26,
       "support_hashes": "PASS",
       "required_report_images": [
         {
@@ -76,11 +76,15 @@
         },
         {
           "file": "submission/Student_A/evidence/gui/ssis_dimdate.png",
-          "exists": false
+          "exists": true,
+          "bytes": 1102243,
+          "sha256": "2b9e9a82fa5e2b9068252397a5fd9b4644bf6dae8e711354bc036903697666ae"
         },
         {
           "file": "submission/Student_A/evidence/gui/ssis_geography_customer.png",
-          "exists": false
+          "exists": true,
+          "bytes": 88853,
+          "sha256": "08f9214925790eba89fef13bd57b3af17510264f39b9117c51fd2fbd59272c45"
         },
         {
           "file": "submission/Student_A/evidence/gui/ssis_geography_seller.png",
@@ -135,7 +139,7 @@
           "exists": false
         }
       ],
-      "missing_report_images": 17,
+      "missing_report_images": 15,
       "final_report_files": [
         {
           "file": "submission/Student_A/report/STUDENT_A_ID.docx",
@@ -206,7 +210,7 @@
           "sha256": "531ec4943b4ab9af10e3f07b64a53e037779e1c507b1979c2a42b8dc5f5428fe"
         }
       ],
-      "unchanged_support_copies": 24,
+      "unchanged_support_copies": 26,
       "support_hashes": "PASS",
       "required_report_images": [
         {

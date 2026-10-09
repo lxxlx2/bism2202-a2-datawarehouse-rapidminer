@@ -1,0 +1,7 @@
+{
+  "Status": "POWERSHELL_SYNTAX_PASS_NOT_GUI_ACCEPTANCE",
+  "Errors": [],
+  "script": "scripts/windows/warehouse/capture_designer_flows.ps1",
+  "sha256": "9222d892315f2678808cb868297ec506b4b69b62298fc2e1d03f38f62b6a03ea",
+  "guest_byte_readback_matches_source": true
+}

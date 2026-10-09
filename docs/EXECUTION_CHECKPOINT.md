@@ -68,3 +68,12 @@ No model is validated for lending. Student IDs remain explicit placeholders.
 - A complete Customer Data Flow was captured directly from UTM after the real successful Designer execution. Native paths show 21,000 rows; the package success bar remains visible. Components are grey after completion, with an unused-column warning on Derived Column; these native visuals were preserved without editing.
 - Keyboard navigation and Visual Studio full-screen view allowed a complete 60% flow capture; mouse clicks still do not reliably reach Windows. Other required native flows and query/model panels remain pending.
 - Both local deliveries now contain unchanged implementation code copies and the immutable loan CSV, with 24 source-to-copy SHA256 comparisons passing per student. RMP files remain unchanged; relocation instructions require editing only source_csv.
+
+## Command takeover and native Geography evidence
+
+- The human explicitly authorised command takeover. Native Windows UI Automation and real desktop CopyFromScreen capture were used in the existing Administrator interactive session; no access rights or software were added.
+- The UTM CLI accepts the executable and arguments after a single --cmd option. Repeating --cmd did not execute the intended helper. A written/read-back probe established the working syntax. CLI exit zero is not accepted as execution proof.
+- A complete native Customer Geography screenshot was visually reviewed at 80%: all six components, 1,500 rows and package-success bar are visible. Selector-only changes and RPC-error-dialog captures were rejected. Native Date and Customer metadata screenshots were also saved.
+- Native script output denotes capture creation, not final visual acceptance. A Seller Geography image whose selector said Seller while the canvas still showed 1,500 Customer rows was rejected. Further selection repair and screenshots remain pending.
+- Unchanged support copies now total 26 per student. Current acceptance reports remain PARTIAL, and remaining images are recorded by the live delivery inventory.
+- Computer Use reported the Mac locked again; manual unlock was requested. Windows command work continued independently. No FINAL report or assignment ZIP was promoted.

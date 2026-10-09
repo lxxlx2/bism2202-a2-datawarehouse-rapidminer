@@ -1,0 +1,26 @@
+{
+  "status": "GENUINE_NATIVE_CAPTURES_SAVED_GUI_ACCEPTANCE_STILL_PARTIAL",
+  "student": "A",
+  "files": [
+    {
+      "file": "ssis_customer_output_metadata.png",
+      "sha256": "52aa3eb0f3ec897fc1797207afb048d6c9a7dfaad8d83bc7bfc99c70ec663713",
+      "pixels": [
+        2048,
+        1616
+      ],
+      "method": "cua_repl UTM native screenshot; original unchanged bytes",
+      "observed": "Native Data Flow Path Editor Metadata panel after Education Lookup; eight actual output columns and SSIS data types visible, some column names naturally abbreviated."
+    },
+    {
+      "file": "ssis_dimdate.png",
+      "sha256": "2b9e9a82fa5e2b9068252397a5fd9b4644bf6dae8e711354bc036903697666ae",
+      "pixels": [
+        2048,
+        1616
+      ],
+      "method": "cua_repl UTM native screenshot; original unchanged bytes",
+      "observed": "Complete native Date flow after the real successful Master run; 25,000 source order rows and 493 deduplicated output dates visible. Native grey components and warning icons preserved."
+    }
+  ]
+}

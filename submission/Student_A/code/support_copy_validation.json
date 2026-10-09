@@ -23,9 +23,19 @@
       "sha256": "63dad0f84f543cb87ce31583862e5292f91e793b68b31969c30d1404c4428f6e"
     },
     {
+      "file": "code/scripts/windows/warehouse/capture_designer_flows.ps1",
+      "source": "scripts/windows/warehouse/capture_designer_flows.ps1",
+      "sha256": "9222d892315f2678808cb868297ec506b4b69b62298fc2e1d03f38f62b6a03ea"
+    },
+    {
       "file": "code/scripts/windows/warehouse/initial_dimseller.ps1",
       "source": "scripts/windows/warehouse/initial_dimseller.ps1",
       "sha256": "c39aa68a88aab6a3cdab6d3748074e503c4269c61e10efc59107df1445323b84"
+    },
+    {
+      "file": "code/scripts/windows/warehouse/inspect_designer_ui.ps1",
+      "source": "scripts/windows/warehouse/inspect_designer_ui.ps1",
+      "sha256": "a5b7cfe34491936c1f9bbb9a28d03ed01b6df92e9b09e525b4997ed139c43960"
     },
     {
       "file": "code/scripts/windows/warehouse/load_customer.ps1",
