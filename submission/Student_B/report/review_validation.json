@@ -1,0 +1,59 @@
+{
+  "mode": "REVIEW_INCOMPLETE",
+  "student": "B",
+  "docx": "/Users/jerson/antigravity-agent-test/bism2202-a2-datawarehouse-rapidminer/work/report_review/Student_B/STUDENT_B_ID.docx",
+  "missing_genuine_images": [
+    "/Users/jerson/antigravity-agent-test/bism2202-a2-datawarehouse-rapidminer/submission/Student_B/evidence/gui/ssis_dimcustomer.png",
+    "/Users/jerson/antigravity-agent-test/bism2202-a2-datawarehouse-rapidminer/submission/Student_B/evidence/gui/ssis_dimproduct.png",
+    "/Users/jerson/antigravity-agent-test/bism2202-a2-datawarehouse-rapidminer/submission/Student_B/evidence/gui/ssis_dimseller.png",
+    "/Users/jerson/antigravity-agent-test/bism2202-a2-datawarehouse-rapidminer/submission/Student_B/evidence/gui/ssis_dimdate.png",
+    "/Users/jerson/antigravity-agent-test/bism2202-a2-datawarehouse-rapidminer/submission/Student_B/evidence/gui/ssis_geography_customer.png",
+    "/Users/jerson/antigravity-agent-test/bism2202-a2-datawarehouse-rapidminer/submission/Student_B/evidence/gui/ssis_geography_seller.png",
+    "/Users/jerson/antigravity-agent-test/bism2202-a2-datawarehouse-rapidminer/submission/Student_B/evidence/gui/ssis_fact.png",
+    "/Users/jerson/antigravity-agent-test/bism2202-a2-datawarehouse-rapidminer/submission/Student_B/evidence/gui/sql_Q4_1.png",
+    "/Users/jerson/antigravity-agent-test/bism2202-a2-datawarehouse-rapidminer/submission/Student_B/evidence/gui/sql_Q4_2.png",
+    "/Users/jerson/antigravity-agent-test/bism2202-a2-datawarehouse-rapidminer/submission/Student_B/evidence/gui/sql_Q4_3.png",
+    "/Users/jerson/antigravity-agent-test/bism2202-a2-datawarehouse-rapidminer/submission/Student_B/evidence/gui/model1_process.png",
+    "/Users/jerson/antigravity-agent-test/bism2202-a2-datawarehouse-rapidminer/submission/Student_B/evidence/gui/model1_cv.png",
+    "/Users/jerson/antigravity-agent-test/bism2202-a2-datawarehouse-rapidminer/submission/Student_B/evidence/gui/model2_process.png",
+    "/Users/jerson/antigravity-agent-test/bism2202-a2-datawarehouse-rapidminer/submission/Student_B/evidence/gui/model2_cv.png",
+    "/Users/jerson/antigravity-agent-test/bism2202-a2-datawarehouse-rapidminer/submission/Student_B/evidence/gui/model1_result.png",
+    "/Users/jerson/antigravity-agent-test/bism2202-a2-datawarehouse-rapidminer/submission/Student_B/evidence/gui/model2_result.png",
+    "/Users/jerson/antigravity-agent-test/bism2202-a2-datawarehouse-rapidminer/submission/Student_B/evidence/gui/model1_performance.png",
+    "/Users/jerson/antigravity-agent-test/bism2202-a2-datawarehouse-rapidminer/submission/Student_B/evidence/gui/model2_performance.png"
+  ],
+  "original_sha256": "485144ccdaf745eec9ca00ab5ed239faaa6f996dd0b6f78959f0f13c8ff84def",
+  "preserve_only_parts": "PASS",
+  "word_counts": {
+    "process": 89,
+    "recommendations": 168,
+    "ethics": 207,
+    "predictors": 89,
+    "comparison": 117,
+    "dimensions": 283,
+    "implementation": 207,
+    "executive_summary": 210,
+    "query_4_1": 92,
+    "query_4_2": 88,
+    "query_4_3": 114
+  },
+  "visual_review": {
+    "status": "PASS_REVIEW_DRAFT_LAYOUT",
+    "pdf": "work/report_review/Student_B/render_v8/STUDENT_B_ID.pdf",
+    "pages": 9,
+    "pages_inspected": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "method": "Independent pdftoppm PNG review; B v8 unchanged page bytes reuse v7 review, changed page 4 inspected again",
+    "native_images": "MISSING_FINAL_BLOCKED"
+  },
+  "docx_sha256": "2c7b4ce2d8c431ace11bf23f3b5cf8d53bb5c6331303a2cd81536a44bd3ed92d"
+}

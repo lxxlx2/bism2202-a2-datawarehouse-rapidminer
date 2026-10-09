@@ -50,9 +50,10 @@ Current full-package milestone:
 
 Pending completion:
 
-- Genuine Designer and SSMS screenshots; GUI project reopen;
-  native AI Studio GUI screenshots; original-template reports and every-page
-  rendered QA; final AI export, manifests and ZIPs.
+- A project reopened in native Visual Studio and its Master completed successfully in the Designer. The genuine success capture is saved. A SQL validation/query export was refreshed after this GUI execution; the new backup actually restored to STUDENT_A_ID_dw_restore_validation_20261009042850 and passed ten full-table comparisons, CHECKDB and all four restored queries. Its downloaded SHA-256 is dd92262915ce8c0426582ce0c50a7fdb06fd838d74d24d378b55ba4207db5ec1.
+- A/B original-template review DOCX/PDF drafts are built and their nine pages each were visually reviewed. All required native report slots remain missing; FINAL mode refuses incomplete output. Editable SQL boxes use native Word cells with the original purple border; the teacher source remains immutable.
+- A/B SSIS project ZIPs now include the actual native projects, ISPACs, unchanged reference CSVs, schema and run instructions; ZIP integrity passed. These are project archives, not final assignment ZIPs.
+- Pending: complete Designer and SSMS images, B GUI reopen/run evidence, AI Studio GUI screenshots, image-filled report render QA, final AI export/manifests and assignment ZIPs.
 - Mac unlocked and UTM capture manually released. Get-Date was visibly executed
   through the native UI. Background scheduled jobs still steal foreground focus;
   GUI evidence will follow completion of the CLI work.

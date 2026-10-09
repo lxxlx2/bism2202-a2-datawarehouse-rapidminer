@@ -1,11 +1,11 @@
 {
-  "exported_at_utc": "2026-10-09T05:24:03.981734+00:00",
-  "source_session_sha256": "b644d968e3348e3381ce9f0304b4d10dd1e16bc11abf2abcf9d297e030153fcf",
-  "export_sha256": "c2d0f0a0f72c197aa1162977c3d535d9f318c0ff7d2c739a36e0c9efc4674f54",
+  "exported_at_utc": "2026-10-09T16:05:03.063672+00:00",
+  "source_session_sha256": "659818f5e62e0e27aa5bd4130da6cb165730349913e4097e8a09ec10180116fa",
+  "export_sha256": "07f81b3f0969aebfb0b4fb6558753d2b240d48667a01e9575bbd846275c02aca",
   "counts": {
-    "human_messages": 7,
-    "assistant_messages": 37,
-    "ai_tool_inputs": 352
+    "human_messages": 10,
+    "assistant_messages": 54,
+    "ai_tool_inputs": 554
   },
   "scope": "Visible messages and AI tool inputs only; native outputs provided separately",
   "student_review": "PENDING",

@@ -1,8 +1,8 @@
 {
   "A": {
     "backup": "submission/Student_A/database/STUDENT_A_ID_dw.bak",
-    "bytes": 28227584,
-    "sha256": "43aa115d4b073cefd4ee94f37ea2d0a1092542f6afe493aab0b840f7b2c591da",
+    "bytes": 28447232,
+    "sha256": "dd92262915ce8c0426582ce0c50a7fdb06fd838d74d24d378b55ba4207db5ec1",
     "actual_restore": "PASS",
     "full_rows_and_restored_queries": "PASS",
     "visual_studio_native_build": "PASS",
@@ -12,7 +12,10 @@
       "product version",
       "UI editor assembly metadata",
       "path refId renaming and path element order; actual endpoints preserved"
-    ]
+    ],
+    "native_designer_execution": "PASS",
+    "restore_database": "STUDENT_A_ID_dw_restore_validation_20261009042850",
+    "execution_screenshot": "submission/Student_A/evidence/gui/ssis_execution_success.png"
   },
   "B": {
     "backup": "submission/Student_B/database/STUDENT_B_ID_dw.bak",
