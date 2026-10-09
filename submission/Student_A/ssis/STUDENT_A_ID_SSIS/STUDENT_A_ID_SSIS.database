@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='utf-8'?>
+<ns0:Database xmlns:ns0="http://schemas.microsoft.com/analysisservices/2003/engine" xmlns:ns1="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" ns1:design-time-name="1f607165-7b5a-4bcc-8933-32499823f1c3">
+  <ns0:ID>STUDENT_A_ID_SSIS</ns0:ID>
+  <ns0:Name>STUDENT_A_ID_SSIS</ns0:Name>
+  <ns0:CreatedTimestamp>0001-01-01T00:00:00Z</ns0:CreatedTimestamp>
+  <ns0:LastSchemaUpdate>0001-01-01T00:00:00Z</ns0:LastSchemaUpdate>
+  <ns0:LastProcessed>0001-01-01T00:00:00Z</ns0:LastProcessed>
+  <ns0:State>Unprocessed</ns0:State>
+  <ns0:LastUpdate>0001-01-01T00:00:00Z</ns0:LastUpdate>
+  <ns0:DataSourceImpersonationInfo>
+    <ns0:ImpersonationMode>Default</ns0:ImpersonationMode>
+    <ns0:ImpersonationInfoSecurity>Unchanged</ns0:ImpersonationInfoSecurity>
+  </ns0:DataSourceImpersonationInfo>
+</ns0:Database>

@@ -1,0 +1,32 @@
+{
+  "A": {
+    "backup": "submission/Student_A/database/STUDENT_A_ID_dw.bak",
+    "bytes": 28227584,
+    "sha256": "43aa115d4b073cefd4ee94f37ea2d0a1092542f6afe493aab0b840f7b2c591da",
+    "actual_restore": "PASS",
+    "full_rows_and_restored_queries": "PASS",
+    "visual_studio_native_build": "PASS",
+    "ispac_sha256": "5cd567df4630de33c973579b4d0bf1257e3e204b529d164f6f5951da8875cc24",
+    "ispac_master_semantic_comparison": "PASS",
+    "semantic_comparison_exclusions": [
+      "product version",
+      "UI editor assembly metadata",
+      "path refId renaming and path element order; actual endpoints preserved"
+    ]
+  },
+  "B": {
+    "backup": "submission/Student_B/database/STUDENT_B_ID_dw.bak",
+    "bytes": 28497408,
+    "sha256": "f2d9d08c6da0eea3112ecc6359b29262b370e0e3634cf235b30a1cab2927bb77",
+    "actual_restore": "PASS",
+    "full_rows_and_restored_queries": "PASS",
+    "visual_studio_native_build": "PASS",
+    "ispac_sha256": "6340e1e6e11c22a0995dc6d76a5bf236d29d453172ae028a333d0a14416aba19",
+    "ispac_master_semantic_comparison": "PASS",
+    "semantic_comparison_exclusions": [
+      "product version",
+      "UI editor assembly metadata",
+      "path refId renaming and path element order; actual endpoints preserved"
+    ]
+  }
+}

@@ -1,0 +1,26 @@
+﻿[
+    {
+        "ObjectName":  "FactSales",
+        "Rows":  137901
+    },
+    {
+        "ObjectName":  "DimCustomer",
+        "Rows":  21000
+    },
+    {
+        "ObjectName":  "DimProduct",
+        "Rows":  2199
+    },
+    {
+        "ObjectName":  "DimSeller",
+        "Rows":  100
+    },
+    {
+        "ObjectName":  "DimGeography",
+        "Rows":  1599
+    },
+    {
+        "ObjectName":  "DimDate",
+        "Rows":  493
+    }
+]

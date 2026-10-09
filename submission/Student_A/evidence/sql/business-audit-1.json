@@ -1,0 +1,37 @@
+﻿[
+    {
+        "StateCode":  "NSW",
+        "Items":  35861,
+        "Sellers":  26
+    },
+    {
+        "StateCode":  "QLD",
+        "Items":  35927,
+        "Sellers":  26
+    },
+    {
+        "StateCode":  "SA",
+        "Items":  9572,
+        "Sellers":  7
+    },
+    {
+        "StateCode":  "TAS",
+        "Items":  4145,
+        "Sellers":  3
+    },
+    {
+        "StateCode":  "UNK",
+        "Items":  2797,
+        "Sellers":  2
+    },
+    {
+        "StateCode":  "VIC",
+        "Items":  42713,
+        "Sellers":  31
+    },
+    {
+        "StateCode":  "WA",
+        "Items":  6886,
+        "Sellers":  5
+    }
+]

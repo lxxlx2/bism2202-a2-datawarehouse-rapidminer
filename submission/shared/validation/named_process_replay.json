@@ -1,0 +1,19 @@
+{
+  "results": [
+    {
+      "student": "A",
+      "named_process_default_native_replay": "PASS",
+      "frozen_cv_exact_text_match": true,
+      "performance_sha256": "c97e997d8d918ef315f069e776c13a5e73a4797466d4d973acea3920515faff0",
+      "holdout_reexecuted": false
+    },
+    {
+      "student": "B",
+      "named_process_default_native_replay": "PASS",
+      "frozen_cv_exact_text_match": true,
+      "performance_sha256": "ed16ff46e1894577ce0657d073e698beaa09786055ded5fef3feea8c89a9d29f",
+      "holdout_reexecuted": false
+    }
+  ],
+  "gui_reopen": "PENDING"
+}

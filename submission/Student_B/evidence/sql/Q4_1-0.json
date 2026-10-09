@@ -1,0 +1,50 @@
+﻿[
+    {
+        "StateCode":  "ACT",
+        "Age":  19,
+        "Revenue":  5044.0570,
+        "Position":  1
+    },
+    {
+        "StateCode":  "NSW",
+        "Age":  57,
+        "Revenue":  44167.3311,
+        "Position":  1
+    },
+    {
+        "StateCode":  "NT",
+        "Age":  71,
+        "Revenue":  9880.3241,
+        "Position":  1
+    },
+    {
+        "StateCode":  "QLD",
+        "Age":  40,
+        "Revenue":  39449.2688,
+        "Position":  1
+    },
+    {
+        "StateCode":  "SA",
+        "Age":  81,
+        "Revenue":  32235.4120,
+        "Position":  1
+    },
+    {
+        "StateCode":  "TAS",
+        "Age":  85,
+        "Revenue":  15084.7479,
+        "Position":  1
+    },
+    {
+        "StateCode":  "VIC",
+        "Age":  35,
+        "Revenue":  31673.9412,
+        "Position":  1
+    },
+    {
+        "StateCode":  "WA",
+        "Age":  31,
+        "Revenue":  19051.9916,
+        "Position":  1
+    }
+]

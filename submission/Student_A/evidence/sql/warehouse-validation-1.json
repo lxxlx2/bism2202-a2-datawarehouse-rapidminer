@@ -1,0 +1,44 @@
+﻿[
+    {
+        "OrderStatus":  "approved",
+        "Items":  22646,
+        "Units":  113089,
+        "SuppliedLineAmount":  5177717.3802,
+        "RecalculatedAmount":  5177804.6594
+    },
+    {
+        "OrderStatus":  "created",
+        "Items":  22575,
+        "Units":  112196,
+        "SuppliedLineAmount":  5102641.4045,
+        "RecalculatedAmount":  5102727.2726
+    },
+    {
+        "OrderStatus":  "delivered",
+        "Items":  23187,
+        "Units":  115739,
+        "SuppliedLineAmount":  5378913.1218,
+        "RecalculatedAmount":  5379004.2797
+    },
+    {
+        "OrderStatus":  "invoiced",
+        "Items":  22940,
+        "Units":  115116,
+        "SuppliedLineAmount":  5293291.8404,
+        "RecalculatedAmount":  5293380.1072
+    },
+    {
+        "OrderStatus":  "processing",
+        "Items":  22900,
+        "Units":  114362,
+        "SuppliedLineAmount":  5193631.3248,
+        "RecalculatedAmount":  5193720.5516
+    },
+    {
+        "OrderStatus":  "shipped",
+        "Items":  23653,
+        "Units":  117865,
+        "SuppliedLineAmount":  5339769.3043,
+        "RecalculatedAmount":  5339860.8542
+    }
+]

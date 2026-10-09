@@ -1,0 +1,2 @@
+﻿VISUAL_STUDIO_NATIVE_BUILD=PASS
+ISPAC=C:\BISM2202\submission\Student_A\ssis\STUDENT_A_ID_SSIS\bin\Development\STUDENT_A_ID_SSIS.ispac

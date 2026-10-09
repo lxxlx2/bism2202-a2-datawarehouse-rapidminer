@@ -1,0 +1,322 @@
+﻿[
+    {
+        "StateCode":  "ACT",
+        "CategoryID":  "PC_2",
+        "CategoryName":  "Toys \u0026 Games ",
+        "UnitsSold":  255,
+        "Revenue":  9086.9040,
+        "Position":  1
+    },
+    {
+        "StateCode":  "ACT",
+        "CategoryID":  "PC_3",
+        "CategoryName":  "Clothing, Shoes \u0026 Jewelry ",
+        "UnitsSold":  42,
+        "Revenue":  2804.4020,
+        "Position":  2
+    },
+    {
+        "StateCode":  "ACT",
+        "CategoryID":  "PC_1",
+        "CategoryName":  "Home \u0026 Kitchen ",
+        "UnitsSold":  27,
+        "Revenue":  625.7590,
+        "Position":  3
+    },
+    {
+        "StateCode":  "ACT",
+        "CategoryID":  "PC_5",
+        "CategoryName":  "Sports \u0026 Outdoors ",
+        "UnitsSold":  14,
+        "Revenue":  233.1280,
+        "Position":  4
+    },
+    {
+        "StateCode":  "ACT",
+        "CategoryID":  "PC_16",
+        "CategoryName":  "Industrial \u0026 Scientific ",
+        "UnitsSold":  9,
+        "Revenue":  198.9360,
+        "Position":  5
+    },
+    {
+        "StateCode":  "NSW",
+        "CategoryID":  "PC_2",
+        "CategoryName":  "Toys \u0026 Games ",
+        "UnitsSold":  24667,
+        "Revenue":  1124009.6842,
+        "Position":  1
+    },
+    {
+        "StateCode":  "NSW",
+        "CategoryID":  "PC_3",
+        "CategoryName":  "Clothing, Shoes \u0026 Jewelry ",
+        "UnitsSold":  2576,
+        "Revenue":  154621.5617,
+        "Position":  2
+    },
+    {
+        "StateCode":  "NSW",
+        "CategoryID":  "PC_5",
+        "CategoryName":  "Sports \u0026 Outdoors ",
+        "UnitsSold":  2274,
+        "Revenue":  97375.1941,
+        "Position":  3
+    },
+    {
+        "StateCode":  "NSW",
+        "CategoryID":  "PC_1",
+        "CategoryName":  "Home \u0026 Kitchen ",
+        "UnitsSold":  2173,
+        "Revenue":  109655.6051,
+        "Position":  4
+    },
+    {
+        "StateCode":  "NSW",
+        "CategoryID":  "PC_6",
+        "CategoryName":  "Baby Products ",
+        "UnitsSold":  714,
+        "Revenue":  33849.7350,
+        "Position":  5
+    },
+    {
+        "StateCode":  "NT",
+        "CategoryID":  "PC_2",
+        "CategoryName":  "Toys \u0026 Games ",
+        "UnitsSold":  1713,
+        "Revenue":  89707.0229,
+        "Position":  1
+    },
+    {
+        "StateCode":  "NT",
+        "CategoryID":  "PC_5",
+        "CategoryName":  "Sports \u0026 Outdoors ",
+        "UnitsSold":  203,
+        "Revenue":  23764.4917,
+        "Position":  2
+    },
+    {
+        "StateCode":  "NT",
+        "CategoryID":  "PC_1",
+        "CategoryName":  "Home \u0026 Kitchen ",
+        "UnitsSold":  165,
+        "Revenue":  5022.2180,
+        "Position":  3
+    },
+    {
+        "StateCode":  "NT",
+        "CategoryID":  "PC_3",
+        "CategoryName":  "Clothing, Shoes \u0026 Jewelry ",
+        "UnitsSold":  159,
+        "Revenue":  9608.4869,
+        "Position":  4
+    },
+    {
+        "StateCode":  "NT",
+        "CategoryID":  "PC_8",
+        "CategoryName":  "Arts, Crafts \u0026 Sewing ",
+        "UnitsSold":  60,
+        "Revenue":  1970.2300,
+        "Position":  5
+    },
+    {
+        "StateCode":  "QLD",
+        "CategoryID":  "PC_2",
+        "CategoryName":  "Toys \u0026 Games ",
+        "UnitsSold":  17836,
+        "Revenue":  817222.9517,
+        "Position":  1
+    },
+    {
+        "StateCode":  "QLD",
+        "CategoryID":  "PC_3",
+        "CategoryName":  "Clothing, Shoes \u0026 Jewelry ",
+        "UnitsSold":  1991,
+        "Revenue":  95906.2014,
+        "Position":  2
+    },
+    {
+        "StateCode":  "QLD",
+        "CategoryID":  "PC_1",
+        "CategoryName":  "Home \u0026 Kitchen ",
+        "UnitsSold":  1770,
+        "Revenue":  86468.7981,
+        "Position":  3
+    },
+    {
+        "StateCode":  "QLD",
+        "CategoryID":  "PC_5",
+        "CategoryName":  "Sports \u0026 Outdoors ",
+        "UnitsSold":  1742,
+        "Revenue":  97912.2998,
+        "Position":  4
+    },
+    {
+        "StateCode":  "QLD",
+        "CategoryID":  "PC_6",
+        "CategoryName":  "Baby Products ",
+        "UnitsSold":  541,
+        "Revenue":  16806.2330,
+        "Position":  5
+    },
+    {
+        "StateCode":  "SA",
+        "CategoryID":  "PC_2",
+        "CategoryName":  "Toys \u0026 Games ",
+        "UnitsSold":  10573,
+        "Revenue":  512762.4318,
+        "Position":  1
+    },
+    {
+        "StateCode":  "SA",
+        "CategoryID":  "PC_3",
+        "CategoryName":  "Clothing, Shoes \u0026 Jewelry ",
+        "UnitsSold":  1197,
+        "Revenue":  45346.2389,
+        "Position":  2
+    },
+    {
+        "StateCode":  "SA",
+        "CategoryID":  "PC_5",
+        "CategoryName":  "Sports \u0026 Outdoors ",
+        "UnitsSold":  971,
+        "Revenue":  31541.7730,
+        "Position":  3
+    },
+    {
+        "StateCode":  "SA",
+        "CategoryID":  "PC_1",
+        "CategoryName":  "Home \u0026 Kitchen ",
+        "UnitsSold":  876,
+        "Revenue":  35836.8710,
+        "Position":  4
+    },
+    {
+        "StateCode":  "SA",
+        "CategoryID":  "PC_6",
+        "CategoryName":  "Baby Products ",
+        "UnitsSold":  299,
+        "Revenue":  11929.8509,
+        "Position":  5
+    },
+    {
+        "StateCode":  "TAS",
+        "CategoryID":  "PC_2",
+        "CategoryName":  "Toys \u0026 Games ",
+        "UnitsSold":  2832,
+        "Revenue":  149979.0321,
+        "Position":  1
+    },
+    {
+        "StateCode":  "TAS",
+        "CategoryID":  "PC_1",
+        "CategoryName":  "Home \u0026 Kitchen ",
+        "UnitsSold":  307,
+        "Revenue":  11084.2890,
+        "Position":  2
+    },
+    {
+        "StateCode":  "TAS",
+        "CategoryID":  "PC_3",
+        "CategoryName":  "Clothing, Shoes \u0026 Jewelry ",
+        "UnitsSold":  303,
+        "Revenue":  12907.0011,
+        "Position":  3
+    },
+    {
+        "StateCode":  "TAS",
+        "CategoryID":  "PC_5",
+        "CategoryName":  "Sports \u0026 Outdoors ",
+        "UnitsSold":  261,
+        "Revenue":  11922.1650,
+        "Position":  4
+    },
+    {
+        "StateCode":  "TAS",
+        "CategoryID":  "PC_6",
+        "CategoryName":  "Baby Products ",
+        "UnitsSold":  80,
+        "Revenue":  2943.4880,
+        "Position":  5
+    },
+    {
+        "StateCode":  "VIC",
+        "CategoryID":  "PC_2",
+        "CategoryName":  "Toys \u0026 Games ",
+        "UnitsSold":  17914,
+        "Revenue":  795259.7659,
+        "Position":  1
+    },
+    {
+        "StateCode":  "VIC",
+        "CategoryID":  "PC_3",
+        "CategoryName":  "Clothing, Shoes \u0026 Jewelry ",
+        "UnitsSold":  1852,
+        "Revenue":  71695.5963,
+        "Position":  2
+    },
+    {
+        "StateCode":  "VIC",
+        "CategoryID":  "PC_5",
+        "CategoryName":  "Sports \u0026 Outdoors ",
+        "UnitsSold":  1646,
+        "Revenue":  94419.8312,
+        "Position":  3
+    },
+    {
+        "StateCode":  "VIC",
+        "CategoryID":  "PC_1",
+        "CategoryName":  "Home \u0026 Kitchen ",
+        "UnitsSold":  1493,
+        "Revenue":  62915.0201,
+        "Position":  4
+    },
+    {
+        "StateCode":  "VIC",
+        "CategoryID":  "PC_6",
+        "CategoryName":  "Baby Products ",
+        "UnitsSold":  550,
+        "Revenue":  26571.3142,
+        "Position":  5
+    },
+    {
+        "StateCode":  "WA",
+        "CategoryID":  "PC_2",
+        "CategoryName":  "Toys \u0026 Games ",
+        "UnitsSold":  7390,
+        "Revenue":  340580.7825,
+        "Position":  1
+    },
+    {
+        "StateCode":  "WA",
+        "CategoryID":  "PC_3",
+        "CategoryName":  "Clothing, Shoes \u0026 Jewelry ",
+        "UnitsSold":  717,
+        "Revenue":  32540.8511,
+        "Position":  2
+    },
+    {
+        "StateCode":  "WA",
+        "CategoryID":  "PC_1",
+        "CategoryName":  "Home \u0026 Kitchen ",
+        "UnitsSold":  707,
+        "Revenue":  40109.1936,
+        "Position":  3
+    },
+    {
+        "StateCode":  "WA",
+        "CategoryID":  "PC_5",
+        "CategoryName":  "Sports \u0026 Outdoors ",
+        "UnitsSold":  595,
+        "Revenue":  31863.7297,
+        "Position":  4
+    },
+    {
+        "StateCode":  "WA",
+        "CategoryID":  "PC_6",
+        "CategoryName":  "Baby Products ",
+        "UnitsSold":  229,
+        "Revenue":  8365.7820,
+        "Position":  5
+    }
+]

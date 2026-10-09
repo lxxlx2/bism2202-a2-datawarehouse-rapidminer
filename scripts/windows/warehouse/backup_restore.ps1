@@ -1,6 +1,6 @@
 param([ValidateSet('A','B')][string]$Student='A')
 $ErrorActionPreference='Stop'
-$db="STUDENT_${Student}_ID_dw";$restore="${db}_restore_validation"
+$db="STUDENT_${Student}_ID_dw";$restore="${db}_restore_validation_"+(Get-Date -Format yyyyMMddHHmmss)
 $out="C:\BISM2202\submission\Student_$Student\database"
 New-Item -ItemType Directory -Force $out|Out-Null
 $log=New-Object 'System.Collections.Generic.List[string]'
@@ -24,14 +24,24 @@ try{
  foreach($file in $files.Rows){$n++;$base=if($file.Type -eq 'L'){$paths.LogPath}else{$paths.DataPath};$ext=if($file.Type -eq 'L'){'.ldf'}else{'.mdf'};$p=Join-Path $base ($restore+'_'+$n+$ext);$logical=$file.LogicalName.Replace("'","''");$moves+="MOVE N'$logical' TO N'$p'"}
  [void](Query "RESTORE DATABASE [$restore] FROM DISK=N'$backup' WITH $($moves -join ','),CHECKSUM,RECOVERY;")
  Say 'ACTUAL_RESTORE_DATABASE=PASS'
+ Say "RESTORE_DATABASE_NAME=$restore"
  foreach($table in @('DimSeller','DimCustomer','DimProduct','DimDate','DimGeography','FactSales','RefAge','RefEducation','RefState','RefSellerLocation')){
   $cols=(Query "SELECT name FROM sys.columns WHERE object_id=OBJECT_ID('dbo.$table') ORDER BY column_id" $db).Tables[0].Rows|ForEach-Object{'['+$_.name+']'}
   $list=$cols -join ','
-  [void](Query "IF EXISTS(SELECT $list FROM [$db].dbo.$table EXCEPT SELECT $list FROM [$restore].dbo.$table) OR EXISTS(SELECT $list FROM [$restore].dbo.$table EXCEPT SELECT $list FROM [$db].dbo.$table) THROW 51020,'Restore row mismatch',1;")
+  [void](Query "IF (SELECT COUNT_BIG(*) FROM [$db].dbo.$table)<>(SELECT COUNT_BIG(*) FROM [$restore].dbo.$table) OR EXISTS(SELECT $list FROM [$db].dbo.$table EXCEPT SELECT $list FROM [$restore].dbo.$table) OR EXISTS(SELECT $list FROM [$restore].dbo.$table EXCEPT SELECT $list FROM [$db].dbo.$table) THROW 51020,'Restore row mismatch',1;")
   Say "RESTORE_FULL_ROW_COMPARISON_$table=PASS"
  }
  [void](Query 'DBCC CHECKDB WITH NO_INFOMSGS;' $restore)
  Say 'RESTORED_CHECKDB=PASS'
+ foreach($name in @('Q4_1','Q4_2','Q4_3','Q4_3_customer_destination_sensitivity')){
+  $sql=(Get-Content -Raw "C:\BISM2202\assignment_work\sql\Student_$Student\$name.sql") -replace '(?m)^GO\s*$',''
+  $live=(Query $sql $db).Tables[0]
+  $copy=(Query ($sql.Replace("USE [$db];","USE [$restore];")) $restore).Tables[0]
+  $liveRows=@(foreach($r in $live.Rows){($r.ItemArray|ForEach-Object{if($_ -is [DBNull]){'<NULL>'}else{[string]$_}}) -join "`t"})
+  $copyRows=@(foreach($r in $copy.Rows){($r.ItemArray|ForEach-Object{if($_ -is [DBNull]){'<NULL>'}else{[string]$_}}) -join "`t"})
+  if($liveRows.Count -ne $copyRows.Count -or ($liveRows -join "`n") -cne ($copyRows -join "`n")){throw "Restored query mismatch: $name"}
+  Say "RESTORED_QUERY_${name}=PASS ROWS=$($copyRows.Count)"
+ }
  Copy-Item -LiteralPath $backup -Destination (Join-Path $out ($db+'.bak'))
  Say ('BACKUP_SHA256='+(Get-FileHash (Join-Path $out ($db+'.bak')) -Algorithm SHA256).Hash)
  Say 'BACKUP_AND_ACTUAL_RESTORE=PASS'

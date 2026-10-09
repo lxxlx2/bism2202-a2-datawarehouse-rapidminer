@@ -21,15 +21,19 @@ for student in 'AB':
  root=tree.getroot()
  for parent in root.iter():
   for child in list(parent):
-   if child.tag==f'{{{NS}}}Property' and child.get(f'{{{NS}}}Name') in ('PasswordVerifier','CreatorName','CreatorComputerName'):
-    parent.remove(child)
- root.find('Database').text=name+'.database'
- root.find('State').text=''
+   if child.tag==f'{{{NS}}}Property':
+    key=child.get(f'{{{NS}}}Name')
+    if key=='PasswordVerifier':child.text=''
+    elif key in ('CreatorName','CreatorComputerName'):child.text='BISM2202'
+ root.find('Database').text=None
+ root.find('Database/Name').text=name+'.database'
+ root.find('Database/FullPath').text=name+'.database'
+ root.find('.//{'+NS+'}Project').set('{'+NS+'}ProtectionLevel','DontSaveSensitive')
  for p in root.findall('.//{'+NS+'}Project/{'+NS+'}Properties/{'+NS+'}Property'):
   key=p.get('{'+NS+'}Name')
   if key=='Name':p.text=name
   elif key in ('ID','VersionGUID'):p.text=guid()
-  elif key=='ProtectionLevel':p.text='0'
+  elif key=='ProtectionLevel':p.text='DontSaveSensitive'
  for p in root.findall('.//{'+NS+'}Package'):p.set('{'+NS+'}Name','Master.dtsx')
  for metadata in root.findall('.//{'+NS+'}PackageMetaData'):
   metadata.set('{'+NS+'}Name','Master.dtsx')
@@ -45,7 +49,7 @@ for student in 'AB':
  db=E.parse(ROOT/'work/windows_results/teacher_project.database')
  for el in db.getroot():
   if el.tag.split('}')[-1] in ('ID','Name'):el.text=name
- db.getroot().attrib.clear()
+ db.getroot().set('{http://schemas.microsoft.com/DataWarehouse/Designer/1.0}design-time-name',str(uuid.uuid4()))
  db.write(dest/(name+'.database'),encoding='utf-8',xml_declaration=True)
  (dest/'Project.params').write_text('<?xml version="1.0"?><SSIS:Parameters xmlns:SSIS="'+NS+'" />',encoding='utf-8')
  project_id=guid()

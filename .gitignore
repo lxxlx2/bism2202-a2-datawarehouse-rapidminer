@@ -21,3 +21,6 @@ submission/shared/academic_integrity/complete_ai_record.md
 
 __pycache__/
 *.pyc
+
+# Complete local AI prompt/output record is for student review, not public Git.
+submission/shared/ai_disclosure/*_record.md

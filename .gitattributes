@@ -3,3 +3,7 @@ submission/**/evidence/native/* -text -whitespace
 submission/**/evidence/ssis/*.txt -text -whitespace
 submission/**/*.dtsx -text whitespace=cr-at-eol
 submission/shared/verified_source_metadata/live_sql_catalog.json -text whitespace=cr-at-eol
+submission/**/evidence/sql/* -text -whitespace
+submission/**/database/restore_validation.txt -text -whitespace
+submission/**/ssis/**/native_build.log -text -whitespace
+submission/**/ssis/**/build_status.txt -text -whitespace

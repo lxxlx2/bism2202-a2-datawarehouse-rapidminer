@@ -1,4 +1,4 @@
--- PREPARED, NOT EXECUTED. Requires completed and verified SSIS warehouse.
+-- Executed on the verified native-SSIS warehouse; outputs are in evidence/sql.
 USE [STUDENT_A_ID_dw];
 GO
 SET NOCOUNT ON;

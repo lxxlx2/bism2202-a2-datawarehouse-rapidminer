@@ -1,0 +1,31 @@
+﻿START 2026-10-08T22:18:37.5209066-07:00
+DLL = C:\WINDOWS\Microsoft.NET\assembly\GAC_MSIL\Microsoft.SqlServer.ManagedDTS\v4.0_16.0.0.0__89845dcd8080cc91\Microsoft.SqlServer.ManagedDTS.dll
+DLL = C:\WINDOWS\Microsoft.NET\assembly\GAC_64\Microsoft.SqlServer.DTSRuntimeWrap\v4.0_16.0.0.0__89845dcd8080cc91\Microsoft.SqlServer.DTSRuntimeWrap.dll
+DLL = C:\WINDOWS\Microsoft.NET\assembly\GAC_MSIL\Microsoft.SqlServer.DTSPipelineWrap\v4.0_16.0.0.0__89845dcd8080cc91\Microsoft.SQLServer.DTSPipelineWrap.dll
+DLL = C:\WINDOWS\Microsoft.NET\assembly\GAC_MSIL\Microsoft.SqlServer.PipelineHost\v4.0_16.0.0.0__89845dcd8080cc91\Microsoft.SQLServer.PipelineHost.dll
+WAREHOUSE_NATIVE_EXECUTION=PASS
+Rows_1=78
+Rows_10=493
+Rows_11=137901
+Rows_2=6
+Rows_3=8
+Rows_4=100
+Rows_5=100
+Rows_6=21000
+Rows_7=2199
+Rows_8=1500
+Rows_9=99
+
+RefEducation ROWS=6 EXPECTED=6
+DimProduct ROWS=2199 EXPECTED=2199
+FactSales ROWS=137901 EXPECTED=137901
+DimCustomer ROWS=21000 EXPECTED=21000
+DimSeller ROWS=100 EXPECTED=100
+RefAge ROWS=78 EXPECTED=78
+RefSellerLocation ROWS=100 EXPECTED=100
+RefState ROWS=8 EXPECTED=8
+DimGeography ROWS=1599 EXPECTED=1599
+QUANTITY=688367
+DIMDATE_ROWS=493 EXPECTED=493
+WAREHOUSE_MASTER_RUNTIME=PASS
+DESIGNER_PROJECT_AND_SCREENSHOTS=PENDING

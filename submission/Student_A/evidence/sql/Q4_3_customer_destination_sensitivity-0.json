@@ -1,0 +1,170 @@
+﻿[
+    {
+        "CalendarYear":  2021,
+        "SellerID":  "f0bc6906-c958-4c58-8304-fed6febdfbaf",
+        "SellerName":  "Nancy Stewart",
+        "UnitsSold":  16,
+        "Revenue":  514.1920,
+        "Position":  1
+    },
+    {
+        "CalendarYear":  2021,
+        "SellerID":  "0add1493-f5c6-4e25-84fe-879f4e556695",
+        "SellerName":  "Adam Underwood",
+        "UnitsSold":  14,
+        "Revenue":  245.2680,
+        "Position":  2
+    },
+    {
+        "CalendarYear":  2021,
+        "SellerID":  "27c05baa-4792-4471-98ef-23eae8bb718c",
+        "SellerName":  "Tasha Fernandez",
+        "UnitsSold":  14,
+        "Revenue":  284.4400,
+        "Position":  2
+    },
+    {
+        "CalendarYear":  2021,
+        "SellerID":  "3c954b45-56f7-4ef8-a8c0-fd3a34e756e7",
+        "SellerName":  "Daniel Rodgers",
+        "UnitsSold":  13,
+        "Revenue":  153.7900,
+        "Position":  3
+    },
+    {
+        "CalendarYear":  2021,
+        "SellerID":  "173a8c93-fca8-4371-99d1-a5953e4b5279",
+        "SellerName":  "Samantha Keith",
+        "UnitsSold":  12,
+        "Revenue":  367.8000,
+        "Position":  4
+    },
+    {
+        "CalendarYear":  2021,
+        "SellerID":  "1c59041f-d6ea-4c1c-b998-c9402d59e4b2",
+        "SellerName":  "Angela Escobar",
+        "UnitsSold":  12,
+        "Revenue":  702.5200,
+        "Position":  4
+    },
+    {
+        "CalendarYear":  2021,
+        "SellerID":  "015dc809-d92d-43a5-98d9-befd200c0b36",
+        "SellerName":  "Robert Sims",
+        "UnitsSold":  9,
+        "Revenue":  102.2760,
+        "Position":  5
+    },
+    {
+        "CalendarYear":  2021,
+        "SellerID":  "5000124f-8298-4a47-92d7-cf7d6bbe54de",
+        "SellerName":  "Tamara Baxter",
+        "UnitsSold":  9,
+        "Revenue":  81.5500,
+        "Position":  5
+    },
+    {
+        "CalendarYear":  2021,
+        "SellerID":  "6d17668c-44f0-4ec0-9faa-6d09c17a4ac9",
+        "SellerName":  "Wendy Wilson",
+        "UnitsSold":  9,
+        "Revenue":  368.5500,
+        "Position":  5
+    },
+    {
+        "CalendarYear":  2021,
+        "SellerID":  "93622db1-367d-45ec-a776-c1d6c922def1",
+        "SellerName":  "Jamie Robertson",
+        "UnitsSold":  9,
+        "Revenue":  503.6220,
+        "Position":  5
+    },
+    {
+        "CalendarYear":  2022,
+        "SellerID":  "8b4e53fa-6324-4b4e-bff1-83b514a9e828",
+        "SellerName":  "Brenda Velasquez",
+        "UnitsSold":  273,
+        "Revenue":  9222.3630,
+        "Position":  1
+    },
+    {
+        "CalendarYear":  2022,
+        "SellerID":  "ef3814ba-7d38-4e0e-8780-51cdb3daa7af",
+        "SellerName":  "Joshua Hayes",
+        "UnitsSold":  272,
+        "Revenue":  10391.6130,
+        "Position":  2
+    },
+    {
+        "CalendarYear":  2022,
+        "SellerID":  "bdfd8575-76f1-42d6-bcb3-1d8347709f97",
+        "SellerName":  "Erin Marquez",
+        "UnitsSold":  267,
+        "Revenue":  11023.1820,
+        "Position":  3
+    },
+    {
+        "CalendarYear":  2022,
+        "SellerID":  "9d9eada7-e671-444d-b9a6-03bf34222232",
+        "SellerName":  "Ashley Silva",
+        "UnitsSold":  263,
+        "Revenue":  11781.5342,
+        "Position":  4
+    },
+    {
+        "CalendarYear":  2022,
+        "SellerID":  "37f04875-e807-4294-89d7-521bdd50fb76",
+        "SellerName":  "Andrew Winters",
+        "UnitsSold":  262,
+        "Revenue":  10005.8649,
+        "Position":  5
+    },
+    {
+        "CalendarYear":  2023,
+        "SellerID":  "a6766a11-05ce-48b1-8a5a-b1ea35483503",
+        "SellerName":  "Karen Walker",
+        "UnitsSold":  228,
+        "Revenue":  6618.8080,
+        "Position":  1
+    },
+    {
+        "CalendarYear":  2023,
+        "SellerID":  "4f7940f7-8eac-42ad-9f3b-8e066f7ef300",
+        "SellerName":  "Timothy Guerrero",
+        "UnitsSold":  223,
+        "Revenue":  12112.6429,
+        "Position":  2
+    },
+    {
+        "CalendarYear":  2023,
+        "SellerID":  "d5e809d8-c1b0-4f31-86c3-70e09ab2f001",
+        "SellerName":  "Maria Frye",
+        "UnitsSold":  223,
+        "Revenue":  10289.2572,
+        "Position":  2
+    },
+    {
+        "CalendarYear":  2023,
+        "SellerID":  "b76f9d99-9e18-4cf3-a38d-4b200d13f34c",
+        "SellerName":  "Alicia Porter",
+        "UnitsSold":  220,
+        "Revenue":  15206.0549,
+        "Position":  3
+    },
+    {
+        "CalendarYear":  2023,
+        "SellerID":  "bdfd8575-76f1-42d6-bcb3-1d8347709f97",
+        "SellerName":  "Erin Marquez",
+        "UnitsSold":  210,
+        "Revenue":  9164.6060,
+        "Position":  4
+    },
+    {
+        "CalendarYear":  2023,
+        "SellerID":  "93622db1-367d-45ec-a776-c1d6c922def1",
+        "SellerName":  "Jamie Robertson",
+        "UnitsSold":  206,
+        "Revenue":  7916.3850,
+        "Position":  5
+    }
+]

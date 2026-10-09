@@ -1,5 +1,6 @@
 using System;
 using System.Text.RegularExpressions;
+using System.Collections.Generic;
 using Microsoft.SqlServer.Dts.Runtime;
 using Microsoft.SqlServer.Dts.Pipeline.Wrapper;
 using DT=Microsoft.SqlServer.Dts.Runtime.Wrapper.DataType;
@@ -9,8 +10,11 @@ using DT=Microsoft.SqlServer.Dts.Runtime.Wrapper.DataType;
 public class BismCustomerFlow {
  Package pkg; MainPipe pipe; ConnectionManager sourceConnection,targetConnection;
  static Package sharedPackage; static Executable sharedLast; string countVariable="RowsCopied";
+ static Dictionary<string,string> componentIds=new Dictionary<string,string>();
  IDTSComponentMetaData100 New(string display,string prog,string name) {
   string id=null;int rank=-1;
+  if(componentIds.ContainsKey(prog))id=componentIds[prog];
+  else {
   foreach(PipelineComponentInfo info in new Application().PipelineComponentInfos) {
    if(info.Name!=display && !info.CreationName.StartsWith(prog))continue;
    int n=0;var suffix=info.CreationName.Substring(Math.Min(info.CreationName.Length,prog.Length));
@@ -18,6 +22,8 @@ public class BismCustomerFlow {
    if(id==null || n>rank){id=info.CreationName;rank=n;}
   }
   if(id==null)throw new Exception("Missing native component "+display);
+  componentIds[prog]=id;
+  }
   var m=pipe.ComponentMetaDataCollection.New();m.ComponentClassID=id;
   m.Instantiate().ProvideComponentProperties();m.Name=name;return m;
  }
@@ -103,6 +109,7 @@ public class BismCustomerFlow {
  void Destination(IDTSOutput100 previous,string table) {
   var m=New("OLE DB Destination","DTSAdapter.OleDbDestination","Load "+table);var w=m.Instantiate();Connect(m,targetConnection);
   w.SetComponentProperty("AccessMode",3);w.SetComponentProperty("OpenRowset","[dbo].["+table+"]");
+  w.SetComponentProperty("FastLoadOptions","TABLOCK,CHECK_CONSTRAINTS");
   w.AcquireConnections(null);w.ReinitializeMetaData();w.ReleaseConnections();
   var convert=New("Data Conversion","DTSTransform.DataConvert","Explicit target column types");var cw=convert.Instantiate();
   pipe.PathCollection.New().AttachPathAndPropagateNotifications(previous,convert.InputCollection[0]);
@@ -162,7 +169,7 @@ public class BismCustomerFlow {
   var resetConn=pkg.Connections.Add("OLEDB");resetConn.Name="Isolated warehouse reset";resetConn.ConnectionString=target;
   var reset=(TaskHost)pkg.Executables.Add("STOCK:SQLTask");reset.Name="Reset isolated assignment warehouse";
   reset.Properties["Connection"].SetValue(reset,resetConn.ID);
-  reset.Properties["SqlStatementSource"].SetValue(reset,"IF DB_NAME() <> '"+expected+"' THROW 51000,'Unexpected database',1; SET XACT_ABORT ON; BEGIN TRAN; DELETE FROM dbo.FactSales; DELETE FROM dbo.DimCustomer; DELETE FROM dbo.DimProduct; DELETE FROM dbo.DimSeller; DELETE FROM dbo.DimDate; DELETE FROM dbo.DimGeography; DELETE FROM dbo.RefAge; DELETE FROM dbo.RefEducation; DELETE FROM dbo.RefState; DELETE FROM dbo.RefSellerLocation; COMMIT;");
+  reset.Properties["SqlStatementSource"].SetValue(reset,"IF DB_NAME() <> '"+expected+"' THROW 51000,'Unexpected database',1; SET XACT_ABORT ON; BEGIN TRAN; DELETE FROM dbo.FactSales; DELETE FROM dbo.DimCustomer; DELETE FROM dbo.DimProduct; DELETE FROM dbo.DimSeller; DELETE FROM dbo.DimDate; DELETE FROM dbo.DimGeography; DELETE FROM dbo.RefAge; DELETE FROM dbo.RefEducation; DELETE FROM dbo.RefState; DELETE FROM dbo.RefSellerLocation; ALTER TABLE dbo.FactSales WITH CHECK CHECK CONSTRAINT ALL; ALTER TABLE dbo.DimCustomer WITH CHECK CHECK CONSTRAINT ALL; ALTER TABLE dbo.DimProduct WITH CHECK CHECK CONSTRAINT ALL; ALTER TABLE dbo.DimSeller WITH CHECK CHECK CONSTRAINT ALL; ALTER TABLE dbo.DimDate WITH CHECK CHECK CONSTRAINT ALL; ALTER TABLE dbo.DimGeography WITH CHECK CHECK CONSTRAINT ALL; COMMIT;");
   try {
    sharedPackage=pkg;sharedLast=reset;
    string[][] refs=new string[][] {
@@ -192,13 +199,18 @@ public class BismCustomerFlow {
   o=b.Lookup(o,"SELECT LocationID,GeographyKey FROM dbo.DimGeography WHERE GeographyRole='Customer'","CustomerLocationID","LocationID","GeographyKey","CustomerGeographyKey",false,DT.DT_I4,0);
   o=b.Lookup(o,"SELECT LocationID,GeographyKey FROM dbo.DimGeography WHERE GeographyRole='Seller'","SellerLocationID","LocationID","GeographyKey","SellerGeographyKey",false,DT.DT_I4,0);
   o=b.Derived(o,"PurchaseDateKey","YEAR(PurchaseTimestamp)*10000+MONTH(PurchaseTimestamp)*100+DAY(PurchaseTimestamp)",DT.DT_I4,0);
-  o=b.Derived(o,"UnitSalesPrice","(DT_NUMERIC,19,4)SourceUnitSalesPrice",DT.DT_NUMERIC,0,19,4);
-  o=b.Derived(o,"LineAmount","(DT_NUMERIC,19,4)SourceLineTotal",DT.DT_NUMERIC,0,19,4);
-  o=b.Derived(o,"ExtendedAmount","(DT_NUMERIC,19,4)(SourceUnitSalesPrice*ItemQuantity)",DT.DT_NUMERIC,0,19,4);
-  o=b.Derived(o,"AmountDifference","(DT_NUMERIC,19,4)(SourceLineTotal-SourceUnitSalesPrice*ItemQuantity)",DT.DT_NUMERIC,0,19,4);
+  // Round scaled floats to integral ten-thousandths before exact numeric division.
+  // A direct float-to-DT_NUMERIC cast truncates and failed source reconciliation.
+  o=b.Derived(o,"UnitSalesPrice",Money("SourceUnitSalesPrice"),DT.DT_NUMERIC,0,19,4);
+  o=b.Derived(o,"LineAmount",Money("SourceLineTotal"),DT.DT_NUMERIC,0,19,4);
+  o=b.Derived(o,"ExtendedAmount",Money("SourceUnitSalesPrice*ItemQuantity"),DT.DT_NUMERIC,0,19,4);
+  o=b.Derived(o,"AmountDifference",Money("SourceLineTotal-SourceUnitSalesPrice*ItemQuantity"),DT.DT_NUMERIC,0,19,4);
   // Verified source freight_price is NULL for all 137901 rows.
   o=b.Derived(o,"FreightAmount","NULL(DT_NUMERIC,19,4)",DT.DT_NUMERIC,0,19,4);
   b.Destination(o,"FactSales");return b.Finish(path);
+ }
+ static string Money(string value) {
+  return "(DT_NUMERIC,19,4)((DT_NUMERIC,19,0)ROUND(("+value+")*10000.0,0)/(DT_NUMERIC,5,0)10000)";
  }
  public static long Date(string source,string target,string path,string student) {
   var b=Create(source,target,"Student_"+student+"_DimDate");

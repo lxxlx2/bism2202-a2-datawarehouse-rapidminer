@@ -3,6 +3,7 @@ $ErrorActionPreference='Stop'
 $db="STUDENT_${Student}_ID_dw"
 $out="C:\BISM2202\submission\Student_$Student\evidence\sql"
 New-Item -ItemType Directory -Force $out|Out-Null
+('RUNNING '+(Get-Date -Format o))|Set-Content -Encoding UTF8 (Join-Path $out 'execution_status.txt')
 function Query([string]$sql,[string]$database=$db){
  $c=New-Object System.Data.SqlClient.SqlConnection("Server=.;Database=$database;Integrated Security=True;Encrypt=False")
  try{$c.Open();$cmd=$c.CreateCommand();$cmd.CommandText=$sql;$cmd.CommandTimeout=300;$a=New-Object System.Data.SqlClient.SqlDataAdapter $cmd;$d=New-Object System.Data.DataSet;[void]$a.Fill($d);return ,$d}finally{$c.Dispose()}
