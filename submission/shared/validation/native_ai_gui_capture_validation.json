@@ -1,0 +1,307 @@
+{
+  "status": "PASS_FOR_CAPTURED_AI_SLOTS_ONLY",
+  "snapshot_utc": "2026-10-10T09:10:36.319871+00:00",
+  "license": "Actual GUI title Altair AI Studio Trial 2026.1.1; user completed login after explicit EULA authorization",
+  "sources": [
+    {
+      "file": "submission/Student_A/rapidminer/STUDENT_A_ID_rapidminer.rmp",
+      "sha256": "66d08cc7bd846af1bee75347018088669967d7eb25d977db22faeb431d0f9230",
+      "unchanged_from_HEAD": true
+    },
+    {
+      "file": "submission/Student_A/rapidminer/cv_only_decision_tree.rmp",
+      "sha256": "c85d648edb74bb67d956c6d0b65a098013ab944b24353771a0c41ce4a94f069b",
+      "unchanged_from_HEAD": true
+    },
+    {
+      "file": "submission/Student_A/rapidminer/cv_only_logistic_regression.rmp",
+      "sha256": "22a95e1b19a89320a923ae9e2827f20bc27dac13787a6bfa696f299b87ed7382",
+      "unchanged_from_HEAD": true
+    },
+    {
+      "file": "submission/Student_A/rapidminer/holdout_decision_tree.rmp",
+      "sha256": "b592c42eb8a093037e3da1373aed5eb73c378c0663a1789922d97cdf130880a2",
+      "unchanged_from_HEAD": true
+    },
+    {
+      "file": "submission/Student_A/rapidminer/holdout_logistic_regression.rmp",
+      "sha256": "588718b9000012fdb2bc74ddb64257eb1275059a1d29721d606ed21bd238da23",
+      "unchanged_from_HEAD": true
+    },
+    {
+      "file": "submission/Student_B/rapidminer/STUDENT_B_ID_rapidminer.rmp",
+      "sha256": "cf36047fcab40a23d91251c8cff9d81637921013c7ccca9ec6687bd527c3bf50",
+      "unchanged_from_HEAD": true
+    },
+    {
+      "file": "submission/Student_B/rapidminer/cv_only_logistic_regression.rmp",
+      "sha256": "9716c9cc1d44d73add256ca64d08b03b77e7419505875fca2a59855845d28ae1",
+      "unchanged_from_HEAD": true
+    },
+    {
+      "file": "submission/Student_B/rapidminer/cv_only_random_forest.rmp",
+      "sha256": "5cc2cc0461089a280c76bf10a34fbab76174d55805455aefa305104cb0ff0703",
+      "unchanged_from_HEAD": true
+    },
+    {
+      "file": "submission/Student_B/rapidminer/holdout_logistic_regression.rmp",
+      "sha256": "2299c6b071acea03edeca9b991491cd3005be64a146ba90d825013f1148c993b",
+      "unchanged_from_HEAD": true
+    },
+    {
+      "file": "submission/Student_B/rapidminer/holdout_random_forest.rmp",
+      "sha256": "531ec4943b4ab9af10e3f07b64a53e037779e1c507b1979c2a42b8dc5f5428fe",
+      "unchanged_from_HEAD": true
+    }
+  ],
+  "screenshots": [
+    {
+      "file": "submission/Student_A/evidence/gui/model1_cv.png",
+      "sha256": "f44d5ab9e62b4e4cd20d2643ddf9e255dbbed449f664e1ecef691db60bbfeffb",
+      "bytes": 872073,
+      "file_modified_utc": "2026-10-10T08:56:48.778248+00:00",
+      "capture": "Actual AI Studio window 30090 via macOS screencapture; visually inspected; no reconstructed pixels",
+      "evaluation": "training-only CV process/model/result"
+    },
+    {
+      "file": "submission/Student_A/evidence/gui/model1_cv_accuracy.png",
+      "sha256": "34fcbcf22eaab36f016368e336f7acfe807d4a0bcb3105a48c4f4db309701d5e",
+      "bytes": 902408,
+      "file_modified_utc": "2026-10-10T08:55:07.372399+00:00",
+      "capture": "Actual AI Studio window 30090 via macOS screencapture; visually inspected; no reconstructed pixels",
+      "evaluation": "training-only CV process/model/result"
+    },
+    {
+      "file": "submission/Student_A/evidence/gui/model1_cv_auc.png",
+      "sha256": "3a849efb46cde9b1b77109f2119a2d4497f5512dece74aee8c3dd2b0fca3d58e",
+      "bytes": 1093876,
+      "file_modified_utc": "2026-10-10T08:55:33.198247+00:00",
+      "capture": "Actual AI Studio window 30090 via macOS screencapture; visually inspected; no reconstructed pixels",
+      "evaluation": "training-only CV process/model/result"
+    },
+    {
+      "file": "submission/Student_A/evidence/gui/model1_performance.png",
+      "sha256": "a26e383e22331dd49e15c518727244064b4e48526850766fd5008200547f5b70",
+      "bytes": 885268,
+      "file_modified_utc": "2026-10-10T09:10:16.972309+00:00",
+      "capture": "Actual AI Studio window 30090 via macOS screencapture; visually inspected; no reconstructed pixels",
+      "evaluation": "fixed holdout display replay"
+    },
+    {
+      "file": "submission/Student_A/evidence/gui/model1_process.png",
+      "sha256": "d2b26e73b4143a8f9158565de274be1520910bcc300899225a662b7d853d2b66",
+      "bytes": 823539,
+      "file_modified_utc": "2026-10-10T08:56:33.885956+00:00",
+      "capture": "Actual AI Studio window 30090 via macOS screencapture; visually inspected; no reconstructed pixels",
+      "evaluation": "training-only CV process/model/result"
+    },
+    {
+      "file": "submission/Student_A/evidence/gui/model1_result.png",
+      "sha256": "d0cbff8c9eea0d680df4c269cd69a907e5a7a13b51fabdbdac817c18d42f3120",
+      "bytes": 1241945,
+      "file_modified_utc": "2026-10-10T08:57:19.110653+00:00",
+      "capture": "Actual AI Studio window 30090 via macOS screencapture; visually inspected; no reconstructed pixels",
+      "evaluation": "training-only CV process/model/result"
+    },
+    {
+      "file": "submission/Student_A/evidence/gui/model2_cv.png",
+      "sha256": "869725103d895960bf6dfc236ab539a65b0ada0483dc7979ca1e4674672dcea0",
+      "bytes": 856736,
+      "file_modified_utc": "2026-10-10T09:04:05.730047+00:00",
+      "capture": "Actual AI Studio window 30090 via macOS screencapture; visually inspected; no reconstructed pixels",
+      "evaluation": "training-only CV process/model/result"
+    },
+    {
+      "file": "submission/Student_A/evidence/gui/model2_cv_accuracy.png",
+      "sha256": "3fe01c5a194dda8e75e9a98b41ed9cd110732c745fe5a409ee402140b0438056",
+      "bytes": 907369,
+      "file_modified_utc": "2026-10-10T09:04:18.548879+00:00",
+      "capture": "Actual AI Studio window 30090 via macOS screencapture; visually inspected; no reconstructed pixels",
+      "evaluation": "training-only CV process/model/result"
+    },
+    {
+      "file": "submission/Student_A/evidence/gui/model2_performance.png",
+      "sha256": "4a5b046c674ed978e8fd41d5bd4229fcabd847257faac680e12595ab512cd579",
+      "bytes": 884280,
+      "file_modified_utc": "2026-10-10T09:09:41.137292+00:00",
+      "capture": "Actual AI Studio window 30090 via macOS screencapture; visually inspected; no reconstructed pixels",
+      "evaluation": "fixed holdout display replay"
+    },
+    {
+      "file": "submission/Student_A/evidence/gui/model2_process.png",
+      "sha256": "ee711af6d4d047a5c9185856c192809e5d059eb66e6cbc64f4704bbcdca44f6b",
+      "bytes": 823119,
+      "file_modified_utc": "2026-10-10T09:03:56.350597+00:00",
+      "capture": "Actual AI Studio window 30090 via macOS screencapture; visually inspected; no reconstructed pixels",
+      "evaluation": "training-only CV process/model/result"
+    },
+    {
+      "file": "submission/Student_A/evidence/gui/model2_result.png",
+      "sha256": "05e620cb2f1b8898f3772a0ac5efa59e3e31803b8f6edf0d9cb70a8c8cacf065",
+      "bytes": 864571,
+      "file_modified_utc": "2026-10-10T09:03:43.446354+00:00",
+      "capture": "Actual AI Studio window 30090 via macOS screencapture; visually inspected; no reconstructed pixels",
+      "evaluation": "training-only CV process/model/result"
+    },
+    {
+      "file": "submission/Student_B/evidence/gui/model1_cv.png",
+      "sha256": "6d4e87752b3cf1adfb7b84ef81ddbd2baac552e2ad1e3d35d4a85d198b81cef3",
+      "bytes": 835421,
+      "file_modified_utc": "2026-10-10T09:05:45.961694+00:00",
+      "capture": "Actual AI Studio window 30090 via macOS screencapture; visually inspected; no reconstructed pixels",
+      "evaluation": "training-only CV process/model/result"
+    },
+    {
+      "file": "submission/Student_B/evidence/gui/model1_cv_accuracy.png",
+      "sha256": "a028dce6b40b83da00c178f54d495d8b1224c80140fb72198d5c57c06e892a47",
+      "bytes": 871371,
+      "file_modified_utc": "2026-10-10T09:05:58.325362+00:00",
+      "capture": "Actual AI Studio window 30090 via macOS screencapture; visually inspected; no reconstructed pixels",
+      "evaluation": "training-only CV process/model/result"
+    },
+    {
+      "file": "submission/Student_B/evidence/gui/model1_cv_auc.png",
+      "sha256": "890ad38c0d161e57f6b02344f0caa8f2971965cb57b4616ba46c5663e2bc3bda",
+      "bytes": 1059803,
+      "file_modified_utc": "2026-10-10T09:06:28.198084+00:00",
+      "capture": "Actual AI Studio window 30090 via macOS screencapture; visually inspected; no reconstructed pixels",
+      "evaluation": "training-only CV process/model/result"
+    },
+    {
+      "file": "submission/Student_B/evidence/gui/model1_performance.png",
+      "sha256": "aab1324853175ab16d19141302e3b1198f745b33f3f118ba8513914a31fd014a",
+      "bytes": 886967,
+      "file_modified_utc": "2026-10-10T09:09:11.060796+00:00",
+      "capture": "Actual AI Studio window 30090 via macOS screencapture; visually inspected; no reconstructed pixels",
+      "evaluation": "fixed holdout display replay"
+    },
+    {
+      "file": "submission/Student_B/evidence/gui/model1_process.png",
+      "sha256": "e0239fc1e67affc7936786f4f6e93de950d232e04bbb7789cbfdb5e4fa449121",
+      "bytes": 788631,
+      "file_modified_utc": "2026-10-10T09:05:25.807994+00:00",
+      "capture": "Actual AI Studio window 30090 via macOS screencapture; visually inspected; no reconstructed pixels",
+      "evaluation": "training-only CV process/model/result"
+    },
+    {
+      "file": "submission/Student_B/evidence/gui/model1_result.png",
+      "sha256": "bde301b3fbc1efd97771452c3fa8ce4405754fd94ebc09b50574884d5bc08c16",
+      "bytes": 1078811,
+      "file_modified_utc": "2026-10-10T09:05:16.754286+00:00",
+      "capture": "Actual AI Studio window 30090 via macOS screencapture; visually inspected; no reconstructed pixels",
+      "evaluation": "training-only CV process/model/result"
+    },
+    {
+      "file": "submission/Student_B/evidence/gui/model2_cv.png",
+      "sha256": "c9f03aeecf2369a250f2356e70b07531124de2d143324f592abd755656553ec1",
+      "bytes": 822065,
+      "file_modified_utc": "2026-10-10T09:07:52.725902+00:00",
+      "capture": "Actual AI Studio window 30090 via macOS screencapture; visually inspected; no reconstructed pixels",
+      "evaluation": "training-only CV process/model/result"
+    },
+    {
+      "file": "submission/Student_B/evidence/gui/model2_cv_accuracy.png",
+      "sha256": "b167d37dcfc420d4d20b388e2ebe69e0d507ef103a55dc7f93ad48437f372a8f",
+      "bytes": 871028,
+      "file_modified_utc": "2026-10-10T09:08:06.697111+00:00",
+      "capture": "Actual AI Studio window 30090 via macOS screencapture; visually inspected; no reconstructed pixels",
+      "evaluation": "training-only CV process/model/result"
+    },
+    {
+      "file": "submission/Student_B/evidence/gui/model2_performance.png",
+      "sha256": "d51ccf71f2a79f5fbc019f733981eb1867636258ce819559a830029c325eacbe",
+      "bytes": 886465,
+      "file_modified_utc": "2026-10-10T09:08:37.261414+00:00",
+      "capture": "Actual AI Studio window 30090 via macOS screencapture; visually inspected; no reconstructed pixels",
+      "evaluation": "fixed holdout display replay"
+    },
+    {
+      "file": "submission/Student_B/evidence/gui/model2_process.png",
+      "sha256": "b4ae51f7d8d67070f15bd7007320b141892a810e3eccc6de58a984a62603a7fe",
+      "bytes": 788271,
+      "file_modified_utc": "2026-10-10T09:07:39.962871+00:00",
+      "capture": "Actual AI Studio window 30090 via macOS screencapture; visually inspected; no reconstructed pixels",
+      "evaluation": "training-only CV process/model/result"
+    },
+    {
+      "file": "submission/Student_B/evidence/gui/model2_result.png",
+      "sha256": "8f5a82ff609641d179342086df143415cdf670a6a65b90d2285b94edb68e4afd",
+      "bytes": 887770,
+      "file_modified_utc": "2026-10-10T09:07:30.215030+00:00",
+      "capture": "Actual AI Studio window 30090 via macOS screencapture; visually inspected; no reconstructed pixels",
+      "evaluation": "training-only CV process/model/result"
+    }
+  ],
+  "observed_cv": {
+    "A_lr": {
+      "accuracy_percent": 89.4,
+      "auc": 0.647,
+      "confusion_TN_FP_FN_TP": [
+        7145,
+        5,
+        843,
+        6
+      ]
+    },
+    "A_dt": {
+      "accuracy_percent": 89.39,
+      "confusion_TN_FP_FN_TP": [
+        7150,
+        0,
+        849,
+        0
+      ]
+    },
+    "B_lr": {
+      "accuracy_percent": 89.38,
+      "auc": 0.601,
+      "confusion_TN_FP_FN_TP": [
+        6256,
+        0,
+        743,
+        0
+      ]
+    },
+    "B_rf": {
+      "accuracy_percent": 89.38,
+      "confusion_TN_FP_FN_TP": [
+        6256,
+        0,
+        743,
+        0
+      ]
+    }
+  },
+  "observed_holdout_confusion": {
+    "A_lr": [
+      1786,
+      1,
+      212,
+      0
+    ],
+    "A_dt": [
+      1787,
+      0,
+      212,
+      0
+    ],
+    "B_lr": [
+      2681,
+      0,
+      318,
+      0
+    ],
+    "B_rf": [
+      2681,
+      0,
+      318,
+      0
+    ]
+  },
+  "limitations": [
+    "GUI replay is evidence display using unchanged frozen files; no retuning, reselection or new validation claim",
+    "B Random Forest model image shows first constituent tree, not all 50 trees",
+    "Holdout screenshot records confusion matrix; precise AUC and undefined F1 remain in original native result records",
+    "Final reports, Windows screenshot gates and final packages remain incomplete"
+  ]
+}

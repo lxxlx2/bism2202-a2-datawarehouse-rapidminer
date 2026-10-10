@@ -110,8 +110,12 @@ CV performance; that packaging replay did not repeat the holdout.
 Native F1 is undefined in these holdout outputs and is preserved as such.
 The separately calculated confusion-count F1 is zero. Every model has zero
 holdout default recall at the fixed native classification threshold. No model
-is accepted for lending decisions. Required native model GUI panels remain
-PENDING; XML readability alone is not GUI acceptance.
+is accepted for lending decisions. All eight required native model GUI images
+per student are now saved and visually inspected. Training-only CV GUI replay
+and fixed holdout display replay reproduce the recorded confusion counts.
+The RMP files remain byte-identical to the committed frozen files.
+`shared/validation/native_ai_gui_capture_validation.json` records screenshot
+hashes, scope and limitations; B's model image shows the first forest tree.
 
 ## Delivery integrity and remaining gates
 
@@ -141,9 +145,11 @@ and fitted the Customer Geography flow; its complete native screenshot was
 visually reviewed. Further flow captures remain subject to visual acceptance.
 The Cua launcher binding still cannot attach AI Studio's running Java window.
 Native macOS Accessibility control using an already trusted Swift process now
-reads and controls that actual window. AI Studio is at its EULA page; accepting
-the agreement awaits explicit human confirmation. Model GUI captures remain
-pending. Native runtime evidence has not
+reads and controls that actual window. The user explicitly authorised the EULA
+and completed login; the actual window now shows Trial 2026.1.1. Native model
+GUI captures are saved. A later UTM RPC timeout also prevented pause/resume;
+the guest stopped and was started again using utmctl. Windows session recovery
+and remaining screenshots are still pending. Native runtime evidence has not
 been replaced by reconstructed screenshots or Python-generated model visuals.
 '''
     target = base / 'evidence/ACCEPTANCE_REPORT.md'

@@ -37,7 +37,7 @@ def sqlbox(doc,source,sql,slot):
  doc.add_paragraph().paragraph_format.space_after=Pt(0)
 
 IMAGE_SLOTS={61:['schema/STUDENT_{s}_ID_dm.png'],88:['gui/ssis_dimcustomer.png','gui/ssis_dimproduct.png','gui/ssis_dimseller.png','gui/ssis_dimdate.png','gui/ssis_geography_customer.png','gui/ssis_geography_seller.png'],101:['gui/ssis_fact.png'],138:['gui/sql_Q4_1.png'],170:['gui/sql_Q4_2.png'],212:['gui/sql_Q4_3.png'],263:['gui/model1_process.png','gui/model1_cv.png'],267:['gui/model2_process.png','gui/model2_cv.png'],284:['gui/model1_result.png'],292:['gui/model2_result.png'],303:['gui/model1_performance.png','gui/model2_performance.png']}
-LABELS={'ssis_dimcustomer':'Customer dimension native SSIS Data Flow','ssis_dimproduct':'Product dimension native SSIS Data Flow','ssis_dimseller':'Seller dimension native SSIS Data Flow','ssis_dimdate':'Date dimension native SSIS Data Flow','ssis_geography_customer':'Customer destination Geography native SSIS Data Flow','ssis_geography_seller':'Supplier origin Geography native SSIS Data Flow','ssis_fact':'FactSales native SSIS Data Flow','sql_Q4_1':'Executed customer age revenue query','sql_Q4_2':'Executed product category quantity query','sql_Q4_3':'Executed NSW supplier quantity query','model1_process':'Logistic regression overall native process','model1_cv':'Logistic regression cross-validation subprocess','model2_process':'Second model overall native process','model2_cv':'Second model cross-validation subprocess','model1_result':'Native logistic regression model result','model2_result':'Native second model result','model1_performance':'Native logistic regression performance','model2_performance':'Native second model performance'}
+LABELS={'ssis_dimcustomer':'Customer dimension native SSIS Data Flow','ssis_dimproduct':'Product dimension native SSIS Data Flow','ssis_dimseller':'Seller dimension native SSIS Data Flow','ssis_dimdate':'Date dimension native SSIS Data Flow','ssis_geography_customer':'Customer destination Geography native SSIS Data Flow','ssis_geography_seller':'Supplier origin Geography native SSIS Data Flow','ssis_fact':'FactSales native SSIS Data Flow','sql_Q4_1':'Executed customer age revenue query','sql_Q4_2':'Executed product category quantity query','sql_Q4_3':'Executed NSW supplier quantity query','model1_process':'Logistic regression overall native process','model1_cv':'Logistic regression cross-validation subprocess','model2_process':'Second model overall native process','model2_cv':'Second model cross-validation subprocess','model1_result':'Native logistic regression fitted on the training partition','model2_result':'Native second model result','model1_performance':'Fixed holdout logistic regression accuracy and confusion matrix','model2_performance':'Fixed holdout second model accuracy and confusion matrix'}
 
 def build(s,final):
  base=ROOT/'submission'/f'Student_{s}'
@@ -55,6 +55,9 @@ def build(s,final):
  for i in range(52,324):
   if i in headings:
    node=deepcopy(original[i])
+   pr=node.find('w:pPr',NS)
+   if pr is None:pr=E.Element(q('pPr'));node.insert(0,pr)
+   if pr.find(q('keepNext')) is None:E.SubElement(pr,q('keepNext'))
    if i in [121,154,196,257,321]:
     pr=node.find('w:pPr',NS)
     if pr is None:pr=E.Element(q('pPr'));node.insert(0,pr)
@@ -66,7 +69,9 @@ def build(s,final):
    for rel in IMAGE_SLOTS[i]:
     f=base/'evidence'/rel.format(s=s)
     if f.exists():
-     p=doc.add_paragraph();p.add_run().add_picture(str(f),width=Inches(6.9));caption=LABELS.get(f.stem,'Dimensional model with actual warehouse columns and keys');prose(doc,caption)
+     p=doc.add_paragraph();p.paragraph_format.keep_with_next=True;p.add_run().add_picture(str(f),width=Inches(6.9));caption=LABELS.get(f.stem,'Dimensional model with actual warehouse columns and keys')
+     if f.stem=='model2_result':caption=('Native decision tree fitted on the training partition: one false leaf' if s=='A' else 'Native random forest: first constituent tree shown, with one false leaf')
+     prose(doc,caption)
    if i in [138,170,212]:prose(doc,text[{138:'query_4_1',170:'query_4_2',212:'query_4_3'}[i]])
   if i==323:
    refs=json.loads((ROOT/'submission/shared/references/verified_reference_register.json').read_text())['references'];refs=[r.copy() for r in refs if r.get('student',s)==s]

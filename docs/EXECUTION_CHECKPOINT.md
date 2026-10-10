@@ -85,3 +85,24 @@ No model is validated for lending. Student IDs remain explicit placeholders.
 - FactSales overview was created and its component guard passed. Native 100% viewing displayed real 137,901-row paths. After transient terminal interference cleared, a clean partial measure-conversion screenshot was saved with the package-success bar visible. Full overview and source/target detail remain pending for final report acceptance.
 - Native macOS AX reads the actual Java EULA window using an already trusted Swift process. Use RapidMiner License restarted the existing GUI; no new security permissions or software were added. Acceptance of the EULA awaits explicit action-time human confirmation.
 - Support copies were refreshed and all 26 per-student source hashes verified. Current inventory remains PARTIAL: A has twelve required report images missing, B eighteen. These counts do not represent completion of visual acceptance.
+
+
+## Native AI GUI acceptance progress, 2026-10-10
+
+The user explicitly authorised the displayed AI Studio EULA and personally
+completed the account/license login. The current genuine application title
+is Altair AI Studio Trial 2026.1.1. All four CV-only RMP files were imported
+and run in the native GUI; their observed metrics/counts reproduce the frozen
+results. The unchanged holdout files were replayed only to display performance
+evidence, with no retuning or reselection. All eight required AI screenshot
+slots per student are saved; 22 actual native PNGs including extra CV panels
+are hashed in native_ai_gui_capture_validation.json. All ten RMP source files
+remain byte-identical to HEAD. Student B forest model screenshot is explicitly
+the first constituent tree.
+
+UTM later failed RPC and normal pause/resume with Timed out waiting for RPC.
+It showed stopped; initial start returned Operation is not available, then a
+subsequent utmctl start succeeded and the genuine Windows Boot Manager screen
+was observed. Prior Visual Studio/SSMS sessions need reopening. No reinstall,
+source data alteration, or new successful SQL/SSIS execution is claimed.
+Final image-filled report rendering and remaining Windows captures are open.

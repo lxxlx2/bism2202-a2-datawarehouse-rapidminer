@@ -114,38 +114,54 @@
         },
         {
           "file": "submission/Student_A/evidence/gui/model1_process.png",
-          "exists": false
+          "exists": true,
+          "bytes": 823539,
+          "sha256": "d2b26e73b4143a8f9158565de274be1520910bcc300899225a662b7d853d2b66"
         },
         {
           "file": "submission/Student_A/evidence/gui/model1_cv.png",
-          "exists": false
+          "exists": true,
+          "bytes": 872073,
+          "sha256": "f44d5ab9e62b4e4cd20d2643ddf9e255dbbed449f664e1ecef691db60bbfeffb"
         },
         {
           "file": "submission/Student_A/evidence/gui/model2_process.png",
-          "exists": false
+          "exists": true,
+          "bytes": 823119,
+          "sha256": "ee711af6d4d047a5c9185856c192809e5d059eb66e6cbc64f4704bbcdca44f6b"
         },
         {
           "file": "submission/Student_A/evidence/gui/model2_cv.png",
-          "exists": false
+          "exists": true,
+          "bytes": 856736,
+          "sha256": "869725103d895960bf6dfc236ab539a65b0ada0483dc7979ca1e4674672dcea0"
         },
         {
           "file": "submission/Student_A/evidence/gui/model1_result.png",
-          "exists": false
+          "exists": true,
+          "bytes": 1241945,
+          "sha256": "d0cbff8c9eea0d680df4c269cd69a907e5a7a13b51fabdbdac817c18d42f3120"
         },
         {
           "file": "submission/Student_A/evidence/gui/model2_result.png",
-          "exists": false
+          "exists": true,
+          "bytes": 864571,
+          "sha256": "05e620cb2f1b8898f3772a0ac5efa59e3e31803b8f6edf0d9cb70a8c8cacf065"
         },
         {
           "file": "submission/Student_A/evidence/gui/model1_performance.png",
-          "exists": false
+          "exists": true,
+          "bytes": 885268,
+          "sha256": "a26e383e22331dd49e15c518727244064b4e48526850766fd5008200547f5b70"
         },
         {
           "file": "submission/Student_A/evidence/gui/model2_performance.png",
-          "exists": false
+          "exists": true,
+          "bytes": 884280,
+          "sha256": "4a5b046c674ed978e8fd41d5bd4229fcabd847257faac680e12595ab512cd579"
         }
       ],
-      "missing_report_images": 12,
+      "missing_report_images": 4,
       "final_report_files": [
         {
           "file": "submission/Student_A/report/STUDENT_A_ID.docx",
@@ -267,38 +283,54 @@
         },
         {
           "file": "submission/Student_B/evidence/gui/model1_process.png",
-          "exists": false
+          "exists": true,
+          "bytes": 788631,
+          "sha256": "e0239fc1e67affc7936786f4f6e93de950d232e04bbb7789cbfdb5e4fa449121"
         },
         {
           "file": "submission/Student_B/evidence/gui/model1_cv.png",
-          "exists": false
+          "exists": true,
+          "bytes": 835421,
+          "sha256": "6d4e87752b3cf1adfb7b84ef81ddbd2baac552e2ad1e3d35d4a85d198b81cef3"
         },
         {
           "file": "submission/Student_B/evidence/gui/model2_process.png",
-          "exists": false
+          "exists": true,
+          "bytes": 788271,
+          "sha256": "b4ae51f7d8d67070f15bd7007320b141892a810e3eccc6de58a984a62603a7fe"
         },
         {
           "file": "submission/Student_B/evidence/gui/model2_cv.png",
-          "exists": false
+          "exists": true,
+          "bytes": 822065,
+          "sha256": "c9f03aeecf2369a250f2356e70b07531124de2d143324f592abd755656553ec1"
         },
         {
           "file": "submission/Student_B/evidence/gui/model1_result.png",
-          "exists": false
+          "exists": true,
+          "bytes": 1078811,
+          "sha256": "bde301b3fbc1efd97771452c3fa8ce4405754fd94ebc09b50574884d5bc08c16"
         },
         {
           "file": "submission/Student_B/evidence/gui/model2_result.png",
-          "exists": false
+          "exists": true,
+          "bytes": 887770,
+          "sha256": "8f5a82ff609641d179342086df143415cdf670a6a65b90d2285b94edb68e4afd"
         },
         {
           "file": "submission/Student_B/evidence/gui/model1_performance.png",
-          "exists": false
+          "exists": true,
+          "bytes": 886967,
+          "sha256": "aab1324853175ab16d19141302e3b1198f745b33f3f118ba8513914a31fd014a"
         },
         {
           "file": "submission/Student_B/evidence/gui/model2_performance.png",
-          "exists": false
+          "exists": true,
+          "bytes": 886465,
+          "sha256": "d51ccf71f2a79f5fbc019f733981eb1867636258ce819559a830029c325eacbe"
         }
       ],
-      "missing_report_images": 18,
+      "missing_report_images": 10,
       "final_report_files": [
         {
           "file": "submission/Student_B/report/STUDENT_B_ID.docx",
