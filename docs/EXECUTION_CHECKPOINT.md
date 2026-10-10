@@ -77,3 +77,11 @@ No model is validated for lending. Student IDs remain explicit placeholders.
 - Native script output denotes capture creation, not final visual acceptance. A Seller Geography image whose selector said Seller while the canvas still showed 1,500 Customer rows was rejected. Further selection repair and screenshots remain pending.
 - Unchanged support copies now total 26 per student. Current acceptance reports remain PARTIAL, and remaining images are recorded by the live delivery inventory.
 - Computer Use reported the Mac locked again; manual unlock was requested. Windows command work continued independently. No FINAL report or assignment ZIP was promoted.
+
+## Native command control and current GUI gates
+
+- Human confirmed Mac unlocked. Command takeover remains authorised. Native asynchronous combo keyboard messages changed the actual canvas, verified against all component names in the own Master package.
+- Student A Product screenshot shows all seven components and 2,199 rows at 60%; Seller shows all four components and 100 rows at 120%. Seller Geography overview contains all thirteen components at 30%, but small row text is not claimed as readable; a larger detail is pending.
+- FactSales overview was created and its component guard passed. Native 100% viewing displayed real 137,901-row paths. After transient terminal interference cleared, a clean partial measure-conversion screenshot was saved with the package-success bar visible. Full overview and source/target detail remain pending for final report acceptance.
+- Native macOS AX reads the actual Java EULA window using an already trusted Swift process. Use RapidMiner License restarted the existing GUI; no new security permissions or software were added. Acceptance of the EULA awaits explicit action-time human confirmation.
+- Support copies were refreshed and all 26 per-student source hashes verified. Current inventory remains PARTIAL: A has twelve required report images missing, B eighteen. These counts do not represent completion of visual acceptance.

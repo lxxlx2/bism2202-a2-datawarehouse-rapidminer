@@ -66,16 +66,16 @@ public static class NativeDesigner {
  $index=[Array]::IndexOf($items,$wanted)
  if($index -lt 0){throw "Actual combo does not contain $wanted; found $($items -join ', ')"}
  [void][NativeDesigner]::SetForegroundWindow($windowHandle)
- [void][NativeDesigner]::SendMessage($h,0x14E,[IntPtr](-1),[IntPtr]::Zero)
  $combo.SetFocus()
- ([System.Windows.Automation.ExpandCollapsePattern]$combo.GetCurrentPattern([System.Windows.Automation.ExpandCollapsePattern]::Pattern)).Expand()
+ [void][NativeDesigner]::PostMessage($h,0x100,[IntPtr]36,[IntPtr]::Zero)
+ [void][NativeDesigner]::PostMessage($h,0x101,[IntPtr]36,[IntPtr]::Zero)
  Start-Sleep -Seconds 2
- $itemCondition=New-Object System.Windows.Automation.AndCondition (New-Object System.Windows.Automation.PropertyCondition([System.Windows.Automation.AutomationElement]::NameProperty,$wanted)),(New-Object System.Windows.Automation.PropertyCondition([System.Windows.Automation.AutomationElement]::ControlTypeProperty,[System.Windows.Automation.ControlType]::ListItem))
- $choice=[System.Windows.Automation.AutomationElement]::RootElement.FindFirst([System.Windows.Automation.TreeScope]::Descendants,$itemCondition)
- if($null -eq $choice){throw 'Native task list item not found'}
- ([System.Windows.Automation.SelectionItemPattern]$choice.GetCurrentPattern([System.Windows.Automation.SelectionItemPattern]::Pattern)).Select()
+ for($i=0;$i -lt $index;$i++){
+  [void][NativeDesigner]::PostMessage($h,0x100,[IntPtr]40,[IntPtr]::Zero)
+  [void][NativeDesigner]::PostMessage($h,0x101,[IntPtr]40,[IntPtr]::Zero)
+  Start-Sleep -Seconds 2
+ }
  Start-Sleep -Seconds 3
- ([System.Windows.Automation.ExpandCollapsePattern]$combo.GetCurrentPattern([System.Windows.Automation.ExpandCollapsePattern]::Pattern)).Collapse()
  $dialogCondition=New-Object System.Windows.Automation.AndCondition (New-Object System.Windows.Automation.PropertyCondition([System.Windows.Automation.AutomationElement]::NameProperty,'Microsoft Visual Studio')),(New-Object System.Windows.Automation.PropertyCondition([System.Windows.Automation.AutomationElement]::ProcessIdProperty,$root.Current.ProcessId))
  $de=[System.Windows.Automation.AutomationElement]::RootElement.FindFirst([System.Windows.Automation.TreeScope]::Descendants,$dialogCondition)
  if($null -ne $de){
@@ -91,7 +91,6 @@ public static class NativeDesigner {
   [void][NativeDesigner]::PostMessage($okHandle,0x202,[IntPtr]::Zero,[IntPtr]655370)
   Start-Sleep -Seconds 3
  }
- Start-Sleep -Seconds 3
  $value=([System.Windows.Automation.ValuePattern]$combo.GetCurrentPattern([System.Windows.Automation.ValuePattern]::Pattern)).Current.Value
  if($value -ne $wanted){throw "Native selection mismatch: $value"}
  $graph=$root.FindFirst([System.Windows.Automation.TreeScope]::Descendants,(New-Object System.Windows.Automation.PropertyCondition([System.Windows.Automation.AutomationElement]::AutomationIdProperty,'graphControl')))

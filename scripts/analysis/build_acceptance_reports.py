@@ -139,8 +139,11 @@ UTM mouse input does not reliably reach the Windows guest. After explicit
 command-takeover authorisation, Windows native messages successfully selected
 and fitted the Customer Geography flow; its complete native screenshot was
 visually reviewed. Further flow captures remain subject to visual acceptance.
-The computer control tool cannot bind AI Studio's running Java GUI window;
-that GUI capture remains unresolved. Native runtime evidence has not
+The Cua launcher binding still cannot attach AI Studio's running Java window.
+Native macOS Accessibility control using an already trusted Swift process now
+reads and controls that actual window. AI Studio is at its EULA page; accepting
+the agreement awaits explicit human confirmation. Model GUI captures remain
+pending. Native runtime evidence has not
 been replaced by reconstructed screenshots or Python-generated model visuals.
 '''
     target = base / 'evidence/ACCEPTANCE_REPORT.md'

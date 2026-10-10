@@ -2,7 +2,7 @@
 
 **Overall status: PARTIAL — no final school submission or FINAL assignment ZIP.**
 
-This evidence summary was generated at 2026-10-09T21:37:01.310716+00:00. That is the report snapshot
+This evidence summary was generated at 2026-10-10T02:39:21.447976+00:00. That is the report snapshot
 time, not an invented execution timestamp. The preserved successful backend
 Master log records its start as **2026-10-08T22:18:37.5209066-07:00**. The native AI runner's result log
 does not provide a precise execution timestamp; that timestamp is UNKNOWN.
@@ -130,6 +130,9 @@ UTM mouse input does not reliably reach the Windows guest. After explicit
 command-takeover authorisation, Windows native messages successfully selected
 and fitted the Customer Geography flow; its complete native screenshot was
 visually reviewed. Further flow captures remain subject to visual acceptance.
-The computer control tool cannot bind AI Studio's running Java GUI window;
-that GUI capture remains unresolved. Native runtime evidence has not
+The Cua launcher binding still cannot attach AI Studio's running Java window.
+Native macOS Accessibility control using an already trusted Swift process now
+reads and controls that actual window. AI Studio is at its EULA page; accepting
+the agreement awaits explicit human confirmation. Model GUI captures remain
+pending. Native runtime evidence has not
 been replaced by reconstructed screenshots or Python-generated model visuals.

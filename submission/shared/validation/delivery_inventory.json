@@ -68,11 +68,15 @@
         },
         {
           "file": "submission/Student_A/evidence/gui/ssis_dimproduct.png",
-          "exists": false
+          "exists": true,
+          "bytes": 1088582,
+          "sha256": "41e592f038a988fda1f13f05a87f96de2dcbaffb8bda64d292a966b890d9808f"
         },
         {
           "file": "submission/Student_A/evidence/gui/ssis_dimseller.png",
-          "exists": false
+          "exists": true,
+          "bytes": 1059173,
+          "sha256": "c590f6776b8185f0f4905699880dcda913a239e18f6366901c42b33929132ddf"
         },
         {
           "file": "submission/Student_A/evidence/gui/ssis_dimdate.png",
@@ -88,7 +92,9 @@
         },
         {
           "file": "submission/Student_A/evidence/gui/ssis_geography_seller.png",
-          "exists": false
+          "exists": true,
+          "bytes": 76335,
+          "sha256": "359dc5f8ead3567e618bbda51822c7e747136237a2fd4f862a10ccb8cc562850"
         },
         {
           "file": "submission/Student_A/evidence/gui/ssis_fact.png",
@@ -139,7 +145,7 @@
           "exists": false
         }
       ],
-      "missing_report_images": 15,
+      "missing_report_images": 12,
       "final_report_files": [
         {
           "file": "submission/Student_A/report/STUDENT_A_ID.docx",

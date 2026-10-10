@@ -1,0 +1,22 @@
+{
+  "Student": "A",
+  "SelectedTask": "DFT Student_A_DimGeography_Seller",
+  "ActualComboItems": [
+    "DFT Student_A_DimCustomer_Lookup",
+    "DFT Student_A_DimDate",
+    "DFT Student_A_DimGeography_Customer",
+    "DFT Student_A_DimGeography_Seller",
+    "DFT Student_A_DimProduct",
+    "DFT Student_A_DimSeller",
+    "DFT Student_A_FactSales",
+    "DFT Student_A_RefAge",
+    "DFT Student_A_RefEducation",
+    "DFT Student_A_RefSellerLocation",
+    "DFT Student_A_RefState"
+  ],
+  "Capture": "ssis_geography_seller.png",
+  "Method": "Actual Windows desktop pixels via CopyFromScreen; native controls selected without altering package",
+  "ScreenWidth": 1024,
+  "ScreenHeight": 768,
+  "Status": "NATIVE_SCREEN_CAPTURE_SAVED_VISUAL_REVIEW_REQUIRED"
+}
