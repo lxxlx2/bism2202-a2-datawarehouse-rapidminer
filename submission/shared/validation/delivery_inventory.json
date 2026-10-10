@@ -102,15 +102,21 @@
         },
         {
           "file": "submission/Student_A/evidence/gui/sql_Q4_1.png",
-          "exists": false
+          "exists": true,
+          "bytes": 110356,
+          "sha256": "e2d68781ff90cdcbfee5d38be3d6ec44ba4afd3498932f853fde41cba1b5b7e4"
         },
         {
           "file": "submission/Student_A/evidence/gui/sql_Q4_2.png",
-          "exists": false
+          "exists": true,
+          "bytes": 127108,
+          "sha256": "9dd55cc45991374839251cd1f4afe82099707871d583749ee9086e5522d6d426"
         },
         {
           "file": "submission/Student_A/evidence/gui/sql_Q4_3.png",
-          "exists": false
+          "exists": true,
+          "bytes": 134992,
+          "sha256": "f84fd918a11a7659de0419d2a5b5c8562b9eadab9eadf26ddb3d2b430fb00347"
         },
         {
           "file": "submission/Student_A/evidence/gui/model1_process.png",
@@ -161,7 +167,7 @@
           "sha256": "4a5b046c674ed978e8fd41d5bd4229fcabd847257faac680e12595ab512cd579"
         }
       ],
-      "missing_report_images": 4,
+      "missing_report_images": 1,
       "final_report_files": [
         {
           "file": "submission/Student_A/report/STUDENT_A_ID.docx",
@@ -271,15 +277,21 @@
         },
         {
           "file": "submission/Student_B/evidence/gui/sql_Q4_1.png",
-          "exists": false
+          "exists": true,
+          "bytes": 110376,
+          "sha256": "bad3180d551d7e5fec358ce61c60a6a822d6527e8d1882d94e8defd07f14b198"
         },
         {
           "file": "submission/Student_B/evidence/gui/sql_Q4_2.png",
-          "exists": false
+          "exists": true,
+          "bytes": 128448,
+          "sha256": "e79fdc81511e0b221d920981ef65504cd3ddda7afffba507901589e427c09e54"
         },
         {
           "file": "submission/Student_B/evidence/gui/sql_Q4_3.png",
-          "exists": false
+          "exists": true,
+          "bytes": 135149,
+          "sha256": "9652efdf57395816f1b599688b3c015a01bb0bf9a8a76383c5e42e2ba495858e"
         },
         {
           "file": "submission/Student_B/evidence/gui/model1_process.png",
@@ -330,7 +342,7 @@
           "sha256": "d51ccf71f2a79f5fbc019f733981eb1867636258ce819559a830029c325eacbe"
         }
       ],
-      "missing_report_images": 10,
+      "missing_report_images": 7,
       "final_report_files": [
         {
           "file": "submission/Student_B/report/STUDENT_B_ID.docx",

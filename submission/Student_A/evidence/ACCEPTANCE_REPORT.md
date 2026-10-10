@@ -2,7 +2,7 @@
 
 **Overall status: PARTIAL — no final school submission or FINAL assignment ZIP.**
 
-This evidence summary was generated at 2026-10-10T09:11:09.281093+00:00. That is the report snapshot
+This evidence summary was generated at 2026-10-10T14:09:09.267209+00:00. That is the report snapshot
 time, not an invented execution timestamp. The preserved successful backend
 Master log records its start as **2026-10-08T22:18:33.4435630-07:00**. The native AI runner's result log
 does not provide a precise execution timestamp; that timestamp is UNKNOWN.
@@ -102,9 +102,6 @@ another full render and page review. Student IDs remain placeholders.
 Missing required report screenshots at this snapshot:
 
 - `ssis_fact.png`
-- `sql_Q4_1.png`
-- `sql_Q4_2.png`
-- `sql_Q4_3.png`
 
 Other incomplete items: final image-filled DOCX/PDF, final visible AI record
 snapshot and student review, final manifests and FINAL assignment ZIP.

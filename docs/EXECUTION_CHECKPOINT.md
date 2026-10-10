@@ -106,3 +106,21 @@ subsequent utmctl start succeeded and the genuine Windows Boot Manager screen
 was observed. Prior Visual Studio/SSMS sessions need reopening. No reinstall,
 source data alteration, or new successful SQL/SSIS execution is claimed.
 Final image-filled report rendering and remaining Windows captures are open.
+
+## Windows recovery and native SQL captures, 2026-10-10
+
+The user completed the Windows Administrator login. Native command access and
+SQL Server service were verified after recovery. All six current A/B query files
+were read back byte-for-byte from Windows against the delivery SQL. Actual SSMS
+queries succeeded with A counts 8/40/17 and B counts 8/40/15. All six required
+SQL PNGs were visually inspected and accepted; native_sql_gui_capture_validation.json
+records actual capture metadata, hashes and visibility limits. Q4.2/Q4.3 images
+show first visible grid rows and total counts, with complete frozen exports kept.
+An obsolete PREPARED comment and a failed path-input attempt were corrected;
+failed captures were not promoted. SSMS launcher PID differs from its IDE PID,
+and delayed capture completion was handled by checking files and actual windows.
+
+A native Visual Studio /Run launch was requested for the existing own A SSIS
+solution using the installed executable. This is only a launch request, not a
+new SSIS execution or acceptance claim. Remaining required GUI slots are A FactSales
+and all seven B data flows. Final backup refresh, full report QA and ZIPs remain open.

@@ -1,0 +1,132 @@
+{
+  "status": "SIX_REQUIRED_NATIVE_SQL_SCREENSHOTS_VISUALLY_ACCEPTED",
+  "recorded_utc": "2026-10-10T14:09:01.861046+00:00",
+  "method": "Actual Windows interactive SSMS execution and Graphics.CopyFromScreen; no screenshot reconstruction or pixel edits",
+  "limitations": [
+    "Q4.2 and Q4.3 result grids show the first visible rows and actual total-row status; full JSON/CSV exports retain every result row.",
+    "Native process Window metadata may retain its cached title before connection; the screenshot visibly confirms the final target database and successful execution.",
+    "This validates SQL screenshots only; final SSIS GUI acceptance, frozen-build backup refresh, report rendering and final packaging remain open."
+  ],
+  "captures": [
+    {
+      "student": "A",
+      "query": "Q4_1",
+      "image": "submission/Student_A/evidence/gui/sql_Q4_1.png",
+      "sha256": "e2d68781ff90cdcbfee5d38be3d6ec44ba4afd3498932f853fde41cba1b5b7e4",
+      "bytes": 110356,
+      "native_capture": {
+        "Utc": "2026-10-10T13:46:21.4996018Z",
+        "Pid": 4496,
+        "Window": "Q4_1.sql - (local).STUDENT_A_ID_dw (WIN-LR4ELCKRUA0\\Administrator (57))* - Q4_1.sql - (local).STUDENT_A_ID_dw (WIN-LR4ELCKRUA0\\Administrator (57))* - Microsoft SQL Server Management Studio (Administrator)",
+        "Capture": "Native Graphics.CopyFromScreen actual Windows desktop; review required",
+        "Names": 96
+      },
+      "visible_database": "STUDENT_A_ID_dw",
+      "observed_rows": 8,
+      "current_query_sha256": "5287db083fefe5bdfa58b09cab9007ebc03007cd01398ed52a3708bd21611855",
+      "guest_input_exact_byte_readback": "PASS",
+      "review": "PASS: actual native screenshot visually inspected; success bar and observed row count match frozen exported results",
+      "all_rows_visible": true
+    },
+    {
+      "student": "A",
+      "query": "Q4_2",
+      "image": "submission/Student_A/evidence/gui/sql_Q4_2.png",
+      "sha256": "9dd55cc45991374839251cd1f4afe82099707871d583749ee9086e5522d6d426",
+      "bytes": 127108,
+      "native_capture": {
+        "Utc": "2026-10-10T13:54:21.0556969Z",
+        "Pid": 6528,
+        "Window": "Q4_2.sql - (local).STUDENT_A_ID_dw (WIN-LR4ELCKRUA0\\Administrator (58)) - Q4_2.sql - (local).STUDENT_A_ID_dw (WIN-LR4ELCKRUA0\\Administrator (58)) - Microsoft SQL Server Management Studio (Administrator)",
+        "Capture": "Native Graphics.CopyFromScreen actual Windows desktop; review required",
+        "Names": 96
+      },
+      "visible_database": "STUDENT_A_ID_dw",
+      "observed_rows": 40,
+      "current_query_sha256": "06e34a78184d2aa1d5ed2bd760f007afb053946af4b2c4e55c058566d66922d6",
+      "guest_input_exact_byte_readback": "PASS",
+      "review": "PASS: actual native screenshot visually inspected; success bar and observed row count match frozen exported results",
+      "all_rows_visible": false
+    },
+    {
+      "student": "A",
+      "query": "Q4_3",
+      "image": "submission/Student_A/evidence/gui/sql_Q4_3.png",
+      "sha256": "f84fd918a11a7659de0419d2a5b5c8562b9eadab9eadf26ddb3d2b430fb00347",
+      "bytes": 134992,
+      "native_capture": {
+        "Utc": "2026-10-10T13:59:42.4855125Z",
+        "Pid": 10532,
+        "Window": "Q4_3.sql - Q4_3.sql - Microsoft SQL Server Management Studio (Administrator)",
+        "Capture": "Native Graphics.CopyFromScreen actual Windows desktop; review required",
+        "Names": 96
+      },
+      "visible_database": "STUDENT_A_ID_dw",
+      "observed_rows": 17,
+      "current_query_sha256": "2f7c6f6044e69be2da96b485e70d6caeca7dfa8f1d5c59c9491a5e5b8269c841",
+      "guest_input_exact_byte_readback": "PASS",
+      "review": "PASS: actual native screenshot visually inspected; success bar and observed row count match frozen exported results",
+      "all_rows_visible": false
+    },
+    {
+      "student": "B",
+      "query": "Q4_1",
+      "image": "submission/Student_B/evidence/gui/sql_Q4_1.png",
+      "sha256": "bad3180d551d7e5fec358ce61c60a6a822d6527e8d1882d94e8defd07f14b198",
+      "bytes": 110376,
+      "native_capture": {
+        "Utc": "2026-10-10T14:01:09.2049019Z",
+        "Pid": 11156,
+        "Window": "Q4_1.sql - Q4_1.sql - Microsoft SQL Server Management Studio (Administrator)",
+        "Capture": "Native Graphics.CopyFromScreen actual Windows desktop; review required",
+        "Names": 96
+      },
+      "visible_database": "STUDENT_B_ID_dw",
+      "observed_rows": 8,
+      "current_query_sha256": "cbdc72b9702981fde470b618fcea5cea9f4f4b8530f0ebc7ad09a1ed906541f4",
+      "guest_input_exact_byte_readback": "PASS",
+      "review": "PASS: actual native screenshot visually inspected; success bar and observed row count match frozen exported results",
+      "all_rows_visible": true
+    },
+    {
+      "student": "B",
+      "query": "Q4_2",
+      "image": "submission/Student_B/evidence/gui/sql_Q4_2.png",
+      "sha256": "e79fdc81511e0b221d920981ef65504cd3ddda7afffba507901589e427c09e54",
+      "bytes": 128448,
+      "native_capture": {
+        "Utc": "2026-10-10T14:04:04.0081576Z",
+        "Pid": 2440,
+        "Window": "Q4_2.sql - Q4_2.sql - Microsoft SQL Server Management Studio (Administrator)",
+        "Capture": "Native Graphics.CopyFromScreen actual Windows desktop; review required",
+        "Names": 96
+      },
+      "visible_database": "STUDENT_B_ID_dw",
+      "observed_rows": 40,
+      "current_query_sha256": "8c93a9b3890f5ae2f3338d96eb2840a7ad59b116e4e00f2b3fed5421a8d08b93",
+      "guest_input_exact_byte_readback": "PASS",
+      "review": "PASS: actual native screenshot visually inspected; success bar and observed row count match frozen exported results",
+      "all_rows_visible": false
+    },
+    {
+      "student": "B",
+      "query": "Q4_3",
+      "image": "submission/Student_B/evidence/gui/sql_Q4_3.png",
+      "sha256": "9652efdf57395816f1b599688b3c015a01bb0bf9a8a76383c5e42e2ba495858e",
+      "bytes": 135149,
+      "native_capture": {
+        "Utc": "2026-10-10T14:07:52.1841683Z",
+        "Pid": 7284,
+        "Window": "Q4_3.sql - (local).STUDENT_B_ID_dw (WIN-LR4ELCKRUA0\\Administrator (60)) - Q4_3.sql - (local).STUDENT_B_ID_dw (WIN-LR4ELCKRUA0\\Administrator (60)) - Microsoft SQL Server Management Studio (Administrator)",
+        "Capture": "Native Graphics.CopyFromScreen actual Windows desktop; review required",
+        "Names": 96
+      },
+      "visible_database": "STUDENT_B_ID_dw",
+      "observed_rows": 15,
+      "current_query_sha256": "f8791658599027f1428d07b4996cae294093d5fb8da1b002fae14465904d59b2",
+      "guest_input_exact_byte_readback": "PASS",
+      "review": "PASS: actual native screenshot visually inspected; success bar and observed row count match frozen exported results",
+      "all_rows_visible": false
+    }
+  ]
+}
