@@ -1,0 +1,117 @@
+{
+  "Student": "B",
+  "Flow": "DimGeography_Seller",
+  "Task": "DFT Student_B_DimGeography_Seller",
+  "ProcessId": 15312,
+  "VerticalViewSize": 26.018099547511312,
+  "HorizontalViewSize": 100,
+  "ExpectedComponents": [
+    "Audit loaded rows",
+    "Derive GeographyRole",
+    "Derive LocationType",
+    "Derive Postcode",
+    "Derive RegionCode",
+    "Derive StateCode",
+    "Derive StateName",
+    "Derive Suburb",
+    "Explicit target column types",
+    "Load DimGeography",
+    "Lookup RawStateName (fail unmatched)",
+    "Read warehouse references 0",
+    "Sort by LocationID"
+  ],
+  "ComponentsWithoutFullViewportCoverage": [],
+  "Captures": [
+    {
+      "Utc": "2026-10-11T05:15:07.7199936Z",
+      "File": "ssis_geography_seller_detail_01.png",
+      "VerticalScrollPercent": 0,
+      "HorizontalScrollPercent": -1,
+      "VisibleComponents": [
+        "Derive StateName",
+        "Lookup RawStateName (fail unmatched)",
+        "Read warehouse references 0",
+        "Derive StateCode"
+      ],
+      "FullyVisibleComponents": [
+        "Lookup RawStateName (fail unmatched)",
+        "Read warehouse references 0",
+        "Derive StateCode"
+      ],
+      "Sha256": "56F7D2EEFC9FF0D76C2F63B420A2513B5ED157B1DC901F591AD2AEB66DA2648F"
+    },
+    {
+      "Utc": "2026-10-11T05:15:15.2616756Z",
+      "File": "ssis_geography_seller_detail_02.png",
+      "VerticalScrollPercent": 25,
+      "HorizontalScrollPercent": -1,
+      "VisibleComponents": [
+        "Derive Postcode",
+        "Derive StateName",
+        "Derive StateCode",
+        "Derive Suburb"
+      ],
+      "FullyVisibleComponents": [
+        "Derive Postcode",
+        "Derive StateName",
+        "Derive Suburb"
+      ],
+      "Sha256": "041C09574C65003D5F5F469D0DEBE0BD545CBF1E844F5A06D1050531C3BBE9DB"
+    },
+    {
+      "Utc": "2026-10-11T05:15:21.5775206Z",
+      "File": "ssis_geography_seller_detail_03.png",
+      "VerticalScrollPercent": 50,
+      "HorizontalScrollPercent": -1,
+      "VisibleComponents": [
+        "Derive RegionCode",
+        "Derive LocationType",
+        "Sort by LocationID",
+        "Derive Suburb"
+      ],
+      "FullyVisibleComponents": [
+        "Derive RegionCode",
+        "Derive LocationType",
+        "Derive Suburb"
+      ],
+      "Sha256": "00745FD9B1F394999AF8EFF6150B0BED143FF01297605EDA2FC41BB2C1399D90"
+    },
+    {
+      "Utc": "2026-10-11T05:15:27.2851373Z",
+      "File": "ssis_geography_seller_detail_04.png",
+      "VerticalScrollPercent": 75,
+      "HorizontalScrollPercent": -1,
+      "VisibleComponents": [
+        "Explicit target column types",
+        "Derive LocationType",
+        "Sort by LocationID",
+        "Derive GeographyRole"
+      ],
+      "FullyVisibleComponents": [
+        "Explicit target column types",
+        "Sort by LocationID",
+        "Derive GeographyRole"
+      ],
+      "Sha256": "4234E5E7E0811729A817EB3FE8EB6CCF8AB033A6D87FB9811528D354B8031EFF"
+    },
+    {
+      "Utc": "2026-10-11T05:15:33.6054183Z",
+      "File": "ssis_geography_seller_detail_05.png",
+      "VerticalScrollPercent": 100,
+      "HorizontalScrollPercent": -1,
+      "VisibleComponents": [
+        "Explicit target column types",
+        "Load DimGeography",
+        "Audit loaded rows"
+      ],
+      "FullyVisibleComponents": [
+        "Explicit target column types",
+        "Load DimGeography",
+        "Audit loaded rows"
+      ],
+      "Sha256": "0A12570B37CE7C8684BBB6E605326FADDD7BF2206C41D28A30932DE5E1B7F7D2"
+    }
+  ],
+  "Status": "NATIVE_SEGMENTS_SAVED_VISUAL_REVIEW_REQUIRED",
+  "VisualReview": "PASS: all five unchanged native screenshots visually reviewed at 100 percent zoom; thirteen components fully covered; 100 raw mappings sorted to 99 locations, successful package completion retained."
+}

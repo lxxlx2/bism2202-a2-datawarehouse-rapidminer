@@ -1,3 +1,15 @@
+# Final local delivery checkpoint — 2026-10-11
+
+Student A: technical PASS, 48-page final Word/PDF. Student B: technical PASS, 56-page final Word/PDF. Both outer FINAL ZIPs exist and passed CRC plus every-member source-byte verification. Native Designer execution/data-flow evidence, all SQL result rows, AI Studio process/model/performance images, actual final backup restores, source integrity, frozen RMP and report word/visual checks are complete.
+
+See `submission/shared/validation/final_package_verification.json`, `delivery_inventory.json`, each student README/MANIFEST and `evidence/ACCEPTANCE_REPORT.md`. Original material is unchanged. Binary backups/reports/archives, full visible AI record and original loan-data copy are local; code and bounded evidence are synchronized through Git.
+
+Remaining human decisions: actual student IDs; each student's understanding, declaration and course AI/collaboration review. No school upload has been performed. Zero holdout default recall is disclosed; neither model is approved for operational lending. Final AI export states its UTC cutoff and does not claim subsequent packaging/Git messages are included.
+
+The historical checkpoint below preserves development evidence and failures. Older PENDING/PARTIAL states are superseded by the final validation records above.
+
+---
+
 # Execution checkpoint — working delivery, PARTIAL
 
 Host session date: 2026-10-09 (Asia/Bangkok). Guest clock is recorded separately.

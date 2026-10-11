@@ -1,0 +1,177 @@
+{
+  "Student": "B",
+  "Flow": "FactSales",
+  "Task": "DFT Student_B_FactSales",
+  "ProcessId": 15312,
+  "VerticalViewSize": 16.91176470588235,
+  "HorizontalViewSize": 100,
+  "ExpectedComponents": [
+    "Audit loaded rows",
+    "Derive AmountDifference",
+    "Derive ExtendedAmount",
+    "Derive FreightAmount",
+    "Derive LineAmount",
+    "Derive PurchaseDateKey",
+    "Derive UnitSalesPrice",
+    "Explicit target column types",
+    "Load FactSales",
+    "Lookup CustomerGeographyKey (fail unmatched)",
+    "Lookup CustomerID (fail unmatched)",
+    "Lookup CustomerKey (fail unmatched)",
+    "Lookup CustomerLocationID (fail unmatched)",
+    "Lookup OrderStatus (fail unmatched)",
+    "Lookup ProductKey (fail unmatched)",
+    "Lookup PurchaseTimestamp (fail unmatched)",
+    "Lookup SellerGeographyKey (fail unmatched)",
+    "Lookup SellerKey (fail unmatched)",
+    "Lookup SellerLocationID (fail unmatched)",
+    "Read OzMart fields 0"
+  ],
+  "ComponentsWithoutFullViewportCoverage": [],
+  "Captures": [
+    {
+      "Utc": "2026-10-11T05:18:37.2566696Z",
+      "File": "ssis_fact_detail_01.png",
+      "VerticalScrollPercent": 0,
+      "HorizontalScrollPercent": -1,
+      "VisibleComponents": [
+        "Lookup PurchaseTimestamp (fail unmatched)",
+        "Read OzMart fields 0",
+        "Lookup OrderStatus (fail unmatched)",
+        "Lookup CustomerID (fail unmatched)"
+      ],
+      "FullyVisibleComponents": [
+        "Read OzMart fields 0",
+        "Lookup OrderStatus (fail unmatched)",
+        "Lookup CustomerID (fail unmatched)"
+      ],
+      "Sha256": "6BE2BA63DC50B47E2FD8626AA1879C877D53E51C6C07CB325DD24D9FF450FFCA"
+    },
+    {
+      "Utc": "2026-10-11T05:18:46.1451707Z",
+      "File": "ssis_fact_detail_02.png",
+      "VerticalScrollPercent": 14.285714285714283,
+      "HorizontalScrollPercent": -1,
+      "VisibleComponents": [
+        "Lookup CustomerKey (fail unmatched)",
+        "Lookup PurchaseTimestamp (fail unmatched)",
+        "Lookup CustomerLocationID (fail unmatched)",
+        "Lookup OrderStatus (fail unmatched)"
+      ],
+      "FullyVisibleComponents": [
+        "Lookup CustomerKey (fail unmatched)",
+        "Lookup PurchaseTimestamp (fail unmatched)",
+        "Lookup CustomerLocationID (fail unmatched)"
+      ],
+      "Sha256": "C25B3EBFFD394DE7ACE55FC2ED3714B3E75F1C0BE261AF66FC32091836EED088"
+    },
+    {
+      "Utc": "2026-10-11T05:18:54.1544247Z",
+      "File": "ssis_fact_detail_03.png",
+      "VerticalScrollPercent": 28.571428571428566,
+      "HorizontalScrollPercent": -1,
+      "VisibleComponents": [
+        "Lookup ProductKey (fail unmatched)",
+        "Lookup SellerKey (fail unmatched)",
+        "Lookup SellerLocationID (fail unmatched)",
+        "Lookup CustomerLocationID (fail unmatched)"
+      ],
+      "FullyVisibleComponents": [
+        "Lookup ProductKey (fail unmatched)",
+        "Lookup SellerKey (fail unmatched)",
+        "Lookup CustomerLocationID (fail unmatched)"
+      ],
+      "Sha256": "386A23D4D5ECD8C2A58CEC752ADA01DF617161298656AA5E4A0064AB1827C15D"
+    },
+    {
+      "Utc": "2026-10-11T05:19:01.7841401Z",
+      "File": "ssis_fact_detail_04.png",
+      "VerticalScrollPercent": 42.85714285714286,
+      "HorizontalScrollPercent": -1,
+      "VisibleComponents": [
+        "Lookup SellerKey (fail unmatched)",
+        "Lookup SellerLocationID (fail unmatched)",
+        "Lookup CustomerGeographyKey (fail unmatched)",
+        "Lookup SellerGeographyKey (fail unmatched)"
+      ],
+      "FullyVisibleComponents": [
+        "Lookup SellerLocationID (fail unmatched)",
+        "Lookup CustomerGeographyKey (fail unmatched)",
+        "Lookup SellerGeographyKey (fail unmatched)"
+      ],
+      "Sha256": "A92A759C4C8C845A36A25736FABDF4D73AC0F4659CF6BE5D6890125A4B98AC34"
+    },
+    {
+      "Utc": "2026-10-11T05:19:09.3290175Z",
+      "File": "ssis_fact_detail_05.png",
+      "VerticalScrollPercent": 57.14285714285713,
+      "HorizontalScrollPercent": -1,
+      "VisibleComponents": [
+        "Derive UnitSalesPrice",
+        "Derive PurchaseDateKey",
+        "Lookup SellerGeographyKey (fail unmatched)"
+      ],
+      "FullyVisibleComponents": [
+        "Derive UnitSalesPrice",
+        "Derive PurchaseDateKey",
+        "Lookup SellerGeographyKey (fail unmatched)"
+      ],
+      "Sha256": "8EACA7C97BD5CEC33E4DAEC1709D1CF0CE36F2A6B27AFB0ED31AECFCF069CF68"
+    },
+    {
+      "Utc": "2026-10-11T05:19:16.6386957Z",
+      "File": "ssis_fact_detail_06.png",
+      "VerticalScrollPercent": 71.42857142857143,
+      "HorizontalScrollPercent": -1,
+      "VisibleComponents": [
+        "Derive UnitSalesPrice",
+        "Derive LineAmount",
+        "Derive AmountDifference",
+        "Derive ExtendedAmount"
+      ],
+      "FullyVisibleComponents": [
+        "Derive UnitSalesPrice",
+        "Derive LineAmount",
+        "Derive ExtendedAmount"
+      ],
+      "Sha256": "2A93F244AF1470F6675CBAB19C8358D1B45B3B8FC78C84F65BDC94548AB1D893"
+    },
+    {
+      "Utc": "2026-10-11T05:19:23.8363346Z",
+      "File": "ssis_fact_detail_07.png",
+      "VerticalScrollPercent": 85.71428571428572,
+      "HorizontalScrollPercent": -1,
+      "VisibleComponents": [
+        "Explicit target column types",
+        "Derive FreightAmount",
+        "Derive AmountDifference",
+        "Derive ExtendedAmount"
+      ],
+      "FullyVisibleComponents": [
+        "Explicit target column types",
+        "Derive FreightAmount",
+        "Derive AmountDifference"
+      ],
+      "Sha256": "6AD1C3CB6CCBE448B71E6FCC6BF482769658AD058C276BCBB93A6AB3A556CB68"
+    },
+    {
+      "Utc": "2026-10-11T05:19:30.8159664Z",
+      "File": "ssis_fact_detail_08.png",
+      "VerticalScrollPercent": 100,
+      "HorizontalScrollPercent": -1,
+      "VisibleComponents": [
+        "Explicit target column types",
+        "Load FactSales",
+        "Audit loaded rows"
+      ],
+      "FullyVisibleComponents": [
+        "Explicit target column types",
+        "Load FactSales",
+        "Audit loaded rows"
+      ],
+      "Sha256": "09E7CB76E306F1A3E5E27C96F09A079080F9618A2F0F2E30838339F024E207FA"
+    }
+  ],
+  "Status": "NATIVE_SEGMENTS_SAVED_VISUAL_REVIEW_REQUIRED",
+  "VisualReview": "PASS: all eight unchanged native 100 percent screenshots visually reviewed; all twenty components fully covered; 137901 rows retained through lookups, derivations and final FactSales destination; package success visible."
+}

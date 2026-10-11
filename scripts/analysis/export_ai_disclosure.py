@@ -14,6 +14,8 @@ for line in SOURCE.read_text().splitlines():
  if record.get('type')!='response_item':continue
  p=record.get('payload',{});kind=p.get('type')
  if kind=='message' and p.get('role') in ('user','assistant'):
+  if p.get('role')=='assistant' and p.get('channel',p.get('phase')) not in ('commentary','final','final_answer'):
+   continue
   texts=[c.get('text','') for c in p.get('content',[]) if c.get('type') in ('input_text','output_text','text')]
   text='\n'.join(texts)
   if p.get('role')=='user' and text.startswith('<environment_context>'):continue
@@ -32,7 +34,7 @@ text+='## Attached initial request\n\n'+ATTACHMENT.read_text()+'\n\n'
 for n,(time,label,body) in enumerate(items,1):
  text+=f'## {n} {label}\n\nTimestamp: {time}\n\n'+body+'\n\n'
 output=folder/'visible_prompts_and_ai_outputs_record.md';output.write_text(text)
-manifest={'exported_at_utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),'source_session_sha256':hashlib.sha256(SOURCE.read_bytes()).hexdigest(),'export_sha256':hashlib.sha256(output.read_bytes()).hexdigest(),'counts':counts,'scope':'Visible messages and AI tool inputs only; native outputs provided separately','student_review':'PENDING','complete_final_snapshot':False}
+manifest={'exported_at_utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),'source_session_sha256':hashlib.sha256(SOURCE.read_bytes()).hexdigest(),'export_sha256':hashlib.sha256(output.read_bytes()).hexdigest(),'counts':counts,'scope':'Visible messages and AI tool inputs only; native outputs provided separately','student_review':'PENDING','complete_visible_record_at_cutoff':True,'last_included_timestamp':items[-1][0] if items else None,'cutoff_limitation':'Later packaging, Git and handoff activity after export is not claimed to be included in this snapshot.'}
 (folder/'export_manifest.json').write_text(json.dumps(manifest,indent=2)+'\n')
 for student in 'AB':
  (ROOT/'submission'/f'Student_{student}'/'AI_DISCLOSURE.md').write_text(f'''# Generative AI disclosure for Student {student}

@@ -1,0 +1,66 @@
+{
+  "Status": "PASS",
+  "Scope": "Ten current SQL files copied and read back byte for byte; this does not claim new query execution. Two A execution-source differences were first comments only, with active SQL independently compared.",
+  "files": [
+    {
+      "student": "A",
+      "file": "submission/Student_A/sql/Q4_1.sql",
+      "sha256": "5287db083fefe5bdfa58b09cab9007ebc03007cd01398ed52a3708bd21611855",
+      "guest_readback_matches": true
+    },
+    {
+      "student": "A",
+      "file": "submission/Student_A/sql/Q4_2.sql",
+      "sha256": "06e34a78184d2aa1d5ed2bd760f007afb053946af4b2c4e55c058566d66922d6",
+      "guest_readback_matches": true
+    },
+    {
+      "student": "A",
+      "file": "submission/Student_A/sql/Q4_3.sql",
+      "sha256": "2f7c6f6044e69be2da96b485e70d6caeca7dfa8f1d5c59c9491a5e5b8269c841",
+      "guest_readback_matches": true
+    },
+    {
+      "student": "A",
+      "file": "submission/Student_A/sql/Q4_3_customer_destination_sensitivity.sql",
+      "sha256": "16a70159f9716de92193ec7e1beb69fb22c2cfbd7ca5c7249ab2186f0cbdfa35",
+      "guest_readback_matches": true
+    },
+    {
+      "student": "A",
+      "file": "submission/Student_A/sql/warehouse_validation.sql",
+      "sha256": "2a46ffdf47e1c44b32681b752a138a40290cbba333b8462248ad85155afc9b58",
+      "guest_readback_matches": true
+    },
+    {
+      "student": "B",
+      "file": "submission/Student_B/sql/Q4_1.sql",
+      "sha256": "cbdc72b9702981fde470b618fcea5cea9f4f4b8530f0ebc7ad09a1ed906541f4",
+      "guest_readback_matches": true
+    },
+    {
+      "student": "B",
+      "file": "submission/Student_B/sql/Q4_2.sql",
+      "sha256": "8c93a9b3890f5ae2f3338d96eb2840a7ad59b116e4e00f2b3fed5421a8d08b93",
+      "guest_readback_matches": true
+    },
+    {
+      "student": "B",
+      "file": "submission/Student_B/sql/Q4_3.sql",
+      "sha256": "f8791658599027f1428d07b4996cae294093d5fb8da1b002fae14465904d59b2",
+      "guest_readback_matches": true
+    },
+    {
+      "student": "B",
+      "file": "submission/Student_B/sql/Q4_3_customer_destination_sensitivity.sql",
+      "sha256": "38f7fb75552873571abeb3f7fbbd7362c50573ce7e02e564d622542386124b91",
+      "guest_readback_matches": true
+    },
+    {
+      "student": "B",
+      "file": "submission/Student_B/sql/warehouse_validation.sql",
+      "sha256": "d1bcf85733e3f766697d07f5b76acf1c222f334e0fc1d4e7b26452805c6761b0",
+      "guest_readback_matches": true
+    }
+  ]
+}

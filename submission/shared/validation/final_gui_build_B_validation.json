@@ -1,0 +1,223 @@
+{
+  "Status": "FINAL_GUI_BUILD_VALIDATION_AND_ACTUAL_RESTORE_PASS",
+  "StartedUtc": "2026-10-11T05:04:24.9365571Z",
+  "FinishedUtc": "2026-10-11T05:05:50.6297172Z",
+  "Student": "B",
+  "SourceHashes": [
+    {
+      "File": "C:\\BISM2202\\submission\\Student_B\\ssis\\STUDENT_B_ID_SSIS\\Master.dtsx",
+      "Sha256": "D9EF6D631B946436A77442629986DDE6C4ECFEEA88CEBD539E31AD313C7BC900"
+    },
+    {
+      "File": "C:\\BISM2202\\assignment_work\\sql\\Student_B\\Q4_1.sql",
+      "Sha256": "CBDC72B9702981FDE470B618FCEA5CEA9F4F4B8530F0EBC7AD09A1ED906541F4"
+    },
+    {
+      "File": "C:\\BISM2202\\assignment_work\\sql\\Student_B\\Q4_2.sql",
+      "Sha256": "8C93A9B3890F5AE2F3338D96EB2840A7AD59B116E4E00F2B3FED5421A8D08B93"
+    },
+    {
+      "File": "C:\\BISM2202\\assignment_work\\sql\\Student_B\\Q4_3.sql",
+      "Sha256": "F8791658599027F1428D07B4996CAE294093D5FB8DA1B002FAE14465904D59B2"
+    },
+    {
+      "File": "C:\\BISM2202\\assignment_work\\sql\\Student_B\\Q4_3_customer_destination_sensitivity.sql",
+      "Sha256": "38F7FB75552873571ABEB3F7FBBD7362C50573CE7E02E564D622542386124B91"
+    },
+    {
+      "File": "C:\\BISM2202\\assignment_work\\sql\\Student_B\\warehouse_validation.sql",
+      "Sha256": "D1BCF85733E3F766697D07F5B76ACF1C222F334E0FC1D4E7B26452805C6761B0"
+    }
+  ],
+  "BackupSha256": "9A2387133085592470B19F06FE9E1869F8F634CC0315CC06E83D02A67213A23A",
+  "RestoreLog": "BACKUP_DATABASE=PASS\r\nRESTORE_VERIFYONLY=PASS\r\nACTUAL_RESTORE_DATABASE=PASS\r\nRESTORE_DATABASE_NAME=STUDENT_B_ID_dw_restore_validation_20261010220514\r\nRESTORE_FULL_ROW_COMPARISON_DimSeller=PASS\r\nRESTORE_FULL_ROW_COMPARISON_DimCustomer=PASS\r\nRESTORE_FULL_ROW_COMPARISON_DimProduct=PASS\r\nRESTORE_FULL_ROW_COMPARISON_DimDate=PASS\r\nRESTORE_FULL_ROW_COMPARISON_DimGeography=PASS\r\nRESTORE_FULL_ROW_COMPARISON_FactSales=PASS\r\nRESTORE_FULL_ROW_COMPARISON_RefAge=PASS\r\nRESTORE_FULL_ROW_COMPARISON_RefEducation=PASS\r\nRESTORE_FULL_ROW_COMPARISON_RefState=PASS\r\nRESTORE_FULL_ROW_COMPARISON_RefSellerLocation=PASS\r\nRESTORED_CHECKDB=PASS\r\nRESTORED_QUERY_Q4_1=PASS ROWS=8\r\nRESTORED_QUERY_Q4_2=PASS ROWS=40\r\nRESTORED_QUERY_Q4_3=PASS ROWS=15\r\nRESTORED_QUERY_Q4_3_customer_destination_sensitivity=PASS ROWS=15\r\nBACKUP_SHA256=9A2387133085592470B19F06FE9E1869F8F634CC0315CC06E83D02A67213A23A\r\nBACKUP_AND_ACTUAL_RESTORE=PASS\r\n",
+  "SourceComparison": [
+    {
+      "file": "submission/Student_B/ssis/STUDENT_B_ID_SSIS/Master.dtsx",
+      "native_sha256": "d9ef6d631b946436a77442629986dde6c4ecfeea88cebd539e31ad313c7bc900",
+      "local_sha256": "d9ef6d631b946436a77442629986dde6c4ecfeea88cebd539e31ad313c7bc900",
+      "exact_bytes_match": true
+    },
+    {
+      "file": "submission/Student_B/sql/Q4_1.sql",
+      "native_sha256": "cbdc72b9702981fde470b618fcea5cea9f4f4b8530f0ebc7ad09a1ed906541f4",
+      "local_sha256": "cbdc72b9702981fde470b618fcea5cea9f4f4b8530f0ebc7ad09a1ed906541f4",
+      "exact_bytes_match": true
+    },
+    {
+      "file": "submission/Student_B/sql/Q4_2.sql",
+      "native_sha256": "8c93a9b3890f5ae2f3338d96eb2840a7ad59b116e4e00f2b3fed5421a8d08b93",
+      "local_sha256": "8c93a9b3890f5ae2f3338d96eb2840a7ad59b116e4e00f2b3fed5421a8d08b93",
+      "exact_bytes_match": true
+    },
+    {
+      "file": "submission/Student_B/sql/Q4_3.sql",
+      "native_sha256": "f8791658599027f1428d07b4996cae294093d5fb8da1b002fae14465904d59b2",
+      "local_sha256": "f8791658599027f1428d07b4996cae294093d5fb8da1b002fae14465904d59b2",
+      "exact_bytes_match": true
+    },
+    {
+      "file": "submission/Student_B/sql/Q4_3_customer_destination_sensitivity.sql",
+      "native_sha256": "38f7fb75552873571abeb3f7fbbd7362c50573ce7e02e564d622542386124b91",
+      "local_sha256": "38f7fb75552873571abeb3f7fbbd7362c50573ce7e02e564d622542386124b91",
+      "exact_bytes_match": true
+    },
+    {
+      "file": "submission/Student_B/sql/warehouse_validation.sql",
+      "native_sha256": "d1bcf85733e3f766697d07f5b76acf1c222f334e0fc1d4e7b26452805c6761b0",
+      "local_sha256": "d1bcf85733e3f766697d07f5b76acf1c222f334e0fc1d4e7b26452805c6761b0",
+      "exact_bytes_match": true
+    }
+  ],
+  "DownloadedBackupSha256": "9a2387133085592470b19f06fe9e1869f8f634cc0315cc06e83d02a67213a23a",
+  "DownloadedBackupBytes": 28923904,
+  "NativeSqlExportComparison": [
+    {
+      "file": "submission/Student_B/evidence/sql/Q4_1-0.csv",
+      "current_native_sha256": "986026fb024f83e91ecab4b5c94b11c6e1b39a9299ea3b8a3d43185413e61e87",
+      "prior_sha256": "986026fb024f83e91ecab4b5c94b11c6e1b39a9299ea3b8a3d43185413e61e87",
+      "equivalent": true,
+      "comparison": "exact bytes"
+    },
+    {
+      "file": "submission/Student_B/evidence/sql/Q4_1-0.json",
+      "current_native_sha256": "09500c747ef5d96e7ffa398075bdd79c6720920c0478b8f65df07ce5e545d650",
+      "prior_sha256": "09500c747ef5d96e7ffa398075bdd79c6720920c0478b8f65df07ce5e545d650",
+      "equivalent": true,
+      "comparison": "JSON parsed values"
+    },
+    {
+      "file": "submission/Student_B/evidence/sql/Q4_2-0.csv",
+      "current_native_sha256": "329e6412f21c43b779bdcbc965724028da8238320da447d71f37a3ca61cc8c81",
+      "prior_sha256": "329e6412f21c43b779bdcbc965724028da8238320da447d71f37a3ca61cc8c81",
+      "equivalent": true,
+      "comparison": "exact bytes"
+    },
+    {
+      "file": "submission/Student_B/evidence/sql/Q4_2-0.json",
+      "current_native_sha256": "df5f3f32d07b07bced0bbb94628ee34c9fbc95399cbc2779f127c52faae8fede",
+      "prior_sha256": "df5f3f32d07b07bced0bbb94628ee34c9fbc95399cbc2779f127c52faae8fede",
+      "equivalent": true,
+      "comparison": "JSON parsed values"
+    },
+    {
+      "file": "submission/Student_B/evidence/sql/Q4_3-0.csv",
+      "current_native_sha256": "0b126e5a40faf8a357eba827628d015a00a5db7775965bf0a3e81855aea6d178",
+      "prior_sha256": "0b126e5a40faf8a357eba827628d015a00a5db7775965bf0a3e81855aea6d178",
+      "equivalent": true,
+      "comparison": "exact bytes"
+    },
+    {
+      "file": "submission/Student_B/evidence/sql/Q4_3-0.json",
+      "current_native_sha256": "a1b9ba0426212d58f9a456978ebed8c4640b4063be9faa11d2ce72a5477649b3",
+      "prior_sha256": "a1b9ba0426212d58f9a456978ebed8c4640b4063be9faa11d2ce72a5477649b3",
+      "equivalent": true,
+      "comparison": "JSON parsed values"
+    },
+    {
+      "file": "submission/Student_B/evidence/sql/Q4_3_customer_destination_sensitivity-0.csv",
+      "current_native_sha256": "1669c9f9c8349782ca17c5ca1a378248b7629f99907c994812a99e175fdaf294",
+      "prior_sha256": "1669c9f9c8349782ca17c5ca1a378248b7629f99907c994812a99e175fdaf294",
+      "equivalent": true,
+      "comparison": "exact bytes"
+    },
+    {
+      "file": "submission/Student_B/evidence/sql/Q4_3_customer_destination_sensitivity-0.json",
+      "current_native_sha256": "e2a5bcd02cbc4c70c1698cb4b92bee49e7d12c13c0b2bb30a644db55808d8e9d",
+      "prior_sha256": "e2a5bcd02cbc4c70c1698cb4b92bee49e7d12c13c0b2bb30a644db55808d8e9d",
+      "equivalent": true,
+      "comparison": "JSON parsed values"
+    },
+    {
+      "file": "submission/Student_B/evidence/sql/business-audit-0.csv",
+      "current_native_sha256": "cf644f6d1c70b318d842c86fbb9c5b3542908f92a6acfafc0f463115b2d56a66",
+      "prior_sha256": "cf644f6d1c70b318d842c86fbb9c5b3542908f92a6acfafc0f463115b2d56a66",
+      "equivalent": true,
+      "comparison": "exact bytes"
+    },
+    {
+      "file": "submission/Student_B/evidence/sql/business-audit-0.json",
+      "current_native_sha256": "d2a04efa6a9583c93a9864a0c4f7e1b1ead925fbf2fa350c70514194a6d5be66",
+      "prior_sha256": "d2a04efa6a9583c93a9864a0c4f7e1b1ead925fbf2fa350c70514194a6d5be66",
+      "equivalent": true,
+      "comparison": "JSON parsed values"
+    },
+    {
+      "file": "submission/Student_B/evidence/sql/business-audit-1.csv",
+      "current_native_sha256": "666258e4d552d6d7d420554c51dd05bf121a1ada9a35897e605f269ae2ccd15f",
+      "prior_sha256": "666258e4d552d6d7d420554c51dd05bf121a1ada9a35897e605f269ae2ccd15f",
+      "equivalent": true,
+      "comparison": "exact bytes"
+    },
+    {
+      "file": "submission/Student_B/evidence/sql/business-audit-1.json",
+      "current_native_sha256": "9549211dbdf6d74005aeca73e6c89b32210a2dc513d1a669ae876c0743b8da58",
+      "prior_sha256": "9549211dbdf6d74005aeca73e6c89b32210a2dc513d1a669ae876c0743b8da58",
+      "equivalent": true,
+      "comparison": "JSON parsed values"
+    },
+    {
+      "file": "submission/Student_B/evidence/sql/business-audit-2.csv",
+      "current_native_sha256": "5573b121aea48c190bedf5103841ca85376ce14253781c71782a845d2d636ca2",
+      "prior_sha256": "5573b121aea48c190bedf5103841ca85376ce14253781c71782a845d2d636ca2",
+      "equivalent": true,
+      "comparison": "exact bytes"
+    },
+    {
+      "file": "submission/Student_B/evidence/sql/business-audit-2.json",
+      "current_native_sha256": "e3577b8981483da59af9f22f721bf79a5d8d91ac745e1f611e2e6cc21695f414",
+      "prior_sha256": "e3577b8981483da59af9f22f721bf79a5d8d91ac745e1f611e2e6cc21695f414",
+      "equivalent": true,
+      "comparison": "JSON parsed values"
+    },
+    {
+      "file": "submission/Student_B/evidence/sql/execution_status.txt",
+      "current_native_sha256": "f485a9a7db77d374a5c1d2136a06258bcd41e3241df7847ecea119b09d3d30dd",
+      "prior_sha256": "f485a9a7db77d374a5c1d2136a06258bcd41e3241df7847ecea119b09d3d30dd",
+      "equivalent": true,
+      "comparison": "exact bytes"
+    },
+    {
+      "file": "submission/Student_B/evidence/sql/warehouse-validation-0.csv",
+      "current_native_sha256": "f22845c495271e69551ee26763374e293af621fc4f119c1f41aff2aba849db8a",
+      "prior_sha256": "f22845c495271e69551ee26763374e293af621fc4f119c1f41aff2aba849db8a",
+      "equivalent": true,
+      "comparison": "exact bytes"
+    },
+    {
+      "file": "submission/Student_B/evidence/sql/warehouse-validation-0.json",
+      "current_native_sha256": "13347cafe3aab6516e891df68fc4867b816986e2f2d26ca7f1028e7db92b0e10",
+      "prior_sha256": "13347cafe3aab6516e891df68fc4867b816986e2f2d26ca7f1028e7db92b0e10",
+      "equivalent": true,
+      "comparison": "JSON parsed values"
+    },
+    {
+      "file": "submission/Student_B/evidence/sql/warehouse-validation-1.csv",
+      "current_native_sha256": "d00b77ecca2357f3fbe1ace7772769134d9b31da3ccd71852fe780cce556173b",
+      "prior_sha256": "d00b77ecca2357f3fbe1ace7772769134d9b31da3ccd71852fe780cce556173b",
+      "equivalent": true,
+      "comparison": "exact bytes"
+    },
+    {
+      "file": "submission/Student_B/evidence/sql/warehouse-validation-1.json",
+      "current_native_sha256": "387eedb2f158b3253fd0e81b05c9a50bf5e38d9df714bca4a14362e8411f5503",
+      "prior_sha256": "387eedb2f158b3253fd0e81b05c9a50bf5e38d9df714bca4a14362e8411f5503",
+      "equivalent": true,
+      "comparison": "JSON parsed values"
+    },
+    {
+      "file": "submission/Student_B/evidence/sql/warehouse-validation-2.csv",
+      "current_native_sha256": "b43e4201c85f7b1396009a48b60de5acf708553836f590be362cfd28d4b867aa",
+      "prior_sha256": "b43e4201c85f7b1396009a48b60de5acf708553836f590be362cfd28d4b867aa",
+      "equivalent": true,
+      "comparison": "exact bytes"
+    },
+    {
+      "file": "submission/Student_B/evidence/sql/warehouse-validation-2.json",
+      "current_native_sha256": "d4a37c4e6bd31f2fb838e2d75224cdb40266278bae9aea6a82e225267cce13f2",
+      "prior_sha256": "d4a37c4e6bd31f2fb838e2d75224cdb40266278bae9aea6a82e225267cce13f2",
+      "equivalent": true,
+      "comparison": "JSON parsed values"
+    }
+  ]
+}

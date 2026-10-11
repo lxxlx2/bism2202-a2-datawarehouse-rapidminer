@@ -1,17 +1,27 @@
-# Student A delivery status
+# Student A final local delivery
 
-PARTIAL. This is a working delivery directory, not a completed school submission.
+Technical status: PASS. Student ID confirmation and student review of AI/collaboration rules: PENDING. No school upload has been performed.
 
-Confirmed student ID: pending; use STUDENT_A_ID. The complete native SSIS master and native Visual Studio build passed. Counts, original fields, monetary measures, relationships and trusted constraints passed validation. The backup passed actual isolated restoration, CHECKDB, ten full-row comparisons and four restored query comparisons. Local SHA256 matches the guest backup. Original-template Word/PDF review drafts have passed nine-page layout review under work/report_review. Remaining native Designer/SSMS/AI Studio screenshots, final reports and assignment packaging remain pending.
+Open `report/STUDENT_A_ID.docx` for the editable report and `report/STUDENT_A_ID.pdf` for the reviewed rendering (48 pages). Both retain the teacher template; native screenshots and ten APA references are included. Word limits and every rendered page passed review.
 
-Analysis SQL has executed against [STUDENT_A_ID_dw]; actual CSV/JSON results are in evidence/sql/. NSW suppliers uses seller origin; customer destination is a separately labelled sensitivity. Common source facts agree across A/B. Ranking policy causes the documented supplier-output difference. See docs/DW_BUSINESS_DEFINITIONS.md.
+## Required named artifacts
 
-For the preserved first seller-dimension runtime milestone, use scripts/windows/warehouse/initial_dimseller.ps1 -Student A, with schema.sql next to it. That shared base loader is not the final independent project.
+- Report: `report/STUDENT_A_ID.docx` (Turnitin report box).
+- Native project: `ssis/STUDENT_A_ID_ssis.zip` (SSIS box); open the solution inside it and follow `ssis/README_RUN.md`.
+- Actual restored/verified backup: `database/STUDENT_A_ID_dw.bak` (DW box); database name is `STUDENT_A_ID_dw`.
+- Diagrams: `diagrams/STUDENT_A_ID_dm.png` and `diagrams/STUDENT_A_ID_fact.png`. Fact is the genuine native overview; readable native stage images accompany it in `evidence/gui/`.
+- Native model process: `rapidminer/STUDENT_A_ID_rapidminer.rmp`; model switching and unchanged CSV path relocation instructions are supplied.
+- SQL: `sql/`; complete actual query exports: `evidence/sql/`; original native GUI images: `evidence/gui/`.
+- Technical acceptance: `evidence/ACCEPTANCE_REPORT.md`; file hashes: `FILE_HASHES.json`; shared validation proofs accompany each convenience ZIP. Outer archive hashes and post-package checks are external; see shared/validation/PACKAGE_CHECKS.md.
 
-Final required names: STUDENT_A_ID_ssis.zip, STUDENT_A_ID_dw.bak, STUDENT_A_ID_dm.png, STUDENT_A_ID_fact.png, STUDENT_A_ID_rapidminer.rmp, STUDENT_A_ID.docx. Review PDF is additional. School submission boxes are separate; a convenience final ZIP is not a substitute.
+The outer `BISM2202_Student_A_FINAL.zip` is a convenience delivery archive. It does not replace the separate school submission boxes. IDs remain explicit placeholders because real IDs have not been confirmed. Changing only a filename is insufficient to change internal warehouse/project/report IDs; do not invent an ID or claim this step is complete.
 
-Native AI Studio execution verified: Logistic Regression and Decision Tree; 80/20 stratified split; 5-fold training-only CV. Real process files and native metrics/predictions are in rapidminer/ and evidence/native/. Frozen CV decisions and disjoint-cohort validation are in submission/shared/validation/. Native GUI reopening and required screenshots are still pending. All held-out models have zero default recall at their fixed default classification threshold; no model is validated for lending decisions. Native F1 unknown is preserved where emitted, with separate count-derived F1 explicitly defined as zero.
+## Reproducibility and limitations
 
-The complete project is under ssis/STUDENT_A_ID_SSIS. Model switching instructions are in rapidminer/SWITCH_MODELS.md. Do not treat the partial manifest as school acceptance.
+Actual independent SSIS Master, native Designer execution, all source/monetary/relationship/constraint checks, final SQL results and isolated actual backup restoration passed. Q4.3 defines NSW by supplier origin; destination sensitivity is separately labelled. A preserves fifth-rank ties with DENSE_RANK; B returns deterministic five rows per year with ROW_NUMBER. Original missing freight and conflicting geography are preserved.
 
-Unchanged implementation copies and their SHA256 record are in code/. The original loan CSV accompanies the local delivery in rapidminer/data/; README_RUN.md explains source_csv relocation without altering frozen settings. These support copies do not constitute new execution acceptance.
+Native models: Logistic Regression / Decision Tree; 80/20 stratified split, seed 2202; five-fold training-only CV. Original RMP files, preprocessing, splits and candidate decisions remain frozen. All four held-out classifiers have zero default recall at their fixed threshold. Native undefined F1 remains undefined; separately count-derived F1 is zero. No classifier is accepted for operational lending. GUI viewing replays did not retune or reselect the model.
+
+Read `AI_DISCLOSURE.md` and `shared/ai_disclosure/visible_prompts_and_ai_outputs_record.md`. Codex substantially assisted design, code, execution, analysis and drafting. The export states its actual UTC cutoff; later packaging/Git/handoff activity is not claimed to be included. Students must understand and review the work and make a truthful declaration under the course's AI/cooperation rules. Technical verification is separate from that human acceptance.
+
+No fabricated screenshot, source value, result or student authorship is used. Failed captures remain outside report evidence. Teacher originals are SHA256-verified unchanged. Local backup, archive, reports, original data copy and full AI record remain local; Git contains code and bounded evidence/manifests.

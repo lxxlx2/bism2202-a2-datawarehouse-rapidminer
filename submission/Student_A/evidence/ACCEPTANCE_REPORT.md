@@ -1,31 +1,14 @@
-# Student A acceptance report
+# Student A technical acceptance
 
-**Overall status: PARTIAL — no final school submission or FINAL assignment ZIP.**
+Technical implementation and report evidence: PASS. School submission: NOT PERFORMED. Student ID confirmation, personal review and course AI/collaboration acceptance remain PENDING; they are human decisions, separate from execution checks.
 
-This evidence summary was generated at 2026-10-10T14:09:09.267209+00:00. That is the report snapshot
-time, not an invented execution timestamp. The preserved successful backend
-Master log records its start as **2026-10-08T22:18:33.4435630-07:00**. The native AI runner's result log
-does not provide a precise execution timestamp; that timestamp is UNKNOWN.
+Snapshot: 2026-10-11T10:30:22.104868+00:00. Final native Designer build validation: 2026-10-10T20:25:05.7972095Z through 2026-10-10T20:26:58.2998451Z. These are recorded execution times, not the snapshot time.
 
-## Runtime and implementation
+## Warehouse and native evidence
 
-The recorded environment is macOS on Apple Silicon with the UTM
-`BISM2202-Windows` x86_64 Windows Server 2025 VM, SQL Server 2022 Developer,
-SSIS Runtime 16, Visual Studio 2022 Community with SSIS Projects 2.2, and SSMS 22.
-The model runs used the installed macOS Altair AI Studio 2026.1.1 native engine
-12.1.001 and Java 17. These are the preserved execution baseline; this report
-does not claim a new software inventory or reinstall.
+Actual SSIS Master execution passed all eleven flow counts. Independent Customer integration uses Lookup; the master integrates through native transformations. Native Visual Studio project/build and ISPAC semantic comparison passed. All seven required dimension/fact native GUI overview images plus readable native flow details are supplied and inserted in the teacher template. The original success screen is retained.
 
-- Real SSIS Master execution: PASS at all 11 recorded flow counts.
-- Native Visual Studio build and ISPAC semantic comparison: PASS.
-- Native Designer GUI: PASS: native project reopened and full Master execution success captured; individual image acceptance is incomplete.
-- Source fields, four monetary measures, relationships and trusted constraints:
-  PASS in the executed SQL validator.
-- Original source data and teacher materials: preserved.
-
-## Actual warehouse records
-
-| Table | Recorded rows |
+| Table | Rows |
 |---|---:|
 | FactSales | 137,901 |
 | DimCustomer | 21,000 |
@@ -34,94 +17,33 @@ does not claim a new software inventory or reinstall.
 | DimGeography | 1,599 |
 | DimDate | 493 |
 
-Total item quantity across all preserved statuses: **688,367**. Delivered
-analysis and all-status warehouse totals are separate definitions. Revenue
-uses the supplied line amount; recalculated extended amounts remain a separate
-measure. Missing freight and the conflicting seller-location mapping remain
-explicit source limitations. No cost data exists to establish profit.
+The warehouse preserves 137,901 source items and 688,367 units across all statuses. Delivered-only analytical results use original LineAmount, with ExtendedAmount separately reconciled. All missing freight remains NULL. The conflicting seller location remains UNK; two sellers and 2,797 fact rows are affected. Profit is UNKNOWN because costs are absent. Original source data and teacher materials remain unchanged.
 
-The four reference flows recorded 78 Age, 6 Education, 8 State and 100 raw
-SellerLocation records; the seller geography role has 99 distinct locations.
+## Actual backup restore and SQL
 
-## Database restoration and SQL
+Backup bytes: 28737024. SHA256: `26394c39804afe7cb354c98f164bc84f441d40cbf860f571ce0b7e8d32d58c5f`. Actual isolated restore to `STUDENT_A_ID_dw_restore_validation_20261010132611` passed CHECKDB, ten bidirectional full-row comparisons and all four restored query comparisons. Local backup hash equals the native record. Original immutable SQL results were compared against fresh exports from this final build.
 
-The actual backup was restored to a separate validation database. CHECKDB,
-ten bidirectional full-row table comparisons and four restored analytical
-query comparisons passed. This is actual restoration, beyond VERIFYONLY.
+Native SSMS screenshots show Q4.1 eight rows, Q4.2 forty rows and Q4.3 seventeen tied-rank rows; additional native result frames cover all rows. Q4.3 uses supplier origin in NSW, with customer destination documented separately. A DENSE_RANK and B ROW_NUMBER explain the supplier-count difference. No manufactured business differences were introduced.
 
-- Backup: `database/STUDENT_A_ID_dw.bak`
-- Bytes: 28447232
-- SHA256: `dd92262915ce8c0426582ce0c50a7fdb06fd838d74d24d378b55ba4207db5ec1`
-- Current local backup matches that recorded hash: PASS.
-- Real SQL result exports: `evidence/sql/`; reproducible queries: `sql/`.
-- Native SSMS result-grid screenshots: PENDING.
+## Native AI Studio
 
-| Executed result export | Recorded result rows |
-|---|---:|
-| Q4_1 | 8 |
-| Q4_2 | 40 |
-| Q4_3 | 17 |
-| Q4_3_customer_destination_sensitivity | 21 |
+AI Studio 2026.1.1 / engine 12.1.001 / Java 17 performed the native experiments. The frozen pre-holdout choice is recorded in `7afc833dca81d220f0801c79ac723c4aaf092b23`. Training-only fold-fitted preprocessing, disjoint train/holdout identities and unchanged RMP files passed validation. Native GUI process, CV, fitted model and performance screenshots are visually reviewed and included. Fixed holdout display replay reproduced original outputs; it did not retune or reselect models. B's forest image shows the first constituent tree, while native text audits all fifty trees.
 
-Q4.3 defines NSW by supplier origin. Customer destination is a separately
-labelled sensitivity. Student A uses DENSE_RANK with included fifth-rank ties;
-Student B uses deterministic ROW_NUMBER. Shared source facts agree; ranking
-rules account for the supplier result-count difference.
-
-## Native model evaluation
-
-The pre-holdout decision was frozen in commit
-`7afc833dca81d220f0801c79ac723c4aaf092b23`. Fold-fitted preprocessing, disjoint
-train/holdout identities, matched candidate cohorts and unchanged CV text
-passed validation. The named teaching process replay reproduced the original
-CV performance; that packaging replay did not repeat the holdout.
-
-| Fixed model | Training rows | Holdout rows | Accuracy | AUC | TN/FP/FN/TP |
+| Model | Train | Holdout | Accuracy | AUC | TN/FP/FN/TP |
 |---|---:|---:|---:|---:|---|
 | logistic_regression | 7999 | 1999 | 0.893447 | 0.624587 | 1786/1/212/0 |
 | decision_tree | 7999 | 1999 | 0.893947 | 0.500000 | 1787/0/212/0 |
 
-Native F1 is undefined in these holdout outputs and is preserved as such.
-The separately calculated confusion-count F1 is zero. Every model has zero
-holdout default recall at the fixed native classification threshold. No model
-is accepted for lending decisions. All eight required native model GUI images
-per student are now saved and visually inspected. Training-only CV GUI replay
-and fixed holdout display replay reproduce the recorded confusion counts.
-The RMP files remain byte-identical to the committed frozen files.
-`shared/validation/native_ai_gui_capture_validation.json` records screenshot
-hashes, scope and limitations; B's model image shows the first forest tree.
+Every model has zero holdout default recall at the fixed threshold. Native F1 is undefined and preserved; separately count-derived F1 is zero. Neither model is accepted for lending decisions.
 
-## Delivery integrity and remaining gates
+## Reports and local delivery
 
-The native SSIS project ZIP passed CRC integrity. Five RMP files per student
-are XML-readable. 26 unchanged code/data support copies passed
-source-to-copy SHA256 comparison. Original-template report drafts have a
-completed nine-page layout review, but final image-filled reports require
-another full render and page review. Student IDs remain placeholders.
+The final DOCX retains the immutable teacher template's sections and unchanged package parts. All nineteen required image slots are filled. Every final rendered page was visually reviewed: 48 pages, PASS. Word counts: `{"process": 87, "recommendations": 162, "ethics": 200, "predictors": 94, "comparison": 125, "dimensions": 280, "implementation": 212, "executive_summary": 194, "query_4_1": 85, "query_4_2": 82, "query_4_3": 105}`. Ten authentic APA references, five per task, and substantial AI disclosure are included. See `report/RENDER_QA.json` and `authoring_validation.json` for hashes and checks.
 
-Missing required report screenshots at this snapshot:
+The named SSIS project ZIP, actual backup, schema and fact PNG aliases, native RMP, final Word/PDF, executable code, complete SQL outputs and evidence are packaged separately for this student. The final ZIP CRC and every member hash are checked by the final packaging script; see `shared/validation/final_package_verification.json`. Full visible AI prompts/tool inputs are exported at the declared UTC cutoff and kept locally for review, not published to Git. Hidden reasoning and unrelated private tool results are excluded.
 
-- `ssis_fact.png`
+## Evidence limitations and human steps
 
-Other incomplete items: final image-filled DOCX/PDF, final visible AI record
-snapshot and student review, final manifests and FINAL assignment ZIP.
-The AI declaration discloses substantial design, code, execution, analysis
-and drafting assistance; student confirmation of course AI/cooperation rules
-is required. No manual student execution or independent authorship is invented.
+Historical failure logs remain preserved. Invalid file-dialog or empty-editor captures were rejected, never inserted as SQL results. Earlier reviewed native overview images are deliberately preserved even where a later guest working filename was overwritten; their local and current guest hashes are distinguished. No synthetic screenshot or Python model visual replaced native evidence.
 
-## Preserved failures and limitations
-
-- `evidence/ssis/initial_DimSeller_failure_date_conversion.txt`
-
-UTM mouse input does not reliably reach the Windows guest. After explicit
-command-takeover authorisation, Windows native messages successfully selected
-and fitted the Customer Geography flow; its complete native screenshot was
-visually reviewed. Further flow captures remain subject to visual acceptance.
-The Cua launcher binding still cannot attach AI Studio's running Java window.
-Native macOS Accessibility control using an already trusted Swift process now
-reads and controls that actual window. The user explicitly authorised the EULA
-and completed login; the actual window now shows Trial 2026.1.1. Native model
-GUI captures are saved. A later UTM RPC timeout also prevented pause/resume;
-the guest stopped and was started again using utmctl. Windows session recovery
-and remaining screenshots are still pending. Native runtime evidence has not
-been replaced by reconstructed screenshots or Python-generated model visuals.
+Real student IDs remain STUDENT_A_ID placeholders. Each student must review and understand the work and accurately declare extensive AI assistance. The course discourages AI beyond proofreading; technical PASS does not establish permission from the course. The convenience ZIP does not replace the separate Turnitin report, SSIS project and DW backup submission boxes. No school upload is claimed.

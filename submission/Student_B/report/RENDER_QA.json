@@ -1,0 +1,290 @@
+{
+  "Status": "PASS",
+  "Utc": "2026-10-11T10:26:27.315997+00:00",
+  "DocxSha256": "046bf72d50121a6978be3e8b612a67be08e6d9bbdf340caccf89dd609c94e088",
+  "PdfSha256": "4408d288a8d48237a52ea6eb8691f34c3a09acc863bd5fe131086144f9709fe6",
+  "Pages": 56,
+  "Review": "Every rendered page 1-56 visually inspected; no clipping, overlap or missing evidence. Native detail screenshots supplement small overview screenshots. Teacher template retained.",
+  "PageHashes": [
+    {
+      "Page": 1,
+      "Sha256": "ee4d865ed156a59afa6b393e0148ce29e25cc7365b9f6909bc5d119d4f87d546",
+      "VisualReview": "PASS"
+    },
+    {
+      "Page": 2,
+      "Sha256": "5cb48e06c7317e090de43985c605699020d85337e0c96d17f7d992f4d2eca221",
+      "VisualReview": "PASS"
+    },
+    {
+      "Page": 3,
+      "Sha256": "3bad269d7afed1edd4e5f8a64e0596b03e1f05ea6b28fe02845e644f7bfa4a86",
+      "VisualReview": "PASS"
+    },
+    {
+      "Page": 4,
+      "Sha256": "5e48948b4894c8bbfa073f73cc52e37ed02e5976344a147adbe9c3cf6f7ecfb0",
+      "VisualReview": "PASS"
+    },
+    {
+      "Page": 5,
+      "Sha256": "258db2341efa3a7b92d8dd060e6803060d16167cc5afa42e7e0a0df0aab80aa4",
+      "VisualReview": "PASS"
+    },
+    {
+      "Page": 6,
+      "Sha256": "f43d1b0a01f8d2172a0bb36307c17ab49a9667c053183a6001ce7c99cc3efe5e",
+      "VisualReview": "PASS"
+    },
+    {
+      "Page": 7,
+      "Sha256": "d695c93197726d52d6820242c68b2b9c5807b3508de84d4f9fffb752cbf62973",
+      "VisualReview": "PASS"
+    },
+    {
+      "Page": 8,
+      "Sha256": "1d00e625f6b030f9000d13678f88a0ded985ab9179590d6a932ade8b0e644816",
+      "VisualReview": "PASS"
+    },
+    {
+      "Page": 9,
+      "Sha256": "5b0f9e0e28b42fcc94af54006522270c45d2c49bb68848f06465712db5490a1f",
+      "VisualReview": "PASS"
+    },
+    {
+      "Page": 10,
+      "Sha256": "5e1030f550cb6c7a7aa2cfab65a6f47c54ee7b982b9f2c3f4ecd7c6e89c7363e",
+      "VisualReview": "PASS"
+    },
+    {
+      "Page": 11,
+      "Sha256": "fb27621436b43c6bc8fdece5c68a0b877edeb8d40e2e53fe1e8f284dbb2ddb3f",
+      "VisualReview": "PASS"
+    },
+    {
+      "Page": 12,
+      "Sha256": "d8f7c999f7aceb6147e21d0c29e1f80b9c083f3cb5dbb03c1203e0d5053aa66d",
+      "VisualReview": "PASS"
+    },
+    {
+      "Page": 13,
+      "Sha256": "41a337714f224836a387ef2e109aa8ceac11037b4baba2d5d5e6d8b4ea84c471",
+      "VisualReview": "PASS"
+    },
+    {
+      "Page": 14,
+      "Sha256": "b211a6301aaebd85b462a1715eafbce4f3aca0389f18d90e4ca295e0a1edc1e5",
+      "VisualReview": "PASS"
+    },
+    {
+      "Page": 15,
+      "Sha256": "b68cb42cc2eaab5af09db9e8d634ac7ec66131ae476701d5363401c56bb1a06b",
+      "VisualReview": "PASS"
+    },
+    {
+      "Page": 16,
+      "Sha256": "9b76faa9422adec3b2d8d4440290ce05b18d291af374f13297ab8cf64dd65558",
+      "VisualReview": "PASS"
+    },
+    {
+      "Page": 17,
+      "Sha256": "6525c47347a2f8615e677aaaafeef15488b22fd3873fafe83f4ff372bfbf1357",
+      "VisualReview": "PASS"
+    },
+    {
+      "Page": 18,
+      "Sha256": "cfe5a8713544f56ee95727548d37436f549556060b46e99cc2fda3f56c2d4ddd",
+      "VisualReview": "PASS"
+    },
+    {
+      "Page": 19,
+      "Sha256": "fa62e92624e4eb7840d514d0e021cfce5105aa01bc5b6827bf6a5a032d398905",
+      "VisualReview": "PASS"
+    },
+    {
+      "Page": 20,
+      "Sha256": "c34e306b7017ad1f58168ececba5775ef16938046727cc4ef05c88bb3553242f",
+      "VisualReview": "PASS"
+    },
+    {
+      "Page": 21,
+      "Sha256": "972d3cedcf35349cb7f8126fccb7e75eac81656593334be9526577ede3a6fbf2",
+      "VisualReview": "PASS"
+    },
+    {
+      "Page": 22,
+      "Sha256": "44d8477ba28fea551eb1d2ccc7808a3e75a121740cd11ad015014ecc0cbf53ca",
+      "VisualReview": "PASS"
+    },
+    {
+      "Page": 23,
+      "Sha256": "abd34385003e3983fcbae60b603499a6ee920176d3cf5ef859c928e6e0be90bc",
+      "VisualReview": "PASS"
+    },
+    {
+      "Page": 24,
+      "Sha256": "e982704319b75ef3c21046b8ae24c5497684abea5d3df935c696fc731e5cfcea",
+      "VisualReview": "PASS"
+    },
+    {
+      "Page": 25,
+      "Sha256": "c4b8ddef03e121afb0b2e317a4115d7361d67c827e95b98e20da89121da6dd16",
+      "VisualReview": "PASS"
+    },
+    {
+      "Page": 26,
+      "Sha256": "5f7c7976e69b629971fdbd199bac35fd6e7a72164d4d722188a0c2e7d3d9d20e",
+      "VisualReview": "PASS"
+    },
+    {
+      "Page": 27,
+      "Sha256": "cbdc5b039f2511cce8d4b75e13ad34f230bf8c2c80c3d322cd7b0df3a754e9d4",
+      "VisualReview": "PASS"
+    },
+    {
+      "Page": 28,
+      "Sha256": "f1f83acee216b29a9f9137b4dedd8177f78a7600689916befd7a219bf78b860e",
+      "VisualReview": "PASS"
+    },
+    {
+      "Page": 29,
+      "Sha256": "5cfce2760c30fb0a4c7bd623bead1b548595afeeaf35b7633f205495fc8ef7f1",
+      "VisualReview": "PASS"
+    },
+    {
+      "Page": 30,
+      "Sha256": "052e079c1f9ce96a8dffcf92ee42cc095284aab2392b1f2cd5b804cc3583bbbf",
+      "VisualReview": "PASS"
+    },
+    {
+      "Page": 31,
+      "Sha256": "9f51b0dcdc89f167c80fd90f3ff35f997af771469797e59d6e57005d500a7402",
+      "VisualReview": "PASS"
+    },
+    {
+      "Page": 32,
+      "Sha256": "21bcff4cc533b7f2b3456d180448d411da3929da09aa8654e869f7cd0f0d754d",
+      "VisualReview": "PASS"
+    },
+    {
+      "Page": 33,
+      "Sha256": "805571c7166ba4e60e334ce61dc6bb0b560069cde41ea35e6eb5f9de3f085ea0",
+      "VisualReview": "PASS"
+    },
+    {
+      "Page": 34,
+      "Sha256": "23b94782e2c9b9d4be728e2177ee3256534bdc5d5d12e938c42e954dd5b136b3",
+      "VisualReview": "PASS"
+    },
+    {
+      "Page": 35,
+      "Sha256": "f883eb65ff7ce9a7d2e4bdc858eba5c43ccf66e89ee1133731c377c23b95f7f8",
+      "VisualReview": "PASS"
+    },
+    {
+      "Page": 36,
+      "Sha256": "510b5c2c7157cc57a19e9953533bc9d5ab32973e302be68b81622a809772add4",
+      "VisualReview": "PASS"
+    },
+    {
+      "Page": 37,
+      "Sha256": "b41df6ab3c9a7014cf503379d02c34418834717adda67dd85c0b3b78510ef8f9",
+      "VisualReview": "PASS"
+    },
+    {
+      "Page": 38,
+      "Sha256": "5e011f36ea347eedcd34ff2414e67d072854120304ca8b6ccbb227a0ee8c5984",
+      "VisualReview": "PASS"
+    },
+    {
+      "Page": 39,
+      "Sha256": "6287b54418c25cd6ea22489dcc3412aa0fd32db7a04d71d621592266a2282ae2",
+      "VisualReview": "PASS"
+    },
+    {
+      "Page": 40,
+      "Sha256": "2a7f301e9901dfdbc3bfd2d29e55b6027a7acd2b0f16dc6ff15d3f82f78358ab",
+      "VisualReview": "PASS"
+    },
+    {
+      "Page": 41,
+      "Sha256": "ec363314b320a0a1eac2ee8404494f3f085869fe1a97e75b3f9da77ec5c70163",
+      "VisualReview": "PASS"
+    },
+    {
+      "Page": 42,
+      "Sha256": "3ed749054dbb844b84bfec6fbfd4765051b5d208879ff0a70347fe9b495eed61",
+      "VisualReview": "PASS"
+    },
+    {
+      "Page": 43,
+      "Sha256": "28748295e96229a85b24b3adeed47bad00d7e1f62a969bbb66d65feff97559e9",
+      "VisualReview": "PASS"
+    },
+    {
+      "Page": 44,
+      "Sha256": "ee2195414c3853d5fd2d7f637d4f8106fe27dbe2e82bf655ba7e2ada34bae583",
+      "VisualReview": "PASS"
+    },
+    {
+      "Page": 45,
+      "Sha256": "8b251c14ac9a4f96cc243180a29729e3b46c657134a2e09a8c449b46c7b62dd8",
+      "VisualReview": "PASS"
+    },
+    {
+      "Page": 46,
+      "Sha256": "42ba2b364f9a35f0cfd939c7e94780b6a787e90430c85541c23cbffbc0abaee1",
+      "VisualReview": "PASS"
+    },
+    {
+      "Page": 47,
+      "Sha256": "36b7f1d8175bdc5eb9892f041d11d47f419b41d7c8958050012775a9c10b6a2a",
+      "VisualReview": "PASS"
+    },
+    {
+      "Page": 48,
+      "Sha256": "c0bd382a95c2f2e5e746ff275a9bc28e39d8f75e6a88985f65804d6153168817",
+      "VisualReview": "PASS"
+    },
+    {
+      "Page": 49,
+      "Sha256": "e2ef0e6a1a334196044ca8f4eb12fd3d3ba81d74ef1633a3aa0ae0ab19cc0d47",
+      "VisualReview": "PASS"
+    },
+    {
+      "Page": 50,
+      "Sha256": "0126d763565edcd023cfb307a1c0220606002f380b26898e0a108cff5e99f819",
+      "VisualReview": "PASS"
+    },
+    {
+      "Page": 51,
+      "Sha256": "f8c2ad85bee534985cc21127c75ba986541c838cc7cad32ff0d3730f137ea71b",
+      "VisualReview": "PASS"
+    },
+    {
+      "Page": 52,
+      "Sha256": "1d00f670cfbb909c2123776d5a496464eeabac97759dbf072950b0d661362819",
+      "VisualReview": "PASS"
+    },
+    {
+      "Page": 53,
+      "Sha256": "099af40790a514f9fb86a5187da0c1cfe3fa5b751c5cbcad1b5fcefc025dc4e8",
+      "VisualReview": "PASS"
+    },
+    {
+      "Page": 54,
+      "Sha256": "916f2a4a791283b413992781a3155e6a029c7e7fd4b2be04721690a85d3ebfe4",
+      "VisualReview": "PASS"
+    },
+    {
+      "Page": 55,
+      "Sha256": "039876c9950db3465a81012d0589014e19457915d90dbff92beb7291db1b6e00",
+      "VisualReview": "PASS"
+    },
+    {
+      "Page": 56,
+      "Sha256": "6f9391f45c4a7f7ec464059067022e572c13e901f5c67b71004d3d3a11d65826",
+      "VisualReview": "PASS"
+    }
+  ]
+}

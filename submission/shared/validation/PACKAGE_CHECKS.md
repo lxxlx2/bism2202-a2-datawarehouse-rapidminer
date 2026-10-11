@@ -1,0 +1,3 @@
+# Final archive verification
+
+Both final archive CRCs and every archive member are checked against current source bytes by `scripts/analysis/package_final_deliveries.py`. The external `final_package_verification.json` and `delivery_inventory.json` sit beside the delivered artifacts in the repository's `submission/shared/validation/` directory. They contain the outer archive hashes and are excluded from the archives to avoid circular hashes. `artifact_inventory.json` is included as the pre-package local file-integrity record. Each student's `FILE_HASHES.json` lists all its delivered files except itself. Native execution, restoration and report-review proofs are included in both archives.

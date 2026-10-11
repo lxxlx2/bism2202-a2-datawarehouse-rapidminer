@@ -1,0 +1,299 @@
+{
+  "Status": "PASS",
+  "Utc": "2026-10-11T10:30:22.067038+00:00",
+  "DocxSha256": "979c040b590088e8f290edb5069cffdf17909da804a810a43686bf1ffd226d7e",
+  "PdfSha256": "bf4ed3bd6a9602f47408f690ad4e88eadc52cad7abd0696e484d8f011a33aaab",
+  "Pages": 48,
+  "Review": "41 pages byte-identical to fully reviewed previous rendering; all seven changed/new pages visually inspected. No clipping, overlap or missing evidence.",
+  "PreviousReview": "work/report_review/Student_A/render_implementation_fix/visual_review.json",
+  "PageHashes": [
+    {
+      "Page": 1,
+      "Sha256": "89d580311c696d3596cbd9b90923e5cc5f1577e884597fa240f890c4e2d70f36",
+      "PreviouslyReviewedIdenticalPage": "page-1.png",
+      "VisualReview": "PASS_REUSED_BYTE_IDENTICAL"
+    },
+    {
+      "Page": 2,
+      "Sha256": "65c4cd074e0f88cd8f3601fa486527790e63e4b9a7a72faa4c49cab8bfe3cf6d",
+      "PreviouslyReviewedIdenticalPage": "page-2.png",
+      "VisualReview": "PASS_REUSED_BYTE_IDENTICAL"
+    },
+    {
+      "Page": 3,
+      "Sha256": "8808d19259848d12599667a05c457338b09a948431f7995d24b9e16dbd8d133e",
+      "PreviouslyReviewedIdenticalPage": "page-3.png",
+      "VisualReview": "PASS_REUSED_BYTE_IDENTICAL"
+    },
+    {
+      "Page": 4,
+      "Sha256": "ef12e83e789af88d19a5d5364a30e30b20f264615b1e6584cca7649cc98c3a90",
+      "PreviouslyReviewedIdenticalPage": "page-4.png",
+      "VisualReview": "PASS_REUSED_BYTE_IDENTICAL"
+    },
+    {
+      "Page": 5,
+      "Sha256": "106dc5bc7d18afd2c8cf1026b9bee913de602af8c42921603227e91335e5a834",
+      "PreviouslyReviewedIdenticalPage": "page-5.png",
+      "VisualReview": "PASS_REUSED_BYTE_IDENTICAL"
+    },
+    {
+      "Page": 6,
+      "Sha256": "9dc80285f4baa5cf68974b795f08a612b4deff25c1b0e768150f0b6a093ba828",
+      "PreviouslyReviewedIdenticalPage": "page-6.png",
+      "VisualReview": "PASS_REUSED_BYTE_IDENTICAL"
+    },
+    {
+      "Page": 7,
+      "Sha256": "aa996f74c149a173a164817ac0ca2a92531adaa1a6aa2cb29a396f83a5a5361e",
+      "PreviouslyReviewedIdenticalPage": "page-7.png",
+      "VisualReview": "PASS_REUSED_BYTE_IDENTICAL"
+    },
+    {
+      "Page": 8,
+      "Sha256": "bd034a2d7cdff063ca5ad2b64016bd675bde1e771811f7ac0ac95e4470fed28f",
+      "PreviouslyReviewedIdenticalPage": "page-8.png",
+      "VisualReview": "PASS_REUSED_BYTE_IDENTICAL"
+    },
+    {
+      "Page": 9,
+      "Sha256": "882fd3d78aad793d2898764f39c15fc37b1748ae09474d13e05ca771950aa54b",
+      "PreviouslyReviewedIdenticalPage": "page-9.png",
+      "VisualReview": "PASS_REUSED_BYTE_IDENTICAL"
+    },
+    {
+      "Page": 10,
+      "Sha256": "fdd5da4b08637625f095a2291338c4c985d13a5ec54ae34af67ea06f3ee330bc",
+      "PreviouslyReviewedIdenticalPage": "page-10.png",
+      "VisualReview": "PASS_REUSED_BYTE_IDENTICAL"
+    },
+    {
+      "Page": 11,
+      "Sha256": "d9008af1508726ddb93135f4c4735526a71e62ac8fae2adc8c8d010809ce325d",
+      "PreviouslyReviewedIdenticalPage": "page-11.png",
+      "VisualReview": "PASS_REUSED_BYTE_IDENTICAL"
+    },
+    {
+      "Page": 12,
+      "Sha256": "405771441b1ee067af6dccdb7488990d0ea7348b4a5e5840928d9d556257a47c",
+      "PreviouslyReviewedIdenticalPage": "page-12.png",
+      "VisualReview": "PASS_REUSED_BYTE_IDENTICAL"
+    },
+    {
+      "Page": 13,
+      "Sha256": "8e5fbcbea9a68e07aaa07c448eb064a7022ea0263b022cf5f7ef0e97bba4eb61",
+      "PreviouslyReviewedIdenticalPage": "page-13.png",
+      "VisualReview": "PASS_REUSED_BYTE_IDENTICAL"
+    },
+    {
+      "Page": 14,
+      "Sha256": "f790c41d46de53be3d6f33cd13f77c59880076d65412d61013da766f9c203c41",
+      "PreviouslyReviewedIdenticalPage": "page-14.png",
+      "VisualReview": "PASS_REUSED_BYTE_IDENTICAL"
+    },
+    {
+      "Page": 15,
+      "Sha256": "f33779a333957e9fbff035ab37af28b6aa229e3b29a07e97e5ef32dac3ff0a7c",
+      "PreviouslyReviewedIdenticalPage": "page-15.png",
+      "VisualReview": "PASS_REUSED_BYTE_IDENTICAL"
+    },
+    {
+      "Page": 16,
+      "Sha256": "1356aed6171b1103c432ea537ba9edebddcc408f065a60b8eecd4cbb97170137",
+      "PreviouslyReviewedIdenticalPage": "page-16.png",
+      "VisualReview": "PASS_REUSED_BYTE_IDENTICAL"
+    },
+    {
+      "Page": 17,
+      "Sha256": "d04b8bb4b259327ba1033614f6ccdf8e81d410a4efc84ffae71d98f90d19fd7d",
+      "PreviouslyReviewedIdenticalPage": "page-17.png",
+      "VisualReview": "PASS_REUSED_BYTE_IDENTICAL"
+    },
+    {
+      "Page": 18,
+      "Sha256": "6849f6b87c8fca1e9f4916c9491facea932a015d616076fc89f00a472d381edb",
+      "PreviouslyReviewedIdenticalPage": "page-18.png",
+      "VisualReview": "PASS_REUSED_BYTE_IDENTICAL"
+    },
+    {
+      "Page": 19,
+      "Sha256": "d14bd983ad53bc603b717c9aa5d84b2b9bc8fd05d9de49fae5fef3e5b3cb733a",
+      "PreviouslyReviewedIdenticalPage": "page-19.png",
+      "VisualReview": "PASS_REUSED_BYTE_IDENTICAL"
+    },
+    {
+      "Page": 20,
+      "Sha256": "a8a53d6d9a9276cae80525fe3bca77bb9fa8a119d22bfda0673afc3651222b12",
+      "PreviouslyReviewedIdenticalPage": "page-20.png",
+      "VisualReview": "PASS_REUSED_BYTE_IDENTICAL"
+    },
+    {
+      "Page": 21,
+      "Sha256": "57779454113b91ab5965b336e6d7959a4d071e2cbc87a88d8900d607f293634e",
+      "PreviouslyReviewedIdenticalPage": "page-21.png",
+      "VisualReview": "PASS_REUSED_BYTE_IDENTICAL"
+    },
+    {
+      "Page": 22,
+      "Sha256": "e7bdcde470a31d2ab9afef5506c77b27046791e116314e72085ff985fe2e6379",
+      "PreviouslyReviewedIdenticalPage": "page-22.png",
+      "VisualReview": "PASS_REUSED_BYTE_IDENTICAL"
+    },
+    {
+      "Page": 23,
+      "Sha256": "08bff759bf9d75eee128061820992db964baf723871d907c9a30304f00fbaeb3",
+      "PreviouslyReviewedIdenticalPage": "page-23.png",
+      "VisualReview": "PASS_REUSED_BYTE_IDENTICAL"
+    },
+    {
+      "Page": 24,
+      "Sha256": "03c11c08f680669463c6953409c67ec9461c68e48102d60a778d71810c479333",
+      "PreviouslyReviewedIdenticalPage": "page-24.png",
+      "VisualReview": "PASS_REUSED_BYTE_IDENTICAL"
+    },
+    {
+      "Page": 25,
+      "Sha256": "b9e29686aa4011b84b5c7291a43a21acd3fa7110cef186d3b31c0401e9c01ec1",
+      "PreviouslyReviewedIdenticalPage": "page-25.png",
+      "VisualReview": "PASS_REUSED_BYTE_IDENTICAL"
+    },
+    {
+      "Page": 26,
+      "Sha256": "d301402607bb0631cb79366105f1b034386748113c724250c778380b737a7192",
+      "PreviouslyReviewedIdenticalPage": "page-26.png",
+      "VisualReview": "PASS_REUSED_BYTE_IDENTICAL"
+    },
+    {
+      "Page": 27,
+      "Sha256": "bdadda438882fbc080f8fc86eca3c15c9468b503d80e7516ab4a1665d505eac9",
+      "PreviouslyReviewedIdenticalPage": "page-27.png",
+      "VisualReview": "PASS_REUSED_BYTE_IDENTICAL"
+    },
+    {
+      "Page": 28,
+      "Sha256": "75ded2cda4df9ad721926cf1f1f31f07fb21305a1355ba7197ee3bc42a9dc0c6",
+      "PreviouslyReviewedIdenticalPage": "page-28.png",
+      "VisualReview": "PASS_REUSED_BYTE_IDENTICAL"
+    },
+    {
+      "Page": 29,
+      "Sha256": "c56a04d113964d8c8ff46bf031f55ba7e5d57c92b54ea1419d1e52539fffb521",
+      "PreviouslyReviewedIdenticalPage": "page-29.png",
+      "VisualReview": "PASS_REUSED_BYTE_IDENTICAL"
+    },
+    {
+      "Page": 30,
+      "Sha256": "2f250a3f1c01d18ca59d63ce4a4aeff1204eaa9a92dadf1c5942b6bef71d5a6c",
+      "PreviouslyReviewedIdenticalPage": "page-30.png",
+      "VisualReview": "PASS_REUSED_BYTE_IDENTICAL"
+    },
+    {
+      "Page": 31,
+      "Sha256": "6740e52c06e91c27ead18deb0fe8eb32667b9e8eb69b0bfa1f9189e7b76612de",
+      "PreviouslyReviewedIdenticalPage": null,
+      "VisualReview": "PASS_VISUALLY_INSPECTED_CURRENT_RENDER"
+    },
+    {
+      "Page": 32,
+      "Sha256": "8b18d4ce779667aeed5d912a54089f142a1358cb1b0366a6a4d9a2be20faf53f",
+      "PreviouslyReviewedIdenticalPage": null,
+      "VisualReview": "PASS_VISUALLY_INSPECTED_CURRENT_RENDER"
+    },
+    {
+      "Page": 33,
+      "Sha256": "84b1c9acc81f2e8e78a774be47a58d1f087c3fd5406514909b78fc91ae9a2a7a",
+      "PreviouslyReviewedIdenticalPage": null,
+      "VisualReview": "PASS_VISUALLY_INSPECTED_CURRENT_RENDER"
+    },
+    {
+      "Page": 34,
+      "Sha256": "b2dbb6e2aac2950af4fb573e8e74cd5135eba5d42cfe4a330cce1687c2aba241",
+      "PreviouslyReviewedIdenticalPage": null,
+      "VisualReview": "PASS_VISUALLY_INSPECTED_CURRENT_RENDER"
+    },
+    {
+      "Page": 35,
+      "Sha256": "7bae0ef02bd3770be2acf6f37fc74b47dab4e116be587fbeec244da4d25bf06b",
+      "PreviouslyReviewedIdenticalPage": null,
+      "VisualReview": "PASS_VISUALLY_INSPECTED_CURRENT_RENDER"
+    },
+    {
+      "Page": 36,
+      "Sha256": "cfcbf5e5c82a28d9acb55edf8345e9a98f4a694dd73a68799724669d854995ca",
+      "PreviouslyReviewedIdenticalPage": "page-32.png",
+      "VisualReview": "PASS_REUSED_BYTE_IDENTICAL"
+    },
+    {
+      "Page": 37,
+      "Sha256": "11caf062cc80a4bfe4f92e4821d46a809480a516880496778f2e0fd6aff812e2",
+      "PreviouslyReviewedIdenticalPage": null,
+      "VisualReview": "PASS_VISUALLY_INSPECTED_CURRENT_RENDER"
+    },
+    {
+      "Page": 38,
+      "Sha256": "26e054772ddf93aa58c2acaa09a49a9ca71fd60654f92f5694e364bae6a581e3",
+      "PreviouslyReviewedIdenticalPage": null,
+      "VisualReview": "PASS_VISUALLY_INSPECTED_CURRENT_RENDER"
+    },
+    {
+      "Page": 39,
+      "Sha256": "ae8f965b9c799a7f690935b5c41b35270c6480315efcd8ded058f537819d9f70",
+      "PreviouslyReviewedIdenticalPage": "page-34.png",
+      "VisualReview": "PASS_REUSED_BYTE_IDENTICAL"
+    },
+    {
+      "Page": 40,
+      "Sha256": "6f384055ba953938a320e21665fec4167377854169066c63644c3ddbe54621f5",
+      "PreviouslyReviewedIdenticalPage": "page-35.png",
+      "VisualReview": "PASS_REUSED_BYTE_IDENTICAL"
+    },
+    {
+      "Page": 41,
+      "Sha256": "4b85a7f8e341f89de33986bde4583da35dc0fc81c81240ce3f6519519a4b620d",
+      "PreviouslyReviewedIdenticalPage": "page-36.png",
+      "VisualReview": "PASS_REUSED_BYTE_IDENTICAL"
+    },
+    {
+      "Page": 42,
+      "Sha256": "7d7b579596ea50d6dc1dc03b1e2d02897c8291fc21e4753329b24af4d510ea2f",
+      "PreviouslyReviewedIdenticalPage": "page-37.png",
+      "VisualReview": "PASS_REUSED_BYTE_IDENTICAL"
+    },
+    {
+      "Page": 43,
+      "Sha256": "84821bf23151f1804bdb34ad6f21b8c6ccab8595e9d1791f80c471aed7276719",
+      "PreviouslyReviewedIdenticalPage": "page-38.png",
+      "VisualReview": "PASS_REUSED_BYTE_IDENTICAL"
+    },
+    {
+      "Page": 44,
+      "Sha256": "7b37901d24fc1d831d45df1e541191b40838c0e60268906a63fd94a8eaf4070c",
+      "PreviouslyReviewedIdenticalPage": "page-39.png",
+      "VisualReview": "PASS_REUSED_BYTE_IDENTICAL"
+    },
+    {
+      "Page": 45,
+      "Sha256": "fd14b827181a50a2174886c1dce38d4e28b5a7882b9673655cd108c41eb7503c",
+      "PreviouslyReviewedIdenticalPage": "page-40.png",
+      "VisualReview": "PASS_REUSED_BYTE_IDENTICAL"
+    },
+    {
+      "Page": 46,
+      "Sha256": "006e98b8c74be4ecc63d72f52cecd1236d582e39b1e68e42a4fb10a47d15f4fe",
+      "PreviouslyReviewedIdenticalPage": "page-41.png",
+      "VisualReview": "PASS_REUSED_BYTE_IDENTICAL"
+    },
+    {
+      "Page": 47,
+      "Sha256": "014bd1bb23b6986bacb38c016d8cfeca64a3eedbb67a5122fd67f5f895c94ac7",
+      "PreviouslyReviewedIdenticalPage": "page-42.png",
+      "VisualReview": "PASS_REUSED_BYTE_IDENTICAL"
+    },
+    {
+      "Page": 48,
+      "Sha256": "417b9d9289088d2ebe284ad437ad18dd6d530ba99d8373a0689ffbad2ffd0c81",
+      "PreviouslyReviewedIdenticalPage": "page-43.png",
+      "VisualReview": "PASS_REUSED_BYTE_IDENTICAL"
+    }
+  ]
+}

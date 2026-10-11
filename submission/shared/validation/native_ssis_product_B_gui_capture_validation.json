@@ -1,0 +1,75 @@
+{
+  "Student": "B",
+  "Flow": "DimProduct",
+  "Task": "DFT Student_B_DimProduct",
+  "ProcessId": 15312,
+  "VerticalViewSize": 48.319327731092436,
+  "HorizontalViewSize": 100,
+  "ExpectedComponents": [
+    "Audit loaded rows",
+    "Explicit target column types",
+    "Load DimProduct",
+    "Lookup CategoryID (fail unmatched)",
+    "Lookup CategoryName (fail unmatched)",
+    "Lookup SubcategoryName (fail unmatched)",
+    "Read OzMart fields 0"
+  ],
+  "ComponentsWithoutFullViewportCoverage": [],
+  "Captures": [
+    {
+      "Utc": "2026-10-11T10:18:20.7747279Z",
+      "File": "ssis_dimproduct_detail_01.png",
+      "VerticalScrollPercent": 0,
+      "HorizontalScrollPercent": -1,
+      "VisibleComponents": [
+        "Lookup CategoryID (fail unmatched)",
+        "Lookup SubcategoryName (fail unmatched)",
+        "Lookup CategoryName (fail unmatched)",
+        "Read OzMart fields 0"
+      ],
+      "FullyVisibleComponents": [
+        "Lookup CategoryID (fail unmatched)",
+        "Lookup SubcategoryName (fail unmatched)",
+        "Read OzMart fields 0"
+      ],
+      "Sha256": "9D02BBA4C8AA445839F476882F4AF63BAB813A234FB37BDCFBFFF02B57440982"
+    },
+    {
+      "Utc": "2026-10-11T10:18:25.7898359Z",
+      "File": "ssis_dimproduct_detail_02.png",
+      "VerticalScrollPercent": 50,
+      "HorizontalScrollPercent": -1,
+      "VisibleComponents": [
+        "Lookup CategoryID (fail unmatched)",
+        "Audit loaded rows",
+        "Lookup CategoryName (fail unmatched)",
+        "Explicit target column types"
+      ],
+      "FullyVisibleComponents": [
+        "Lookup CategoryID (fail unmatched)",
+        "Lookup CategoryName (fail unmatched)",
+        "Explicit target column types"
+      ],
+      "Sha256": "5B6C6C8DB32A1173C97BBAE5134B8B0F712AC8B3FC785970A01D1FB6D6433539"
+    },
+    {
+      "Utc": "2026-10-11T10:18:29.6735837Z",
+      "File": "ssis_dimproduct_detail_03.png",
+      "VerticalScrollPercent": 100,
+      "HorizontalScrollPercent": -1,
+      "VisibleComponents": [
+        "Audit loaded rows",
+        "Explicit target column types",
+        "Load DimProduct"
+      ],
+      "FullyVisibleComponents": [
+        "Audit loaded rows",
+        "Explicit target column types",
+        "Load DimProduct"
+      ],
+      "Sha256": "2DDA60A30B0C47015A1F6A8F73132268F8E593FE25122C46A94BAAF196F6596E"
+    }
+  ],
+  "Status": "NATIVE_SEGMENTS_SAVED_VISUAL_REVIEW_REQUIRED",
+  "VisualReview": "PASS: all three unchanged native 100 percent captures visually reviewed; seven components covered, 2199 rows maintained, success retained."
+}

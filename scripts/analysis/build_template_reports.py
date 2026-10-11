@@ -45,6 +45,8 @@ def build(s,final):
  if final and missing:raise RuntimeError('Genuine native captures missing: '+', '.join(missing))
  text={}
  for name in ['model','warehouse','query']:text.update(json.loads((base/'report'/f'{name}_sections_draft.json').read_text())['sections'])
+ limits={'executive_summary':250,'dimensions':400,'implementation':300,'process':100,'predictors':100,'comparison':150,'recommendations':200,'ethics':250}
+ assert all(len(text[key].split())<=limit for key,limit in limits.items()),'Teacher word limit exceeded'
  doc=Document(REFERENCE);original=[deepcopy(p._p) for p in doc.paragraphs];body=doc._element.body;section=deepcopy(body.find(q('sectPr')))
  for child in list(body):body.remove(child)
  body.append(section)
@@ -58,7 +60,7 @@ def build(s,final):
    pr=node.find('w:pPr',NS)
    if pr is None:pr=E.Element(q('pPr'));node.insert(0,pr)
    if pr.find(q('keepNext')) is None:E.SubElement(pr,q('keepNext'))
-   if i in [121,154,196,257,321]:
+   if i in [115,118,154,196,257,321]:
     pr=node.find('w:pPr',NS)
     if pr is None:pr=E.Element(q('pPr'));node.insert(0,pr)
     if pr.find(q('pageBreakBefore')) is None:E.SubElement(pr,q('pageBreakBefore'))
@@ -69,9 +71,14 @@ def build(s,final):
    for rel in IMAGE_SLOTS[i]:
     f=base/'evidence'/rel.format(s=s)
     if f.exists():
+     details=sorted(f.parent.glob(f.stem+'_detail_[0-9][0-9].png'))
      p=doc.add_paragraph();p.paragraph_format.keep_with_next=True;p.add_run().add_picture(str(f),width=Inches(6.9));caption=LABELS.get(f.stem,'Dimensional model with actual warehouse columns and keys')
+     if details:caption+=(' overview. Additional native result rows follow.' if f.stem.startswith('sql_') else ' overview. Readable native stages follow.')
      if f.stem=='model2_result':caption=('Native decision tree fitted on the training partition: one false leaf' if s=='A' else 'Native random forest: first constituent tree shown, with one false leaf')
      prose(doc,caption)
+     for number,detail in enumerate(details,1):
+      p=doc.add_paragraph();p.paragraph_format.keep_with_next=True;p.add_run().add_picture(str(detail),width=Inches(6.9))
+      prose(doc,f'Native SQL result continuation {number} of {len(details)}' if f.stem.startswith('sql_') else f'Native flow detail {number} of {len(details)}')
    if i in [138,170,212]:prose(doc,text[{138:'query_4_1',170:'query_4_2',212:'query_4_3'}[i]])
   if i==323:
    refs=json.loads((ROOT/'submission/shared/references/verified_reference_register.json').read_text())['references'];refs=[r.copy() for r in refs if r.get('student',s)==s]

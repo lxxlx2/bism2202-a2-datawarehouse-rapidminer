@@ -1,0 +1,88 @@
+{
+  "Student": "B",
+  "Flow": "DimCustomer_MergeJoin",
+  "Task": "DFT Student_B_DimCustomer_MergeJoin",
+  "ProcessId": 15312,
+  "VerticalViewSize": 42.279411764705884,
+  "HorizontalViewSize": 100,
+  "ExpectedComponents": [
+    "Audit loaded rows",
+    "Derive EducationCode",
+    "Explicit target column types",
+    "Load DimCustomer",
+    "Lookup Age (fail unmatched)",
+    "Merge education CSV on normalised key",
+    "Read OzMart fields 0",
+    "Read warehouse references 4",
+    "Sort by EducationCode",
+    "Sort by EducationJoinKey"
+  ],
+  "ComponentsWithoutFullViewportCoverage": [],
+  "Captures": [
+    {
+      "Utc": "2026-10-11T05:09:03.9796665Z",
+      "File": "ssis_dimcustomer_detail_01.png",
+      "VerticalScrollPercent": 0,
+      "HorizontalScrollPercent": -1,
+      "VisibleComponents": [
+        "Read OzMart fields 0",
+        "Sort by EducationCode",
+        "Read warehouse references 4",
+        "Lookup Age (fail unmatched)",
+        "Derive EducationCode",
+        "Sort by EducationJoinKey"
+      ],
+      "FullyVisibleComponents": [
+        "Read OzMart fields 0",
+        "Read warehouse references 4",
+        "Lookup Age (fail unmatched)",
+        "Derive EducationCode"
+      ],
+      "Sha256": "53DB7F0E35F9C08885278CFB52120A704FE766BDEE094331D3EFB645DC688949"
+    },
+    {
+      "Utc": "2026-10-11T05:09:09.3854811Z",
+      "File": "ssis_dimcustomer_detail_02.png",
+      "VerticalScrollPercent": 50,
+      "HorizontalScrollPercent": -1,
+      "VisibleComponents": [
+        "Merge education CSV on normalised key",
+        "Sort by EducationCode",
+        "Read warehouse references 4",
+        "Lookup Age (fail unmatched)",
+        "Sort by EducationJoinKey",
+        "Explicit target column types"
+      ],
+      "FullyVisibleComponents": [
+        "Merge education CSV on normalised key",
+        "Sort by EducationCode",
+        "Sort by EducationJoinKey",
+        "Explicit target column types"
+      ],
+      "Sha256": "423CA4BF1D1D99627761055FE59914DD70FCAC58F74D4BA9CF7147A453D3E55D"
+    },
+    {
+      "Utc": "2026-10-11T05:09:14.9363116Z",
+      "File": "ssis_dimcustomer_detail_03.png",
+      "VerticalScrollPercent": 100,
+      "HorizontalScrollPercent": -1,
+      "VisibleComponents": [
+        "Load DimCustomer",
+        "Explicit target column types",
+        "Audit loaded rows"
+      ],
+      "FullyVisibleComponents": [
+        "Load DimCustomer",
+        "Explicit target column types",
+        "Audit loaded rows"
+      ],
+      "Sha256": "4A0E5A5953E2AC5DC4FC2D2C1330104DD747A97C0D14B18F64F8A7B433540AE3"
+    }
+  ],
+  "Status": "NATIVE_SEGMENTS_SAVED_VISUAL_REVIEW_REQUIRED",
+  "VisualReview": "PASS: all three unmodified native screenshots visually reviewed at 100 percent zoom; all ten components fully covered, 21000 customer rows and six education rows visible; package success retained.",
+  "Overview": {
+    "file": "ssis_dimcustomer.png",
+    "sha256": "67901ff23d53456817a055e831221fcecd3fc17b2ff7b3e0d308e5c15aa5affa"
+  }
+}

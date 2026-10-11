@@ -1,15 +1,15 @@
 {
-  "status": "PARTIAL",
+  "status": "TECHNICAL_PASS_HUMAN_REVIEW_PENDING",
   "scope": "Current local file integrity; prior runtime evidence remains separate",
   "students": {
     "A": {
-      "status": "PARTIAL",
+      "status": "TECHNICAL_PASS_HUMAN_REVIEW_PENDING",
       "backup_hash_matches_actual_restore_record": true,
       "backup": {
         "file": "submission/Student_A/database/STUDENT_A_ID_dw.bak",
         "exists": true,
-        "bytes": 28447232,
-        "sha256": "dd92262915ce8c0426582ce0c50a7fdb06fd838d74d24d378b55ba4207db5ec1"
+        "bytes": 28737024,
+        "sha256": "26394c39804afe7cb354c98f164bc84f441d40cbf860f571ce0b7e8d32d58c5f"
       },
       "ssis_project_zip": {
         "file": "submission/Student_A/ssis/STUDENT_A_ID_ssis.zip",
@@ -51,7 +51,7 @@
           "sha256": "588718b9000012fdb2bc74ddb64257eb1275059a1d29721d606ed21bd238da23"
         }
       ],
-      "unchanged_support_copies": 26,
+      "unchanged_support_copies": 27,
       "support_hashes": "PASS",
       "required_report_images": [
         {
@@ -98,7 +98,9 @@
         },
         {
           "file": "submission/Student_A/evidence/gui/ssis_fact.png",
-          "exists": false
+          "exists": true,
+          "bytes": 84710,
+          "sha256": "22872979e244da50d01e11708043635e0dca20c011ea9f8100dd480e5b322bea"
         },
         {
           "file": "submission/Student_A/evidence/gui/sql_Q4_1.png",
@@ -167,36 +169,44 @@
           "sha256": "4a5b046c674ed978e8fd41d5bd4229fcabd847257faac680e12595ab512cd579"
         }
       ],
-      "missing_report_images": 1,
+      "missing_report_images": 0,
       "final_report_files": [
         {
           "file": "submission/Student_A/report/STUDENT_A_ID.docx",
-          "exists": false
+          "exists": true,
+          "bytes": 9624017,
+          "sha256": "979c040b590088e8f290edb5069cffdf17909da804a810a43686bf1ffd226d7e"
         },
         {
           "file": "submission/Student_A/report/STUDENT_A_ID.pdf",
-          "exists": false
+          "exists": true,
+          "bytes": 8033569,
+          "sha256": "bf4ed3bd6a9602f47408f690ad4e88eadc52cad7abd0696e484d8f011a33aaab"
         }
       ],
       "final_assignment_zip": {
         "file": "submission/BISM2202_Student_A_FINAL.zip",
-        "exists": false
+        "exists": true,
+        "bytes": 57770780,
+        "sha256": "634a272b02f0dbbefda4cd45d5a948f8804ac6d90075ec8823cb03fcd52492d2"
       },
       "pending": [
-        "remaining native screenshots",
-        "image-filled final report and page review",
-        "final AI disclosure snapshot and student review",
-        "final packaging and acceptance"
-      ]
+        "Real student ID confirmation",
+        "Student review and course AI/collaboration acceptance",
+        "School submission (not performed)"
+      ],
+      "render_review": "PASS",
+      "render_pages": 48,
+      "final_package_integrity": "PASS"
     },
     "B": {
-      "status": "PARTIAL",
+      "status": "TECHNICAL_PASS_HUMAN_REVIEW_PENDING",
       "backup_hash_matches_actual_restore_record": true,
       "backup": {
         "file": "submission/Student_B/database/STUDENT_B_ID_dw.bak",
         "exists": true,
-        "bytes": 28497408,
-        "sha256": "f2d9d08c6da0eea3112ecc6359b29262b370e0e3634cf235b30a1cab2927bb77"
+        "bytes": 28923904,
+        "sha256": "9a2387133085592470b19f06fe9e1869f8f634cc0315cc06e83d02a67213a23a"
       },
       "ssis_project_zip": {
         "file": "submission/Student_B/ssis/STUDENT_B_ID_ssis.zip",
@@ -238,7 +248,7 @@
           "sha256": "531ec4943b4ab9af10e3f07b64a53e037779e1c507b1979c2a42b8dc5f5428fe"
         }
       ],
-      "unchanged_support_copies": 26,
+      "unchanged_support_copies": 27,
       "support_hashes": "PASS",
       "required_report_images": [
         {
@@ -249,31 +259,45 @@
         },
         {
           "file": "submission/Student_B/evidence/gui/ssis_dimcustomer.png",
-          "exists": false
+          "exists": true,
+          "bytes": 100412,
+          "sha256": "67901ff23d53456817a055e831221fcecd3fc17b2ff7b3e0d308e5c15aa5affa"
         },
         {
           "file": "submission/Student_B/evidence/gui/ssis_dimproduct.png",
-          "exists": false
+          "exists": true,
+          "bytes": 95693,
+          "sha256": "697243e6967bf480f0abca5337c55af0f6f0421974c73c991351258645d62974"
         },
         {
           "file": "submission/Student_B/evidence/gui/ssis_dimseller.png",
-          "exists": false
+          "exists": true,
+          "bytes": 97407,
+          "sha256": "d5588ffe7ef34434fb30e2e28f7513a9a501b3cc198942bcbc7fbda3806dc48a"
         },
         {
           "file": "submission/Student_B/evidence/gui/ssis_dimdate.png",
-          "exists": false
+          "exists": true,
+          "bytes": 95255,
+          "sha256": "daed4d2bb80f45725d5dc65247f4d61d6975cc5f4101bb92c9822a81aa11545e"
         },
         {
           "file": "submission/Student_B/evidence/gui/ssis_geography_customer.png",
-          "exists": false
+          "exists": true,
+          "bytes": 92866,
+          "sha256": "b2a7893c864fc437017f586e505ae57802411d0e293194606351a5cb85e92859"
         },
         {
           "file": "submission/Student_B/evidence/gui/ssis_geography_seller.png",
-          "exists": false
+          "exists": true,
+          "bytes": 90744,
+          "sha256": "5a97642d53b87fe65e010d8366de6548d7c8b11212072855fa5bd4a99976075f"
         },
         {
           "file": "submission/Student_B/evidence/gui/ssis_fact.png",
-          "exists": false
+          "exists": true,
+          "bytes": 88821,
+          "sha256": "4f90cd951bb3fdc20884c8703ee932170f64e75be0036520bcd9288a035b5786"
         },
         {
           "file": "submission/Student_B/evidence/gui/sql_Q4_1.png",
@@ -342,27 +366,35 @@
           "sha256": "d51ccf71f2a79f5fbc019f733981eb1867636258ce819559a830029c325eacbe"
         }
       ],
-      "missing_report_images": 7,
+      "missing_report_images": 0,
       "final_report_files": [
         {
           "file": "submission/Student_B/report/STUDENT_B_ID.docx",
-          "exists": false
+          "exists": true,
+          "bytes": 9172275,
+          "sha256": "046bf72d50121a6978be3e8b612a67be08e6d9bbdf340caccf89dd609c94e088"
         },
         {
           "file": "submission/Student_B/report/STUDENT_B_ID.pdf",
-          "exists": false
+          "exists": true,
+          "bytes": 5740808,
+          "sha256": "4408d288a8d48237a52ea6eb8691f34c3a09acc863bd5fe131086144f9709fe6"
         }
       ],
       "final_assignment_zip": {
         "file": "submission/BISM2202_Student_B_FINAL.zip",
-        "exists": false
+        "exists": true,
+        "bytes": 55280598,
+        "sha256": "af69890ee70b07d8bbec0899a5512cf0103dc2ef44306c5b54d44aacb3e2b5e6"
       },
       "pending": [
-        "remaining native screenshots",
-        "image-filled final report and page review",
-        "final AI disclosure snapshot and student review",
-        "final packaging and acceptance"
-      ]
+        "Real student ID confirmation",
+        "Student review and course AI/collaboration acceptance",
+        "School submission (not performed)"
+      ],
+      "render_review": "PASS",
+      "render_pages": 56,
+      "final_package_integrity": "PASS"
     }
   }
 }

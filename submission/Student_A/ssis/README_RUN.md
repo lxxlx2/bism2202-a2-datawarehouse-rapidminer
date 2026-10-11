@@ -23,4 +23,4 @@ Validation compares raw original floats and rounded money separately, checks ori
 
 The current backup's actual restore and query comparisons passed; see `../database/restore_validation.txt` and the shared hash verification. Every new ETL execution changes the warehouse build. After a final rerun, regenerate the backup and repeat actual restoration/full-row/query comparisons before treating that new build as frozen. The previous backup validation does not automatically validate later reloads.
 
-The current overall delivery is PARTIAL because genuine required screenshots and final report/package acceptance remain outstanding. Native runtime/build/restore passes are recorded separately from this remaining evidence work.
+Technical delivery is PASS: native screenshots, final teacher-template report rendering and package integrity have passed. Real student ID confirmation and personal course AI/collaboration review remain pending; no school upload is claimed.

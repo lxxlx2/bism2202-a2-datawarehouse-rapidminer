@@ -1,7 +1,324 @@
 {
-  "Status": "POWERSHELL_SYNTAX_PASS_NOT_GUI_ACCEPTANCE",
-  "Errors": [],
-  "script": "scripts/windows/warehouse/capture_designer_flows.ps1",
-  "sha256": "a1c61388af221cb90dcac7caedb70da2d55e655266f5ad7254d4fbcf918a6cc5",
-  "guest_byte_readback_matches_source": true
+  "Utc": "2026-10-11T05:22:08.5144253Z",
+  "SourceSyntax": [
+    {
+      "File": "C:\\BISM2202\\assignment_work\\warehouse\\capture_designer_flows.ps1",
+      "Sha256": "5761E9AF81F976F89EB9A399294873A5406D0E7A2301A1501481BD6C6FEDCB16",
+      "ErrorCount": 0,
+      "Errors": []
+    },
+    {
+      "File": "C:\\BISM2202\\assignment_work\\warehouse\\capture_designer_segments.ps1",
+      "Sha256": "74BCE1209A148444DD53C6F6AE97194505961B52931A86228EEC21CBC6CA1B6C",
+      "ErrorCount": 0,
+      "Errors": []
+    }
+  ],
+  "GuestLocalImageReadback": [
+    {
+      "File": "submission/Student_A/evidence/gui/ssis_dimdate.png",
+      "GuestSHA256": "5e1260e4cca42e8377e6168d18201a36813e8c105911f97f0a17f96dd4134afc",
+      "LocalMatches": false,
+      "LocalSHA256": "2b9e9a82fa5e2b9068252397a5fd9b4644bf6dae8e711354bc036903697666ae",
+      "Explanation": "Earlier visually reviewed native overview retained. Later guest working filename was overwritten; this is not a same-file readback match. Readable native detail frames have separate matching capture hashes."
+    },
+    {
+      "File": "submission/Student_A/evidence/gui/ssis_dimdate_detail_01.png",
+      "GuestSHA256": "8abbd8da2c1674a66b634dbdc4560b1dc0a812c0c66223e3d5dba658f1a3e913",
+      "LocalMatches": true,
+      "LocalSHA256": "8abbd8da2c1674a66b634dbdc4560b1dc0a812c0c66223e3d5dba658f1a3e913"
+    },
+    {
+      "File": "submission/Student_A/evidence/gui/ssis_dimdate_detail_02.png",
+      "GuestSHA256": "914cd4e0e7650c7de94ad7776c70ed9d930c87f508fbd3e57b8c8d752a8ddae6",
+      "LocalMatches": true,
+      "LocalSHA256": "914cd4e0e7650c7de94ad7776c70ed9d930c87f508fbd3e57b8c8d752a8ddae6"
+    },
+    {
+      "File": "submission/Student_A/evidence/gui/ssis_dimdate_detail_03.png",
+      "GuestSHA256": "9cdfa43e4c5ef64df4e535a6246386f5ab92c9b7cae435723622d36569f6cbad",
+      "LocalMatches": true,
+      "LocalSHA256": "9cdfa43e4c5ef64df4e535a6246386f5ab92c9b7cae435723622d36569f6cbad"
+    },
+    {
+      "File": "submission/Student_A/evidence/gui/ssis_dimdate_detail_04.png",
+      "GuestSHA256": "380a64ccdaf861853c647a345b551e0f1078c9bf8a2b471c11555a36fa78e21a",
+      "LocalMatches": true,
+      "LocalSHA256": "380a64ccdaf861853c647a345b551e0f1078c9bf8a2b471c11555a36fa78e21a"
+    },
+    {
+      "File": "submission/Student_A/evidence/gui/ssis_dimproduct.png",
+      "GuestSHA256": "25aeae49cfe9f4eb4845e6560c7ce9a8ffea2c1c629451c009e3ebfefb515d7f",
+      "LocalMatches": false,
+      "LocalSHA256": "41e592f038a988fda1f13f05a87f96de2dcbaffb8bda64d292a966b890d9808f",
+      "Explanation": "Earlier visually reviewed native overview retained. Later guest working filename was overwritten; this is not a same-file readback match. Readable native detail frames have separate matching capture hashes."
+    },
+    {
+      "File": "submission/Student_A/evidence/gui/ssis_dimseller.png",
+      "GuestSHA256": "3466bb4c0752df7bf98045dcd7c9cfcd4d75c713c0471a26ae408e100f3e83d2",
+      "LocalMatches": false,
+      "LocalSHA256": "c590f6776b8185f0f4905699880dcda913a239e18f6366901c42b33929132ddf",
+      "Explanation": "Earlier visually reviewed native overview retained. Later guest working filename was overwritten; this is not a same-file readback match. Readable native detail frames have separate matching capture hashes."
+    },
+    {
+      "File": "submission/Student_A/evidence/gui/ssis_fact.png",
+      "GuestSHA256": "c0364c91d7f2f98f5deb98884aadc923ce2e326bd490f9a251ff7c94defd0b2a",
+      "LocalMatches": false,
+      "LocalSHA256": "22872979e244da50d01e11708043635e0dca20c011ea9f8100dd480e5b322bea",
+      "Explanation": "Earlier visually reviewed native overview retained. Later guest working filename was overwritten; this is not a same-file readback match. Readable native detail frames have separate matching capture hashes."
+    },
+    {
+      "File": "submission/Student_A/evidence/gui/ssis_fact_detail_01.png",
+      "GuestSHA256": "23b58509d813342b3ddde8ea886bc9e0cf7e9be3d0f10bdfe1710e0b42e35cd6",
+      "LocalMatches": true,
+      "LocalSHA256": "23b58509d813342b3ddde8ea886bc9e0cf7e9be3d0f10bdfe1710e0b42e35cd6"
+    },
+    {
+      "File": "submission/Student_A/evidence/gui/ssis_fact_detail_02.png",
+      "GuestSHA256": "f3676c1aa1fb920a271d2cb30d78bc5fd1ce9639d22ab6bf804c11c98b037075",
+      "LocalMatches": true,
+      "LocalSHA256": "f3676c1aa1fb920a271d2cb30d78bc5fd1ce9639d22ab6bf804c11c98b037075"
+    },
+    {
+      "File": "submission/Student_A/evidence/gui/ssis_fact_detail_03.png",
+      "GuestSHA256": "e88a2c7d011a46d0323d3a76c6a6fd2ad9a7fa953e2b0bba9251d18e4a48effe",
+      "LocalMatches": true,
+      "LocalSHA256": "e88a2c7d011a46d0323d3a76c6a6fd2ad9a7fa953e2b0bba9251d18e4a48effe"
+    },
+    {
+      "File": "submission/Student_A/evidence/gui/ssis_fact_detail_04.png",
+      "GuestSHA256": "42ca3f4ff07e4844de94b027c4151c4b301dbf7448ad6929d90d95e1af2f3bc5",
+      "LocalMatches": true,
+      "LocalSHA256": "42ca3f4ff07e4844de94b027c4151c4b301dbf7448ad6929d90d95e1af2f3bc5"
+    },
+    {
+      "File": "submission/Student_A/evidence/gui/ssis_fact_detail_05.png",
+      "GuestSHA256": "064d933b3d8dfc93de4603eb70a9e912323e8ce1e4a042a2bae07ad5a17f8d15",
+      "LocalMatches": true,
+      "LocalSHA256": "064d933b3d8dfc93de4603eb70a9e912323e8ce1e4a042a2bae07ad5a17f8d15"
+    },
+    {
+      "File": "submission/Student_A/evidence/gui/ssis_fact_detail_06.png",
+      "GuestSHA256": "9f28ae55e7e5e34cf3a4726e7a7c6d5a0948652e53138e65d0f30e61d111d7d8",
+      "LocalMatches": true,
+      "LocalSHA256": "9f28ae55e7e5e34cf3a4726e7a7c6d5a0948652e53138e65d0f30e61d111d7d8"
+    },
+    {
+      "File": "submission/Student_A/evidence/gui/ssis_fact_detail_07.png",
+      "GuestSHA256": "8c32dcb74144b1f758391ee9dbae1814545bf6cfb18a7d254bfb7b1dbc656897",
+      "LocalMatches": true,
+      "LocalSHA256": "8c32dcb74144b1f758391ee9dbae1814545bf6cfb18a7d254bfb7b1dbc656897"
+    },
+    {
+      "File": "submission/Student_A/evidence/gui/ssis_geography_customer.png",
+      "GuestSHA256": "08f9214925790eba89fef13bd57b3af17510264f39b9117c51fd2fbd59272c45",
+      "LocalMatches": true,
+      "LocalSHA256": "08f9214925790eba89fef13bd57b3af17510264f39b9117c51fd2fbd59272c45"
+    },
+    {
+      "File": "submission/Student_A/evidence/gui/ssis_geography_seller.png",
+      "GuestSHA256": "359dc5f8ead3567e618bbda51822c7e747136237a2fd4f862a10ccb8cc562850",
+      "LocalMatches": true,
+      "LocalSHA256": "359dc5f8ead3567e618bbda51822c7e747136237a2fd4f862a10ccb8cc562850"
+    },
+    {
+      "File": "submission/Student_A/evidence/gui/ssis_geography_seller_detail_01.png",
+      "GuestSHA256": "f31bbdbee4f82d6b16e10e5fc451424b2c8b4217c35e04792f4743574f9f6f9c",
+      "LocalMatches": true,
+      "LocalSHA256": "f31bbdbee4f82d6b16e10e5fc451424b2c8b4217c35e04792f4743574f9f6f9c"
+    },
+    {
+      "File": "submission/Student_A/evidence/gui/ssis_geography_seller_detail_02.png",
+      "GuestSHA256": "f57ff9e961d178e38a2d3018cc5d779961dd99d166e849e0356468363b5c3f74",
+      "LocalMatches": true,
+      "LocalSHA256": "f57ff9e961d178e38a2d3018cc5d779961dd99d166e849e0356468363b5c3f74"
+    },
+    {
+      "File": "submission/Student_A/evidence/gui/ssis_geography_seller_detail_03.png",
+      "GuestSHA256": "4c79bf1d176a0b14fb48bd2d039a572fe0f9ce8cda0d83f154f5ffc5e7624509",
+      "LocalMatches": true,
+      "LocalSHA256": "4c79bf1d176a0b14fb48bd2d039a572fe0f9ce8cda0d83f154f5ffc5e7624509"
+    },
+    {
+      "File": "submission/Student_A/evidence/gui/ssis_geography_seller_detail_04.png",
+      "GuestSHA256": "c87a618c61b14a22fbda6024a7fc212744927492bc971e4bb923bdf9c834e50c",
+      "LocalMatches": true,
+      "LocalSHA256": "c87a618c61b14a22fbda6024a7fc212744927492bc971e4bb923bdf9c834e50c"
+    },
+    {
+      "File": "submission/Student_A/evidence/gui/ssis_geography_seller_detail_05.png",
+      "GuestSHA256": "05daa5edc0644a89eec600e81a56e29947738d55e487fd6c2ef03f7155453080",
+      "LocalMatches": true,
+      "LocalSHA256": "05daa5edc0644a89eec600e81a56e29947738d55e487fd6c2ef03f7155453080"
+    },
+    {
+      "File": "submission/Student_A/evidence/gui/ssis_geography_seller_detail_06.png",
+      "GuestSHA256": "4b5bb5c22b55b57933407f1b01b4cb130240fab260d0aceb3621296dd8379530",
+      "LocalMatches": true,
+      "LocalSHA256": "4b5bb5c22b55b57933407f1b01b4cb130240fab260d0aceb3621296dd8379530"
+    },
+    {
+      "File": "submission/Student_B/evidence/gui/ssis_dimcustomer.png",
+      "GuestSHA256": "67901ff23d53456817a055e831221fcecd3fc17b2ff7b3e0d308e5c15aa5affa",
+      "LocalMatches": true,
+      "LocalSHA256": "67901ff23d53456817a055e831221fcecd3fc17b2ff7b3e0d308e5c15aa5affa"
+    },
+    {
+      "File": "submission/Student_B/evidence/gui/ssis_dimcustomer_detail_01.png",
+      "GuestSHA256": "53db7f0e35f9c08885278cfb52120a704fe766bdee094331d3efb645dc688949",
+      "LocalMatches": true,
+      "LocalSHA256": "53db7f0e35f9c08885278cfb52120a704fe766bdee094331d3efb645dc688949"
+    },
+    {
+      "File": "submission/Student_B/evidence/gui/ssis_dimcustomer_detail_02.png",
+      "GuestSHA256": "423ca4bf1d1d99627761055fe59914dd70fcac58f74d4ba9cf7147a453d3e55d",
+      "LocalMatches": true,
+      "LocalSHA256": "423ca4bf1d1d99627761055fe59914dd70fcac58f74d4ba9cf7147a453d3e55d"
+    },
+    {
+      "File": "submission/Student_B/evidence/gui/ssis_dimcustomer_detail_03.png",
+      "GuestSHA256": "4a0e5a5953e2ac5dc4fc2d2c1330104dd747a97c0d14b18f64f8a7b433540ae3",
+      "LocalMatches": true,
+      "LocalSHA256": "4a0e5a5953e2ac5dc4fc2d2c1330104dd747a97c0d14b18f64f8a7b433540ae3"
+    },
+    {
+      "File": "submission/Student_B/evidence/gui/ssis_dimdate.png",
+      "GuestSHA256": "daed4d2bb80f45725d5dc65247f4d61d6975cc5f4101bb92c9822a81aa11545e",
+      "LocalMatches": true,
+      "LocalSHA256": "daed4d2bb80f45725d5dc65247f4d61d6975cc5f4101bb92c9822a81aa11545e"
+    },
+    {
+      "File": "submission/Student_B/evidence/gui/ssis_dimdate_detail_01.png",
+      "GuestSHA256": "fe38dcfdd832ea00b4948e3920a7959a008d42d8810fb9a452620b218f10b2a8",
+      "LocalMatches": true,
+      "LocalSHA256": "fe38dcfdd832ea00b4948e3920a7959a008d42d8810fb9a452620b218f10b2a8"
+    },
+    {
+      "File": "submission/Student_B/evidence/gui/ssis_dimdate_detail_02.png",
+      "GuestSHA256": "4db3d5b354580ee861af98663e40aa08021376dcd2e2787794c15c5d9926c961",
+      "LocalMatches": true,
+      "LocalSHA256": "4db3d5b354580ee861af98663e40aa08021376dcd2e2787794c15c5d9926c961"
+    },
+    {
+      "File": "submission/Student_B/evidence/gui/ssis_dimdate_detail_03.png",
+      "GuestSHA256": "6d9fb6ec880aa400749e4866d58fd6055b2c1a1245eed710d2af94c7abe15d04",
+      "LocalMatches": true,
+      "LocalSHA256": "6d9fb6ec880aa400749e4866d58fd6055b2c1a1245eed710d2af94c7abe15d04"
+    },
+    {
+      "File": "submission/Student_B/evidence/gui/ssis_dimdate_detail_04.png",
+      "GuestSHA256": "a6f9ad7e1c9fdc80149922b639ed2695eb1d82a96b41f44d92b1fa656dff76fd",
+      "LocalMatches": true,
+      "LocalSHA256": "a6f9ad7e1c9fdc80149922b639ed2695eb1d82a96b41f44d92b1fa656dff76fd"
+    },
+    {
+      "File": "submission/Student_B/evidence/gui/ssis_dimproduct.png",
+      "GuestSHA256": "697243e6967bf480f0abca5337c55af0f6f0421974c73c991351258645d62974",
+      "LocalMatches": true,
+      "LocalSHA256": "697243e6967bf480f0abca5337c55af0f6f0421974c73c991351258645d62974"
+    },
+    {
+      "File": "submission/Student_B/evidence/gui/ssis_dimseller.png",
+      "GuestSHA256": "d5588ffe7ef34434fb30e2e28f7513a9a501b3cc198942bcbc7fbda3806dc48a",
+      "LocalMatches": true,
+      "LocalSHA256": "d5588ffe7ef34434fb30e2e28f7513a9a501b3cc198942bcbc7fbda3806dc48a"
+    },
+    {
+      "File": "submission/Student_B/evidence/gui/ssis_fact.png",
+      "GuestSHA256": "4f90cd951bb3fdc20884c8703ee932170f64e75be0036520bcd9288a035b5786",
+      "LocalMatches": true,
+      "LocalSHA256": "4f90cd951bb3fdc20884c8703ee932170f64e75be0036520bcd9288a035b5786"
+    },
+    {
+      "File": "submission/Student_B/evidence/gui/ssis_fact_detail_01.png",
+      "GuestSHA256": "6be2ba63dc50b47e2fd8626aa1879c877d53e51c6c07cb325dd24d9ff450ffca",
+      "LocalMatches": true,
+      "LocalSHA256": "6be2ba63dc50b47e2fd8626aa1879c877d53e51c6c07cb325dd24d9ff450ffca"
+    },
+    {
+      "File": "submission/Student_B/evidence/gui/ssis_fact_detail_02.png",
+      "GuestSHA256": "c25b3ebffd394de7ace55fc2ed3714b3e75f1c0be261af66fc32091836eed088",
+      "LocalMatches": true,
+      "LocalSHA256": "c25b3ebffd394de7ace55fc2ed3714b3e75f1c0be261af66fc32091836eed088"
+    },
+    {
+      "File": "submission/Student_B/evidence/gui/ssis_fact_detail_03.png",
+      "GuestSHA256": "386a23d4d5ecd8c2a58cec752ada01df617161298656aa5e4a0064ab1827c15d",
+      "LocalMatches": true,
+      "LocalSHA256": "386a23d4d5ecd8c2a58cec752ada01df617161298656aa5e4a0064ab1827c15d"
+    },
+    {
+      "File": "submission/Student_B/evidence/gui/ssis_fact_detail_04.png",
+      "GuestSHA256": "a92a759c4c8c845a36a25736fabdf4d73ac0f4659cf6be5d6890125a4b98ac34",
+      "LocalMatches": true,
+      "LocalSHA256": "a92a759c4c8c845a36a25736fabdf4d73ac0f4659cf6be5d6890125a4b98ac34"
+    },
+    {
+      "File": "submission/Student_B/evidence/gui/ssis_fact_detail_05.png",
+      "GuestSHA256": "8eaca7c97bd5cec33e4daec1709d1cf0ce36f2a6b27afb0ed31aecfcf069cf68",
+      "LocalMatches": true,
+      "LocalSHA256": "8eaca7c97bd5cec33e4daec1709d1cf0ce36f2a6b27afb0ed31aecfcf069cf68"
+    },
+    {
+      "File": "submission/Student_B/evidence/gui/ssis_fact_detail_06.png",
+      "GuestSHA256": "2a93f244af1470f6675cbab19c8358d1b45b3b8fc78c84f65bdc94548ab1d893",
+      "LocalMatches": true,
+      "LocalSHA256": "2a93f244af1470f6675cbab19c8358d1b45b3b8fc78c84f65bdc94548ab1d893"
+    },
+    {
+      "File": "submission/Student_B/evidence/gui/ssis_fact_detail_07.png",
+      "GuestSHA256": "6ad1c3cb6ccbe448b71e6fcc6bf482769658ad058c276bcbb93a6ab3a556cb68",
+      "LocalMatches": true,
+      "LocalSHA256": "6ad1c3cb6ccbe448b71e6fcc6bf482769658ad058c276bcbb93a6ab3a556cb68"
+    },
+    {
+      "File": "submission/Student_B/evidence/gui/ssis_fact_detail_08.png",
+      "GuestSHA256": "09e7cb76e306f1a3e5e27c96f09a079080f9618a2f0f2e30838339f024e207fa",
+      "LocalMatches": true,
+      "LocalSHA256": "09e7cb76e306f1a3e5e27c96f09a079080f9618a2f0f2e30838339f024e207fa"
+    },
+    {
+      "File": "submission/Student_B/evidence/gui/ssis_geography_customer.png",
+      "GuestSHA256": "b2a7893c864fc437017f586e505ae57802411d0e293194606351a5cb85e92859",
+      "LocalMatches": true,
+      "LocalSHA256": "b2a7893c864fc437017f586e505ae57802411d0e293194606351a5cb85e92859"
+    },
+    {
+      "File": "submission/Student_B/evidence/gui/ssis_geography_seller.png",
+      "GuestSHA256": "5a97642d53b87fe65e010d8366de6548d7c8b11212072855fa5bd4a99976075f",
+      "LocalMatches": true,
+      "LocalSHA256": "5a97642d53b87fe65e010d8366de6548d7c8b11212072855fa5bd4a99976075f"
+    },
+    {
+      "File": "submission/Student_B/evidence/gui/ssis_geography_seller_detail_01.png",
+      "GuestSHA256": "56f7d2eefc9ff0d76c2f63b420a2513b5ed157b1dc901f591ad2aeb66da2648f",
+      "LocalMatches": true,
+      "LocalSHA256": "56f7d2eefc9ff0d76c2f63b420a2513b5ed157b1dc901f591ad2aeb66da2648f"
+    },
+    {
+      "File": "submission/Student_B/evidence/gui/ssis_geography_seller_detail_02.png",
+      "GuestSHA256": "041c09574c65003d5f5f469d0debe0bd545cbf1e844f5a06d1050531c3bbe9db",
+      "LocalMatches": true,
+      "LocalSHA256": "041c09574c65003d5f5f469d0debe0bd545cbf1e844f5a06d1050531c3bbe9db"
+    },
+    {
+      "File": "submission/Student_B/evidence/gui/ssis_geography_seller_detail_03.png",
+      "GuestSHA256": "00745fd9b1f394999af8eff6150b0bed143ff01297605eda2fc41bb2c1399d90",
+      "LocalMatches": true,
+      "LocalSHA256": "00745fd9b1f394999af8eff6150b0bed143ff01297605eda2fc41bb2c1399d90"
+    },
+    {
+      "File": "submission/Student_B/evidence/gui/ssis_geography_seller_detail_04.png",
+      "GuestSHA256": "4234e5e7e0811729a817eb3fe8eb6ccf8ab033a6d87fb9811528d354b8031eff",
+      "LocalMatches": true,
+      "LocalSHA256": "4234e5e7e0811729a817eb3fe8eb6ccf8ab033a6d87fb9811528d354b8031eff"
+    },
+    {
+      "File": "submission/Student_B/evidence/gui/ssis_geography_seller_detail_05.png",
+      "GuestSHA256": "0a12570b37ce7c8684bbb6e605326faddd7bf2206c41d28a30932de5e1b7f7d2",
+      "LocalMatches": true,
+      "LocalSHA256": "0a12570b37ce7c8684bbb6e605326faddd7bf2206c41d28a30932de5e1b7f7d2"
+    }
+  ],
+  "Status": "SOURCE_SYNTAX_PASS_READBACK_MATCHES_AND_PRESERVED_EARLIER_OVERVIEWS_DISTINGUISHED"
 }

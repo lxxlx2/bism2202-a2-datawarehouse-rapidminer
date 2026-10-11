@@ -25,7 +25,12 @@
     {
       "file": "code/scripts/windows/warehouse/capture_designer_flows.ps1",
       "source": "scripts/windows/warehouse/capture_designer_flows.ps1",
-      "sha256": "a1c61388af221cb90dcac7caedb70da2d55e655266f5ad7254d4fbcf918a6cc5"
+      "sha256": "5761e9af81f976f89eb9a399294873a5406d0e7a2301a1501481bd6c6fedcb16"
+    },
+    {
+      "file": "code/scripts/windows/warehouse/capture_designer_segments.ps1",
+      "source": "scripts/windows/warehouse/capture_designer_segments.ps1",
+      "sha256": "74bce1209a148444dd53c6f6ae97194505961b52931a86228eec21cbc6ca1b6c"
     },
     {
       "file": "code/scripts/windows/warehouse/initial_dimseller.ps1",

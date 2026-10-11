@@ -32,16 +32,13 @@ public static class NativeDesigner {
 }
 '@
  [void][NativeDesigner]::SetProcessDPIAware()
- $p=@(Get-Process devenv|Where-Object{$_.MainWindowTitle -like "*STUDENT_${Student}_ID_SSIS*"})
- if($p.Count -eq 1){$windowHandle=$p[0].MainWindowHandle}else{
-  $prior=Get-Content "C:\BISM2202\analysis\native_ui_$Student\processes.json" -Raw|ConvertFrom-Json
-  $root=[System.Windows.Automation.AutomationElement]::FromHandle([IntPtr]$prior.MainWindowHandle)
-  if($root.Current.ProcessId -ne $prior.Id -or (Get-Process -Id $prior.Id).ProcessName -ne 'devenv'){throw 'Previously verified own designer window no longer exists'}
-  $windowHandle=[IntPtr]$prior.MainWindowHandle
- }
+ $designerIds=@((Get-Process devenv).Id)
+ $ownRoots=@([System.Windows.Automation.AutomationElement]::RootElement.FindAll([System.Windows.Automation.TreeScope]::Children,[System.Windows.Automation.Condition]::TrueCondition)|Where-Object{$_.Current.ProcessId -in $designerIds -and $_.Current.Name -like "*STUDENT_${Student}_ID_SSIS*"})
+ if($ownRoots.Count -ne 1){throw 'Expected exactly one current own student designer window'}
+ $windowHandle=[IntPtr]$ownRoots[0].Current.NativeWindowHandle
  $root=[System.Windows.Automation.AutomationElement]::FromHandle($windowHandle)
  $dialogCondition=New-Object System.Windows.Automation.AndCondition (New-Object System.Windows.Automation.PropertyCondition([System.Windows.Automation.AutomationElement]::NameProperty,'Microsoft Visual Studio')),(New-Object System.Windows.Automation.PropertyCondition([System.Windows.Automation.AutomationElement]::ProcessIdProperty,$root.Current.ProcessId))
- $de=[System.Windows.Automation.AutomationElement]::RootElement.FindFirst([System.Windows.Automation.TreeScope]::Descendants,$dialogCondition)
+ $de=[System.Windows.Automation.AutomationElement]::RootElement.FindFirst([System.Windows.Automation.TreeScope]::Children,$dialogCondition)
  if($null -ne $de){
   $dialogNames=@($de.FindAll([System.Windows.Automation.TreeScope]::Descendants,[System.Windows.Automation.Condition]::TrueCondition)|ForEach-Object{$_.Current.Name})
   if(-not @($dialogNames|Where-Object{$_ -like '*RPC_E_CANTCALLOUT_ININPUTSYNCCALL*'}).Count){throw 'Unexpected Visual Studio dialog; do not dismiss it'}
@@ -57,7 +54,8 @@ public static class NativeDesigner {
  }
  "TIME=$(Get-Date -Format o) ROOT=$($root.Current.Name) ROOTPID=$($root.Current.ProcessId)" | Set-Content "$out\ui_diagnostic.txt"
  Start-Sleep -Seconds 1
- $combo=$root.FindFirst([System.Windows.Automation.TreeScope]::Descendants,(New-Object System.Windows.Automation.PropertyCondition([System.Windows.Automation.AutomationElement]::ControlTypeProperty,[System.Windows.Automation.ControlType]::ComboBox)))
+ $taskComboCondition=New-Object System.Windows.Automation.AndCondition (New-Object System.Windows.Automation.PropertyCondition([System.Windows.Automation.AutomationElement]::ControlTypeProperty,[System.Windows.Automation.ControlType]::ComboBox)),(New-Object System.Windows.Automation.PropertyCondition([System.Windows.Automation.AutomationElement]::NameProperty,'Data Flow Task'))
+ $combo=$root.FindFirst([System.Windows.Automation.TreeScope]::Descendants,$taskComboCondition)
  if($null -eq $combo -or $combo.Current.Name -ne 'Data Flow Task'){throw 'Expected native Data Flow Task combo'}
  $h=[IntPtr]$combo.Current.NativeWindowHandle
  $count=[NativeDesigner]::SendMessage($h,0x146,[IntPtr]::Zero,[IntPtr]::Zero).ToInt32()
@@ -77,7 +75,7 @@ public static class NativeDesigner {
  }
  Start-Sleep -Seconds 3
  $dialogCondition=New-Object System.Windows.Automation.AndCondition (New-Object System.Windows.Automation.PropertyCondition([System.Windows.Automation.AutomationElement]::NameProperty,'Microsoft Visual Studio')),(New-Object System.Windows.Automation.PropertyCondition([System.Windows.Automation.AutomationElement]::ProcessIdProperty,$root.Current.ProcessId))
- $de=[System.Windows.Automation.AutomationElement]::RootElement.FindFirst([System.Windows.Automation.TreeScope]::Descendants,$dialogCondition)
+ $de=[System.Windows.Automation.AutomationElement]::RootElement.FindFirst([System.Windows.Automation.TreeScope]::Children,$dialogCondition)
  if($null -ne $de){
   $dialogNames=@($de.FindAll([System.Windows.Automation.TreeScope]::Descendants,[System.Windows.Automation.Condition]::TrueCondition)|ForEach-Object{$_.Current.Name})
   if(-not @($dialogNames|Where-Object{$_ -like '*RPC_E_CANTCALLOUT_ININPUTSYNCCALL*'}).Count){throw 'Unexpected Visual Studio dialog; do not dismiss it'}
@@ -100,13 +98,18 @@ public static class NativeDesigner {
  $pt=New-Object System.Drawing.Point ([int]($b.Right-40)),([int]($b.Bottom-34))
  "GRAPH=$b POINT=$pt" | Add-Content "$out\ui_diagnostic.txt"
  $target=[NativeDesigner]::WindowFromPoint($pt)
- [void][NativeDesigner]::ScreenToClient($target,[ref]$pt)
- $lp=[IntPtr](($pt.Y -shl 16) -bor ($pt.X -band 65535))
- [void][NativeDesigner]::PostMessage($target,0x200,[IntPtr]::Zero,$lp)
- [void][NativeDesigner]::PostMessage($target,0x201,[IntPtr]1,$lp)
- [void][NativeDesigner]::PostMessage($target,0x202,[IntPtr]::Zero,$lp)
- Start-Sleep -Seconds 1
- [System.Windows.Forms.SendKeys]::SendWait('{ENTER}')
+ [uint32]$targetPid=0
+ for($attempt=0;$attempt -lt 6;$attempt++){
+  [void][NativeDesigner]::SetForegroundWindow($windowHandle)
+  Start-Sleep -Seconds 1
+  $target=[NativeDesigner]::WindowFromPoint($pt)
+  [void][NativeDesigner]::GetWindowThreadProcessId($target,[ref]$targetPid)
+  if($targetPid -eq $root.Current.ProcessId){break}
+ }
+ if($targetPid -ne $root.Current.ProcessId){throw 'Fit-view point is outside the own Visual Studio process'}
+ [void][NativeDesigner]::SetCursorPos($pt.X,$pt.Y)
+ [NativeDesigner]::mouse_event(2,0,0,0,[UIntPtr]::Zero)
+ [NativeDesigner]::mouse_event(4,0,0,0,[UIntPtr]::Zero)
  Start-Sleep -Seconds 2
  [uint32]$foregroundPid=0
  [void][NativeDesigner]::GetWindowThreadProcessId([NativeDesigner]::GetForegroundWindow(),[ref]$foregroundPid)
@@ -122,13 +125,13 @@ public static class NativeDesigner {
  $missingComponents=@($expected|Where-Object{$_ -notin $names})
  if($missingComponents.Count){throw "Stale or incomplete canvas controls: $($missingComponents -join ', ')"}
  $names | ConvertTo-Json | Set-Content -Encoding UTF8 "$out\$Flow-controls.json"
- $map=@{DimCustomer_Lookup='ssis_dimcustomer';DimCustomer_Merge='ssis_dimcustomer';DimDate='ssis_dimdate';DimGeography_Customer='ssis_geography_customer';DimGeography_Seller='ssis_geography_seller';DimProduct='ssis_dimproduct';DimSeller='ssis_dimseller';FactSales='ssis_fact'}
+ $map=@{DimCustomer_Lookup='ssis_dimcustomer';DimCustomer_MergeJoin='ssis_dimcustomer';DimDate='ssis_dimdate';DimGeography_Customer='ssis_geography_customer';DimGeography_Seller='ssis_geography_seller';DimProduct='ssis_dimproduct';DimSeller='ssis_dimseller';FactSales='ssis_fact'}
  if(-not $map.ContainsKey($Flow)){throw 'Capture filename is not allowlisted'}
  $bounds=[System.Windows.Forms.Screen]::PrimaryScreen.Bounds
  $bitmap=New-Object System.Drawing.Bitmap $bounds.Width,$bounds.Height
  $graphics=[System.Drawing.Graphics]::FromImage($bitmap)
  try{$graphics.CopyFromScreen($bounds.Location,[System.Drawing.Point]::Empty,$bounds.Size);$bitmap.Save((Join-Path $out ($map[$Flow]+'.png')),[System.Drawing.Imaging.ImageFormat]::Png)}finally{$graphics.Dispose();$bitmap.Dispose()}
- [pscustomobject]@{Student=$Student;SelectedTask=$value;ActualComboItems=$items;Capture=$map[$Flow]+'.png';Method='Actual Windows desktop pixels via CopyFromScreen; native controls selected without altering package';ScreenWidth=$bounds.Width;ScreenHeight=$bounds.Height;Status='NATIVE_SCREEN_CAPTURE_SAVED_VISUAL_REVIEW_REQUIRED'} | ConvertTo-Json -Depth 5 | Set-Content -Encoding UTF8 "$out\$Flow-capture.json"
+ [pscustomobject]@{Utc=(Get-Date).ToUniversalTime().ToString('o');Student=$Student;ProcessId=$root.Current.ProcessId;SelectedTask=$value;ActualComboItems=$items;ExpectedCanvasComponents=$expected;Capture=$map[$Flow]+'.png';Method='Actual Windows desktop pixels via CopyFromScreen; native controls selected without altering package';ScreenWidth=$bounds.Width;ScreenHeight=$bounds.Height;Status='NATIVE_SCREEN_CAPTURE_SAVED_VISUAL_REVIEW_REQUIRED'} | ConvertTo-Json -Depth 5 | Set-Content -Encoding UTF8 "$out\$Flow-capture.json"
  "NATIVE_FLOW_CAPTURE=SAVED_REVIEW_REQUIRED FLOW=$Flow TIME=$(Get-Date -Format o)" | Set-Content -Encoding UTF8 "$out\capture_status.txt"
 }catch{
  "NATIVE_FLOW_CAPTURE=FAIL FLOW=$Flow $($_.Exception.ToString())" | Set-Content -Encoding UTF8 "$out\capture_status.txt"

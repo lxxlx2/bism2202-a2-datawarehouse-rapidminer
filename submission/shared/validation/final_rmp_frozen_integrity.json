@@ -1,0 +1,55 @@
+{
+  "Status": "PASS",
+  "Files": [
+    {
+      "File": "submission/Student_A/rapidminer/STUDENT_A_ID_rapidminer.rmp",
+      "Sha256": "66d08cc7bd846af1bee75347018088669967d7eb25d977db22faeb431d0f9230",
+      "ByteIdenticalToFrozenHEAD": "PASS"
+    },
+    {
+      "File": "submission/Student_A/rapidminer/cv_only_decision_tree.rmp",
+      "Sha256": "c85d648edb74bb67d956c6d0b65a098013ab944b24353771a0c41ce4a94f069b",
+      "ByteIdenticalToFrozenHEAD": "PASS"
+    },
+    {
+      "File": "submission/Student_A/rapidminer/cv_only_logistic_regression.rmp",
+      "Sha256": "22a95e1b19a89320a923ae9e2827f20bc27dac13787a6bfa696f299b87ed7382",
+      "ByteIdenticalToFrozenHEAD": "PASS"
+    },
+    {
+      "File": "submission/Student_A/rapidminer/holdout_decision_tree.rmp",
+      "Sha256": "b592c42eb8a093037e3da1373aed5eb73c378c0663a1789922d97cdf130880a2",
+      "ByteIdenticalToFrozenHEAD": "PASS"
+    },
+    {
+      "File": "submission/Student_A/rapidminer/holdout_logistic_regression.rmp",
+      "Sha256": "588718b9000012fdb2bc74ddb64257eb1275059a1d29721d606ed21bd238da23",
+      "ByteIdenticalToFrozenHEAD": "PASS"
+    },
+    {
+      "File": "submission/Student_B/rapidminer/STUDENT_B_ID_rapidminer.rmp",
+      "Sha256": "cf36047fcab40a23d91251c8cff9d81637921013c7ccca9ec6687bd527c3bf50",
+      "ByteIdenticalToFrozenHEAD": "PASS"
+    },
+    {
+      "File": "submission/Student_B/rapidminer/cv_only_logistic_regression.rmp",
+      "Sha256": "9716c9cc1d44d73add256ca64d08b03b77e7419505875fca2a59855845d28ae1",
+      "ByteIdenticalToFrozenHEAD": "PASS"
+    },
+    {
+      "File": "submission/Student_B/rapidminer/cv_only_random_forest.rmp",
+      "Sha256": "5cc2cc0461089a280c76bf10a34fbab76174d55805455aefa305104cb0ff0703",
+      "ByteIdenticalToFrozenHEAD": "PASS"
+    },
+    {
+      "File": "submission/Student_B/rapidminer/holdout_logistic_regression.rmp",
+      "Sha256": "2299c6b071acea03edeca9b991491cd3005be64a146ba90d825013f1148c993b",
+      "ByteIdenticalToFrozenHEAD": "PASS"
+    },
+    {
+      "File": "submission/Student_B/rapidminer/holdout_random_forest.rmp",
+      "Sha256": "531ec4943b4ab9af10e3f07b64a53e037779e1c507b1979c2a42b8dc5f5428fe",
+      "ByteIdenticalToFrozenHEAD": "PASS"
+    }
+  ]
+}

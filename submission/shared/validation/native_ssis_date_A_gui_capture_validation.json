@@ -1,0 +1,106 @@
+{
+  "Student": "A",
+  "Flow": "DimDate",
+  "Task": "DFT Student_A_DimDate",
+  "ProcessId": 12596,
+  "VerticalViewSize": 34.49197860962567,
+  "HorizontalViewSize": 100,
+  "ExpectedComponents": [
+    "Audit loaded rows",
+    "Derive CalendarDate",
+    "Derive CalendarMonth",
+    "Derive CalendarQuarter",
+    "Derive CalendarYear",
+    "Derive DateKey",
+    "Derive DayOfMonth",
+    "Explicit target column types",
+    "Load DimDate",
+    "Read OzMart fields 0",
+    "Sort by DateKey"
+  ],
+  "ComponentsWithoutFullViewportCoverage": [],
+  "Captures": [
+    {
+      "Utc": "2026-10-10T20:35:54.3777081Z",
+      "File": "ssis_dimdate_detail_01.png",
+      "VerticalScrollPercent": 0,
+      "HorizontalScrollPercent": -1,
+      "VisibleComponents": [
+        "Derive CalendarYear",
+        "Derive CalendarDate",
+        "Derive DateKey",
+        "Read OzMart fields 0"
+      ],
+      "FullyVisibleComponents": [
+        "Derive CalendarYear",
+        "Derive CalendarDate",
+        "Derive DateKey",
+        "Read OzMart fields 0"
+      ],
+      "Sha256": "8ABBD8DA2C1674A66B634DBDC4560B1DC0A812C0C66223E3D5DBA658F1A3E913"
+    },
+    {
+      "Utc": "2026-10-10T20:36:00.4709187Z",
+      "File": "ssis_dimdate_detail_02.png",
+      "VerticalScrollPercent": 33.333333333333336,
+      "HorizontalScrollPercent": -1,
+      "VisibleComponents": [
+        "Derive DayOfMonth",
+        "Derive CalendarQuarter",
+        "Derive CalendarYear",
+        "Derive CalendarDate",
+        "Derive CalendarMonth"
+      ],
+      "FullyVisibleComponents": [
+        "Derive CalendarQuarter",
+        "Derive CalendarYear",
+        "Derive CalendarMonth"
+      ],
+      "Sha256": "914CD4E0E7650C7DE94AD7776C70ED9D930C87F508FBD3E57B8C8D752A8DDAE6"
+    },
+    {
+      "Utc": "2026-10-10T20:36:05.6781802Z",
+      "File": "ssis_dimdate_detail_03.png",
+      "VerticalScrollPercent": 66.66666666666667,
+      "HorizontalScrollPercent": -1,
+      "VisibleComponents": [
+        "Derive DayOfMonth",
+        "Explicit target column types",
+        "Sort by DateKey",
+        "Derive CalendarMonth"
+      ],
+      "FullyVisibleComponents": [
+        "Derive DayOfMonth",
+        "Explicit target column types",
+        "Sort by DateKey",
+        "Derive CalendarMonth"
+      ],
+      "Sha256": "9CDFA43E4C5EF64DF4E535A6246386F5AB92C9B7CAE435723622D36569F6CBAD"
+    },
+    {
+      "Utc": "2026-10-10T20:36:10.3079342Z",
+      "File": "ssis_dimdate_detail_04.png",
+      "VerticalScrollPercent": 100,
+      "HorizontalScrollPercent": -1,
+      "VisibleComponents": [
+        "Explicit target column types",
+        "Sort by DateKey",
+        "Load DimDate",
+        "Audit loaded rows"
+      ],
+      "FullyVisibleComponents": [
+        "Explicit target column types",
+        "Load DimDate",
+        "Audit loaded rows"
+      ],
+      "Sha256": "380A64CCDAF861853C647A345B551E0F1078C9BF8A2B471C11555A36FA78E21A"
+    }
+  ],
+  "Status": "NATIVE_SEGMENTS_SAVED_VISUAL_REVIEW_REQUIRED",
+  "VisualReview": "PASS: all four native 100 percent screenshots reviewed; eleven components fully covered; input 25000 and unique output 493; package success retained.",
+  "Overview": {
+    "file": "ssis_dimdate.png",
+    "sha256": "2b9e9a82fa5e2b9068252397a5fd9b4644bf6dae8e711354bc036903697666ae",
+    "scope": "Preserved original complete native overview; four readable native segments supplement its small text."
+  }
+}

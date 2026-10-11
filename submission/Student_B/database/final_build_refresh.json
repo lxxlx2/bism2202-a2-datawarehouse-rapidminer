@@ -1,0 +1,74 @@
+{
+  "Status": "FINAL_GUI_BUILD_VALIDATION_AND_ACTUAL_RESTORE_PASS",
+  "StartedUtc": "2026-10-11T05:04:24.9365571Z",
+  "FinishedUtc": "2026-10-11T05:05:50.6297172Z",
+  "Student": "B",
+  "SourceHashes": [
+    {
+      "File": "C:\\BISM2202\\submission\\Student_B\\ssis\\STUDENT_B_ID_SSIS\\Master.dtsx",
+      "Sha256": "D9EF6D631B946436A77442629986DDE6C4ECFEEA88CEBD539E31AD313C7BC900"
+    },
+    {
+      "File": "C:\\BISM2202\\assignment_work\\sql\\Student_B\\Q4_1.sql",
+      "Sha256": "CBDC72B9702981FDE470B618FCEA5CEA9F4F4B8530F0EBC7AD09A1ED906541F4"
+    },
+    {
+      "File": "C:\\BISM2202\\assignment_work\\sql\\Student_B\\Q4_2.sql",
+      "Sha256": "8C93A9B3890F5AE2F3338D96EB2840A7AD59B116E4E00F2B3FED5421A8D08B93"
+    },
+    {
+      "File": "C:\\BISM2202\\assignment_work\\sql\\Student_B\\Q4_3.sql",
+      "Sha256": "F8791658599027F1428D07B4996CAE294093D5FB8DA1B002FAE14465904D59B2"
+    },
+    {
+      "File": "C:\\BISM2202\\assignment_work\\sql\\Student_B\\Q4_3_customer_destination_sensitivity.sql",
+      "Sha256": "38F7FB75552873571ABEB3F7FBBD7362C50573CE7E02E564D622542386124B91"
+    },
+    {
+      "File": "C:\\BISM2202\\assignment_work\\sql\\Student_B\\warehouse_validation.sql",
+      "Sha256": "D1BCF85733E3F766697D07F5B76ACF1C222F334E0FC1D4E7B26452805C6761B0"
+    }
+  ],
+  "BackupSha256": "9A2387133085592470B19F06FE9E1869F8F634CC0315CC06E83D02A67213A23A",
+  "RestoreLog": "BACKUP_DATABASE=PASS\r\nRESTORE_VERIFYONLY=PASS\r\nACTUAL_RESTORE_DATABASE=PASS\r\nRESTORE_DATABASE_NAME=STUDENT_B_ID_dw_restore_validation_20261010220514\r\nRESTORE_FULL_ROW_COMPARISON_DimSeller=PASS\r\nRESTORE_FULL_ROW_COMPARISON_DimCustomer=PASS\r\nRESTORE_FULL_ROW_COMPARISON_DimProduct=PASS\r\nRESTORE_FULL_ROW_COMPARISON_DimDate=PASS\r\nRESTORE_FULL_ROW_COMPARISON_DimGeography=PASS\r\nRESTORE_FULL_ROW_COMPARISON_FactSales=PASS\r\nRESTORE_FULL_ROW_COMPARISON_RefAge=PASS\r\nRESTORE_FULL_ROW_COMPARISON_RefEducation=PASS\r\nRESTORE_FULL_ROW_COMPARISON_RefState=PASS\r\nRESTORE_FULL_ROW_COMPARISON_RefSellerLocation=PASS\r\nRESTORED_CHECKDB=PASS\r\nRESTORED_QUERY_Q4_1=PASS ROWS=8\r\nRESTORED_QUERY_Q4_2=PASS ROWS=40\r\nRESTORED_QUERY_Q4_3=PASS ROWS=15\r\nRESTORED_QUERY_Q4_3_customer_destination_sensitivity=PASS ROWS=15\r\nBACKUP_SHA256=9A2387133085592470B19F06FE9E1869F8F634CC0315CC06E83D02A67213A23A\r\nBACKUP_AND_ACTUAL_RESTORE=PASS\r\n",
+  "SourceComparison": [
+    {
+      "file": "submission/Student_B/ssis/STUDENT_B_ID_SSIS/Master.dtsx",
+      "native_sha256": "d9ef6d631b946436a77442629986dde6c4ecfeea88cebd539e31ad313c7bc900",
+      "local_sha256": "d9ef6d631b946436a77442629986dde6c4ecfeea88cebd539e31ad313c7bc900",
+      "exact_bytes_match": true
+    },
+    {
+      "file": "submission/Student_B/sql/Q4_1.sql",
+      "native_sha256": "cbdc72b9702981fde470b618fcea5cea9f4f4b8530f0ebc7ad09a1ed906541f4",
+      "local_sha256": "cbdc72b9702981fde470b618fcea5cea9f4f4b8530f0ebc7ad09a1ed906541f4",
+      "exact_bytes_match": true
+    },
+    {
+      "file": "submission/Student_B/sql/Q4_2.sql",
+      "native_sha256": "8c93a9b3890f5ae2f3338d96eb2840a7ad59b116e4e00f2b3fed5421a8d08b93",
+      "local_sha256": "8c93a9b3890f5ae2f3338d96eb2840a7ad59b116e4e00f2b3fed5421a8d08b93",
+      "exact_bytes_match": true
+    },
+    {
+      "file": "submission/Student_B/sql/Q4_3.sql",
+      "native_sha256": "f8791658599027f1428d07b4996cae294093d5fb8da1b002fae14465904d59b2",
+      "local_sha256": "f8791658599027f1428d07b4996cae294093d5fb8da1b002fae14465904d59b2",
+      "exact_bytes_match": true
+    },
+    {
+      "file": "submission/Student_B/sql/Q4_3_customer_destination_sensitivity.sql",
+      "native_sha256": "38f7fb75552873571abeb3f7fbbd7362c50573ce7e02e564d622542386124b91",
+      "local_sha256": "38f7fb75552873571abeb3f7fbbd7362c50573ce7e02e564d622542386124b91",
+      "exact_bytes_match": true
+    },
+    {
+      "file": "submission/Student_B/sql/warehouse_validation.sql",
+      "native_sha256": "d1bcf85733e3f766697d07f5b76acf1c222f334e0fc1d4e7b26452805c6761b0",
+      "local_sha256": "d1bcf85733e3f766697d07f5b76acf1c222f334e0fc1d4e7b26452805c6761b0",
+      "exact_bytes_match": true
+    }
+  ],
+  "DownloadedBackupSha256": "9a2387133085592470b19f06fe9e1869f8f634cc0315cc06e83d02a67213a23a",
+  "DownloadedBackupBytes": 28923904
+}

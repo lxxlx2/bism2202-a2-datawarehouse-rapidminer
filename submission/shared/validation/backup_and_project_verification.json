@@ -1,8 +1,8 @@
 {
   "A": {
     "backup": "submission/Student_A/database/STUDENT_A_ID_dw.bak",
-    "bytes": 28447232,
-    "sha256": "dd92262915ce8c0426582ce0c50a7fdb06fd838d74d24d378b55ba4207db5ec1",
+    "bytes": 28737024,
+    "sha256": "26394c39804afe7cb354c98f164bc84f441d40cbf860f571ce0b7e8d32d58c5f",
     "actual_restore": "PASS",
     "full_rows_and_restored_queries": "PASS",
     "visual_studio_native_build": "PASS",
@@ -14,13 +14,19 @@
       "path refId renaming and path element order; actual endpoints preserved"
     ],
     "native_designer_execution": "PASS",
-    "restore_database": "STUDENT_A_ID_dw_restore_validation_20261009042850",
-    "execution_screenshot": "submission/Student_A/evidence/gui/ssis_execution_success.png"
+    "restore_database": "STUDENT_A_ID_dw_restore_validation_20261010132611",
+    "execution_screenshot": "submission/Student_A/evidence/gui/ssis_execution_success.png",
+    "previous_backup": {
+      "bytes": 28447232,
+      "sha256": "dd92262915ce8c0426582ce0c50a7fdb06fd838d74d24d378b55ba4207db5ec1",
+      "restore_database": "STUDENT_A_ID_dw_restore_validation_20261009042850"
+    },
+    "final_gui_build_validation": "submission/shared/validation/final_gui_build_A_validation.json"
   },
   "B": {
     "backup": "submission/Student_B/database/STUDENT_B_ID_dw.bak",
-    "bytes": 28497408,
-    "sha256": "f2d9d08c6da0eea3112ecc6359b29262b370e0e3634cf235b30a1cab2927bb77",
+    "bytes": 28923904,
+    "sha256": "9a2387133085592470b19f06fe9e1869f8f634cc0315cc06e83d02a67213a23a",
     "actual_restore": "PASS",
     "full_rows_and_restored_queries": "PASS",
     "visual_studio_native_build": "PASS",
@@ -30,6 +36,14 @@
       "product version",
       "UI editor assembly metadata",
       "path refId renaming and path element order; actual endpoints preserved"
-    ]
+    ],
+    "previous_backup": {
+      "bytes": 28497408,
+      "sha256": "f2d9d08c6da0eea3112ecc6359b29262b370e0e3634cf235b30a1cab2927bb77"
+    },
+    "native_designer_execution": "PASS",
+    "restore_database": "STUDENT_B_ID_dw_restore_validation_20261010220514",
+    "final_gui_build_validation": "submission/shared/validation/final_gui_build_B_validation.json",
+    "execution_screenshot": "submission/Student_B/evidence/gui/ssis_execution_success.png"
   }
 }

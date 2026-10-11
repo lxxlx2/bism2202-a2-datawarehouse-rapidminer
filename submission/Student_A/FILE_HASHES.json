@@ -1,0 +1,996 @@
+{
+  "Student": "A",
+  "Status": "TECHNICAL_PASS_HUMAN_REVIEW_PENDING",
+  "Files": [
+    {
+      "Path": "AI_DISCLOSURE.md",
+      "Bytes": 1255,
+      "Sha256": "7c5487aa4d1ddfec476aabbe606bdf5b288b6746c8588b69b44104abe7c0bbd5"
+    },
+    {
+      "Path": "MANIFEST.md",
+      "Bytes": 1620,
+      "Sha256": "178b2b4d930a7cb032c7f65c6f4421e53d48dbe26004df44a6a903c1de7aba3c"
+    },
+    {
+      "Path": "README.md",
+      "Bytes": 3496,
+      "Sha256": "70f93baddb250c56af08e366c10ba01786382dc55a1399196c8dbd5573e32121"
+    },
+    {
+      "Path": "code/README.md",
+      "Bytes": 1400,
+      "Sha256": "61fb41bda00c3abafeb7e086c12f01dda4a232ce22ecf13131ee89853efde735"
+    },
+    {
+      "Path": "code/scripts/analysis/audit_loan_csv.py",
+      "Bytes": 2663,
+      "Sha256": "d663231b71e9951e4a621440a1c9765bda8537404c170dadf33f3260047ef160"
+    },
+    {
+      "Path": "code/scripts/rapidminer/NativeOperatorProbe.java",
+      "Bytes": 1610,
+      "Sha256": "68e7a3cbafe6df6e1bb4232407dab7907500c7715d09f34e2bdcbbd45d599e5a"
+    },
+    {
+      "Path": "code/scripts/rapidminer/NativeProcessRunner.java",
+      "Bytes": 3030,
+      "Sha256": "793a126fcc2b6fb3c9c4c453f9379625b25b3db0f4f15cd37504d24a953151d7"
+    },
+    {
+      "Path": "code/scripts/rapidminer/build_processes.py",
+      "Bytes": 9674,
+      "Sha256": "d9524fea60f7f56c2ccc7059ef15937c0e926fb86a08d018cdaea8601205bfeb"
+    },
+    {
+      "Path": "code/scripts/rapidminer/build_submission_process.py",
+      "Bytes": 2580,
+      "Sha256": "652e525eb7c2893b4fa4f75fbaf7accd4f64b9c319b7678e91ba789e37a9a842"
+    },
+    {
+      "Path": "code/scripts/rapidminer/probe_native.sh",
+      "Bytes": 840,
+      "Sha256": "05ac4ecaf1cc8ed523e0764f932b99daee2b62df852d8eacef1beab2f765a9a7"
+    },
+    {
+      "Path": "code/scripts/rapidminer/run_native.sh",
+      "Bytes": 942,
+      "Sha256": "a252007e09b65031e50fb9cb404980c2fb93c4b18deac4de10acf5473fa82785"
+    },
+    {
+      "Path": "code/scripts/rapidminer/verify_native_results.py",
+      "Bytes": 4011,
+      "Sha256": "a2b4eb5c1bbfd67d75081d82e6911b3bbefdaec4474dcb534ca1fface83d4311"
+    },
+    {
+      "Path": "code/scripts/windows/warehouse/CustomerFlow.cs",
+      "Bytes": 22404,
+      "Sha256": "556437f07e8b065a12f8d985520de6615582d4f771cd08c37f5dab0ef300e0db"
+    },
+    {
+      "Path": "code/scripts/windows/warehouse/backup_restore.ps1",
+      "Bytes": 4343,
+      "Sha256": "62ecd5c5a2aa929e9c3d7a7927218c5bcbf9d62043bbc191aa3aa228f757ab2c"
+    },
+    {
+      "Path": "code/scripts/windows/warehouse/build_project.ps1",
+      "Bytes": 1581,
+      "Sha256": "ce0fc4d1f110745e652a5a61d08913732647b310a533b7843d6f61c5ff0496d3"
+    },
+    {
+      "Path": "code/scripts/windows/warehouse/build_project.py",
+      "Bytes": 3313,
+      "Sha256": "63dad0f84f543cb87ce31583862e5292f91e793b68b31969c30d1404c4428f6e"
+    },
+    {
+      "Path": "code/scripts/windows/warehouse/capture_designer_flows.ps1",
+      "Bytes": 12729,
+      "Sha256": "5761e9af81f976f89eb9a399294873a5406d0e7a2301a1501481bd6c6fedcb16"
+    },
+    {
+      "Path": "code/scripts/windows/warehouse/capture_designer_segments.ps1",
+      "Bytes": 8784,
+      "Sha256": "74bce1209a148444dd53c6f6ae97194505961b52931a86228eec21cbc6ca1b6c"
+    },
+    {
+      "Path": "code/scripts/windows/warehouse/initial_dimseller.ps1",
+      "Bytes": 15504,
+      "Sha256": "c39aa68a88aab6a3cdab6d3748074e503c4269c61e10efc59107df1445323b84"
+    },
+    {
+      "Path": "code/scripts/windows/warehouse/inspect_designer_ui.ps1",
+      "Bytes": 1602,
+      "Sha256": "a5b7cfe34491936c1f9bbb9a28d03ed01b6df92e9b09e525b4997ed139c43960"
+    },
+    {
+      "Path": "code/scripts/windows/warehouse/load_customer.ps1",
+      "Bytes": 4394,
+      "Sha256": "92b12e3ab62a9c1d2ae443d0fc5f93c5608cf430a69eacff9a12e1cbecc24ae5"
+    },
+    {
+      "Path": "code/scripts/windows/warehouse/load_date.ps1",
+      "Bytes": 4314,
+      "Sha256": "d53cff4fe5f89f45b828649d808c2a26c42ba365d60ccb540f1d0ea7c3cf795c"
+    },
+    {
+      "Path": "code/scripts/windows/warehouse/load_dimension_batch.ps1",
+      "Bytes": 719,
+      "Sha256": "bf61f09607a834e0fd456890ae864639eac1abef8430d7abc98f3ae30acb76ae"
+    },
+    {
+      "Path": "code/scripts/windows/warehouse/load_fact.ps1",
+      "Bytes": 4297,
+      "Sha256": "0d623c873c53d0b36b621047201bc619c32b7745223d8b4bffbc5ceed7edaf0e"
+    },
+    {
+      "Path": "code/scripts/windows/warehouse/load_product_geography.ps1",
+      "Bytes": 4706,
+      "Sha256": "97edbe3c1ce03c36e258aab72209122dea1c0abc5c14547c5607805e2638e681"
+    },
+    {
+      "Path": "code/scripts/windows/warehouse/load_references.ps1",
+      "Bytes": 12190,
+      "Sha256": "909358ff25c3addb68f5abe9b1cb62ba92cbe280bc4ac21a8507ebade588e74c"
+    },
+    {
+      "Path": "code/scripts/windows/warehouse/load_warehouse_master.ps1",
+      "Bytes": 4873,
+      "Sha256": "cd3d34aae92680516f125da9a5957e9234352d7bfed634d65b1ee938a5c729c6"
+    },
+    {
+      "Path": "code/scripts/windows/warehouse/probe_components.ps1",
+      "Bytes": 3485,
+      "Sha256": "3e458c494a1b1a6060ba6b7501f1a657ac8eb15b41df69eef83f37a3d594d4da"
+    },
+    {
+      "Path": "code/scripts/windows/warehouse/schema.sql",
+      "Bytes": 4041,
+      "Sha256": "38fc9aad1a8822d2e31ad58135b5f3307053f2ae73452b9ff7b9e61d5dbb73a0"
+    },
+    {
+      "Path": "code/scripts/windows/warehouse/validate_and_query.ps1",
+      "Bytes": 3540,
+      "Sha256": "d1906d8a7b0c5899040964715409ed00b2da29344b6c8d1358a25067f56d2de5"
+    },
+    {
+      "Path": "code/support_copy_validation.json",
+      "Bytes": 6261,
+      "Sha256": "2791eff2f7329c7bd0de15ab9de8eb22ed22a2a5ea95144ccc500bada97ac9ba"
+    },
+    {
+      "Path": "database/STUDENT_A_ID_dw.bak",
+      "Bytes": 28737024,
+      "Sha256": "26394c39804afe7cb354c98f164bc84f441d40cbf860f571ce0b7e8d32d58c5f"
+    },
+    {
+      "Path": "database/final_build_refresh.json",
+      "Bytes": 7615,
+      "Sha256": "5581d3e425f641e6802bc734a19e1f4cd672e55fec89feb111acf02cfdec4f4e"
+    },
+    {
+      "Path": "database/restore_validation.txt",
+      "Bytes": 907,
+      "Sha256": "0f40b17343e8eb31a1335b09de3c17cf21a353d0dd4de03047df3b3bd6e21969"
+    },
+    {
+      "Path": "diagrams/STUDENT_A_ID_dm.png",
+      "Bytes": 283900,
+      "Sha256": "848eb012295875d22379d2b69d99ec9bc4ebb57504c04ae6cc0baecd64cbecd8"
+    },
+    {
+      "Path": "diagrams/STUDENT_A_ID_fact.png",
+      "Bytes": 84710,
+      "Sha256": "22872979e244da50d01e11708043635e0dca20c011ea9f8100dd480e5b322bea"
+    },
+    {
+      "Path": "evidence/ACCEPTANCE_REPORT.md",
+      "Bytes": 5337,
+      "Sha256": "f3c74a6d7e4217bcd95a05f2ba594b31d5f8c175745a1dca2ca98a1e11f0b2ed"
+    },
+    {
+      "Path": "evidence/gui/DimGeography_Customer-capture.json",
+      "Bytes": 755,
+      "Sha256": "f87d533b43cbf9745b7b5f5c03db259a7bc194fd40639f6274102ab7f660f9d9"
+    },
+    {
+      "Path": "evidence/gui/DimGeography_Seller-capture.json",
+      "Bytes": 751,
+      "Sha256": "ec0a3f4ea826cb584d30ffd115b91bc2940419270e8c7e72288711da96c19ce1"
+    },
+    {
+      "Path": "evidence/gui/additional_capture_validation.json",
+      "Bytes": 1041,
+      "Sha256": "abebb4cf1a56852cb977d57d097f7cb5e940ac678e56c5290f4de05c7635b5a7"
+    },
+    {
+      "Path": "evidence/gui/command_capture_validation.json",
+      "Bytes": 4106,
+      "Sha256": "144202913546b7a7d7836e0fe9774563560dcfe7ad2e5003e5ce9544d528ca10"
+    },
+    {
+      "Path": "evidence/gui/customer_capture_validation.json",
+      "Bytes": 540,
+      "Sha256": "7d75a79f516455385ee849f1cc9047f8d24421966b3217d0a6eb63efa77530f0"
+    },
+    {
+      "Path": "evidence/gui/model1_cv.png",
+      "Bytes": 872073,
+      "Sha256": "f44d5ab9e62b4e4cd20d2643ddf9e255dbbed449f664e1ecef691db60bbfeffb"
+    },
+    {
+      "Path": "evidence/gui/model1_cv_accuracy.png",
+      "Bytes": 902408,
+      "Sha256": "34fcbcf22eaab36f016368e336f7acfe807d4a0bcb3105a48c4f4db309701d5e"
+    },
+    {
+      "Path": "evidence/gui/model1_cv_auc.png",
+      "Bytes": 1093876,
+      "Sha256": "3a849efb46cde9b1b77109f2119a2d4497f5512dece74aee8c3dd2b0fca3d58e"
+    },
+    {
+      "Path": "evidence/gui/model1_performance.png",
+      "Bytes": 885268,
+      "Sha256": "a26e383e22331dd49e15c518727244064b4e48526850766fd5008200547f5b70"
+    },
+    {
+      "Path": "evidence/gui/model1_process.png",
+      "Bytes": 823539,
+      "Sha256": "d2b26e73b4143a8f9158565de274be1520910bcc300899225a662b7d853d2b66"
+    },
+    {
+      "Path": "evidence/gui/model1_result.png",
+      "Bytes": 1241945,
+      "Sha256": "d0cbff8c9eea0d680df4c269cd69a907e5a7a13b51fabdbdac817c18d42f3120"
+    },
+    {
+      "Path": "evidence/gui/model2_cv.png",
+      "Bytes": 856736,
+      "Sha256": "869725103d895960bf6dfc236ab539a65b0ada0483dc7979ca1e4674672dcea0"
+    },
+    {
+      "Path": "evidence/gui/model2_cv_accuracy.png",
+      "Bytes": 907369,
+      "Sha256": "3fe01c5a194dda8e75e9a98b41ed9cd110732c745fe5a409ee402140b0438056"
+    },
+    {
+      "Path": "evidence/gui/model2_performance.png",
+      "Bytes": 884280,
+      "Sha256": "4a5b046c674ed978e8fd41d5bd4229fcabd847257faac680e12595ab512cd579"
+    },
+    {
+      "Path": "evidence/gui/model2_process.png",
+      "Bytes": 823119,
+      "Sha256": "ee711af6d4d047a5c9185856c192809e5d059eb66e6cbc64f4704bbcdca44f6b"
+    },
+    {
+      "Path": "evidence/gui/model2_result.png",
+      "Bytes": 864571,
+      "Sha256": "05e620cb2f1b8898f3772a0ac5efa59e3e31803b8f6edf0d9cb70a8c8cacf065"
+    },
+    {
+      "Path": "evidence/gui/sql_Q4_1.png",
+      "Bytes": 110356,
+      "Sha256": "e2d68781ff90cdcbfee5d38be3d6ec44ba4afd3498932f853fde41cba1b5b7e4"
+    },
+    {
+      "Path": "evidence/gui/sql_Q4_2.png",
+      "Bytes": 127108,
+      "Sha256": "9dd55cc45991374839251cd1f4afe82099707871d583749ee9086e5522d6d426"
+    },
+    {
+      "Path": "evidence/gui/sql_Q4_2_detail_01.png",
+      "Bytes": 129735,
+      "Sha256": "133b1e00f9bd51b729b387389ca7f8873eaf506d10766a94f579d20bfa88356c"
+    },
+    {
+      "Path": "evidence/gui/sql_Q4_2_detail_02.png",
+      "Bytes": 129934,
+      "Sha256": "7117a843e0632ccb37bf05444906108db6c92816376471de996eb2346df36379"
+    },
+    {
+      "Path": "evidence/gui/sql_Q4_2_detail_03.png",
+      "Bytes": 129801,
+      "Sha256": "569d49d2bc2df6ddd75875902663a9e2fb9945f6118d78db9da1bcd7e1d5f653"
+    },
+    {
+      "Path": "evidence/gui/sql_Q4_2_detail_04.png",
+      "Bytes": 128398,
+      "Sha256": "0080d7ba7c8d244c75977b477d5189d38980e9eeaf589b98633f4318c0ec173d"
+    },
+    {
+      "Path": "evidence/gui/sql_Q4_3.png",
+      "Bytes": 134992,
+      "Sha256": "f84fd918a11a7659de0419d2a5b5c8562b9eadab9eadf26ddb3d2b430fb00347"
+    },
+    {
+      "Path": "evidence/gui/sql_Q4_3_detail_01.png",
+      "Bytes": 134802,
+      "Sha256": "308116c8f9bbd35e3ae3f51a27a38a58a70bf11401bd67fd77e8ad22126848da"
+    },
+    {
+      "Path": "evidence/gui/ssis_customer_lookup_detail.png",
+      "Bytes": 719035,
+      "Sha256": "87e19385b88e85c02c750902da93699a996dfed7697692acfab285d9cde3bcbf"
+    },
+    {
+      "Path": "evidence/gui/ssis_customer_output_metadata.png",
+      "Bytes": 623328,
+      "Sha256": "52aa3eb0f3ec897fc1797207afb048d6c9a7dfaad8d83bc7bfc99c70ec663713"
+    },
+    {
+      "Path": "evidence/gui/ssis_dimcustomer.png",
+      "Bytes": 1102940,
+      "Sha256": "9325cb9ad5cfb67bc61890beebddcb33ef8fe5406d10b23e9363338a572830ec"
+    },
+    {
+      "Path": "evidence/gui/ssis_dimdate.png",
+      "Bytes": 1102243,
+      "Sha256": "2b9e9a82fa5e2b9068252397a5fd9b4644bf6dae8e711354bc036903697666ae"
+    },
+    {
+      "Path": "evidence/gui/ssis_dimdate_detail_01.png",
+      "Bytes": 93650,
+      "Sha256": "8abbd8da2c1674a66b634dbdc4560b1dc0a812c0c66223e3d5dba658f1a3e913"
+    },
+    {
+      "Path": "evidence/gui/ssis_dimdate_detail_02.png",
+      "Bytes": 93458,
+      "Sha256": "914cd4e0e7650c7de94ad7776c70ed9d930c87f508fbd3e57b8c8d752a8ddae6"
+    },
+    {
+      "Path": "evidence/gui/ssis_dimdate_detail_03.png",
+      "Bytes": 92657,
+      "Sha256": "9cdfa43e4c5ef64df4e535a6246386f5ab92c9b7cae435723622d36569f6cbad"
+    },
+    {
+      "Path": "evidence/gui/ssis_dimdate_detail_04.png",
+      "Bytes": 88462,
+      "Sha256": "380a64ccdaf861853c647a345b551e0f1078c9bf8a2b471c11555a36fa78e21a"
+    },
+    {
+      "Path": "evidence/gui/ssis_dimproduct.png",
+      "Bytes": 1088582,
+      "Sha256": "41e592f038a988fda1f13f05a87f96de2dcbaffb8bda64d292a966b890d9808f"
+    },
+    {
+      "Path": "evidence/gui/ssis_dimseller.png",
+      "Bytes": 1059173,
+      "Sha256": "c590f6776b8185f0f4905699880dcda913a239e18f6366901c42b33929132ddf"
+    },
+    {
+      "Path": "evidence/gui/ssis_execution_success.png",
+      "Bytes": 768306,
+      "Sha256": "c5652c7ab9bcf2f8d82719a8bfcb852b38e9188ca7206734b4c0f5278a68cee6"
+    },
+    {
+      "Path": "evidence/gui/ssis_fact.png",
+      "Bytes": 84710,
+      "Sha256": "22872979e244da50d01e11708043635e0dca20c011ea9f8100dd480e5b322bea"
+    },
+    {
+      "Path": "evidence/gui/ssis_fact_detail_01.png",
+      "Bytes": 94485,
+      "Sha256": "23b58509d813342b3ddde8ea886bc9e0cf7e9be3d0f10bdfe1710e0b42e35cd6"
+    },
+    {
+      "Path": "evidence/gui/ssis_fact_detail_02.png",
+      "Bytes": 96114,
+      "Sha256": "f3676c1aa1fb920a271d2cb30d78bc5fd1ce9639d22ab6bf804c11c98b037075"
+    },
+    {
+      "Path": "evidence/gui/ssis_fact_detail_03.png",
+      "Bytes": 94608,
+      "Sha256": "e88a2c7d011a46d0323d3a76c6a6fd2ad9a7fa953e2b0bba9251d18e4a48effe"
+    },
+    {
+      "Path": "evidence/gui/ssis_fact_detail_04.png",
+      "Bytes": 95782,
+      "Sha256": "42ca3f4ff07e4844de94b027c4151c4b301dbf7448ad6929d90d95e1af2f3bc5"
+    },
+    {
+      "Path": "evidence/gui/ssis_fact_detail_05.png",
+      "Bytes": 95360,
+      "Sha256": "064d933b3d8dfc93de4603eb70a9e912323e8ce1e4a042a2bae07ad5a17f8d15"
+    },
+    {
+      "Path": "evidence/gui/ssis_fact_detail_06.png",
+      "Bytes": 94440,
+      "Sha256": "9f28ae55e7e5e34cf3a4726e7a7c6d5a0948652e53138e65d0f30e61d111d7d8"
+    },
+    {
+      "Path": "evidence/gui/ssis_fact_detail_07.png",
+      "Bytes": 90572,
+      "Sha256": "8c32dcb74144b1f758391ee9dbae1814545bf6cfb18a7d254bfb7b1dbc656897"
+    },
+    {
+      "Path": "evidence/gui/ssis_fact_detail_measures.png",
+      "Bytes": 1064250,
+      "Sha256": "45361855360853b7d99e42c0f5ba1e5736a18ac917c5f0bc0851118af780d023"
+    },
+    {
+      "Path": "evidence/gui/ssis_geography_customer.png",
+      "Bytes": 88853,
+      "Sha256": "08f9214925790eba89fef13bd57b3af17510264f39b9117c51fd2fbd59272c45"
+    },
+    {
+      "Path": "evidence/gui/ssis_geography_seller.png",
+      "Bytes": 76335,
+      "Sha256": "359dc5f8ead3567e618bbda51822c7e747136237a2fd4f862a10ccb8cc562850"
+    },
+    {
+      "Path": "evidence/gui/ssis_geography_seller_detail_01.png",
+      "Bytes": 93870,
+      "Sha256": "f31bbdbee4f82d6b16e10e5fc451424b2c8b4217c35e04792f4743574f9f6f9c"
+    },
+    {
+      "Path": "evidence/gui/ssis_geography_seller_detail_02.png",
+      "Bytes": 94323,
+      "Sha256": "f57ff9e961d178e38a2d3018cc5d779961dd99d166e849e0356468363b5c3f74"
+    },
+    {
+      "Path": "evidence/gui/ssis_geography_seller_detail_03.png",
+      "Bytes": 94807,
+      "Sha256": "4c79bf1d176a0b14fb48bd2d039a572fe0f9ce8cda0d83f154f5ffc5e7624509"
+    },
+    {
+      "Path": "evidence/gui/ssis_geography_seller_detail_04.png",
+      "Bytes": 93140,
+      "Sha256": "c87a618c61b14a22fbda6024a7fc212744927492bc971e4bb923bdf9c834e50c"
+    },
+    {
+      "Path": "evidence/gui/ssis_geography_seller_detail_05.png",
+      "Bytes": 90773,
+      "Sha256": "05daa5edc0644a89eec600e81a56e29947738d55e487fd6c2ef03f7155453080"
+    },
+    {
+      "Path": "evidence/gui/ssis_geography_seller_detail_06.png",
+      "Bytes": 90565,
+      "Sha256": "4b5bb5c22b55b57933407f1b01b4cb130240fab260d0aceb3621296dd8379530"
+    },
+    {
+      "Path": "evidence/gui/ssis_project_reopen.png",
+      "Bytes": 394864,
+      "Sha256": "469dddf45d46fcce9e61c569e563eb050ed79b321c6b2fe482d5fbddef5d852f"
+    },
+    {
+      "Path": "evidence/native/decision_tree_cv_execution.log",
+      "Bytes": 16312,
+      "Sha256": "c97231308fc768ed822ce21967c67deee8ff0a9ba1b626bceb3a565f5e801fbc"
+    },
+    {
+      "Path": "evidence/native/decision_tree_cv_result_0.txt",
+      "Bytes": 1140,
+      "Sha256": "1ec9bdb45a4c3e9ce055c4e323cc4efc466d9b540dcbfefbd65e83681318cb9b"
+    },
+    {
+      "Path": "evidence/native/decision_tree_cv_result_1.txt",
+      "Bytes": 197,
+      "Sha256": "cccdbda623820e3cf90c9382dace3f6a2fd202d60d66a7634778032d082b930c"
+    },
+    {
+      "Path": "evidence/native/decision_tree_holdout_execution.log",
+      "Bytes": 17442,
+      "Sha256": "53f49364bfb06024330f13a1fbba68f87ffe8435b73b4ecbc4267dfc1607cb45"
+    },
+    {
+      "Path": "evidence/native/decision_tree_holdout_result_0.txt",
+      "Bytes": 1140,
+      "Sha256": "1ec9bdb45a4c3e9ce055c4e323cc4efc466d9b540dcbfefbd65e83681318cb9b"
+    },
+    {
+      "Path": "evidence/native/decision_tree_holdout_result_0_metrics.csv",
+      "Bytes": 422,
+      "Sha256": "d7b25efbfd404a2088ff1e1a131ebe8b64b94c8432d3a6da92ee6dc3ec0bf9c8"
+    },
+    {
+      "Path": "evidence/native/decision_tree_holdout_result_1.txt",
+      "Bytes": 903,
+      "Sha256": "e57bff1ed2ce20e46f717f2d9f0c9474310433584bcbd2e28d879c4afe70491c"
+    },
+    {
+      "Path": "evidence/native/decision_tree_holdout_result_1_metrics.csv",
+      "Bytes": 370,
+      "Sha256": "9c3f718283ec85e2c2de3a67854c50e73ae50ff64783992aac2cc87853cf7162"
+    },
+    {
+      "Path": "evidence/native/decision_tree_holdout_result_2.txt",
+      "Bytes": 197,
+      "Sha256": "2fd8a63fde88128224769f06f62a8e0521c220469a47a64705032c160de80b74"
+    },
+    {
+      "Path": "evidence/native/decision_tree_holdout_result_3_identities.csv",
+      "Bytes": 89571,
+      "Sha256": "e0f66e224adf7c66867939e69ad1ef6067d120dab250074138d6dd1eeade0135"
+    },
+    {
+      "Path": "evidence/native/decision_tree_holdout_result_3_summary.txt",
+      "Bytes": 1077,
+      "Sha256": "27b76113073d1c3c46105fc3e29148a029fc17adf2a064f9df64610e3df32ca8"
+    },
+    {
+      "Path": "evidence/native/decision_tree_holdout_result_4_identities.csv",
+      "Bytes": 166267,
+      "Sha256": "9f4ddd40ff703be09f79c5ee49d01938f96807df62e912e0083ef24170c84da1"
+    },
+    {
+      "Path": "evidence/native/decision_tree_holdout_result_4_summary.txt",
+      "Bytes": 877,
+      "Sha256": "72ef57caae937bb5fa74b98189abc338a2df3f9163a020797f1e7e4e8c9c5c4f"
+    },
+    {
+      "Path": "evidence/native/logistic_regression_cv_execution.log",
+      "Bytes": 17938,
+      "Sha256": "43a250bc4e5ff7afcf6ec792a81331f7afd54eef8cb712a0ce9b5112c2613824"
+    },
+    {
+      "Path": "evidence/native/logistic_regression_cv_result_0.txt",
+      "Bytes": 1137,
+      "Sha256": "c97e997d8d918ef315f069e776c13a5e73a4797466d4d973acea3920515faff0"
+    },
+    {
+      "Path": "evidence/native/logistic_regression_cv_result_1.txt",
+      "Bytes": 1812,
+      "Sha256": "8b562f33ce0bfabcb734ec4dfc8af919969fc548f0f0b87757202ada55622bc8"
+    },
+    {
+      "Path": "evidence/native/logistic_regression_holdout_execution.log",
+      "Bytes": 19065,
+      "Sha256": "6b705da6d4ff2a02fe4d9e4cadf62224f0c97e4198154d6906178b52808aef1a"
+    },
+    {
+      "Path": "evidence/native/logistic_regression_holdout_result_0.txt",
+      "Bytes": 1137,
+      "Sha256": "c97e997d8d918ef315f069e776c13a5e73a4797466d4d973acea3920515faff0"
+    },
+    {
+      "Path": "evidence/native/logistic_regression_holdout_result_0_metrics.csv",
+      "Bytes": 660,
+      "Sha256": "6e930ac0d50fd3cc3a8ee3bd0f1eb4d31f0e8f71db79d24e3355882e961b6425"
+    },
+    {
+      "Path": "evidence/native/logistic_regression_holdout_result_1.txt",
+      "Bytes": 901,
+      "Sha256": "0cef2b5b056a8c9b2e0a171c0cfb822531dd6a16f3694e8d9446d84511d67c32"
+    },
+    {
+      "Path": "evidence/native/logistic_regression_holdout_result_1_metrics.csv",
+      "Bytes": 400,
+      "Sha256": "56c46122e73c8da8284beb7d73de2583222e078a56b868a4aef4726091bb21ff"
+    },
+    {
+      "Path": "evidence/native/logistic_regression_holdout_result_2.txt",
+      "Bytes": 1812,
+      "Sha256": "1a0c732c3bb52f2c48c28db0142964c1694e25507f1ea5b5c51e9514615abb91"
+    },
+    {
+      "Path": "evidence/native/logistic_regression_holdout_result_3_identities.csv",
+      "Bytes": 89737,
+      "Sha256": "fee12226cb1d448dd7573f33480b660225c8759ed9e15a87fb3efc7d4d40c1af"
+    },
+    {
+      "Path": "evidence/native/logistic_regression_holdout_result_3_summary.txt",
+      "Bytes": 1077,
+      "Sha256": "fa7bab6b41b2ee75f5966e251d4e4c2f0a782be27a8378270bae1a571f686c23"
+    },
+    {
+      "Path": "evidence/native/logistic_regression_holdout_result_4_identities.csv",
+      "Bytes": 166267,
+      "Sha256": "9f4ddd40ff703be09f79c5ee49d01938f96807df62e912e0083ef24170c84da1"
+    },
+    {
+      "Path": "evidence/native/logistic_regression_holdout_result_4_summary.txt",
+      "Bytes": 877,
+      "Sha256": "72ef57caae937bb5fa74b98189abc338a2df3f9163a020797f1e7e4e8c9c5c4f"
+    },
+    {
+      "Path": "evidence/native/predictor_interpretation.md",
+      "Bytes": 887,
+      "Sha256": "25a6e84e5424703f260f64b6e0258154bc441a8df1959f276cb8a27c48c239b2"
+    },
+    {
+      "Path": "evidence/schema/STUDENT_A_ID_dm.png",
+      "Bytes": 283900,
+      "Sha256": "848eb012295875d22379d2b69d99ec9bc4ebb57504c04ae6cc0baecd64cbecd8"
+    },
+    {
+      "Path": "evidence/sql/Q4_1-0.csv",
+      "Bytes": 270,
+      "Sha256": "986026fb024f83e91ecab4b5c94b11c6e1b39a9299ea3b8a3d43185413e61e87"
+    },
+    {
+      "Path": "evidence/sql/Q4_1-0.json",
+      "Bytes": 987,
+      "Sha256": "09500c747ef5d96e7ffa398075bdd79c6720920c0478b8f65df07ce5e545d650"
+    },
+    {
+      "Path": "evidence/sql/Q4_2-0.csv",
+      "Bytes": 2379,
+      "Sha256": "329e6412f21c43b779bdcbc965724028da8238320da447d71f37a3ca61cc8c81"
+    },
+    {
+      "Path": "evidence/sql/Q4_2-0.json",
+      "Bytes": 8560,
+      "Sha256": "df5f3f32d07b07bced0bbb94628ee34c9fbc95399cbc2779f127c52faae8fede"
+    },
+    {
+      "Path": "evidence/sql/Q4_3-0.csv",
+      "Bytes": 1516,
+      "Sha256": "37e32cb9d4ba79096d4d4b776e4187306f18e772c4c87be18d13aa8adef0b12f"
+    },
+    {
+      "Path": "evidence/sql/Q4_3-0.json",
+      "Bytes": 3981,
+      "Sha256": "493c7cb2320c400a932bc19d9280a4511002c73710aec8c2e302aa385f393ecc"
+    },
+    {
+      "Path": "evidence/sql/Q4_3_customer_destination_sensitivity-0.csv",
+      "Bytes": 1849,
+      "Sha256": "c745a610ccb6fce8b0692edf76092f2d2dd3f0a4991a4d2c0a1772bd754df7bd"
+    },
+    {
+      "Path": "evidence/sql/Q4_3_customer_destination_sensitivity-0.json",
+      "Bytes": 4910,
+      "Sha256": "a047fffd02a7f27ed3e6225b00ee65f172a9e2b500bfe480cc63f8007087368c"
+    },
+    {
+      "Path": "evidence/sql/business-audit-0.csv",
+      "Bytes": 149,
+      "Sha256": "cf644f6d1c70b318d842c86fbb9c5b3542908f92a6acfafc0f463115b2d56a66"
+    },
+    {
+      "Path": "evidence/sql/business-audit-0.json",
+      "Bytes": 226,
+      "Sha256": "d2a04efa6a9583c93a9864a0c4f7e1b1ead925fbf2fa350c70514194a6d5be66"
+    },
+    {
+      "Path": "evidence/sql/business-audit-1.csv",
+      "Bytes": 164,
+      "Sha256": "666258e4d552d6d7d420554c51dd05bf121a1ada9a35897e605f269ae2ccd15f"
+    },
+    {
+      "Path": "evidence/sql/business-audit-1.json",
+      "Bytes": 663,
+      "Sha256": "9549211dbdf6d74005aeca73e6c89b32210a2dc513d1a669ae876c0743b8da58"
+    },
+    {
+      "Path": "evidence/sql/business-audit-2.csv",
+      "Bytes": 42,
+      "Sha256": "5573b121aea48c190bedf5103841ca85376ce14253781c71782a845d2d636ca2"
+    },
+    {
+      "Path": "evidence/sql/business-audit-2.json",
+      "Bytes": 71,
+      "Sha256": "e3577b8981483da59af9f22f721bf79a5d8d91ac745e1f611e2e6cc21695f414"
+    },
+    {
+      "Path": "evidence/sql/execution_status.txt",
+      "Bytes": 42,
+      "Sha256": "f485a9a7db77d374a5c1d2136a06258bcd41e3241df7847ecea119b09d3d30dd"
+    },
+    {
+      "Path": "evidence/sql/warehouse-validation-0.csv",
+      "Bytes": 149,
+      "Sha256": "f22845c495271e69551ee26763374e293af621fc4f119c1f41aff2aba849db8a"
+    },
+    {
+      "Path": "evidence/sql/warehouse-validation-0.json",
+      "Bytes": 463,
+      "Sha256": "13347cafe3aab6516e891df68fc4867b816986e2f2d26ca7f1028e7db92b0e10"
+    },
+    {
+      "Path": "evidence/sql/warehouse-validation-1.csv",
+      "Bytes": 431,
+      "Sha256": "d00b77ecca2357f3fbe1ace7772769134d9b31da3ccd71852fe780cce556173b"
+    },
+    {
+      "Path": "evidence/sql/warehouse-validation-1.json",
+      "Bytes": 1185,
+      "Sha256": "387eedb2f158b3253fd0e81b05c9a50bf5e38d9df714bca4a14362e8411f5503"
+    },
+    {
+      "Path": "evidence/sql/warehouse-validation-2.csv",
+      "Bytes": 66,
+      "Sha256": "b43e4201c85f7b1396009a48b60de5acf708553836f590be362cfd28d4b867aa"
+    },
+    {
+      "Path": "evidence/sql/warehouse-validation-2.json",
+      "Bytes": 95,
+      "Sha256": "d4a37c4e6bd31f2fb838e2d75224cdb40266278bae9aea6a82e225267cce13f2"
+    },
+    {
+      "Path": "evidence/ssis/customer_run1.txt",
+      "Bytes": 777,
+      "Sha256": "fa2db300a1a2a965edb68250b75f13ac734d990ffec5c46b7b73d4c3733b2631"
+    },
+    {
+      "Path": "evidence/ssis/date_run1.txt",
+      "Bytes": 759,
+      "Sha256": "3728fc5ab3fe8efcc7fbba1a3d5a4e74431b153a43178e3402d2ebb96ddb1f73"
+    },
+    {
+      "Path": "evidence/ssis/fact_run1.txt",
+      "Bytes": 792,
+      "Sha256": "c52509799a3bbb8959fddce3d8649ce423fe71eccb8bb469529c00f3dac3b0ba"
+    },
+    {
+      "Path": "evidence/ssis/initial_DimSeller_failure_date_conversion.txt",
+      "Bytes": 1734,
+      "Sha256": "502d2f3d479100bfcf0585adb1e8faf0024d2d824419d6beeecc6bc8fad3b84d"
+    },
+    {
+      "Path": "evidence/ssis/initial_DimSeller_run1.txt",
+      "Bytes": 1079,
+      "Sha256": "70889738741b64b2408a28ff146a9a183270498f7e01aa1a8d464a4905c8f79d"
+    },
+    {
+      "Path": "evidence/ssis/product_geography_run1.txt",
+      "Bytes": 870,
+      "Sha256": "7e6f5aa303fe9d1db9a04d9271e24435c5a5082e4cf10942eff9efa2b84749c8"
+    },
+    {
+      "Path": "evidence/ssis/reference_field_validation.json",
+      "Bytes": 325,
+      "Sha256": "4652a7da26c01913ca64d16505f03dd72e567e4638e32c25489acfb63978bf1d"
+    },
+    {
+      "Path": "evidence/ssis/reference_run1.txt",
+      "Bytes": 849,
+      "Sha256": "9dc2271a67b73cb598f25121db75aa3d75f60001d4934321a271fb41404f6553"
+    },
+    {
+      "Path": "evidence/ssis/reference_run2.txt",
+      "Bytes": 849,
+      "Sha256": "9dc2271a67b73cb598f25121db75aa3d75f60001d4934321a271fb41404f6553"
+    },
+    {
+      "Path": "evidence/ssis/warehouse_master_run1.txt",
+      "Bytes": 1208,
+      "Sha256": "24c0ad7c631126fda1b5290e4da4f6b81000dc73149c2f00903c9d5c49b111db"
+    },
+    {
+      "Path": "evidence/ssis/warehouse_master_run2.txt",
+      "Bytes": 1249,
+      "Sha256": "ad26c29ebe40be188d90f3e9fc512deb69020781e640663234af002a22e9e450"
+    },
+    {
+      "Path": "rapidminer/README_RUN.md",
+      "Bytes": 1342,
+      "Sha256": "4cb396b954ef69eec4cc0a56e1d4af70a8a9f8746f1b91ae8dd8cf1d926c8f61"
+    },
+    {
+      "Path": "rapidminer/STUDENT_A_ID_rapidminer.rmp",
+      "Bytes": 17622,
+      "Sha256": "66d08cc7bd846af1bee75347018088669967d7eb25d977db22faeb431d0f9230"
+    },
+    {
+      "Path": "rapidminer/SWITCH_MODELS.md",
+      "Bytes": 1217,
+      "Sha256": "9e6477fdb6c2151473efa61276b43ac2536e98a1cb40195786088468ac0ae347"
+    },
+    {
+      "Path": "rapidminer/cv_only_decision_tree.rmp",
+      "Bytes": 11189,
+      "Sha256": "c85d648edb74bb67d956c6d0b65a098013ab944b24353771a0c41ce4a94f069b"
+    },
+    {
+      "Path": "rapidminer/cv_only_logistic_regression.rmp",
+      "Bytes": 12852,
+      "Sha256": "22a95e1b19a89320a923ae9e2827f20bc27dac13787a6bfa696f299b87ed7382"
+    },
+    {
+      "Path": "rapidminer/data/BISM2202_A2_Loan_Data_Set_RapidMiner2026S2.csv",
+      "Bytes": 2291082,
+      "Sha256": "b333abef401d01dce2b0115b65649400238c01d9362b328c8ca1c4c19876d00a"
+    },
+    {
+      "Path": "rapidminer/holdout_decision_tree.rmp",
+      "Bytes": 12997,
+      "Sha256": "b592c42eb8a093037e3da1373aed5eb73c378c0663a1789922d97cdf130880a2"
+    },
+    {
+      "Path": "rapidminer/holdout_logistic_regression.rmp",
+      "Bytes": 14660,
+      "Sha256": "588718b9000012fdb2bc74ddb64257eb1275059a1d29721d606ed21bd238da23"
+    },
+    {
+      "Path": "report/RENDER_QA.json",
+      "Bytes": 11195,
+      "Sha256": "cfdf3feb104fd63bc24409eb7690fb4096a228a9025af53defa377aa1dc8793a"
+    },
+    {
+      "Path": "report/STUDENT_A_ID.docx",
+      "Bytes": 9624017,
+      "Sha256": "979c040b590088e8f290edb5069cffdf17909da804a810a43686bf1ffd226d7e"
+    },
+    {
+      "Path": "report/STUDENT_A_ID.pdf",
+      "Bytes": 8033569,
+      "Sha256": "bf4ed3bd6a9602f47408f690ad4e88eadc52cad7abd0696e484d8f011a33aaab"
+    },
+    {
+      "Path": "report/authoring_validation.json",
+      "Bytes": 605,
+      "Sha256": "f805e9c0221b27c4682715055282cd971e15e5eb646b874e82be775ee5bac81f"
+    },
+    {
+      "Path": "report/model_sections_draft.json",
+      "Bytes": 5266,
+      "Sha256": "50089c0c1c9ce552b7f361b36b6ea32eb0b556fe7737ce36e2eab97208029c1f"
+    },
+    {
+      "Path": "report/query_sections_draft.json",
+      "Bytes": 3490,
+      "Sha256": "aa906236c23454d2cdd803b77b9b5504f7e5b3c776a2e8bcafc244e72fd9923e"
+    },
+    {
+      "Path": "report/reference_draft.md",
+      "Bytes": 2061,
+      "Sha256": "c841679e232f20c78970c60f12326b54bedb13619f5bcbcd37b8b46ce5981538"
+    },
+    {
+      "Path": "report/review_validation.json",
+      "Bytes": 3542,
+      "Sha256": "5c9dcaf08918e21c17d545dd2f6585dbf49d0a87c3fc762e2725b3ef33d093f2"
+    },
+    {
+      "Path": "report/warehouse_sections_draft.json",
+      "Bytes": 3803,
+      "Sha256": "3cb3de186dfae3a1a9c6350a53575c37312a56480439ee5ea69c4ce912f03b7a"
+    },
+    {
+      "Path": "sql/Q4_1.sql",
+      "Bytes": 720,
+      "Sha256": "5287db083fefe5bdfa58b09cab9007ebc03007cd01398ed52a3708bd21611855"
+    },
+    {
+      "Path": "sql/Q4_2.sql",
+      "Bytes": 858,
+      "Sha256": "06e34a78184d2aa1d5ed2bd760f007afb053946af4b2c4e55c058566d66922d6"
+    },
+    {
+      "Path": "sql/Q4_3.sql",
+      "Bytes": 1078,
+      "Sha256": "2f7c6f6044e69be2da96b485e70d6caeca7dfa8f1d5c59c9491a5e5b8269c841"
+    },
+    {
+      "Path": "sql/Q4_3_customer_destination_sensitivity.sql",
+      "Bytes": 1020,
+      "Sha256": "16a70159f9716de92193ec7e1beb69fb22c2cfbd7ca5c7249ab2186f0cbdfa35"
+    },
+    {
+      "Path": "sql/warehouse_validation.sql",
+      "Bytes": 2776,
+      "Sha256": "2a46ffdf47e1c44b32681b752a138a40290cbba333b8462248ad85155afc9b58"
+    },
+    {
+      "Path": "ssis/README_RUN.md",
+      "Bytes": 3591,
+      "Sha256": "c3310921d88f003c4df8f2a98ab3bcf3017b7fdfd090186fd16422e126dfc856"
+    },
+    {
+      "Path": "ssis/STUDENT_A_ID_SSIS/Master.dtsx",
+      "Bytes": 963759,
+      "Sha256": "93c9a02fb9eebe6d4cd6d8aedf83d3cda0a3de761826dc5f67449a6e9147dd3d"
+    },
+    {
+      "Path": "ssis/STUDENT_A_ID_SSIS/Project.params",
+      "Bytes": 86,
+      "Sha256": "44f7fa6396dfee103dff509488a062771d33629f28aa1001bd05d42d0101b48a"
+    },
+    {
+      "Path": "ssis/STUDENT_A_ID_SSIS/STUDENT_A_ID_SSIS.database",
+      "Bytes": 845,
+      "Sha256": "7e5830c0d5acdb13a233f299c92be46611ae1a637368e11b616761c94d0063f4"
+    },
+    {
+      "Path": "ssis/STUDENT_A_ID_SSIS/STUDENT_A_ID_SSIS.dtproj",
+      "Bytes": 5288,
+      "Sha256": "a05909dbdfa4864f1ec6e5036ef1cadf0cec5a9852decac243c365f14148bed7"
+    },
+    {
+      "Path": "ssis/STUDENT_A_ID_SSIS/STUDENT_A_ID_SSIS.ispac",
+      "Bytes": 58168,
+      "Sha256": "5cd567df4630de33c973579b4d0bf1257e3e204b529d164f6f5951da8875cc24"
+    },
+    {
+      "Path": "ssis/STUDENT_A_ID_SSIS/STUDENT_A_ID_SSIS.sln",
+      "Bytes": 705,
+      "Sha256": "b3002557df329e71e4dd91c18840c0fb96a9277f6bc60e082cecd2024a74e666"
+    },
+    {
+      "Path": "ssis/STUDENT_A_ID_SSIS/Support/csv/Age_Table.csv",
+      "Bytes": 862,
+      "Sha256": "97818522d3a9cf23e5b4058ff636519771ccc972fd11da4e26e431d602719299"
+    },
+    {
+      "Path": "ssis/STUDENT_A_ID_SSIS/Support/csv/Customer_Education.csv",
+      "Bytes": 172,
+      "Sha256": "b8d5d338b9997b8a29bdab633c99a089c8cd6be2bf75860d2d90a874bc1e9ad3"
+    },
+    {
+      "Path": "ssis/STUDENT_A_ID_SSIS/Support/csv/State_code.csv",
+      "Bytes": 190,
+      "Sha256": "29a4c16fed0543a06ac53d9407ddff4309988b861d3770dfc571f0cb9372a81a"
+    },
+    {
+      "Path": "ssis/STUDENT_A_ID_SSIS/Support/csv/seller_location.csv",
+      "Bytes": 8871,
+      "Sha256": "ba7fec836774b59692342e371597fff9f7006267dae01b8fb68c62f2bdc9b7e7"
+    },
+    {
+      "Path": "ssis/STUDENT_A_ID_SSIS/Support/schema.sql",
+      "Bytes": 4041,
+      "Sha256": "38fc9aad1a8822d2e31ad58135b5f3307053f2ae73452b9ff7b9e61d5dbb73a0"
+    },
+    {
+      "Path": "ssis/STUDENT_A_ID_SSIS/build_status.txt",
+      "Bytes": 138,
+      "Sha256": "1ae510b5d73306a09c4416eb40bfcc1832f0948ce17cf2331b3f6665b1fdefef"
+    },
+    {
+      "Path": "ssis/STUDENT_A_ID_SSIS/native_build.log",
+      "Bytes": 789,
+      "Sha256": "d6eb10827a55c3fdfe0a3798346a86a45360c991db9097579e53276327e8f08b"
+    },
+    {
+      "Path": "ssis/STUDENT_A_ID_ssis.zip",
+      "Bytes": 121778,
+      "Sha256": "c8f0f2dc3fb54a519affb6881df0d7234a1f0ec761037dd88ed3f4c6008db1ef"
+    },
+    {
+      "Path": "ssis/customer_lookup/02_DimCustomer.dtsx",
+      "Bytes": 83193,
+      "Sha256": "346fb6183b2d525c32a9902b2964b8f9f0b69ce98db89e5f72396b837ec72a60"
+    },
+    {
+      "Path": "ssis/date/05_DimDate.dtsx",
+      "Bytes": 92972,
+      "Sha256": "b877da29c3e5c1a934d5b7683d6e1b450c305521408d2e133af1328ceb3932ef"
+    },
+    {
+      "Path": "ssis/fact/06_FactSales.dtsx",
+      "Bytes": 279404,
+      "Sha256": "66fd312b813610f476ab268d0779dc3f9292a85c640f4c49bd3966737ef40b86"
+    },
+    {
+      "Path": "ssis/initial_seller/01_DimSeller.dtsx",
+      "Bytes": 40620,
+      "Sha256": "d95e740afab4d7d5d8fdba917b3900748599c4c0a412581f8b200c699dec27d0"
+    },
+    {
+      "Path": "ssis/product_geography/03_DimProduct.dtsx",
+      "Bytes": 75273,
+      "Sha256": "3bfda744d3d4730dcd92e29e4163a9d625405c6ccdd81ed80ef72fea4ed1fdef"
+    },
+    {
+      "Path": "ssis/product_geography/04_DimGeography_Customer.dtsx",
+      "Bytes": 72948,
+      "Sha256": "691553caf94aa1eeaecf15434ff8bb726b6ece5f73bb5f98b6704e873c21f7c2"
+    },
+    {
+      "Path": "ssis/product_geography/04_DimGeography_Seller.dtsx",
+      "Bytes": 164859,
+      "Sha256": "b64d35d33e2159c7ad5704128a501f87bc47e9b8f029bf63a3778fe3fad06c03"
+    },
+    {
+      "Path": "ssis/references/RefAge.dtsx",
+      "Bytes": 27650,
+      "Sha256": "d9da4f282ba433beed4ad9f17f0bc14e7c63d0858a6810ef4cdffed2dd8ecfe6"
+    },
+    {
+      "Path": "ssis/references/RefEducation.dtsx",
+      "Bytes": 28355,
+      "Sha256": "f129081f3957e70d43e051a28ba858cc4c8efb04bc290595c6cae8c5a43edeb8"
+    },
+    {
+      "Path": "ssis/references/RefSellerLocation.dtsx",
+      "Bytes": 62143,
+      "Sha256": "995f5d975658613310ccbb2f2f298440edbf3bef5cb71db760127cdf86744660"
+    },
+    {
+      "Path": "ssis/references/RefState.dtsx",
+      "Bytes": 28023,
+      "Sha256": "9f953d1efda9b0327301a4ca6242784d49ecd2753ff7a79d13e86e6c0eb985cb"
+    }
+  ]
+}

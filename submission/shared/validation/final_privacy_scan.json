@@ -1,0 +1,14 @@
+{
+  "Status": "PASS",
+  "Scope": "Bounded final student/shared text files, including local full visible AI export and native logs",
+  "FilesScanned": 233,
+  "Patterns": [
+    "private_key",
+    "github_token",
+    "openai_key",
+    "aws_access_key",
+    "literal_password"
+  ],
+  "Findings": [],
+  "Limit": "Pattern scan plus intended file inventory; not a claim that all possible secret formats can be recognized."
+}

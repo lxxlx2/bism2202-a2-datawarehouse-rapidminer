@@ -1,17 +1,18 @@
-# Student A manifest
+# Student A artifact manifest
 
-Status: PARTIAL. No final ZIP has been produced.
+Technical delivery: PASS. Human ID/course-policy review: PENDING. School submission: NOT PERFORMED.
 
-| Artifact | Exists | Runtime verified |
-|---|---|---|
-| SQL queries and warehouse validator | Yes | All source, monetary, relationship and trusted-constraint gates PASS; queries executed and exported |
-| Five dimensions and fact native packages | Yes | All independent flows passed counts; original fields reconciled |
-| Full SSIS Master package and Visual Studio project | Yes | Corrected master PASS at all 11 row counts; native Visual Studio build PASS with actual ispac |
-| SSIS Designer screenshots | Partial | Actual project reopen, complete package success and full Customer flow with 21,000 rows Date flow with 25,000 source/493 output rows and complete Customer Geography with 1,500 rows captured; four other required flows pending |
-| DDL-derived star schema image | Yes | Generated directly from submitted schema; visual review completed |
-| Warehouse backup and actual restored database | Yes | CHECKDB, ten full-row comparisons and four restored query comparisons PASS; local SHA256 matches guest backup |
-| Native CV/holdout RMP and metric/identity evidence | Yes | Native engine and cohort checks PASS; GUI screenshots pending |
-| Required named RMP with model switching | Yes | Default native replay exactly matches frozen CV text; holdout not rerun |
-| Template review DOCX/PDF and 10 verified references | Yes, under work/report_review | Nine-page draft layout reviewed; required native images missing; FINAL blocked |
-| Final Word and complete AI disclosure | No | Review drafts and working disclosure exist; final evidence/student review pending |
-| Final independent package | No | Pending |
+`FILE_HASHES.json` lists actual files, sizes and SHA256s. `shared/validation/final_package_verification.json` records the outer ZIP CRC, member count, member-to-source byte verification and archive SHA256. `shared/validation/delivery_inventory.json` records final backup, SSIS, native RMP, code-copy, required images, report and package checks. These checks do not establish student authorship or course approval.
+
+| Artifact | Evidence |
+|---|---|
+| Full native SSIS project and ISPAC | Native build and semantic comparison PASS; full Designer success and seven data-flow overviews plus readable detail screenshots |
+| Actual DW backup | Actual isolated restore, CHECKDB, ten full-row table and four query comparisons PASS |
+| SQL queries/results | Actual complete CSV/JSON plus native SSMS result grids; all requested rows covered |
+| Native AI Studio | Two native model processes, CV, model outputs and fixed holdout screens; unchanged RMP and disjoint identity validation PASS |
+| Teacher-template Word/PDF | Nineteen required image slots, word-limit checks and 48-page visual QA PASS |
+| Named schema/fact PNGs | Byte-identical aliases of verified schema and original native fact overview |
+| Full visible AI record | Local export with explicit cutoff; substantial AI assistance disclosed; personal review pending |
+| Final independent ZIP | CRC and every-member source hash checked by packaging script |
+
+See README for separate submission-box instructions and unresolved real IDs.

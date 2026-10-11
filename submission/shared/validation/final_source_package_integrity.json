@@ -1,0 +1,43 @@
+{
+  "Status": "PASS",
+  "Students": [
+    {
+      "Student": "A",
+      "SSISZipMasterByteIdenticalToExecutedSource": "PASS",
+      "ZipCRC": "PASS",
+      "MasterSha256": "93c9a02fb9eebe6d4cd6d8aedf83d3cda0a3de761826dc5f67449a6e9147dd3d",
+      "ReportWordCounts": {
+        "process": 87,
+        "recommendations": 162,
+        "ethics": 200,
+        "predictors": 94,
+        "comparison": 125,
+        "dimensions": 280,
+        "implementation": 212,
+        "executive_summary": 194,
+        "query_4_1": 85,
+        "query_4_2": 82,
+        "query_4_3": 105
+      }
+    },
+    {
+      "Student": "B",
+      "SSISZipMasterByteIdenticalToExecutedSource": "PASS",
+      "ZipCRC": "PASS",
+      "MasterSha256": "d9ef6d631b946436a77442629986dde6c4ecfeea88cebd539e31ad313c7bc900",
+      "ReportWordCounts": {
+        "process": 89,
+        "recommendations": 168,
+        "ethics": 207,
+        "predictors": 89,
+        "comparison": 117,
+        "dimensions": 283,
+        "implementation": 207,
+        "executive_summary": 210,
+        "query_4_1": 92,
+        "query_4_2": 88,
+        "query_4_3": 114
+      }
+    }
+  ]
+}

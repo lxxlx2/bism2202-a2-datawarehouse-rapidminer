@@ -1,0 +1,191 @@
+{
+  "Status": "PASS",
+  "Method": "Unmodified native Windows CopyFromScreen, own-process guards; actual screenshots visually reviewed",
+  "Accepted": [
+    {
+      "Student": "A",
+      "Query": 3,
+      "Pid": 10532,
+      "Window": "Q4_3.sql - (local).STUDENT_A_ID_dw (WIN-LR4ELCKRUA0\\Administrator (59)) - Q4_3.sql - (local).STUDENT_A_ID_dw (WIN-LR4ELCKRUA0\\Administrator (59)) - Microsoft SQL Server Management Studio (Administrator)",
+      "File": "sql_Q4_3_detail_01.png",
+      "Key": "^{END}",
+      "Utc": "2026-10-11T05:25:10.6287256Z",
+      "Sha256": "308116C8F9BBD35E3AE3F51A27A38A58A70BF11401BD67FD77E8AD22126848DA"
+    },
+    {
+      "Student": "B",
+      "Query": 2,
+      "Pid": 2440,
+      "Window": "Q4_2.sql - (local).STUDENT_B_ID_dw (WIN-LR4ELCKRUA0\\Administrator (68)) - Q4_2.sql - (local).STUDENT_B_ID_dw (WIN-LR4ELCKRUA0\\Administrator (68)) - Microsoft SQL Server Management Studio (Administrator)",
+      "File": "sql_Q4_2_detail_01.png",
+      "Key": "^{HOME}",
+      "Utc": "2026-10-11T05:25:14.1071497Z",
+      "Sha256": "E523214E867C16026C7CF3AEBCA36B3EEC1B49A69BDEF83345483FCA963BE51B"
+    },
+    {
+      "Student": "B",
+      "Query": 2,
+      "Pid": 2440,
+      "Window": "Q4_2.sql - (local).STUDENT_B_ID_dw (WIN-LR4ELCKRUA0\\Administrator (68)) - Q4_2.sql - (local).STUDENT_B_ID_dw (WIN-LR4ELCKRUA0\\Administrator (68)) - Microsoft SQL Server Management Studio (Administrator)",
+      "File": "sql_Q4_2_detail_04.png",
+      "Key": "^{END}",
+      "Utc": "2026-10-11T05:25:16.4578254Z",
+      "Sha256": "DC425B1BEBC6C0EE9D1B2C87B99B3459BCDDAC6042491FCAD5087B98360573FC"
+    },
+    {
+      "Student": "B",
+      "Query": 2,
+      "Pid": 2440,
+      "Window": "Q4_2.sql - (local).STUDENT_B_ID_dw (WIN-LR4ELCKRUA0\\Administrator (68)) - Q4_2.sql - (local).STUDENT_B_ID_dw (WIN-LR4ELCKRUA0\\Administrator (68)) - Microsoft SQL Server Management Studio (Administrator)",
+      "File": "sql_Q4_2_detail_03.png",
+      "Key": "{PGUP}",
+      "Utc": "2026-10-11T05:25:18.8177089Z",
+      "Sha256": "3B7A47FE2D34E662839F0B964CBF550B63F021AA71B652FDB11E27F6E6B2932C"
+    },
+    {
+      "Student": "B",
+      "Query": 2,
+      "Pid": 2440,
+      "Window": "Q4_2.sql - (local).STUDENT_B_ID_dw (WIN-LR4ELCKRUA0\\Administrator (68)) - Q4_2.sql - (local).STUDENT_B_ID_dw (WIN-LR4ELCKRUA0\\Administrator (68)) - Microsoft SQL Server Management Studio (Administrator)",
+      "File": "sql_Q4_2_detail_02.png",
+      "Key": "{PGUP}",
+      "Utc": "2026-10-11T05:25:21.1504035Z",
+      "Sha256": "215DC502D743E15C65EA0ED67516B4C1CD07D6144CEB4120D32D3E77A1D5D4AE"
+    },
+    {
+      "Student": "B",
+      "Query": 3,
+      "Pid": 7284,
+      "Window": "Q4_3.sql - (local).STUDENT_B_ID_dw (WIN-LR4ELCKRUA0\\Administrator (60)) - Q4_3.sql - (local).STUDENT_B_ID_dw (WIN-LR4ELCKRUA0\\Administrator (60)) - Microsoft SQL Server Management Studio (Administrator)",
+      "File": "sql_Q4_3_detail_01.png",
+      "Key": "^{END}",
+      "Utc": "2026-10-11T05:25:24.6028455Z",
+      "Sha256": "6CCF71E25A2C62A68F9CC06FC04FD1BC20584E7B9BC40C7659944E167570EC64"
+    },
+    {
+      "Student": "A",
+      "Query": 2,
+      "Pid": 4496,
+      "Window": "SQLQuery1.sql - (local).STUDENT_A_ID_dw (WIN-LR4ELCKRUA0\\Administrator (63))* - SQLQuery1.sql - (local).STUDENT_A_ID_dw (WIN-LR4ELCKRUA0\\Administrator (63))* - Microsoft SQL Server Management Studio (Administrator)",
+      "File": "sql_Q4_2_detail_01.png",
+      "Key": "^{HOME}",
+      "Utc": "2026-10-11T10:29:09.9818665Z",
+      "Sha256": "133B1E00F9BD51B729B387389CA7F8873EAF506D10766A94F579D20BFA88356C",
+      "VisualReview": "PASS",
+      "VisibleRows": [
+        1,
+        11
+      ]
+    },
+    {
+      "Student": "A",
+      "Query": 2,
+      "Pid": 4496,
+      "Window": "SQLQuery1.sql - (local).STUDENT_A_ID_dw (WIN-LR4ELCKRUA0\\Administrator (63))* - SQLQuery1.sql - (local).STUDENT_A_ID_dw (WIN-LR4ELCKRUA0\\Administrator (63))* - Microsoft SQL Server Management Studio (Administrator)",
+      "File": "sql_Q4_2_detail_04.png",
+      "Key": "^{END}",
+      "Utc": "2026-10-11T10:29:13.1614834Z",
+      "Sha256": "0080D7BA7C8D244C75977B477D5189D38980E9EEAF589B98633F4318C0EC173D",
+      "VisualReview": "PASS",
+      "VisibleRows": [
+        31,
+        40
+      ]
+    },
+    {
+      "Student": "A",
+      "Query": 2,
+      "Pid": 4496,
+      "Window": "SQLQuery1.sql - (local).STUDENT_A_ID_dw (WIN-LR4ELCKRUA0\\Administrator (63))* - SQLQuery1.sql - (local).STUDENT_A_ID_dw (WIN-LR4ELCKRUA0\\Administrator (63))* - Microsoft SQL Server Management Studio (Administrator)",
+      "File": "sql_Q4_2_detail_03.png",
+      "Key": "{PGUP}",
+      "Utc": "2026-10-11T10:29:15.4907388Z",
+      "Sha256": "569D49D2BC2DF6DDD75875902663A9E2FB9945F6118D78DB9DA1BCD7E1D5F653",
+      "VisualReview": "PASS",
+      "VisibleRows": [
+        21,
+        31
+      ]
+    },
+    {
+      "Student": "A",
+      "Query": 2,
+      "Pid": 4496,
+      "Window": "SQLQuery1.sql - (local).STUDENT_A_ID_dw (WIN-LR4ELCKRUA0\\Administrator (63))* - SQLQuery1.sql - (local).STUDENT_A_ID_dw (WIN-LR4ELCKRUA0\\Administrator (63))* - Microsoft SQL Server Management Studio (Administrator)",
+      "File": "sql_Q4_2_detail_02.png",
+      "Key": "{PGUP}",
+      "Utc": "2026-10-11T10:29:17.8956751Z",
+      "Sha256": "7117A843E0632CCB37BF05444906108DB6C92816376471DE996EB2346DF36379",
+      "VisualReview": "PASS",
+      "VisibleRows": [
+        11,
+        21
+      ]
+    }
+  ],
+  "RejectedAttempts": [
+    {
+      "Student": "A",
+      "Query": 2,
+      "Pid": 4496,
+      "Window": "SQLQuery1.sql - (local).STUDENT_A_ID_dw (WIN-LR4ELCKRUA0\\Administrator (63)) - SQLQuery1.sql - (local).STUDENT_A_ID_dw (WIN-LR4ELCKRUA0\\Administrator (63)) - Microsoft SQL Server Management Studio (Administrator)",
+      "File": "sql_Q4_2_detail_01.png",
+      "Key": "^{HOME}",
+      "Utc": "2026-10-11T05:24:59.1321344Z",
+      "Sha256": "376DE9350E91A95F978BC5BBB6FF4623DAD92CAF4B397102AB0B26B82749C0E1",
+      "Reason": "Rejected after visual review: own Open File dialog remained visible, no SQL results. Not included in delivery."
+    },
+    {
+      "Student": "A",
+      "Query": 2,
+      "Pid": 4496,
+      "Window": "SQLQuery1.sql - (local).STUDENT_A_ID_dw (WIN-LR4ELCKRUA0\\Administrator (63)) - SQLQuery1.sql - (local).STUDENT_A_ID_dw (WIN-LR4ELCKRUA0\\Administrator (63)) - Microsoft SQL Server Management Studio (Administrator)",
+      "File": "sql_Q4_2_detail_04.png",
+      "Key": "^{END}",
+      "Utc": "2026-10-11T05:25:02.3718644Z",
+      "Sha256": "B6A0F007B82ABBE7595B95437AB7C330C643E2D1FF021EB3A70E343A84EDED99",
+      "Reason": "Rejected after visual review: own Open File dialog remained visible, no SQL results. Not included in delivery."
+    },
+    {
+      "Student": "A",
+      "Query": 2,
+      "Pid": 4496,
+      "Window": "SQLQuery1.sql - (local).STUDENT_A_ID_dw (WIN-LR4ELCKRUA0\\Administrator (63)) - SQLQuery1.sql - (local).STUDENT_A_ID_dw (WIN-LR4ELCKRUA0\\Administrator (63)) - Microsoft SQL Server Management Studio (Administrator)",
+      "File": "sql_Q4_2_detail_03.png",
+      "Key": "{PGUP}",
+      "Utc": "2026-10-11T05:25:04.8197790Z",
+      "Sha256": "0C9B6DD22819CC3EA0361E0BEBF4890BE5F9FB86B444359AD6505A23753D5D79",
+      "Reason": "Rejected after visual review: own Open File dialog remained visible, no SQL results. Not included in delivery."
+    },
+    {
+      "Student": "A",
+      "Query": 2,
+      "Pid": 4496,
+      "Window": "SQLQuery1.sql - (local).STUDENT_A_ID_dw (WIN-LR4ELCKRUA0\\Administrator (63)) - SQLQuery1.sql - (local).STUDENT_A_ID_dw (WIN-LR4ELCKRUA0\\Administrator (63)) - Microsoft SQL Server Management Studio (Administrator)",
+      "File": "sql_Q4_2_detail_02.png",
+      "Key": "{PGUP}",
+      "Utc": "2026-10-11T05:25:07.1523705Z",
+      "Sha256": "0C9B6DD22819CC3EA0361E0BEBF4890BE5F9FB86B444359AD6505A23753D5D79",
+      "Reason": "Rejected after visual review: own Open File dialog remained visible, no SQL results. Not included in delivery."
+    }
+  ],
+  "VisualCoverage": {
+    "A_Q4_3": "PASS: original rows 1-11 plus continuation rows 8-17 cover all 17",
+    "B_Q4_2": "PASS: rows 1-11,11-21,21-31,31-40 cover all 40",
+    "B_Q4_3": "PASS: original rows 1-11 plus continuation rows 6-15 cover all 15",
+    "A_Q4_2": "PASS: native re-execution 2026-10-11T10:29Z; rows 1-11,11-21,21-31,31-40 cover all 40"
+  },
+  "Coverage": {
+    "A": {
+      "Q4_1": 8,
+      "Q4_2": 40,
+      "Q4_3": 17
+    },
+    "B": {
+      "Q4_1": 8,
+      "Q4_2": 40,
+      "Q4_3": 15
+    }
+  },
+  "Pending": []
+}

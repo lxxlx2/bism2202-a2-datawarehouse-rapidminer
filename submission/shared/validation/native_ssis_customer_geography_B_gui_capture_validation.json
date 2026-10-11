@@ -1,0 +1,56 @@
+{
+  "Student": "B",
+  "Flow": "DimGeography_Customer",
+  "Task": "DFT Student_B_DimGeography_Customer",
+  "ProcessId": 15312,
+  "VerticalViewSize": 56.372549019607845,
+  "HorizontalViewSize": 100,
+  "ExpectedComponents": [
+    "Audit loaded rows",
+    "Derive GeographyRole",
+    "Explicit target column types",
+    "Load DimGeography",
+    "Lookup StateName (fail unmatched)",
+    "Read OzMart fields 0"
+  ],
+  "ComponentsWithoutFullViewportCoverage": [],
+  "Captures": [
+    {
+      "Utc": "2026-10-11T10:19:39.6843648Z",
+      "File": "ssis_geography_customer_detail_01.png",
+      "VerticalScrollPercent": 0,
+      "HorizontalScrollPercent": -1,
+      "VisibleComponents": [
+        "Lookup StateName (fail unmatched)",
+        "Derive GeographyRole",
+        "Explicit target column types",
+        "Read OzMart fields 0"
+      ],
+      "FullyVisibleComponents": [
+        "Lookup StateName (fail unmatched)",
+        "Derive GeographyRole",
+        "Read OzMart fields 0"
+      ],
+      "Sha256": "6E810B3781CC1D25A14EA476FCB8E7B6233E5AC3371836671D3D20E884A32BD2"
+    },
+    {
+      "Utc": "2026-10-11T10:19:43.8368599Z",
+      "File": "ssis_geography_customer_detail_02.png",
+      "VerticalScrollPercent": 100,
+      "HorizontalScrollPercent": -1,
+      "VisibleComponents": [
+        "Explicit target column types",
+        "Audit loaded rows",
+        "Load DimGeography"
+      ],
+      "FullyVisibleComponents": [
+        "Explicit target column types",
+        "Audit loaded rows",
+        "Load DimGeography"
+      ],
+      "Sha256": "5015EEF2D38ABDB1FAB2DD981035F8FDD71DCD3A523B720D3187D8B65F02A23A"
+    }
+  ],
+  "Status": "NATIVE_SEGMENTS_SAVED_VISUAL_REVIEW_REQUIRED",
+  "VisualReview": "PASS: both unchanged native 100 percent screenshots visually reviewed; all six components covered, 1500 rows maintained and success retained."
+}

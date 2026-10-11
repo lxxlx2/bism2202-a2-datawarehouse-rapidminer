@@ -1,0 +1,104 @@
+{
+  "Student": "A",
+  "Flow": "DimGeography_Seller",
+  "Task": "DFT Student_A_DimGeography_Seller",
+  "ProcessId": 12596,
+  "ViewSize": 29.18552036199095,
+  "ExpectedComponents": [
+    "Audit loaded rows",
+    "Derive GeographyRole",
+    "Derive LocationType",
+    "Derive Postcode",
+    "Derive RegionCode",
+    "Derive StateCode",
+    "Derive StateName",
+    "Derive Suburb",
+    "Explicit target column types",
+    "Load DimGeography",
+    "Lookup RawStateName (fail unmatched)",
+    "Read warehouse references 0",
+    "Sort by LocationID"
+  ],
+  "Captures": [
+    {
+      "Utc": "2026-10-10T20:23:00.3580150Z",
+      "File": "ssis_geography_seller_detail_01.png",
+      "VerticalScrollPercent": 0,
+      "VisibleComponents": [
+        "Derive StateName",
+        "Lookup RawStateName (fail unmatched)",
+        "Read warehouse references 0",
+        "Derive StateCode"
+      ],
+      "Sha256": "F31BBDBEE4F82D6B16E10E5FC451424B2C8B4217C35E04792F4743574F9F6F9C"
+    },
+    {
+      "Utc": "2026-10-10T20:23:06.1124331Z",
+      "File": "ssis_geography_seller_detail_02.png",
+      "VerticalScrollPercent": 20,
+      "VisibleComponents": [
+        "Derive Postcode",
+        "Derive StateName",
+        "Derive StateCode",
+        "Derive Suburb"
+      ],
+      "Sha256": "F57FF9E961D178E38A2D3018CC5D779961DD99D166E849E0356468363B5C3F74"
+    },
+    {
+      "Utc": "2026-10-10T20:23:10.9967429Z",
+      "File": "ssis_geography_seller_detail_03.png",
+      "VerticalScrollPercent": 40,
+      "VisibleComponents": [
+        "Derive Postcode",
+        "Derive RegionCode",
+        "Derive LocationType",
+        "Derive Suburb"
+      ],
+      "Sha256": "4C79BF1D176A0B14FB48BD2D039A572FE0F9CE8CDA0D83F154F5FFC5E7624509"
+    },
+    {
+      "Utc": "2026-10-10T20:23:16.0556417Z",
+      "File": "ssis_geography_seller_detail_04.png",
+      "VerticalScrollPercent": 60,
+      "VisibleComponents": [
+        "Derive RegionCode",
+        "Derive LocationType",
+        "Sort by LocationID",
+        "Derive GeographyRole"
+      ],
+      "Sha256": "C87A618C61B14A22FBDA6024A7FC212744927492BC971E4BB923BDF9C834E50C"
+    },
+    {
+      "Utc": "2026-10-10T20:23:20.8093393Z",
+      "File": "ssis_geography_seller_detail_05.png",
+      "VerticalScrollPercent": 80,
+      "VisibleComponents": [
+        "Explicit target column types",
+        "Derive LocationType",
+        "Sort by LocationID",
+        "Derive GeographyRole",
+        "Audit loaded rows"
+      ],
+      "Sha256": "05DAA5EDC0644A89EEC600E81A56E29947738D55E487FD6C2EF03F7155453080"
+    },
+    {
+      "Utc": "2026-10-10T20:23:25.6254315Z",
+      "File": "ssis_geography_seller_detail_06.png",
+      "VerticalScrollPercent": 100,
+      "VisibleComponents": [
+        "Explicit target column types",
+        "Load DimGeography",
+        "Derive GeographyRole",
+        "Audit loaded rows"
+      ],
+      "Sha256": "4B5BB5C22B55B57933407F1B01B4CB130240FAB260D0ACEB3621296DD8379530"
+    }
+  ],
+  "Status": "NATIVE_SEGMENTS_SAVED_VISUAL_REVIEW_REQUIRED",
+  "VisualReview": "PASS: all six native 100 percent images reviewed; all thirteen components readable; raw 100 rows reduce to 99 through Sort; package success retained.",
+  "Overview": {
+    "file": "ssis_geography_seller.png",
+    "sha256": "359dc5f8ead3567e618bbda51822c7e747136237a2fd4f862a10ccb8cc562850",
+    "scope": "Preserved original full native overview at 30 percent; small component text is supported by six readable native segments."
+  }
+}
