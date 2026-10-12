@@ -1,0 +1,258 @@
+{
+  "Status": "PASS",
+  "ExecutionCompletedUtc": "2026-10-11T11:11:39.3383784Z",
+  "Records": [
+    {
+      "Student": "A",
+      "File": "Q4_3-0.json",
+      "SameBytesAsBaseline": false,
+      "CurrentExecution": "PASS"
+    },
+    {
+      "Student": "A",
+      "File": "Q4_3_customer_destination_sensitivity-0.csv",
+      "SameBytesAsBaseline": true,
+      "CurrentExecution": "PASS"
+    },
+    {
+      "Student": "A",
+      "File": "warehouse-validation-0.csv",
+      "SameBytesAsBaseline": true,
+      "CurrentExecution": "PASS"
+    },
+    {
+      "Student": "A",
+      "File": "business-audit-0.csv",
+      "SameBytesAsBaseline": true,
+      "CurrentExecution": "PASS"
+    },
+    {
+      "Student": "A",
+      "File": "business-audit-1.csv",
+      "SameBytesAsBaseline": true,
+      "CurrentExecution": "PASS"
+    },
+    {
+      "Student": "A",
+      "File": "warehouse-validation-1.csv",
+      "SameBytesAsBaseline": true,
+      "CurrentExecution": "PASS"
+    },
+    {
+      "Student": "A",
+      "File": "Q4_1-0.json",
+      "SameBytesAsBaseline": true,
+      "CurrentExecution": "PASS"
+    },
+    {
+      "Student": "A",
+      "File": "business-audit-2.csv",
+      "SameBytesAsBaseline": true,
+      "CurrentExecution": "PASS"
+    },
+    {
+      "Student": "A",
+      "File": "warehouse-validation-2.csv",
+      "SameBytesAsBaseline": true,
+      "CurrentExecution": "PASS"
+    },
+    {
+      "Student": "A",
+      "File": "warehouse-validation-1.json",
+      "SameBytesAsBaseline": true,
+      "CurrentExecution": "PASS"
+    },
+    {
+      "Student": "A",
+      "File": "business-audit-2.json",
+      "SameBytesAsBaseline": true,
+      "CurrentExecution": "PASS"
+    },
+    {
+      "Student": "A",
+      "File": "warehouse-validation-0.json",
+      "SameBytesAsBaseline": true,
+      "CurrentExecution": "PASS"
+    },
+    {
+      "Student": "A",
+      "File": "Q4_2-0.json",
+      "SameBytesAsBaseline": true,
+      "CurrentExecution": "PASS"
+    },
+    {
+      "Student": "A",
+      "File": "Q4_3-0.csv",
+      "SameBytesAsBaseline": false,
+      "CurrentExecution": "PASS"
+    },
+    {
+      "Student": "A",
+      "File": "Q4_3_customer_destination_sensitivity-0.json",
+      "SameBytesAsBaseline": true,
+      "CurrentExecution": "PASS"
+    },
+    {
+      "Student": "A",
+      "File": "business-audit-0.json",
+      "SameBytesAsBaseline": true,
+      "CurrentExecution": "PASS"
+    },
+    {
+      "Student": "A",
+      "File": "Q4_1-0.csv",
+      "SameBytesAsBaseline": true,
+      "CurrentExecution": "PASS"
+    },
+    {
+      "Student": "A",
+      "File": "business-audit-1.json",
+      "SameBytesAsBaseline": true,
+      "CurrentExecution": "PASS"
+    },
+    {
+      "Student": "A",
+      "File": "warehouse-validation-2.json",
+      "SameBytesAsBaseline": true,
+      "CurrentExecution": "PASS"
+    },
+    {
+      "Student": "A",
+      "File": "Q4_2-0.csv",
+      "SameBytesAsBaseline": true,
+      "CurrentExecution": "PASS"
+    },
+    {
+      "Student": "A",
+      "File": "execution_status.txt",
+      "SameBytesAsBaseline": true,
+      "CurrentExecution": "PASS"
+    },
+    {
+      "Student": "B",
+      "File": "Q4_3-0.json",
+      "SameBytesAsBaseline": true,
+      "CurrentExecution": "PASS"
+    },
+    {
+      "Student": "B",
+      "File": "Q4_3_customer_destination_sensitivity-0.csv",
+      "SameBytesAsBaseline": true,
+      "CurrentExecution": "PASS"
+    },
+    {
+      "Student": "B",
+      "File": "warehouse-validation-0.csv",
+      "SameBytesAsBaseline": true,
+      "CurrentExecution": "PASS"
+    },
+    {
+      "Student": "B",
+      "File": "business-audit-0.csv",
+      "SameBytesAsBaseline": true,
+      "CurrentExecution": "PASS"
+    },
+    {
+      "Student": "B",
+      "File": "business-audit-1.csv",
+      "SameBytesAsBaseline": true,
+      "CurrentExecution": "PASS"
+    },
+    {
+      "Student": "B",
+      "File": "warehouse-validation-1.csv",
+      "SameBytesAsBaseline": true,
+      "CurrentExecution": "PASS"
+    },
+    {
+      "Student": "B",
+      "File": "Q4_1-0.json",
+      "SameBytesAsBaseline": true,
+      "CurrentExecution": "PASS"
+    },
+    {
+      "Student": "B",
+      "File": "business-audit-2.csv",
+      "SameBytesAsBaseline": true,
+      "CurrentExecution": "PASS"
+    },
+    {
+      "Student": "B",
+      "File": "warehouse-validation-2.csv",
+      "SameBytesAsBaseline": true,
+      "CurrentExecution": "PASS"
+    },
+    {
+      "Student": "B",
+      "File": "warehouse-validation-1.json",
+      "SameBytesAsBaseline": true,
+      "CurrentExecution": "PASS"
+    },
+    {
+      "Student": "B",
+      "File": "business-audit-2.json",
+      "SameBytesAsBaseline": true,
+      "CurrentExecution": "PASS"
+    },
+    {
+      "Student": "B",
+      "File": "warehouse-validation-0.json",
+      "SameBytesAsBaseline": true,
+      "CurrentExecution": "PASS"
+    },
+    {
+      "Student": "B",
+      "File": "Q4_2-0.json",
+      "SameBytesAsBaseline": true,
+      "CurrentExecution": "PASS"
+    },
+    {
+      "Student": "B",
+      "File": "Q4_3-0.csv",
+      "SameBytesAsBaseline": true,
+      "CurrentExecution": "PASS"
+    },
+    {
+      "Student": "B",
+      "File": "Q4_3_customer_destination_sensitivity-0.json",
+      "SameBytesAsBaseline": true,
+      "CurrentExecution": "PASS"
+    },
+    {
+      "Student": "B",
+      "File": "business-audit-0.json",
+      "SameBytesAsBaseline": true,
+      "CurrentExecution": "PASS"
+    },
+    {
+      "Student": "B",
+      "File": "Q4_1-0.csv",
+      "SameBytesAsBaseline": true,
+      "CurrentExecution": "PASS"
+    },
+    {
+      "Student": "B",
+      "File": "business-audit-1.json",
+      "SameBytesAsBaseline": true,
+      "CurrentExecution": "PASS"
+    },
+    {
+      "Student": "B",
+      "File": "warehouse-validation-2.json",
+      "SameBytesAsBaseline": true,
+      "CurrentExecution": "PASS"
+    },
+    {
+      "Student": "B",
+      "File": "Q4_2-0.csv",
+      "SameBytesAsBaseline": true,
+      "CurrentExecution": "PASS"
+    },
+    {
+      "Student": "B",
+      "File": "execution_status.txt",
+      "SameBytesAsBaseline": true,
+      "CurrentExecution": "PASS"
+    }
+  ]
+}

@@ -3,6 +3,7 @@ USE [STUDENT_A_ID_dw];
 GO
 SET NOCOUNT ON;
 -- NSW means supplier location in seller_location.csv (seller geography role).
+-- Strict five suppliers per year; SellerID deterministically breaks quantity ties.
 -- Year is purchase year; completed-sales proxy uses delivered order status.
 -- Conflicting seller geography remains UNK and is disclosed separately.
 WITH grouped AS (
@@ -15,7 +16,7 @@ WITH grouped AS (
  WHERE f.OrderStatus=N'delivered' AND g.StateCode=N'NSW' AND g.GeographyRole=N'Seller'
  GROUP BY d.CalendarYear,s.SellerID,s.SellerName
 ), ranked AS (
- SELECT *,DENSE_RANK() OVER(PARTITION BY CalendarYear ORDER BY UnitsSold DESC) AS Position
+ SELECT *,ROW_NUMBER() OVER(PARTITION BY CalendarYear ORDER BY UnitsSold DESC,SellerID ASC) AS Position
  FROM grouped
 )
 SELECT CalendarYear,SellerID,SellerName,UnitsSold,Revenue,Position

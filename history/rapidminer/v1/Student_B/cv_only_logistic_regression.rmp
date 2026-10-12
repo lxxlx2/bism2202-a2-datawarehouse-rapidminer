@@ -1,0 +1,167 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<process version="12.1.001">
+  <context>
+    <input/>
+    <output/>
+    <macros>
+      <macro>
+        <key>source_csv</key>
+        <value>/Users/jerson/antigravity-agent-test/bism2202-a2-datawarehouse-rapidminer/requirements/extracted/RapidMiner/BISM2202_A2_Loan_Data_Set_RapidMiner2026S2.csv</value>
+      </macro>
+    </macros>
+  </context>
+  <operator activated="true" class="process" compatibility="12.1.001" expanded="true" height="68" name="Process" width="90" x="45" y="45">
+    <parameter key="logverbosity" value="init"/>
+    <parameter key="random_seed" value="2202"/>
+    <parameter key="send_mail" value="never"/>
+    <process expanded="true">
+      <operator activated="true" class="read_csv" compatibility="12.1.001" expanded="true" height="68" name="Read Original Loan CSV" width="90" x="45" y="45">
+        <parameter key="csv_file" value="%{source_csv}"/>
+        <parameter key="column_separators" value=","/>
+        <parameter key="encoding" value="windows-1252"/>
+        <parameter key="use_header_row" value="true"/>
+        <parameter key="read_not_matching_values_as_missings" value="true"/>
+        <parameter key="read_all_values_as_polynominal" value="false"/>
+        <list key="data_set_meta_data_information">
+          <parameter key="0" value="Customer_id.true.polynominal.attribute"/>
+          <parameter key="1" value="Age.true.integer.attribute"/>
+          <parameter key="2" value="Work_class.true.polynominal.attribute"/>
+          <parameter key="3" value="Loan_amount.true.real.attribute"/>
+          <parameter key="4" value="Education.true.polynominal.attribute"/>
+          <parameter key="5" value="Years_of_education.true.integer.attribute"/>
+          <parameter key="6" value="Marital_status.true.polynominal.attribute"/>
+          <parameter key="7" value="Occupation.true.polynominal.attribute"/>
+          <parameter key="8" value="Race.true.polynominal.attribute"/>
+          <parameter key="9" value="Gender.true.polynominal.attribute"/>
+          <parameter key="10" value="State.true.polynominal.attribute"/>
+          <parameter key="11" value="Capital_gain.true.integer.attribute"/>
+          <parameter key="12" value="Capital_loss.true.integer.attribute"/>
+          <parameter key="13" value="Weekly_work_hours.true.integer.attribute"/>
+          <parameter key="14" value="Country/area_of_origin.true.polynominal.attribute"/>
+          <parameter key="15" value="Income.true.polynominal.attribute"/>
+          <parameter key="16" value="Current_mortgage.true.integer.attribute"/>
+          <parameter key="17" value="Student_debt.true.integer.attribute"/>
+          <parameter key="18" value="Number_of_homes_owned.true.integer.attribute"/>
+          <parameter key="19" value="Bank_balance.true.real.attribute"/>
+          <parameter key="20" value="Loan_purpose.true.polynominal.attribute"/>
+          <parameter key="21" value="Credit_history.true.real.attribute"/>
+          <parameter key="22" value="Past_bankruptcy.true.integer.attribute"/>
+          <parameter key="23" value="Loan_defaulted.true.integer.attribute"/>
+        </list>
+      </operator>
+      <operator activated="true" class="set_role" compatibility="12.1.001" expanded="true" height="68" name="Set Loan Default Label" width="90" x="180" y="45">
+        <parameter key="attribute_name" value="Loan_defaulted"/>
+        <parameter key="target_role" value="label"/>
+      </operator>
+      <operator activated="true" class="set_role" compatibility="12.1.001" expanded="true" height="68" name="Set Customer ID" width="90" x="315" y="45">
+        <parameter key="attribute_name" value="Customer_id"/>
+        <parameter key="target_role" value="id"/>
+      </operator>
+      <operator activated="true" class="filter_examples" compatibility="12.1.001" expanded="true" height="68" name="Keep Verified Labels" width="90" x="450" y="45">
+        <parameter key="condition_class" value="no_missing_labels"/>
+      </operator>
+      <operator activated="true" class="numerical_to_binominal" compatibility="12.1.001" expanded="true" height="68" name="Default 1 Is True" width="90" x="585" y="45">
+        <parameter key="attribute_filter_type" value="single"/>
+        <parameter key="attribute" value="Loan_defaulted"/>
+        <parameter key="include_special_attributes" value="true"/>
+        <parameter key="min" value="0.0"/>
+        <parameter key="max" value="0.0"/>
+      </operator>
+      <connect from_port="output" to_port="example set input" from_op="Read Original Loan CSV" to_op="Set Loan Default Label"/>
+      <connect from_port="example set output" to_port="example set input" from_op="Set Loan Default Label" to_op="Set Customer ID"/>
+      <connect from_port="example set output" to_port="example set input" from_op="Set Customer ID" to_op="Keep Verified Labels"/>
+      <connect from_port="example set output" to_port="example set input" from_op="Keep Verified Labels" to_op="Default 1 Is True"/>
+      <operator activated="true" class="select_attributes" compatibility="12.1.001" expanded="true" height="68" name="Financial Predictors" width="90" x="720" y="45">
+        <parameter key="attribute_filter_type" value="subset"/>
+        <parameter key="attributes" value="Age|Loan_amount|Capital_gain|Capital_loss|Income|Current_mortgage|Student_debt|Number_of_homes_owned|Bank_balance|Loan_purpose|Credit_history|Past_bankruptcy"/>
+        <parameter key="include_special_attributes" value="false"/>
+      </operator>
+      <connect from_port="example set output" to_port="example set input" from_op="Default 1 Is True" to_op="Financial Predictors"/>
+      <operator activated="true" class="split_data" compatibility="12.1.001" expanded="true" height="68" name="Independent Stratified Split" width="90" x="855" y="45">
+        <parameter key="sampling_type" value="stratified sampling"/>
+        <parameter key="use_local_random_seed" value="true"/>
+        <parameter key="local_random_seed" value="2203"/>
+        <enumeration key="partitions">
+          <parameter key="ratio" value="0.7"/>
+          <parameter key="ratio" value="0.3"/>
+        </enumeration>
+      </operator>
+      <connect from_port="example set output" to_port="example set" from_op="Financial Predictors" to_op="Independent Stratified Split"/>
+      <operator activated="true" class="x_validation" compatibility="12.1.001" expanded="true" height="68" name="Training Only Cross Validation" width="90" x="990" y="45">
+        <parameter key="number_of_validations" value="5"/>
+        <parameter key="sampling_type" value="stratified sampling"/>
+        <parameter key="use_local_random_seed" value="true"/>
+        <parameter key="local_random_seed" value="5502"/>
+        <parameter key="create_complete_model" value="true"/>
+        <process expanded="true">
+          <operator activated="true" class="replace_missing_values" compatibility="12.1.001" expanded="true" height="68" name="Fit Training Imputer" width="90" x="45" y="45">
+            <parameter key="return_preprocessing_model" value="true"/>
+            <parameter key="attribute_filter_type" value="all"/>
+            <parameter key="default" value="average"/>
+          </operator>
+          <operator activated="true" class="remove_unused_values" compatibility="12.1.001" expanded="true" height="68" name="Training Vocabulary Only" width="90" x="180" y="45">
+            <parameter key="return_preprocessing_model" value="true"/>
+            <parameter key="attribute_filter_type" value="all"/>
+            <parameter key="include_special_attributes" value="false"/>
+          </operator>
+          <connect from_port="training" to_port="example set input" to_op="Fit Training Imputer"/>
+          <connect from_port="example set output" to_port="example set input" from_op="Fit Training Imputer" to_op="Training Vocabulary Only"/>
+          <operator activated="true" class="nominal_to_numerical" compatibility="12.1.001" expanded="true" height="68" name="Fit Training Dummy Coding" width="90" x="315" y="45">
+            <parameter key="return_preprocessing_model" value="true"/>
+            <parameter key="attribute_filter_type" value="all"/>
+            <parameter key="include_special_attributes" value="false"/>
+            <parameter key="coding_type" value="dummy coding"/>
+            <parameter key="unexpected_value_handling" value="all 0 and warning"/>
+          </operator>
+          <operator activated="true" class="normalize" compatibility="12.1.001" expanded="true" height="68" name="Fit Training Z Scores" width="90" x="450" y="45">
+            <parameter key="return_preprocessing_model" value="true"/>
+            <parameter key="attribute_filter_type" value="all"/>
+            <parameter key="method" value="Z-transformation"/>
+            <parameter key="include_special_attributes" value="false"/>
+          </operator>
+          <connect from_port="example set output" to_port="example set input" from_op="Training Vocabulary Only" to_op="Fit Training Dummy Coding"/>
+          <connect from_port="example set output" to_port="example set input" from_op="Fit Training Dummy Coding" to_op="Fit Training Z Scores"/>
+          <operator activated="true" class="logistic_regression" compatibility="12.1.001" expanded="true" height="68" name="Chosen Classifier" width="90" x="585" y="45">
+            <parameter key="kernel_type" value="dot"/>
+            <parameter key="C" value="1.0"/>
+            <parameter key="scale" value="false"/>
+            <parameter key="calculate_weights" value="true"/>
+          </operator>
+          <connect from_port="example set output" to_port="training set" from_op="Fit Training Z Scores" to_op="Chosen Classifier"/>
+          <operator activated="true" class="group_models" compatibility="12.1.001" expanded="true" height="68" name="Training Transformations And Classifier" width="90" x="720" y="45"/>
+          <connect from_port="preprocessing model" to_port="models in 1" from_op="Fit Training Imputer" to_op="Training Transformations And Classifier"/>
+          <connect from_port="preprocessing model" to_port="models in 2" from_op="Training Vocabulary Only" to_op="Training Transformations And Classifier"/>
+          <connect from_port="preprocessing model" to_port="models in 3" from_op="Fit Training Dummy Coding" to_op="Training Transformations And Classifier"/>
+          <connect from_port="preprocessing model" to_port="models in 4" from_op="Fit Training Z Scores" to_op="Training Transformations And Classifier"/>
+          <connect from_port="model" to_port="models in 5" from_op="Chosen Classifier" to_op="Training Transformations And Classifier"/>
+          <connect from_port="model out" to_port="model" from_op="Training Transformations And Classifier"/>
+        </process>
+        <process expanded="true">
+          <operator activated="true" class="apply_model" compatibility="12.1.001" expanded="true" height="68" name="Apply Fold Training Model" width="90" x="45" y="45"/>
+          <operator activated="true" class="performance_binominal_classification" compatibility="12.1.001" expanded="true" height="68" name="Default Class Fold Performance" width="90" x="180" y="45">
+            <parameter key="manually_set_positive_class" value="true"/>
+            <parameter key="positive_class" value="true"/>
+            <parameter key="main_criterion" value="f_measure"/>
+            <parameter key="accuracy" value="true"/>
+            <parameter key="precision" value="true"/>
+            <parameter key="recall" value="true"/>
+            <parameter key="f_measure" value="true"/>
+            <parameter key="AUC" value="true"/>
+            <parameter key="false_positive" value="true"/>
+            <parameter key="false_negative" value="true"/>
+            <parameter key="true_positive" value="true"/>
+            <parameter key="true_negative" value="true"/>
+            <parameter key="skip_undefined_labels" value="false"/>
+          </operator>
+          <connect from_port="model" to_port="model" to_op="Apply Fold Training Model"/>
+          <connect from_port="test set" to_port="unlabelled data" to_op="Apply Fold Training Model"/>
+          <connect from_port="labelled data" to_port="labelled data" from_op="Apply Fold Training Model" to_op="Default Class Fold Performance"/>
+          <connect from_port="performance" to_port="averagable 1" from_op="Default Class Fold Performance"/>
+        </process>
+      </operator>
+      <connect from_port="partition 1" to_port="training" from_op="Independent Stratified Split" to_op="Training Only Cross Validation"/>
+      <connect from_port="averagable 1" to_port="result 1" from_op="Training Only Cross Validation"/>
+      <connect from_port="model" to_port="result 2" from_op="Training Only Cross Validation"/>
+    </process>
+  </operator>
+</process>

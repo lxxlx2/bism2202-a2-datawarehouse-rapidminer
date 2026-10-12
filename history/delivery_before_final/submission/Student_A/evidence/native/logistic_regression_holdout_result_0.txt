@@ -1,0 +1,44 @@
+
+PerformanceVector [
+-----accuracy: 89.40% +/- 0.10% (micro average: 89.40%)
+ConfusionMatrix:
+True:	false	true
+false:	7145	843
+true:	5	6
+-----AUC: 0.647 +/- 0.009 (micro average: 0.647) (positive class: true)
+-----precision: 54.55% (positive class: true)
+ConfusionMatrix:
+True:	false	true
+false:	7145	843
+true:	5	6
+-----recall: 0.71% +/- 0.77% (micro average: 0.71%) (positive class: true)
+ConfusionMatrix:
+True:	false	true
+false:	7145	843
+true:	5	6
+*****f_measure: 1.40% (positive class: true)
+ConfusionMatrix:
+True:	false	true
+false:	7145	843
+true:	5	6
+-----false_positive: 1.000 +/- 1.225 (micro average: 5.000) (positive class: true)
+ConfusionMatrix:
+True:	false	true
+false:	7145	843
+true:	5	6
+-----false_negative: 168.600 +/- 1.342 (micro average: 843.000) (positive class: true)
+ConfusionMatrix:
+True:	false	true
+false:	7145	843
+true:	5	6
+-----true_positive: 1.200 +/- 1.304 (micro average: 6.000) (positive class: true)
+ConfusionMatrix:
+True:	false	true
+false:	7145	843
+true:	5	6
+-----true_negative: 1429.000 +/- 1.225 (micro average: 7145.000) (positive class: true)
+ConfusionMatrix:
+True:	false	true
+false:	7145	843
+true:	5	6
+]

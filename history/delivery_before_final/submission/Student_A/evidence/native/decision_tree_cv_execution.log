@@ -1,0 +1,249 @@
+注: scripts/rapidminer/NativeProcessRunner.java使用或覆盖了已过时的 API。
+注: 有关详细信息, 请使用 -Xlint:deprecation 重新编译。
+10月 08, 2026 10:15:01 下午 com.rapidminer.tools.PlatformUtilities logInfo
+信息: Searching in Java classpath for AI Studio jars...
+10月 08, 2026 10:15:01 下午 com.rapidminer.tools.PlatformUtilities logInfo
+信息: Trying parent directory of '/Applications/AI Studio 2026.1.1.app/Contents/Resources/RapidMiner-Studio/lib/rapidminer-studio-core-12.1.1.jar'...
+10月 08, 2026 10:15:01 下午 com.rapidminer.tools.PlatformUtilities logInfo
+信息: Gotcha! 'rapidminer.home' is: /Applications/AI Studio 2026.1.1.app/Contents/Resources/RapidMiner-Studio
+10月 08, 2026 10:15:01 下午 com.rapidminer.tools.PlatformUtilities logInfo
+信息: Release platform: OSX
+Oct 08, 2026 10:15:01 PM com.rapidminer.tools.I18N setLocale
+INFO: Setting locale.
+Oct 08, 2026 10:15:01 PM com.rapidminer.tools.I18N setLocale
+INFO: Using locale en.
+Oct 08, 2026 10:15:01 PM com.rapidminer.tools.PlatformUtilities logInfo
+INFO: rapidminer.home is '/Applications/AI Studio 2026.1.1.app/Contents/Resources/RapidMiner-Studio'.
+Oct 08, 2026 10:15:01 PM com.rapidminer.core.license.ProductConstraintManager initialize
+INFO: Using OpenSource license manager.
+Oct 08, 2026 10:15:01 PM com.rapidminer.core.license.ProductConstraintManager initialize
+INFO: Initializing license manager.
+Oct 08, 2026 10:15:01 PM com.rapidminer.core.license.ProductConstraintManager initialize
+INFO: Using default license location.
+Oct 08, 2026 10:15:01 PM com.rapidminer.core.license.ProductConstraintManager initialize
+INFO: Registering default product.
+Oct 08, 2026 10:15:01 PM com.rapidminer.io.process.XMLTools hardenDocumentBuilderFactory
+WARNING: Could not set http://javax.xml.XMLConstants/property/accessExternalStylesheet for XML processor
+Oct 08, 2026 10:15:01 PM com.rapidminer.io.process.XMLTools hardenDocumentBuilderFactory
+WARNING: Could not set http://javax.xml.XMLConstants/property/accessExternalStylesheet for XML processor
+Oct 08, 2026 10:15:02 PM com.rapidminer.tools.plugin.Plugin registerPlugins
+INFO: Register plugin: Cloud Connectivity
+Oct 08, 2026 10:15:02 PM com.rapidminer.tools.plugin.Plugin registerPlugins
+INFO: Register plugin: Data Editor
+Oct 08, 2026 10:15:02 PM com.rapidminer.tools.plugin.Plugin registerPlugins
+INFO: Register plugin: H2O
+Oct 08, 2026 10:15:02 PM com.rapidminer.tools.plugin.Plugin registerPlugins
+INFO: Register plugin: Model Simulator
+Oct 08, 2026 10:15:02 PM com.rapidminer.tools.plugin.Plugin registerPlugins
+INFO: Register plugin: Multi Language Pack
+Oct 08, 2026 10:15:02 PM com.rapidminer.tools.plugin.Plugin registerPlugins
+INFO: Register plugin: OAuth Providers
+Oct 08, 2026 10:15:02 PM com.rapidminer.tools.plugin.Plugin registerPlugins
+INFO: Register plugin: Operator Recommender
+Oct 08, 2026 10:15:02 PM com.rapidminer.tools.plugin.Plugin registerPlugins
+INFO: Register plugin: Python Extension Loader
+Oct 08, 2026 10:15:02 PM com.rapidminer.tools.plugin.Plugin registerPlugins
+INFO: Register plugin: Process Scheduling
+Oct 08, 2026 10:15:02 PM com.rapidminer.tools.plugin.Plugin registerPlugins
+INFO: Register plugin: Data Samples
+Oct 08, 2026 10:15:02 PM com.rapidminer.tools.plugin.Plugin registerPlugins
+INFO: Register plugin: Social Media
+Oct 08, 2026 10:15:02 PM com.rapidminer.tools.plugin.Plugin registerPlugins
+INFO: Register plugin: Time Series
+Oct 08, 2026 10:15:02 PM com.rapidminer.tools.plugin.Plugin registerPlugins
+INFO: Register plugin: Advanced File Connectors
+Oct 08, 2026 10:15:02 PM com.rapidminer.tools.plugin.Plugin registerPlugins
+INFO: Register plugin: Blending
+Oct 08, 2026 10:15:02 PM com.rapidminer.tools.plugin.Plugin registerPlugins
+INFO: Register plugin: Browser
+Oct 08, 2026 10:15:02 PM com.rapidminer.tools.plugin.Plugin registerPlugins
+INFO: Register plugin: Concurrency
+Oct 08, 2026 10:15:02 PM com.rapidminer.tools.plugin.Plugin registerPlugins
+INFO: Register plugin: CTA
+Oct 08, 2026 10:15:02 PM com.rapidminer.tools.plugin.Plugin registerPlugins
+INFO: Register plugin: HTML5 Charts
+Oct 08, 2026 10:15:02 PM com.rapidminer.tools.plugin.Plugin registerPlugins
+INFO: Register plugin: Interactivity
+Oct 08, 2026 10:15:02 PM com.rapidminer.tools.plugin.Plugin registerPlugins
+INFO: Register plugin: JDBC Connectors
+Oct 08, 2026 10:15:02 PM com.rapidminer.tools.plugin.Plugin registerPlugins
+INFO: Register plugin: KS Provider
+Oct 08, 2026 10:15:02 PM com.rapidminer.tools.plugin.Plugin registerPlugins
+INFO: Register plugin: Legacy Result Access
+Oct 08, 2026 10:15:02 PM com.rapidminer.tools.plugin.Plugin registerPlugins
+INFO: Register plugin: Modeling
+Oct 08, 2026 10:15:02 PM com.rapidminer.tools.plugin.Plugin registerPlugins
+INFO: Register plugin: Productivity
+Oct 08, 2026 10:15:02 PM com.rapidminer.tools.plugin.Plugin registerPlugins
+INFO: Register plugin: Professional
+Oct 08, 2026 10:15:02 PM com.rapidminer.tools.plugin.Plugin registerPlugins
+INFO: Register plugin: Remote Repository
+Oct 08, 2026 10:15:02 PM com.rapidminer.tools.plugin.Plugin registerPlugins
+INFO: Register plugin: Utility
+Oct 08, 2026 10:15:03 PM com.rapidminer.tools.config.ConfigurationManager register
+WARNING: Registered configurator Twitter Connection. Please update your extension to use the new connection framework!
+SLF4J(W): No SLF4J providers were found.
+SLF4J(W): Defaulting to no-operation (NOP) logger implementation
+SLF4J(W): See https://www.slf4j.org/codes.html#noProviders for further details.
+Oct 08, 2026 10:15:04 PM com.rapidminer.extension.jdbc.tools.jdbc.JDBCProperties registerDrivers
+INFO: JDBC driver net.sourceforge.jtds.jdbc.Driver not found. Probably the driver is not installed.
+Oct 08, 2026 10:15:04 PM com.rapidminer.extension.jdbc.tools.jdbc.JDBCProperties <init>
+WARNING: Missing database driver class name for ODBC Bridge (e.g. Access)
+Oct 08, 2026 10:15:04 PM com.rapidminer.extension.jdbc.tools.jdbc.JDBCProperties <init>
+WARNING: Missing database driver class name for Ingres
+Oct 08, 2026 10:15:06 PM com.rapidminer.connection.oauth.provider.OAuthProviderDiscovery discoverProviders
+INFO: OAuth provider discovery completed: 0 providers.
+Oct 08, 2026 10:15:06 PM com.rapidminer.connection.oauth.provider.OAuthProviderDiscovery loadProvidersWithServiceLoader
+INFO: OAuth provider discovered: com.rapidminer.connection.oauth.provider.OAuthDatabricksProvider
+Oct 08, 2026 10:15:06 PM com.rapidminer.connection.oauth.provider.OAuthProviderDiscovery loadProvidersWithServiceLoader
+INFO: OAuth provider discovered: com.rapidminer.connection.oauth.provider.OAuthSnowflakeProvider
+Oct 08, 2026 10:15:06 PM com.altair.ai.pel.PluginInitPythonExtensionLoader initPlugin
+WARNING: Python extensions are only available with Altair Units! Disabling Python Extension Loader.
+Oct 08, 2026 10:15:06 PM com.rapidminer.repository.RepositoryManager registerExtensionSamples
+INFO: Registered 'Time Series' as sample folder.
+Oct 08, 2026 10:15:07 PM com.rapidminer.tools.config.ConfigurationManager register
+WARNING: Registered configurator Amazon S3 Connection. Please update your extension to use the new connection framework!
+Oct 08, 2026 10:15:07 PM com.rapidminer.tools.config.ConfigurationManager register
+WARNING: Registered configurator Azure Blob Storage Connection. Please update your extension to use the new connection framework!
+Oct 08, 2026 10:15:07 PM com.rapidminer.tools.config.ConfigurationManager register
+WARNING: Registered configurator gui.configurable.cloud.azure.gen2.name. Please update your extension to use the new connection framework!
+Oct 08, 2026 10:15:07 PM com.rapidminer.tools.config.ConfigurationManager register
+WARNING: Registered configurator Google Cloud Storage Connection. Please update your extension to use the new connection framework!
+Oct 08, 2026 10:15:07 PM com.rapidminer.tools.config.ConfigurationManager register
+WARNING: Registered configurator Dropbox Connection. Please update your extension to use the new connection framework!
+Oct 08, 2026 10:15:07 PM com.rapidminer.tools.plugin.Plugin initAll
+INFO: Extension KS Provider 12.1.1 was loaded in 11ms.
+Oct 08, 2026 10:15:07 PM com.rapidminer.tools.plugin.Plugin initAll
+INFO: Extension Process Scheduling 10.4.0 was loaded in 13ms.
+Oct 08, 2026 10:15:07 PM com.rapidminer.tools.plugin.Plugin initAll
+INFO: Extension Legacy Result Access 12.1.1 was loaded in 13ms.
+Oct 08, 2026 10:15:07 PM com.rapidminer.tools.plugin.Plugin initAll
+INFO: Extension Data Editor 10.3.1 was loaded in 14ms.
+Oct 08, 2026 10:15:07 PM com.rapidminer.tools.plugin.Plugin initAll
+INFO: Extension Productivity 12.1.1 was loaded in 16ms.
+Oct 08, 2026 10:15:07 PM com.rapidminer.tools.plugin.Plugin initAll
+INFO: Extension CTA 12.1.1 was loaded in 18ms.
+Oct 08, 2026 10:15:07 PM com.rapidminer.tools.plugin.Plugin initAll
+INFO: Extension Operator Recommender 10.3.1 was loaded in 18ms.
+Oct 08, 2026 10:15:07 PM com.rapidminer.tools.plugin.Plugin initAll
+INFO: Extension Utility 12.1.1 was loaded in 19ms.
+Oct 08, 2026 10:15:07 PM com.rapidminer.tools.plugin.Plugin initAll
+INFO: Extension Modeling 12.1.1 was loaded in 22ms.
+Oct 08, 2026 10:15:07 PM com.rapidminer.tools.plugin.Plugin initAll
+INFO: Extension Data Samples 1.0.0 was loaded in 25ms.
+Oct 08, 2026 10:15:07 PM com.rapidminer.tools.plugin.Plugin initAll
+INFO: Extension Interactivity 12.1.1 was loaded in 29ms.
+Oct 08, 2026 10:15:07 PM com.rapidminer.tools.plugin.Plugin initAll
+INFO: Extension Multi Language Pack 12.0.3 was loaded in 30ms.
+Oct 08, 2026 10:15:07 PM com.rapidminer.tools.plugin.Plugin initAll
+INFO: Extension Concurrency 12.1.1 was loaded in 37ms.
+Oct 08, 2026 10:15:07 PM com.rapidminer.tools.plugin.Plugin initAll
+INFO: Extension OAuth Providers 1.0.1 was loaded in 38ms.
+Oct 08, 2026 10:15:07 PM com.rapidminer.tools.plugin.Plugin initAll
+INFO: Extension Social Media 10.3.1 was loaded in 39ms.
+Oct 08, 2026 10:15:07 PM com.rapidminer.tools.plugin.Plugin initAll
+INFO: Extension Python Extension Loader 10.5.1 was loaded in 47ms.
+Oct 08, 2026 10:15:07 PM com.rapidminer.tools.plugin.Plugin initAll
+INFO: Extension Time Series 10.3.1 was loaded in 49ms.
+Oct 08, 2026 10:15:07 PM com.rapidminer.tools.plugin.Plugin initAll
+INFO: Extension HTML5 Charts 12.1.1 was loaded in 71ms.
+Oct 08, 2026 10:15:07 PM com.rapidminer.tools.plugin.Plugin initAll
+INFO: Extension Model Simulator 11.1.3 was loaded in 120ms.
+Oct 08, 2026 10:15:07 PM com.rapidminer.tools.plugin.Plugin initAll
+INFO: Extension Remote Repository 12.1.1 was loaded in 127ms.
+Oct 08, 2026 10:15:07 PM com.rapidminer.tools.plugin.Plugin initAll
+INFO: Extension Professional 12.1.1 was loaded in 134ms.
+Oct 08, 2026 10:15:07 PM com.rapidminer.tools.plugin.Plugin initAll
+INFO: Extension Advanced File Connectors 12.1.1 was loaded in 142ms.
+Oct 08, 2026 10:15:07 PM com.rapidminer.tools.plugin.Plugin initAll
+INFO: Extension Browser 12.1.1 was loaded in 146ms.
+Oct 08, 2026 10:15:07 PM com.rapidminer.tools.plugin.Plugin initAll
+INFO: Extension H2O 11.0.3 was loaded in 171ms.
+Oct 08, 2026 10:15:07 PM com.rapidminer.tools.plugin.Plugin initAll
+INFO: Extension Blending 12.1.1 was loaded in 304ms.
+Oct 08, 2026 10:15:07 PM com.rapidminer.tools.plugin.Plugin initAll
+INFO: Extension Cloud Connectivity 12.0.0 was loaded in 550ms.
+Oct 08, 2026 10:15:07 PM com.rapidminer.tools.plugin.Plugin initAll
+INFO: Extension JDBC Connectors 12.1.1 was loaded in 2051ms.
+Oct 08, 2026 10:15:07 PM com.rapidminer.tools.MailUtilities initializeMailCap
+INFO: Initializing mail cap
+Oct 08, 2026 10:15:07 PM com.rapidminer.tools.config.ClientConfigurationManager loadAllParameters
+INFO: No configuration file found for Amazon S3 Connection
+Oct 08, 2026 10:15:07 PM com.rapidminer.tools.config.ClientConfigurationManager loadAllParameters
+INFO: No configuration file found for Azure Blob Storage Connection
+Oct 08, 2026 10:15:07 PM com.rapidminer.tools.config.ClientConfigurationManager loadAllParameters
+INFO: No configuration file found for gui.configurable.cloud.azure.gen2.name
+Oct 08, 2026 10:15:07 PM com.rapidminer.tools.config.ClientConfigurationManager loadAllParameters
+INFO: No configuration file found for Dropbox Connection
+Oct 08, 2026 10:15:07 PM com.rapidminer.tools.config.ClientConfigurationManager loadAllParameters
+INFO: No configuration file found for Google Cloud Storage Connection
+Oct 08, 2026 10:15:07 PM com.rapidminer.tools.config.ClientConfigurationManager loadAllParameters
+INFO: No configuration file found for Twitter Connection
+PROCESS_XML_OPEN=PASS
+Oct 08, 2026 10:15:08 PM com.rapidminer.tools.ResultService init
+INFO: No filename given for result file, using stdout for logging results!
+Oct 08, 2026 10:15:08 PM com.rapidminer.Process execute
+INFO: Process submission/Student_A/rapidminer/cv_only_decision_tree.rmp starts
+Oct 08, 2026 10:15:08 PM com.rapidminer.tools.WrapperLoggingHandler log
+WARNING: Chosen Classifier: Age: Using this data column may potentially lead to biased models or decisions. Please be careful and check if using this data is problematic.This column was flagged since its name contains a suspicious term: age
+Oct 08, 2026 10:15:08 PM com.rapidminer.tools.WrapperLoggingHandler log
+WARNING: Chosen Classifier: Age: Using this data column may potentially lead to biased models or decisions. Please be careful and check if using this data is problematic.This column was flagged since its name contains a suspicious term: age
+Oct 08, 2026 10:15:09 PM com.rapidminer.tools.WrapperLoggingHandler log
+WARNING: Chosen Classifier: Age: Using this data column may potentially lead to biased models or decisions. Please be careful and check if using this data is problematic.This column was flagged since its name contains a suspicious term: age
+Oct 08, 2026 10:15:09 PM com.rapidminer.tools.WrapperLoggingHandler log
+WARNING: Chosen Classifier: Age: Using this data column may potentially lead to biased models or decisions. Please be careful and check if using this data is problematic.This column was flagged since its name contains a suspicious term: age
+Oct 08, 2026 10:15:09 PM com.rapidminer.tools.WrapperLoggingHandler log
+WARNING: Chosen Classifier: Age: Using this data column may potentially lead to biased models or decisions. Please be careful and check if using this data is problematic.This column was flagged since its name contains a suspicious term: age
+Oct 08, 2026 10:15:09 PM com.rapidminer.tools.WrapperLoggingHandler log
+WARNING: Chosen Classifier: Age: Using this data column may potentially lead to biased models or decisions. Please be careful and check if using this data is problematic.This column was flagged since its name contains a suspicious term: age
+Oct 08, 2026 10:15:09 PM com.rapidminer.Process execute
+INFO: Process submission/Student_A/rapidminer/cv_only_decision_tree.rmp finished successfully after 1 s
+RESULT_0_CLASS=com.rapidminer.operator.performance.PerformanceVector
+
+PerformanceVector [
+-----accuracy: 89.39% +/- 0.02% (micro average: 89.39%)
+ConfusionMatrix:
+True:	false	true
+false:	7150	849
+true:	0	0
+-----AUC: 0.500 +/- 0.000 (micro average: 0.500) (positive class: true)
+-----precision: unknown (positive class: true)
+ConfusionMatrix:
+True:	false	true
+false:	7150	849
+true:	0	0
+-----recall: 0.00% +/- 0.00% (micro average: 0.00%) (positive class: true)
+ConfusionMatrix:
+True:	false	true
+false:	7150	849
+true:	0	0
+*****f_measure: unknown (positive class: true)
+ConfusionMatrix:
+True:	false	true
+false:	7150	849
+true:	0	0
+-----false_positive: 0.000 +/- 0.000 (micro average: 0.000) (positive class: true)
+ConfusionMatrix:
+True:	false	true
+false:	7150	849
+true:	0	0
+-----false_negative: 169.800 +/- 0.447 (micro average: 849.000) (positive class: true)
+ConfusionMatrix:
+True:	false	true
+false:	7150	849
+true:	0	0
+-----true_positive: 0.000 +/- 0.000 (micro average: 0.000) (positive class: true)
+ConfusionMatrix:
+True:	false	true
+false:	7150	849
+true:	0	0
+-----true_negative: 1430.000 +/- 0.000 (micro average: 7150.000) (positive class: true)
+ConfusionMatrix:
+True:	false	true
+false:	7150	849
+true:	0	0
+]
+RESULT_1_CLASS=com.rapidminer.operator.GroupedModel
+Model [com.rapidminer.operator.preprocessing.filter.ValueReplenishmentModel@6738e8b2, com.rapidminer.operator.preprocessing.RemoveUnusedNominalValuesModel@609ad016, : false {false=7150, true=849}]
+NATIVE_PROCESS_EXECUTION=PASS
+GUI_REOPEN_AND_SCREENSHOTS=PENDING

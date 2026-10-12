@@ -33,18 +33,20 @@ def sqlbox(doc,source,sql,slot):
   p=cell.paragraphs[0] if i==0 else cell.add_paragraph()
   p.style='Normal';p.paragraph_format.space_before=Pt(0);p.paragraph_format.space_after=Pt(0)
   p.paragraph_format.keep_with_next=i<len(lines)-1
-  r=p.add_run(line);r.font.name='Consolas';r.font.size=Pt(10.5)
+  r=p.add_run(line);r.font.name='Times New Roman';r.font.size=Pt(10.5)
  doc.add_paragraph().paragraph_format.space_after=Pt(0)
 
-IMAGE_SLOTS={61:['schema/STUDENT_{s}_ID_dm.png'],88:['gui/ssis_dimcustomer.png','gui/ssis_dimproduct.png','gui/ssis_dimseller.png','gui/ssis_dimdate.png','gui/ssis_geography_customer.png','gui/ssis_geography_seller.png'],101:['gui/ssis_fact.png'],138:['gui/sql_Q4_1.png'],170:['gui/sql_Q4_2.png'],212:['gui/sql_Q4_3.png'],263:['gui/model1_process.png','gui/model1_cv.png'],267:['gui/model2_process.png','gui/model2_cv.png'],284:['gui/model1_result.png'],292:['gui/model2_result.png'],303:['gui/model1_performance.png','gui/model2_performance.png']}
+IMAGE_SLOTS={61:['schema/STUDENT_{s}_ID_dm.png'],88:['gui/ssis_dimcustomer.png','gui/ssis_dimproduct.png','gui/ssis_dimseller.png','gui/ssis_dimdate.png','gui/ssis_geography_customer.png','gui/ssis_geography_seller.png'],101:['gui/ssis_fact.png'],138:['gui/sql_Q4_1.png'],170:['gui/sql_Q4_2.png'],212:['gui/sql_Q4_3.png'],263:['gui/model1_process.png','gui/model1_cv.png'],267:['gui/model2_cv.png'],284:['gui/model1_result.png'],292:['gui/model2_result.png'],303:['gui/model1_performance.png','gui/model2_performance.png']}
 LABELS={'ssis_dimcustomer':'Customer dimension native SSIS Data Flow','ssis_dimproduct':'Product dimension native SSIS Data Flow','ssis_dimseller':'Seller dimension native SSIS Data Flow','ssis_dimdate':'Date dimension native SSIS Data Flow','ssis_geography_customer':'Customer destination Geography native SSIS Data Flow','ssis_geography_seller':'Supplier origin Geography native SSIS Data Flow','ssis_fact':'FactSales native SSIS Data Flow','sql_Q4_1':'Executed customer age revenue query','sql_Q4_2':'Executed product category quantity query','sql_Q4_3':'Executed NSW supplier quantity query','model1_process':'Logistic regression overall native process','model1_cv':'Logistic regression cross-validation subprocess','model2_process':'Second model overall native process','model2_cv':'Second model cross-validation subprocess','model1_result':'Native logistic regression fitted on the training partition','model2_result':'Native second model result','model1_performance':'Fixed holdout logistic regression accuracy and confusion matrix','model2_performance':'Fixed holdout second model accuracy and confusion matrix'}
 
 def build(s,final):
  base=ROOT/'submission'/f'Student_{s}'
  missing=[str(base/'evidence'/rel.format(s=s)) for rels in IMAGE_SLOTS.values() for rel in rels if not (base/'evidence'/rel.format(s=s)).exists()]
  if final and missing:raise RuntimeError('Genuine native captures missing: '+', '.join(missing))
+ figure_number=0
+ overall_figure=None
  text={}
- for name in ['model','warehouse','query']:text.update(json.loads((base/'report'/f'{name}_sections_draft.json').read_text())['sections'])
+ for name in ['model','warehouse','query']:text.update(json.loads((ROOT/'docs/report_source'/f'Student_{s}'/f'{name}_sections.json').read_text())['sections'])
  limits={'executive_summary':250,'dimensions':400,'implementation':300,'process':100,'predictors':100,'comparison':150,'recommendations':200,'ethics':250}
  assert all(len(text[key].split())<=limit for key,limit in limits.items()),'Teacher word limit exceeded'
  doc=Document(REFERENCE);original=[deepcopy(p._p) for p in doc.paragraphs];body=doc._element.body;section=deepcopy(body.find(q('sectPr')))
@@ -74,11 +76,17 @@ def build(s,final):
      details=sorted(f.parent.glob(f.stem+'_detail_[0-9][0-9].png'))
      p=doc.add_paragraph();p.paragraph_format.keep_with_next=True;p.add_run().add_picture(str(f),width=Inches(6.9));caption=LABELS.get(f.stem,'Dimensional model with actual warehouse columns and keys')
      if details:caption+=(' overview. Additional native result rows follow.' if f.stem.startswith('sql_') else ' overview. Readable native stages follow.')
+     if f.stem=='model1_process':
+      overall_figure=figure_number+1
+      caption='Native main process: logistic regression above and '+('decision tree' if s=='A' else 'random forest')+' below'
+     if f.stem=='model2_cv':caption=('Decision tree' if s=='A' else 'Random forest')+f' cross-validation subprocess; overall branch shown in Figure {overall_figure}'
      if f.stem=='model2_result':caption=('Native decision tree fitted on the training partition: one false leaf' if s=='A' else 'Native random forest: first constituent tree shown, with one false leaf')
-     prose(doc,caption)
+     figure_number+=1
+     prose(doc,f'Figure {figure_number}. {caption}')
      for number,detail in enumerate(details,1):
       p=doc.add_paragraph();p.paragraph_format.keep_with_next=True;p.add_run().add_picture(str(detail),width=Inches(6.9))
-      prose(doc,f'Native SQL result continuation {number} of {len(details)}' if f.stem.startswith('sql_') else f'Native flow detail {number} of {len(details)}')
+      figure_number+=1
+      prose(doc,f'Figure {figure_number}. '+(f'Native SQL result continuation {number} of {len(details)}' if f.stem.startswith('sql_') else f'Native flow detail {number} of {len(details)}'))
    if i in [138,170,212]:prose(doc,text[{138:'query_4_1',170:'query_4_2',212:'query_4_3'}[i]])
   if i==323:
    refs=json.loads((ROOT/'submission/shared/references/verified_reference_register.json').read_text())['references'];refs=[r.copy() for r in refs if r.get('student',s)==s]
@@ -98,7 +106,7 @@ def build(s,final):
     p=doc.add_paragraph(style='Normal');title=titles[r['key']];before,sep,after=apa.partition(title);assert sep,r['key'];p.add_run(before);p.add_run(title).italic=True;p.add_run(after)
     p.paragraph_format.left_indent=Inches(.5);p.paragraph_format.first_line_indent=Inches(-.5);p.paragraph_format.keep_together=True
    prose(doc,'Generative AI disclosure')
-   prose(doc,'Codex provided substantial assistance with design, code, native execution, validation, analysis and report drafting. This use extends beyond proofreading. The accompanying AI disclosure contains visible prompts and AI outputs, code and native execution evidence. Student review and confirmation of course AI and collaboration requirements remain required. No execution outcome is presented as a manual student action.')
+   prose(doc,'Codex assisted with dimensional design, SSIS and SQL implementation, RapidMiner processes, analysis and report writing. The accompanying disclosure records the prompts and AI outputs used in preparing this assignment.')
  doc.core_properties.author='';doc.core_properties.last_modified_by='';doc.core_properties.title='OzMart business analytics report'
  temp=BytesIO();doc.save(temp)
  # Preserve all unchanged template package parts byte for byte.
@@ -110,7 +118,7 @@ def build(s,final):
  assert all(result.read(n)==old.read(n) for n in old.namelist() if n not in editable)
  original_sha=hashlib.sha256(REFERENCE.read_bytes()).hexdigest();contract=(ROOT/'docs/REPORT_TEMPLATE_CONTRACT.md').read_text();assert original_sha in contract
  output={'mode':'FINAL' if final else 'REVIEW_INCOMPLETE','student':s,'docx':str(target),'missing_genuine_images':missing,'original_sha256':original_sha,'preserve_only_parts':'PASS','word_counts':{k:len(v.split()) for k,v in text.items()}}
- (outdir/'authoring_validation.json').write_text(json.dumps(output,indent=2)+'\n');print(s,target,'missing native images',len(missing))
+ (ROOT/'validation/current'/f'report_authoring_{s}.json').write_text(json.dumps(output,indent=2)+'\n');print(s,target,'missing native images',len(missing))
 if __name__=='__main__':
  a=argparse.ArgumentParser();a.add_argument('--final',action='store_true');args=a.parse_args()
  for s in 'AB':build(s,args.final)

@@ -1,0 +1,636 @@
+注: scripts/rapidminer/NativeProcessRunner.java使用或覆盖了已过时的 API。
+注: 有关详细信息, 请使用 -Xlint:deprecation 重新编译。
+10月 11, 2026 6:10:23 下午 com.rapidminer.tools.PlatformUtilities logInfo
+信息: Searching in Java classpath for AI Studio jars...
+10月 11, 2026 6:10:23 下午 com.rapidminer.tools.PlatformUtilities logInfo
+信息: Trying parent directory of '/Applications/AI Studio 2026.1.1.app/Contents/Resources/RapidMiner-Studio/lib/rapidminer-studio-core-12.1.1.jar'...
+10月 11, 2026 6:10:23 下午 com.rapidminer.tools.PlatformUtilities logInfo
+信息: Gotcha! 'rapidminer.home' is: /Applications/AI Studio 2026.1.1.app/Contents/Resources/RapidMiner-Studio
+10月 11, 2026 6:10:23 下午 com.rapidminer.tools.PlatformUtilities logInfo
+信息: Release platform: OSX
+Oct 11, 2026 6:10:23 PM com.rapidminer.tools.I18N setLocale
+INFO: Setting locale.
+Oct 11, 2026 6:10:23 PM com.rapidminer.tools.I18N setLocale
+INFO: Using locale en.
+Oct 11, 2026 6:10:24 PM com.rapidminer.tools.PlatformUtilities logInfo
+INFO: rapidminer.home is '/Applications/AI Studio 2026.1.1.app/Contents/Resources/RapidMiner-Studio'.
+Oct 11, 2026 6:10:24 PM com.rapidminer.core.license.ProductConstraintManager initialize
+INFO: Using OpenSource license manager.
+Oct 11, 2026 6:10:24 PM com.rapidminer.core.license.ProductConstraintManager initialize
+INFO: Initializing license manager.
+Oct 11, 2026 6:10:24 PM com.rapidminer.core.license.ProductConstraintManager initialize
+INFO: Using default license location.
+Oct 11, 2026 6:10:24 PM com.rapidminer.core.license.ProductConstraintManager initialize
+INFO: Registering default product.
+Oct 11, 2026 6:10:24 PM com.rapidminer.io.process.XMLTools hardenDocumentBuilderFactory
+WARNING: Could not set http://javax.xml.XMLConstants/property/accessExternalStylesheet for XML processor
+Oct 11, 2026 6:10:24 PM com.rapidminer.io.process.XMLTools hardenDocumentBuilderFactory
+WARNING: Could not set http://javax.xml.XMLConstants/property/accessExternalStylesheet for XML processor
+Oct 11, 2026 6:10:25 PM com.rapidminer.tools.plugin.Plugin registerPlugins
+INFO: Register plugin: Cloud Connectivity
+Oct 11, 2026 6:10:25 PM com.rapidminer.tools.plugin.Plugin registerPlugins
+INFO: Register plugin: Data Editor
+Oct 11, 2026 6:10:25 PM com.rapidminer.tools.plugin.Plugin registerPlugins
+INFO: Register plugin: H2O
+Oct 11, 2026 6:10:25 PM com.rapidminer.tools.plugin.Plugin registerPlugins
+INFO: Register plugin: Model Simulator
+Oct 11, 2026 6:10:25 PM com.rapidminer.tools.plugin.Plugin registerPlugins
+INFO: Register plugin: Multi Language Pack
+Oct 11, 2026 6:10:25 PM com.rapidminer.tools.plugin.Plugin registerPlugins
+INFO: Register plugin: OAuth Providers
+Oct 11, 2026 6:10:25 PM com.rapidminer.tools.plugin.Plugin registerPlugins
+INFO: Register plugin: Operator Recommender
+Oct 11, 2026 6:10:25 PM com.rapidminer.tools.plugin.Plugin registerPlugins
+INFO: Register plugin: Python Extension Loader
+Oct 11, 2026 6:10:25 PM com.rapidminer.tools.plugin.Plugin registerPlugins
+INFO: Register plugin: Process Scheduling
+Oct 11, 2026 6:10:25 PM com.rapidminer.tools.plugin.Plugin registerPlugins
+INFO: Register plugin: Data Samples
+Oct 11, 2026 6:10:25 PM com.rapidminer.tools.plugin.Plugin registerPlugins
+INFO: Register plugin: Social Media
+Oct 11, 2026 6:10:25 PM com.rapidminer.tools.plugin.Plugin registerPlugins
+INFO: Register plugin: Time Series
+Oct 11, 2026 6:10:25 PM com.rapidminer.tools.plugin.Plugin registerPlugins
+INFO: Register plugin: Advanced File Connectors
+Oct 11, 2026 6:10:25 PM com.rapidminer.tools.plugin.Plugin registerPlugins
+INFO: Register plugin: Blending
+Oct 11, 2026 6:10:25 PM com.rapidminer.tools.plugin.Plugin registerPlugins
+INFO: Register plugin: Browser
+Oct 11, 2026 6:10:25 PM com.rapidminer.tools.plugin.Plugin registerPlugins
+INFO: Register plugin: Concurrency
+Oct 11, 2026 6:10:25 PM com.rapidminer.tools.plugin.Plugin registerPlugins
+INFO: Register plugin: CTA
+Oct 11, 2026 6:10:25 PM com.rapidminer.tools.plugin.Plugin registerPlugins
+INFO: Register plugin: HTML5 Charts
+Oct 11, 2026 6:10:25 PM com.rapidminer.tools.plugin.Plugin registerPlugins
+INFO: Register plugin: Interactivity
+Oct 11, 2026 6:10:25 PM com.rapidminer.tools.plugin.Plugin registerPlugins
+INFO: Register plugin: JDBC Connectors
+Oct 11, 2026 6:10:25 PM com.rapidminer.tools.plugin.Plugin registerPlugins
+INFO: Register plugin: KS Provider
+Oct 11, 2026 6:10:25 PM com.rapidminer.tools.plugin.Plugin registerPlugins
+INFO: Register plugin: Legacy Result Access
+Oct 11, 2026 6:10:25 PM com.rapidminer.tools.plugin.Plugin registerPlugins
+INFO: Register plugin: Modeling
+Oct 11, 2026 6:10:25 PM com.rapidminer.tools.plugin.Plugin registerPlugins
+INFO: Register plugin: Productivity
+Oct 11, 2026 6:10:25 PM com.rapidminer.tools.plugin.Plugin registerPlugins
+INFO: Register plugin: Professional
+Oct 11, 2026 6:10:25 PM com.rapidminer.tools.plugin.Plugin registerPlugins
+INFO: Register plugin: Remote Repository
+Oct 11, 2026 6:10:25 PM com.rapidminer.tools.plugin.Plugin registerPlugins
+INFO: Register plugin: Utility
+Oct 11, 2026 6:10:27 PM com.rapidminer.tools.config.ConfigurationManager register
+WARNING: Registered configurator Twitter Connection. Please update your extension to use the new connection framework!
+SLF4J(W): No SLF4J providers were found.
+SLF4J(W): Defaulting to no-operation (NOP) logger implementation
+SLF4J(W): See https://www.slf4j.org/codes.html#noProviders for further details.
+Oct 11, 2026 6:10:27 PM com.rapidminer.extension.jdbc.tools.jdbc.JDBCProperties registerDrivers
+INFO: JDBC driver net.sourceforge.jtds.jdbc.Driver not found. Probably the driver is not installed.
+Oct 11, 2026 6:10:27 PM com.rapidminer.extension.jdbc.tools.jdbc.JDBCProperties <init>
+WARNING: Missing database driver class name for ODBC Bridge (e.g. Access)
+Oct 11, 2026 6:10:27 PM com.rapidminer.extension.jdbc.tools.jdbc.JDBCProperties <init>
+WARNING: Missing database driver class name for Ingres
+Oct 11, 2026 6:10:29 PM com.rapidminer.connection.oauth.provider.OAuthProviderDiscovery discoverProviders
+INFO: OAuth provider discovery completed: 0 providers.
+Oct 11, 2026 6:10:29 PM com.rapidminer.connection.oauth.provider.OAuthProviderDiscovery loadProvidersWithServiceLoader
+INFO: OAuth provider discovered: com.rapidminer.connection.oauth.provider.OAuthDatabricksProvider
+Oct 11, 2026 6:10:29 PM com.rapidminer.connection.oauth.provider.OAuthProviderDiscovery loadProvidersWithServiceLoader
+INFO: OAuth provider discovered: com.rapidminer.connection.oauth.provider.OAuthSnowflakeProvider
+Oct 11, 2026 6:10:30 PM com.altair.ai.pel.PluginInitPythonExtensionLoader initPlugin
+WARNING: Python extensions are only available with Altair Units! Disabling Python Extension Loader.
+Oct 11, 2026 6:10:30 PM com.rapidminer.repository.RepositoryManager registerExtensionSamples
+INFO: Registered 'Time Series' as sample folder.
+Oct 11, 2026 6:10:30 PM com.rapidminer.tools.config.ConfigurationManager register
+WARNING: Registered configurator Amazon S3 Connection. Please update your extension to use the new connection framework!
+Oct 11, 2026 6:10:30 PM com.rapidminer.tools.config.ConfigurationManager register
+WARNING: Registered configurator Azure Blob Storage Connection. Please update your extension to use the new connection framework!
+Oct 11, 2026 6:10:30 PM com.rapidminer.tools.config.ConfigurationManager register
+WARNING: Registered configurator gui.configurable.cloud.azure.gen2.name. Please update your extension to use the new connection framework!
+Oct 11, 2026 6:10:30 PM com.rapidminer.tools.config.ConfigurationManager register
+WARNING: Registered configurator Google Cloud Storage Connection. Please update your extension to use the new connection framework!
+Oct 11, 2026 6:10:30 PM com.rapidminer.tools.config.ConfigurationManager register
+WARNING: Registered configurator Dropbox Connection. Please update your extension to use the new connection framework!
+Oct 11, 2026 6:10:30 PM com.rapidminer.tools.plugin.Plugin initAll
+INFO: Extension KS Provider 12.1.1 was loaded in 13ms.
+Oct 11, 2026 6:10:30 PM com.rapidminer.tools.plugin.Plugin initAll
+INFO: Extension Data Editor 10.3.1 was loaded in 14ms.
+Oct 11, 2026 6:10:30 PM com.rapidminer.tools.plugin.Plugin initAll
+INFO: Extension Productivity 12.1.1 was loaded in 16ms.
+Oct 11, 2026 6:10:30 PM com.rapidminer.tools.plugin.Plugin initAll
+INFO: Extension Process Scheduling 10.4.0 was loaded in 16ms.
+Oct 11, 2026 6:10:30 PM com.rapidminer.tools.plugin.Plugin initAll
+INFO: Extension Legacy Result Access 12.1.1 was loaded in 16ms.
+Oct 11, 2026 6:10:30 PM com.rapidminer.tools.plugin.Plugin initAll
+INFO: Extension CTA 12.1.1 was loaded in 18ms.
+Oct 11, 2026 6:10:30 PM com.rapidminer.tools.plugin.Plugin initAll
+INFO: Extension Operator Recommender 10.3.1 was loaded in 19ms.
+Oct 11, 2026 6:10:30 PM com.rapidminer.tools.plugin.Plugin initAll
+INFO: Extension Modeling 12.1.1 was loaded in 20ms.
+Oct 11, 2026 6:10:30 PM com.rapidminer.tools.plugin.Plugin initAll
+INFO: Extension Interactivity 12.1.1 was loaded in 22ms.
+Oct 11, 2026 6:10:30 PM com.rapidminer.tools.plugin.Plugin initAll
+INFO: Extension Multi Language Pack 12.0.3 was loaded in 28ms.
+Oct 11, 2026 6:10:30 PM com.rapidminer.tools.plugin.Plugin initAll
+INFO: Extension Data Samples 1.0.0 was loaded in 33ms.
+Oct 11, 2026 6:10:30 PM com.rapidminer.tools.plugin.Plugin initAll
+INFO: Extension OAuth Providers 1.0.1 was loaded in 40ms.
+Oct 11, 2026 6:10:30 PM com.rapidminer.tools.plugin.Plugin initAll
+INFO: Extension Concurrency 12.1.1 was loaded in 40ms.
+Oct 11, 2026 6:10:30 PM com.rapidminer.tools.plugin.Plugin initAll
+INFO: Extension Utility 12.1.1 was loaded in 42ms.
+Oct 11, 2026 6:10:30 PM com.rapidminer.tools.plugin.Plugin initAll
+INFO: Extension Social Media 10.3.1 was loaded in 46ms.
+Oct 11, 2026 6:10:30 PM com.rapidminer.tools.plugin.Plugin initAll
+INFO: Extension Python Extension Loader 10.5.1 was loaded in 49ms.
+Oct 11, 2026 6:10:30 PM com.rapidminer.tools.plugin.Plugin initAll
+INFO: Extension Time Series 10.3.1 was loaded in 51ms.
+Oct 11, 2026 6:10:30 PM com.rapidminer.tools.plugin.Plugin initAll
+INFO: Extension HTML5 Charts 12.1.1 was loaded in 99ms.
+Oct 11, 2026 6:10:30 PM com.rapidminer.tools.plugin.Plugin initAll
+INFO: Extension Model Simulator 11.1.3 was loaded in 119ms.
+Oct 11, 2026 6:10:30 PM com.rapidminer.tools.plugin.Plugin initAll
+INFO: Extension Remote Repository 12.1.1 was loaded in 133ms.
+Oct 11, 2026 6:10:30 PM com.rapidminer.tools.plugin.Plugin initAll
+INFO: Extension Browser 12.1.1 was loaded in 165ms.
+Oct 11, 2026 6:10:30 PM com.rapidminer.tools.plugin.Plugin initAll
+INFO: Extension Professional 12.1.1 was loaded in 175ms.
+Oct 11, 2026 6:10:30 PM com.rapidminer.tools.plugin.Plugin initAll
+INFO: Extension Advanced File Connectors 12.1.1 was loaded in 183ms.
+Oct 11, 2026 6:10:30 PM com.rapidminer.tools.plugin.Plugin initAll
+INFO: Extension H2O 11.0.3 was loaded in 208ms.
+Oct 11, 2026 6:10:30 PM com.rapidminer.tools.plugin.Plugin initAll
+INFO: Extension Blending 12.1.1 was loaded in 382ms.
+Oct 11, 2026 6:10:30 PM com.rapidminer.tools.plugin.Plugin initAll
+INFO: Extension Cloud Connectivity 12.0.0 was loaded in 631ms.
+Oct 11, 2026 6:10:30 PM com.rapidminer.tools.plugin.Plugin initAll
+INFO: Extension JDBC Connectors 12.1.1 was loaded in 2302ms.
+Oct 11, 2026 6:10:30 PM com.rapidminer.tools.MailUtilities initializeMailCap
+INFO: Initializing mail cap
+Oct 11, 2026 6:10:30 PM com.rapidminer.tools.config.ClientConfigurationManager loadAllParameters
+INFO: No configuration file found for Amazon S3 Connection
+Oct 11, 2026 6:10:30 PM com.rapidminer.tools.config.ClientConfigurationManager loadAllParameters
+INFO: No configuration file found for Azure Blob Storage Connection
+Oct 11, 2026 6:10:30 PM com.rapidminer.tools.config.ClientConfigurationManager loadAllParameters
+INFO: No configuration file found for gui.configurable.cloud.azure.gen2.name
+Oct 11, 2026 6:10:30 PM com.rapidminer.tools.config.ClientConfigurationManager loadAllParameters
+INFO: No configuration file found for Dropbox Connection
+Oct 11, 2026 6:10:30 PM com.rapidminer.tools.config.ClientConfigurationManager loadAllParameters
+INFO: No configuration file found for Google Cloud Storage Connection
+Oct 11, 2026 6:10:30 PM com.rapidminer.tools.config.ClientConfigurationManager loadAllParameters
+INFO: No configuration file found for Twitter Connection
+PROCESS_XML_OPEN=PASS
+Oct 11, 2026 6:10:31 PM com.rapidminer.tools.ResultService init
+INFO: No filename given for result file, using stdout for logging results!
+Oct 11, 2026 6:10:31 PM com.rapidminer.Process execute
+INFO: Process submission/Student_B/rapidminer/STUDENT_B_ID_rapidminer.rmp starts
+Oct 11, 2026 6:10:32 PM com.rapidminer.tools.WrapperLoggingHandler log
+WARNING: LR Chosen Classifier: Age: Using this data column may potentially lead to biased models or decisions. Please be careful and check if using this data is problematic.This column was flagged since its name contains a suspicious term: age
+Oct 11, 2026 6:10:33 PM com.rapidminer.tools.WrapperLoggingHandler log
+WARNING: LR Chosen Classifier: Age: Using this data column may potentially lead to biased models or decisions. Please be careful and check if using this data is problematic.This column was flagged since its name contains a suspicious term: age
+Oct 11, 2026 6:10:35 PM com.rapidminer.tools.WrapperLoggingHandler log
+WARNING: LR Chosen Classifier: Age: Using this data column may potentially lead to biased models or decisions. Please be careful and check if using this data is problematic.This column was flagged since its name contains a suspicious term: age
+Oct 11, 2026 6:10:36 PM com.rapidminer.tools.WrapperLoggingHandler log
+WARNING: LR Chosen Classifier: Age: Using this data column may potentially lead to biased models or decisions. Please be careful and check if using this data is problematic.This column was flagged since its name contains a suspicious term: age
+Oct 11, 2026 6:10:37 PM com.rapidminer.tools.WrapperLoggingHandler log
+WARNING: LR Chosen Classifier: Age: Using this data column may potentially lead to biased models or decisions. Please be careful and check if using this data is problematic.This column was flagged since its name contains a suspicious term: age
+Oct 11, 2026 6:10:39 PM com.rapidminer.tools.WrapperLoggingHandler log
+WARNING: LR Chosen Classifier: Age: Using this data column may potentially lead to biased models or decisions. Please be careful and check if using this data is problematic.This column was flagged since its name contains a suspicious term: age
+Oct 11, 2026 6:10:41 PM com.rapidminer.tools.WrapperLoggingHandler log
+WARNING: RF Chosen Classifier: Age: Using this data column may potentially lead to biased models or decisions. Please be careful and check if using this data is problematic.This column was flagged since its name contains a suspicious term: age
+Oct 11, 2026 6:10:42 PM com.rapidminer.tools.WrapperLoggingHandler log
+WARNING: RF Chosen Classifier: Age: Using this data column may potentially lead to biased models or decisions. Please be careful and check if using this data is problematic.This column was flagged since its name contains a suspicious term: age
+Oct 11, 2026 6:10:42 PM com.rapidminer.tools.WrapperLoggingHandler log
+WARNING: RF Chosen Classifier: Age: Using this data column may potentially lead to biased models or decisions. Please be careful and check if using this data is problematic.This column was flagged since its name contains a suspicious term: age
+Oct 11, 2026 6:10:43 PM com.rapidminer.tools.WrapperLoggingHandler log
+WARNING: RF Chosen Classifier: Age: Using this data column may potentially lead to biased models or decisions. Please be careful and check if using this data is problematic.This column was flagged since its name contains a suspicious term: age
+Oct 11, 2026 6:10:44 PM com.rapidminer.tools.WrapperLoggingHandler log
+WARNING: RF Chosen Classifier: Age: Using this data column may potentially lead to biased models or decisions. Please be careful and check if using this data is problematic.This column was flagged since its name contains a suspicious term: age
+Oct 11, 2026 6:10:44 PM com.rapidminer.tools.WrapperLoggingHandler log
+WARNING: RF Chosen Classifier: Age: Using this data column may potentially lead to biased models or decisions. Please be careful and check if using this data is problematic.This column was flagged since its name contains a suspicious term: age
+Oct 11, 2026 6:10:45 PM com.rapidminer.Process execute
+INFO: Process submission/Student_B/rapidminer/STUDENT_B_ID_rapidminer.rmp finished successfully after 14 s
+RESULT_0_CLASS=com.rapidminer.operator.performance.PerformanceVector
+
+PerformanceVector [
+-----accuracy: 89.38% +/- 0.04% (micro average: 89.38%)
+ConfusionMatrix:
+True:	false	true
+false:	6256	743
+true:	0	0
+-----AUC: 0.601 +/- 0.022 (micro average: 0.601) (positive class: true)
+-----precision: unknown (positive class: true)
+ConfusionMatrix:
+True:	false	true
+false:	6256	743
+true:	0	0
+-----recall: 0.00% +/- 0.00% (micro average: 0.00%) (positive class: true)
+ConfusionMatrix:
+True:	false	true
+false:	6256	743
+true:	0	0
+*****f_measure: unknown (positive class: true)
+ConfusionMatrix:
+True:	false	true
+false:	6256	743
+true:	0	0
+-----false_positive: 0.000 +/- 0.000 (micro average: 0.000) (positive class: true)
+ConfusionMatrix:
+True:	false	true
+false:	6256	743
+true:	0	0
+-----false_negative: 148.600 +/- 0.548 (micro average: 743.000) (positive class: true)
+ConfusionMatrix:
+True:	false	true
+false:	6256	743
+true:	0	0
+-----true_positive: 0.000 +/- 0.000 (micro average: 0.000) (positive class: true)
+ConfusionMatrix:
+True:	false	true
+false:	6256	743
+true:	0	0
+-----true_negative: 1251.200 +/- 0.447 (micro average: 6256.000) (positive class: true)
+ConfusionMatrix:
+True:	false	true
+false:	6256	743
+true:	0	0
+]
+RESULT_1_CLASS=com.rapidminer.operator.performance.PerformanceVector
+
+PerformanceVector [
+-----accuracy: 89.40%
+ConfusionMatrix:
+True:	false	true
+false:	2681	318
+true:	0	0
+-----AUC: 0.595 (positive class: true)
+-----precision: unknown (positive class: true)
+ConfusionMatrix:
+True:	false	true
+false:	2681	318
+true:	0	0
+-----recall: 0.00% (positive class: true)
+ConfusionMatrix:
+True:	false	true
+false:	2681	318
+true:	0	0
+*****f_measure: unknown (positive class: true)
+ConfusionMatrix:
+True:	false	true
+false:	2681	318
+true:	0	0
+-----false_positive: 0.000 (positive class: true)
+ConfusionMatrix:
+True:	false	true
+false:	2681	318
+true:	0	0
+-----false_negative: 318.000 (positive class: true)
+ConfusionMatrix:
+True:	false	true
+false:	2681	318
+true:	0	0
+-----true_positive: 0.000 (positive class: true)
+ConfusionMatrix:
+True:	false	true
+false:	2681	318
+true:	0	0
+-----true_negative: 2681.000 (positive class: true)
+ConfusionMatrix:
+True:	false	true
+false:	2681	318
+true:	0	0
+]
+RESULT_2_CLASS=com.rapidminer.operator.GroupedModel
+Model [com.rapidminer.operator.preprocessing.filter.ValueReplenishmentModel@5ccc971e, com.rapidminer.operator.preprocessing.RemoveUnusedNominalValuesModel@28269c65, com.rapidminer.operator.preprocessing.filter.NominalToNumericModel@4c9d833, com.rapidminer.operator.preprocessing.normalization.ZTransformationModel@18b58c77, Total number of Support Vectors: 6999
+Bias (offset): -2.227
+
+w[Income = 50K–250K] = 0.164
+w[Income = <50K] = 0.066
+w[Income = >250K] = -0.174
+w[Loan_purpose = Business Loan] = -0.096
+w[Loan_purpose = Buy House] = -0.006
+w[Loan_purpose = Buy a Car] = 0.020
+w[Loan_purpose = Debt Consolidation] = 0.033
+w[Loan_purpose = Educational Expenses] = -0.004
+w[Loan_purpose = Home Improvements] = 0.052
+w[Loan_purpose = Medical Bills] = -0.076
+w[Loan_purpose = Other] = 0.028
+w[Loan_purpose = Take a Trip] = -0.029
+w[Loan_purpose = major_purchase] = 0.031
+w[Loan_purpose = moving] = 0.027
+w[Loan_purpose = small_business] = -0.235
+w[Loan_purpose = vacation] = -0.004
+w[Loan_purpose = wedding] = -0.150
+w[Age] = -0.142
+w[Loan_amount] = -0.008
+w[Capital_gain] = -0.096
+w[Capital_loss] = -0.030
+w[Current_mortgage] = 0.012
+w[Student_debt] = 0.057
+w[Number_of_homes_owned] = 0.042
+w[Bank_balance] = 0.036
+w[Credit_history] = -0.018
+w[Past_bankruptcy] = 0.035
+]
+RESULT_3_CLASS=com.rapidminer.example.set.SimpleExampleSet
+RESULT_3_ROWS=2999
+RESULT_4_CLASS=com.rapidminer.example.set.SplittedExampleSet
+RESULT_4_ROWS=6999
+RESULT_5_CLASS=com.rapidminer.operator.performance.PerformanceVector
+
+PerformanceVector [
+-----accuracy: 89.38% +/- 0.04% (micro average: 89.38%)
+ConfusionMatrix:
+True:	false	true
+false:	6256	743
+true:	0	0
+-----AUC: 0.500 +/- 0.000 (micro average: 0.500) (positive class: true)
+-----precision: unknown (positive class: true)
+ConfusionMatrix:
+True:	false	true
+false:	6256	743
+true:	0	0
+-----recall: 0.00% +/- 0.00% (micro average: 0.00%) (positive class: true)
+ConfusionMatrix:
+True:	false	true
+false:	6256	743
+true:	0	0
+*****f_measure: unknown (positive class: true)
+ConfusionMatrix:
+True:	false	true
+false:	6256	743
+true:	0	0
+-----false_positive: 0.000 +/- 0.000 (micro average: 0.000) (positive class: true)
+ConfusionMatrix:
+True:	false	true
+false:	6256	743
+true:	0	0
+-----false_negative: 148.600 +/- 0.548 (micro average: 743.000) (positive class: true)
+ConfusionMatrix:
+True:	false	true
+false:	6256	743
+true:	0	0
+-----true_positive: 0.000 +/- 0.000 (micro average: 0.000) (positive class: true)
+ConfusionMatrix:
+True:	false	true
+false:	6256	743
+true:	0	0
+-----true_negative: 1251.200 +/- 0.447 (micro average: 6256.000) (positive class: true)
+ConfusionMatrix:
+True:	false	true
+false:	6256	743
+true:	0	0
+]
+RESULT_6_CLASS=com.rapidminer.operator.performance.PerformanceVector
+
+PerformanceVector [
+-----accuracy: 89.40%
+ConfusionMatrix:
+True:	false	true
+false:	2681	318
+true:	0	0
+-----AUC: 0.500 (positive class: true)
+-----precision: unknown (positive class: true)
+ConfusionMatrix:
+True:	false	true
+false:	2681	318
+true:	0	0
+-----recall: 0.00% (positive class: true)
+ConfusionMatrix:
+True:	false	true
+false:	2681	318
+true:	0	0
+*****f_measure: unknown (positive class: true)
+ConfusionMatrix:
+True:	false	true
+false:	2681	318
+true:	0	0
+-----false_positive: 0.000 (positive class: true)
+ConfusionMatrix:
+True:	false	true
+false:	2681	318
+true:	0	0
+-----false_negative: 318.000 (positive class: true)
+ConfusionMatrix:
+True:	false	true
+false:	2681	318
+true:	0	0
+-----true_positive: 0.000 (positive class: true)
+ConfusionMatrix:
+True:	false	true
+false:	2681	318
+true:	0	0
+-----true_negative: 2681.000 (positive class: true)
+ConfusionMatrix:
+True:	false	true
+false:	2681	318
+true:	0	0
+]
+RESULT_7_CLASS=com.rapidminer.operator.GroupedModel
+Model [com.rapidminer.operator.preprocessing.filter.ValueReplenishmentModel@4ba402b5, com.rapidminer.operator.preprocessing.RemoveUnusedNominalValuesModel@22172b00, Model 0:
+---
+: false {false=6246, true=753}
+
+Model 1:
+---
+: false {false=6246, true=753}
+
+Model 2:
+---
+: false {false=6246, true=753}
+
+Model 3:
+---
+: false {false=6246, true=753}
+
+Model 4:
+---
+: false {false=6246, true=753}
+
+Model 5:
+---
+: false {false=6246, true=753}
+
+Model 6:
+---
+: false {false=6246, true=753}
+
+Model 7:
+---
+: false {false=6246, true=753}
+
+Model 8:
+---
+: false {false=6246, true=753}
+
+Model 9:
+---
+: false {false=6246, true=753}
+
+Model 10:
+---
+: false {false=6246, true=753}
+
+Model 11:
+---
+: false {false=6246, true=753}
+
+Model 12:
+---
+: false {false=6246, true=753}
+
+Model 13:
+---
+: false {false=6246, true=753}
+
+Model 14:
+---
+: false {false=6246, true=753}
+
+Model 15:
+---
+: false {false=6246, true=753}
+
+Model 16:
+---
+: false {false=6246, true=753}
+
+Model 17:
+---
+: false {false=6246, true=753}
+
+Model 18:
+---
+: false {false=6246, true=753}
+
+Model 19:
+---
+: false {false=6246, true=753}
+
+Model 20:
+---
+: false {false=6246, true=753}
+
+Model 21:
+---
+: false {false=6246, true=753}
+
+Model 22:
+---
+: false {false=6246, true=753}
+
+Model 23:
+---
+: false {false=6246, true=753}
+
+Model 24:
+---
+: false {false=6246, true=753}
+
+Model 25:
+---
+: false {false=6246, true=753}
+
+Model 26:
+---
+: false {false=6246, true=753}
+
+Model 27:
+---
+: false {false=6246, true=753}
+
+Model 28:
+---
+: false {false=6246, true=753}
+
+Model 29:
+---
+: false {false=6246, true=753}
+
+Model 30:
+---
+: false {false=6246, true=753}
+
+Model 31:
+---
+: false {false=6246, true=753}
+
+Model 32:
+---
+: false {false=6246, true=753}
+
+Model 33:
+---
+: false {false=6246, true=753}
+
+Model 34:
+---
+: false {false=6246, true=753}
+
+Model 35:
+---
+: false {false=6246, true=753}
+
+Model 36:
+---
+: false {false=6246, true=753}
+
+Model 37:
+---
+: false {false=6246, true=753}
+
+Model 38:
+---
+: false {false=6246, true=753}
+
+Model 39:
+---
+: false {false=6246, true=753}
+
+Model 40:
+---
+: false {false=6246, true=753}
+
+Model 41:
+---
+: false {false=6246, true=753}
+
+Model 42:
+---
+: false {false=6246, true=753}
+
+Model 43:
+---
+: false {false=6246, true=753}
+
+Model 44:
+---
+: false {false=6246, true=753}
+
+Model 45:
+---
+: false {false=6246, true=753}
+
+Model 46:
+---
+: false {false=6246, true=753}
+
+Model 47:
+---
+: false {false=6246, true=753}
+
+Model 48:
+---
+: false {false=6246, true=753}
+
+Model 49:
+---
+: false {false=6246, true=753}
+
+]
+RESULT_8_CLASS=com.rapidminer.example.set.SimpleExampleSet
+RESULT_8_ROWS=2999
+RESULT_9_CLASS=com.rapidminer.example.set.SplittedExampleSet
+RESULT_9_ROWS=6999
+NATIVE_PROCESS_EXECUTION=PASS
+GUI_REOPEN_AND_SCREENSHOTS=PENDING

@@ -8,3 +8,17 @@ submission/**/database/restore_validation.txt -text -whitespace
 submission/**/ssis/**/native_build.log -text -whitespace
 submission/**/ssis/**/build_status.txt -text -whitespace
 submission/**/ssis/**/Support/csv/*.csv -text -whitespace
+*.pdf filter=lfs diff=lfs merge=lfs -text
+*.png filter=lfs diff=lfs merge=lfs -text
+*.jpg filter=lfs diff=lfs merge=lfs -text
+*.ispac filter=lfs diff=lfs merge=lfs -text
+*.zip filter=lfs diff=lfs merge=lfs -text
+*.bak filter=lfs diff=lfs merge=lfs -text
+*.docx filter=lfs diff=lfs merge=lfs -text
+# Native audit history is preserved byte-for-byte, including Windows CRLF and padding.
+history/** -text -whitespace
+submission/**/evidence/native/** -text -whitespace
+validation/current/*_actual_backup_restore_20261011.txt -text -whitespace
+# Unchanged teacher CSV encoding and original visible AI output whitespace are data.
+submission/**/rapidminer/data/*.csv -text -whitespace
+submission/shared/ai_disclosure/*_record.md -text -whitespace

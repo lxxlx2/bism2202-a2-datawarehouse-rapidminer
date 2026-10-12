@@ -1,0 +1,27 @@
+{
+  "Status": "PASS",
+  "Records": [
+    {
+      "Student": "A",
+      "Status": "PASS",
+      "ComparedCsvFiles": 8,
+      "NativeModelsExecuted": 2,
+      "RelativeSourceCsv": "data/BISM2202_A2_Loan_Data_Set_RapidMiner2026S2.csv",
+      "ProcessLocatedOutsideRepository": true,
+      "DirectoryContainsSpaces": true,
+      "ExactMetricsIdentitiesAndPredictionsMatch": true,
+      "DeveloperPathOverrideUsed": false
+    },
+    {
+      "Student": "B",
+      "Status": "PASS",
+      "ComparedCsvFiles": 8,
+      "NativeModelsExecuted": 2,
+      "RelativeSourceCsv": "data/BISM2202_A2_Loan_Data_Set_RapidMiner2026S2.csv",
+      "ProcessLocatedOutsideRepository": true,
+      "DirectoryContainsSpaces": true,
+      "ExactMetricsIdentitiesAndPredictionsMatch": true,
+      "DeveloperPathOverrideUsed": false
+    }
+  ]
+}

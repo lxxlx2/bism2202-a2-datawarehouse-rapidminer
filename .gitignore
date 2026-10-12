@@ -1,30 +1,13 @@
-# Locally extracted immutable teacher assets already exist in the source ZIPs.
 requirements/extracted/
 work/
-# Runtime and binary deliveries remain local with manifests and checksums.
-submission/**/*.bak
-submission/**/*.zip
-submission/**/report/*.docx
-submission/**/report/*.pdf
-submission/**/evidence/*.png
-submission/**/evidence/*.jpg
 **/bin/
 **/obj/
 **/.vs/
 *.user
 *.suo
 .DS_Store
-# Raw native logs and complete AI transcripts may include private local context.
-submission/**/evidence/native/*.log
-submission/shared/academic_integrity/transcript*.jsonl
-submission/shared/academic_integrity/complete_ai_record.md
-
 __pycache__/
 *.pyc
-
-# Complete local AI prompt/output record is for student review, not public Git.
-submission/shared/ai_disclosure/*_record.md
-
-# Unchanged teacher dataset accompanies local delivery without public duplication.
-submission/**/rapidminer/data/*.csv
-submission/**/code/scripts/
+# Private session dumps are not visible assignment disclosure records.
+history/**/academic_integrity/transcript*.jsonl
+history/**/academic_integrity/complete_ai_record.md

@@ -1,14 +1,24 @@
-# BISM2202 Assignment 2 — verified local deliveries
+# BISM2202 Assignment 2
 
-Student A and Student B have independent native SSIS warehouses, restored backups, SQL analysis, AI Studio model processes and final teacher-template reports. Technical checks passed. Real student IDs and each student's course AI/collaboration review remain pending. No school upload has been performed.
+Two independent student deliveries use the unchanged teacher data and report template.
 
-- `submission/BISM2202_Student_A_FINAL.zip`: complete local Student A delivery.
-- `submission/BISM2202_Student_B_FINAL.zip`: complete local Student B delivery.
-- Reports: `submission/Student_A/report/` and `submission/Student_B/report/` (48 and 56 reviewed pages).
-- Each student's README/MANIFEST and `evidence/ACCEPTANCE_REPORT.md` explain contents, reproducibility, limitations and separate submission boxes.
-- `submission/shared/validation/final_package_verification.json` and `delivery_inventory.json` record real archive/member and artifact checks.
-- `docs/requirements/TRACEABILITY_MATRIX.md` maps the original requirements to evidence.
+| Student | Warehouse education integration | Loan models | Stratified train/test |
+|---|---|---|---|
+| A | SSIS Lookup | Logistic regression and decision tree | 80/20, seed 2202 |
+| B | SSIS Sort/Merge Join | Logistic regression and random forest | 70/30, seed 2203 |
 
-Large backups, outer archives, report binaries, original data copies and complete AI transcript remain local under the repository ignore policy. Code, bounded native screenshots and hash/validation records are synchronized to Git. Teacher originals remain unchanged; no VM/ISO/credentials are included.
+Final packages are `submission/BISM2202_Student_A_FINAL.zip` and `submission/BISM2202_Student_B_FINAL.zip`. The expanded student folders contain the same reports, diagrams, SSIS solution, warehouse backup, SQL, RapidMiner processes and native evidence. Required visible AI prompts/outputs are in `submission/shared/ai_disclosure/` and accompany each package. Fill the real student ID in the report before school submission.
 
-A uses Customer Lookup, DENSE_RANK and LR/Decision Tree 80/20. B uses sorted Customer Merge Join, deterministic ROW_NUMBER and LR/Random Forest 70/30. Shared source facts agree. All holdout models have zero default recall and are not accepted for operational lending. Extensive AI assistance is disclosed explicitly.
+Each RapidMiner main process runs both models, five-fold cross-validation confined to its training partition, and evaluation on the fixed holdout. Keep the supplied `data/` directory beside the `.rmp`; see each student's run instructions. Q4.3 returns exactly five NSW-origin suppliers per year, using SellerID to resolve equal quantities. All four tested classifiers have zero default recall; the reports explain why their accuracy does not support operational lending.
+
+The SSIS solution requires Visual Studio with SSIS Projects and SQL Server 2022. The native flows, frozen backups and complete table comparisons have been verified. The original source backup remains in the teacher assets under `requirements/original/`. Follow `ssis/README_RUN.md` for source restoration, reference CSV paths, database configuration and execution.
+
+Use Git LFS to obtain binary files:
+
+```sh
+git clone https://github.com/lxxlx2/bism2202-a2-datawarehouse-rapidminer.git
+cd bism2202-a2-datawarehouse-rapidminer
+git lfs pull
+```
+
+`validation/current/` records final technical checks and archive hashes. `history/` preserves earlier versions and failed or superseded checks outside the student deliveries. `scripts/` and `docs/report_source/` contain the reproducible authoring and verification sources. These internal materials are excluded from the final assignment ZIPs.

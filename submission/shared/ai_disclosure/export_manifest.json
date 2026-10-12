@@ -1,15 +1,17 @@
 {
-  "exported_at_utc": "2026-10-11T10:30:40.674407+00:00",
-  "source_session_sha256": "bfd878e93995b08f768532af1cb6c86b27d81e3040fa93ec9f8f824de6813ca7",
-  "export_sha256": "e2dc0cd20ec0d466d0656e654f64c240de3e81b6529b4f12e5d99c76af6e5fa8",
+  "exported_at_utc": "2026-10-12T00:44:58.438357+00:00",
+  "source_sessions_sha256": [
+    "542b3be27e4e5ecfbf3254fbc2bd3b780da7e32f46d32f58687591d6830f8ac8",
+    "6d5dde88e26f9c31bd8bfbc10e91a0ac164f4880d65dcd7967a787c3728f9816"
+  ],
+  "export_sha256": "79e73f5918fe78fa3c9e4816bf999e21c78b040c19c17d861024f899deccba4e",
   "counts": {
-    "human_messages": 27,
-    "assistant_messages": 184,
-    "ai_tool_inputs": 1528
+    "human_messages": 33,
+    "assistant_messages": 205,
+    "ai_tool_inputs": 1734
   },
   "scope": "Visible messages and AI tool inputs only; native outputs provided separately",
-  "student_review": "PENDING",
   "complete_visible_record_at_cutoff": true,
-  "last_included_timestamp": "2026-10-11T10:30:39.233Z",
-  "cutoff_limitation": "Later packaging, Git and handoff activity after export is not claimed to be included in this snapshot."
+  "last_included_timestamp": "2026-10-12T00:44:56.457Z",
+  "cutoff_limitation": "Later activity after export is not claimed to be included in this snapshot."
 }

@@ -6,7 +6,7 @@
     <macros>
       <macro>
         <key>source_csv</key>
-        <value>/Users/jerson/antigravity-agent-test/bism2202-a2-datawarehouse-rapidminer/requirements/extracted/RapidMiner/BISM2202_A2_Loan_Data_Set_RapidMiner2026S2.csv</value>
+        <value>data/BISM2202_A2_Loan_Data_Set_RapidMiner2026S2.csv</value>
       </macro>
     </macros>
   </context>

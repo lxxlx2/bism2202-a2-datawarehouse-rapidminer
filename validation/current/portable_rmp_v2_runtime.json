@@ -1,0 +1,71 @@
+{
+  "Status": "PASS",
+  "Version": "v2 portability and result access only",
+  "Records": [
+    {
+      "Student": "A",
+      "Model": "logistic_regression",
+      "TrainRows": 7999,
+      "HoldoutRows": 1999,
+      "SplitOverlap": 0,
+      "NativeMetricsMatchFrozenOutputs": "PASS",
+      "AllIdentitiesPredictionsAndScoresMatchFrozenOutputs": "PASS",
+      "Confusion": {
+        "TN": 1786,
+        "FP": 1,
+        "FN": 212,
+        "TP": 0
+      },
+      "ReplayNotNewHoldoutValidation": true
+    },
+    {
+      "Student": "A",
+      "Model": "decision_tree",
+      "TrainRows": 7999,
+      "HoldoutRows": 1999,
+      "SplitOverlap": 0,
+      "NativeMetricsMatchFrozenOutputs": "PASS",
+      "AllIdentitiesPredictionsAndScoresMatchFrozenOutputs": "PASS",
+      "Confusion": {
+        "TN": 1787,
+        "FP": 0,
+        "FN": 212,
+        "TP": 0
+      },
+      "ReplayNotNewHoldoutValidation": true
+    },
+    {
+      "Student": "B",
+      "Model": "logistic_regression",
+      "TrainRows": 6999,
+      "HoldoutRows": 2999,
+      "SplitOverlap": 0,
+      "NativeMetricsMatchFrozenOutputs": "PASS",
+      "AllIdentitiesPredictionsAndScoresMatchFrozenOutputs": "PASS",
+      "Confusion": {
+        "TN": 2681,
+        "FP": 0,
+        "FN": 318,
+        "TP": 0
+      },
+      "ReplayNotNewHoldoutValidation": true
+    },
+    {
+      "Student": "B",
+      "Model": "random_forest",
+      "TrainRows": 6999,
+      "HoldoutRows": 2999,
+      "SplitOverlap": 0,
+      "NativeMetricsMatchFrozenOutputs": "PASS",
+      "AllIdentitiesPredictionsAndScoresMatchFrozenOutputs": "PASS",
+      "Confusion": {
+        "TN": 2681,
+        "FP": 0,
+        "FN": 318,
+        "TP": 0
+      },
+      "ReplayNotNewHoldoutValidation": true
+    }
+  ],
+  "FinalNativeGuiValidation": "portable_rmp_native_gui_final.json"
+}

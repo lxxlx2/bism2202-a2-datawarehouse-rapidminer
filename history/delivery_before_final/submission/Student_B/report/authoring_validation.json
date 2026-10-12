@@ -1,0 +1,21 @@
+{
+  "mode": "FINAL",
+  "student": "B",
+  "docx": "/Users/jerson/antigravity-agent-test/bism2202-a2-datawarehouse-rapidminer/submission/Student_B/report/STUDENT_B_ID.docx",
+  "missing_genuine_images": [],
+  "original_sha256": "485144ccdaf745eec9ca00ab5ed239faaa6f996dd0b6f78959f0f13c8ff84def",
+  "preserve_only_parts": "PASS",
+  "word_counts": {
+    "process": 89,
+    "recommendations": 168,
+    "ethics": 207,
+    "predictors": 87,
+    "comparison": 117,
+    "dimensions": 283,
+    "implementation": 186,
+    "executive_summary": 210,
+    "query_4_1": 92,
+    "query_4_2": 88,
+    "query_4_3": 114
+  }
+}

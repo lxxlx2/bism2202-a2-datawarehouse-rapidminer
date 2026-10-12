@@ -1,0 +1,8 @@
+{
+  "Status": "FAIL_SUPERSEDED",
+  "DetectedBy": "Full DOCX-to-PDF paragraph comparison",
+  "Issue": "Consolas substitution exported ItemQuantity as ItemQuaantity in PDF text",
+  "PreservedOriginalRender": "work/final_repair/render_A_final and render_B_final",
+  "Fix": "SQL text uses teacher Times New Roman font; full paragraph comparison now passes",
+  "FinalChecks": "validation/current/report_render_A.json and report_render_B.json"
+}

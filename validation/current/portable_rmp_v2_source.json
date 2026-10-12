@@ -1,0 +1,88 @@
+{
+  "Status": "PASS",
+  "BaselineCommit": "c81fb86face6339bdc25460e6c1f5fc8f127a911",
+  "Version": "v2 portability and viewing replay, not new research validation",
+  "Files": [
+    {
+      "Student": "A",
+      "File": "submission/Student_A/rapidminer/cv_only_decision_tree.rmp",
+      "V1Sha256": "c85d648edb74bb67d956c6d0b65a098013ab944b24353771a0c41ce4a94f069b",
+      "V2Sha256": "405d02602cf821ab3d901dce53757761085cc3a8597d45c728b0ec54eaaaf859",
+      "Change": "source_csv uses process-file-relative data path only",
+      "Settings": "Unchanged"
+    },
+    {
+      "Student": "A",
+      "File": "submission/Student_A/rapidminer/cv_only_logistic_regression.rmp",
+      "V1Sha256": "22a95e1b19a89320a923ae9e2827f20bc27dac13787a6bfa696f299b87ed7382",
+      "V2Sha256": "83dfca9b70699aba504fbe9ddd1b1a03a3d589df9b7d17cf1f9776608c3ce625",
+      "Change": "source_csv uses process-file-relative data path only",
+      "Settings": "Unchanged"
+    },
+    {
+      "Student": "A",
+      "File": "submission/Student_A/rapidminer/holdout_decision_tree.rmp",
+      "V1Sha256": "b592c42eb8a093037e3da1373aed5eb73c378c0663a1789922d97cdf130880a2",
+      "V2Sha256": "6acc37b05f84b82fce64d10c6dd21ac807b64919a3688c0e8f8802e2c91b424e",
+      "Change": "source_csv uses process-file-relative data path only",
+      "Settings": "Unchanged"
+    },
+    {
+      "Student": "A",
+      "File": "submission/Student_A/rapidminer/holdout_logistic_regression.rmp",
+      "V1Sha256": "588718b9000012fdb2bc74ddb64257eb1275059a1d29721d606ed21bd238da23",
+      "V2Sha256": "f442231172573a526ed4b29381a5f02cd100618bbfd1b4fe8216e126f7680e4a",
+      "Change": "source_csv uses process-file-relative data path only",
+      "Settings": "Unchanged"
+    },
+    {
+      "Student": "A",
+      "File": "submission/Student_A/rapidminer/STUDENT_A_ID_rapidminer.rmp",
+      "V1Sha256": "66d08cc7bd846af1bee75347018088669967d7eb25d977db22faeb431d0f9230",
+      "V2Sha256": "7a7b40da73ac4ad6163a653575efb8f30358683c5c5be0472208f4d2cd7791ac",
+      "Change": "Both preserved candidates run CV plus fixed holdout display replay; ten native outputs; portable relative data path",
+      "Settings": "Original learner/preprocessing/split/CV parameters and seeds unchanged; not a new model-selection experiment"
+    },
+    {
+      "Student": "B",
+      "File": "submission/Student_B/rapidminer/cv_only_logistic_regression.rmp",
+      "V1Sha256": "9716c9cc1d44d73add256ca64d08b03b77e7419505875fca2a59855845d28ae1",
+      "V2Sha256": "7eae9395d35cea474feee6d5b4090b579c0431c77b962d0952274fe0cf3d101c",
+      "Change": "source_csv uses process-file-relative data path only",
+      "Settings": "Unchanged"
+    },
+    {
+      "Student": "B",
+      "File": "submission/Student_B/rapidminer/cv_only_random_forest.rmp",
+      "V1Sha256": "5cc2cc0461089a280c76bf10a34fbab76174d55805455aefa305104cb0ff0703",
+      "V2Sha256": "5e338d5fde65ce9fa3d7ed35f1a9c25f13c49d671a30e7a716a3993082c08269",
+      "Change": "source_csv uses process-file-relative data path only",
+      "Settings": "Unchanged"
+    },
+    {
+      "Student": "B",
+      "File": "submission/Student_B/rapidminer/holdout_logistic_regression.rmp",
+      "V1Sha256": "2299c6b071acea03edeca9b991491cd3005be64a146ba90d825013f1148c993b",
+      "V2Sha256": "ff2ebb5a7a7003bbfe48a5ca33b79667a72a0b57a7a10ba5107dae320ba6b4df",
+      "Change": "source_csv uses process-file-relative data path only",
+      "Settings": "Unchanged"
+    },
+    {
+      "Student": "B",
+      "File": "submission/Student_B/rapidminer/holdout_random_forest.rmp",
+      "V1Sha256": "531ec4943b4ab9af10e3f07b64a53e037779e1c507b1979c2a42b8dc5f5428fe",
+      "V2Sha256": "29004e152b21c6b7fe3643e81fd0014ca92425cfe130abd26240bce2cd6bc25a",
+      "Change": "source_csv uses process-file-relative data path only",
+      "Settings": "Unchanged"
+    },
+    {
+      "Student": "B",
+      "File": "submission/Student_B/rapidminer/STUDENT_B_ID_rapidminer.rmp",
+      "V1Sha256": "cf36047fcab40a23d91251c8cff9d81637921013c7ccca9ec6687bd527c3bf50",
+      "V2Sha256": "fcc22df19bbba9a5b51f95fa3bf11105581bdd96d53ee7151a9bbd88d42bfb87",
+      "Change": "Both preserved candidates run CV plus fixed holdout display replay; ten native outputs; portable relative data path",
+      "Settings": "Original learner/preprocessing/split/CV parameters and seeds unchanged; not a new model-selection experiment"
+    }
+  ],
+  "FinalNativeGuiValidation": "portable_rmp_native_gui_final.json"
+}

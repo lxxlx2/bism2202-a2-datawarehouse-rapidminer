@@ -11,16 +11,14 @@ The verified environment uses local SQL Server (`.`), Windows integrated authent
 3. Create `[STUDENT_A_ID_dw]` if absent, then run `Support/schema.sql` with that database selected in SSMS. The schema allowlist rejects other database names. It creates missing objects without moving any source rows.
 4. Open the solution in Visual Studio, expand SSIS Packages and open `Master.dtsx`. Confirm the two SQL connection managers point to local `ozmart_db` and `[STUDENT_A_ID_dw]`. Start the master package. It resets only the allowlisted student target and loads references, dimensions and facts in dependency order.
 5. Inspect every Data Flow and the native row counts. Expected counts are listed below. Stop debugging after capturing real successful views.
-6. Execute the supplied warehouse validation and business audit SQL, followed by Q4.1, Q4.2, Q4.3 and the explicitly labelled customer-destination sensitivity. Save genuine SSMS outputs and screenshots.
+6. Execute Q4.1, Q4.2 and Q4.3 against the restored student database. Compare the results with the supplied CSVs.
 
 ## Expected native destination counts
 
 Age reference 78; Education reference 6; State reference 8; raw SellerLocation reference 100; Seller 100; Customer 21,000; Product 2,199; customer Geography 1,500; seller Geography 99; Date 493; FactSales 137,901. Both geography streams load one shared role-aware dimension, totalling 1,599 records. Fact quantity totals 688,367 across all retained statuses.
 
-Validation compares raw original floats and rounded money separately, checks original source fields and transaction relationships, rejects disabled/untrusted foreign keys and preserves all-null freight. One seller location remains UNK because its TAS and WA records conflict. Delivered items form the documented query population. A uses Lookup education integration and DENSE_RANK; B uses Sort/Merge Join education integration and deterministic ROW_NUMBER.
+Validation compares raw original floats and rounded money separately, checks original source fields and transaction relationships, rejects disabled/untrusted foreign keys and preserves all-null freight. One seller location remains UNK because its TAS and WA records conflict. Delivered items form the documented query population. Student A uses Lookup education integration and DENSE_RANK for Q4.1–Q4.2. Q4.3 uses deterministic ROW_NUMBER to return five suppliers per year. Student B uses Sort/Merge Join education integration and deterministic ROW_NUMBER for all three queries.
 
-## Backup verification
+## Restoring the supplied warehouse
 
-The current backup's actual restore and query comparisons passed; see `../database/restore_validation.txt` and the shared hash verification. Every new ETL execution changes the warehouse build. After a final rerun, regenerate the backup and repeat actual restoration/full-row/query comparisons before treating that new build as frozen. The previous backup validation does not automatically validate later reloads.
-
-Technical delivery is PASS: native screenshots, final teacher-template report rendering and package integrity have passed. Real student ID confirmation and personal course AI/collaboration review remain pending; no school upload is claimed.
+The supplied backup was restored and its complete table contents and query results were compared with the frozen warehouse. Rebuilding with SSIS creates a new warehouse build; generate a new backup after a rebuild.

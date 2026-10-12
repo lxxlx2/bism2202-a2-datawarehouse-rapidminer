@@ -1,0 +1,31 @@
+{
+  "Status": "PASS",
+  "Application": "Altair AI Studio 2026.1.1",
+  "MainProcessesOpenedAndExecuted": [
+    "Student_A",
+    "Student_B"
+  ],
+  "ResultTabsPerStudent": 10,
+  "NativeScreenshotsVisuallyReviewed": true,
+  "ModelsAndSettingsUnchanged": true,
+  "Processes": [
+    {
+      "Student": "A",
+      "Sha256": "7a7b40da73ac4ad6163a653575efb8f30358683c5c5be0472208f4d2cd7791ac",
+      "DesignScreenshotSha256": "bf0cdecd220c9f669837f2f0a2927424879d0866781398e52073af13aa8d0bc4",
+      "HoldoutPerformanceScreenshotSha256": [
+        "5c7f87c8d1885dce6734c9814b5c5808d14893c32a794cb5bc2205abdec8133d",
+        "2f50fed8102270a18c45f666410c6f1e5a20c585786ce2bb7e0af3db30a2e357"
+      ]
+    },
+    {
+      "Student": "B",
+      "Sha256": "fcc22df19bbba9a5b51f95fa3bf11105581bdd96d53ee7151a9bbd88d42bfb87",
+      "DesignScreenshotSha256": "4263b559fb6a4043f2d037f1553d4d241c08ac5008811e44cd883975333cea8f",
+      "HoldoutPerformanceScreenshotSha256": [
+        "0f819b58ec0dafafee59b47680ee9dfe117ea8368d92cd3d7370bf8a71e2bf7e",
+        "7fba3ff545c23071891aab07583f6ec009697fb1a9c97ca42700e426197ca8f2"
+      ]
+    }
+  ]
+}

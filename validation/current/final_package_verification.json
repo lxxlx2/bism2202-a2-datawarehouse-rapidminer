@@ -1,0 +1,27 @@
+{
+  "Utc": "2026-10-12T00:45:01.628873+00:00",
+  "Status": "PASS",
+  "SchoolSubmission": "NOT_PERFORMED",
+  "Packages": [
+    {
+      "Student": "A",
+      "File": "submission/BISM2202_Student_A_FINAL.zip",
+      "Bytes": 56585052,
+      "Sha256": "bf8506198b98d6f024f62a7b23ead4b476e7f06c44e7b16819f0a50fc50074aa",
+      "Members": 100,
+      "CRC": "PASS",
+      "EveryMemberMatchesCurrentSource": "PASS",
+      "ReportPages": 45
+    },
+    {
+      "Student": "B",
+      "File": "submission/BISM2202_Student_B_FINAL.zip",
+      "Bytes": 54485400,
+      "Sha256": "df5e93e7a9b4de811b2ade7a11755a371776ffaefe58b78625d9a99641e04701",
+      "Members": 105,
+      "CRC": "PASS",
+      "EveryMemberMatchesCurrentSource": "PASS",
+      "ReportPages": 54
+    }
+  ]
+}

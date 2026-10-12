@@ -1,5 +1,5 @@
 {
-  "verified_host_date": "2026-10-09",
+  "verified_host_date": "2026-10-11",
   "references": [
     {
       "key": "kimball_ross",
@@ -33,9 +33,10 @@
       "key": "dense_rank",
       "task": 1,
       "student": "A",
-      "apa": "Microsoft. (2026, September 21). DENSE_RANK (Transact-SQL). Microsoft Learn.",
+      "apa": "Microsoft. (2026, June 13). DENSE_RANK (Transact-SQL). Microsoft Learn.",
       "url": "https://learn.microsoft.com/en-us/sql/t-sql/functions/dense-rank-transact-sql?view=sql-server-ver16",
-      "use": "Preserve ties within state/year partitions."
+      "use": "Preserve ties within state/year partitions.",
+      "metadata_source": "https://raw.githubusercontent.com/MicrosoftDocs/sql-docs/live/docs/t-sql/functions/dense-rank-transact-sql.md"
     },
     {
       "key": "row_number",
@@ -56,7 +57,7 @@
       "key": "quinlan",
       "task": 2,
       "student": "A",
-      "apa": "Quinlan, J. R. (1986). Induction of decision trees. Machine Learning, 1, 81–106. https://doi.org/10.1007/BF00116251",
+      "apa": "Quinlan, J. R. (1986). Induction of decision trees. Machine Learning, 1, 81\u2013106. https://doi.org/10.1007/BF00116251",
       "url": "https://doi.org/10.1007/BF00116251",
       "use": "Decision-tree induction as modelling rationale; actual A fit is a single leaf."
     },
@@ -64,7 +65,7 @@
       "key": "breiman",
       "task": 2,
       "student": "B",
-      "apa": "Breiman, L. (2001). Random forests. Machine Learning, 45, 5–32. https://doi.org/10.1023/A:1010933404324",
+      "apa": "Breiman, L. (2001). Random forests. Machine Learning, 45, 5\u201332. https://doi.org/10.1023/A:1010933404324",
       "url": "https://doi.org/10.1023/A:1010933404324",
       "use": "Randomised tree ensemble rationale; actual B fit has 50 non-default leaves."
     },
