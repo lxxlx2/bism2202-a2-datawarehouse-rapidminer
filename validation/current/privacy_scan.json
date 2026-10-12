@@ -1,6 +1,6 @@
 {
   "Status": "PASS",
-  "TextFilesScanned": 451,
+  "TextFilesScanned": 456,
   "CredentialSignatureMatches": [],
   "PublicCourseMaterialAuthorization": "User explicitly confirmed complete course materials/data and AI disclosure may be published to the public repository",
   "ExcludedPrivateSessionDumps": "Ignored raw session transcripts and hidden/system content are not staged"

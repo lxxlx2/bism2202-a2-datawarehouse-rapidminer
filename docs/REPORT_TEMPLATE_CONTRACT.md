@@ -35,3 +35,5 @@ Editable slots:
 - paragraph 323: APA references
 
 Fidelity gates: all preserved package part hashes equal the original; section geometry unchanged; original headings remain in sequence; no instructions or angle-bracket placeholders in authored document; factual word limits audited; every final page rendered and visually checked. Additional AI declaration follows references and accurately discloses substantial AI assistance; students remain responsible for review. Final name retains ID placeholder until confirmed.
+
+Final SQL answer text uses Times New Roman 10.5 pt. This preserves complete editable SQL and avoids the observed PDF character mapping error from an unavailable Consolas substitution. Final DOCX/PDF paragraph comparisons include every SQL line.

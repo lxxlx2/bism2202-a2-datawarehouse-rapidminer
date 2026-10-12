@@ -1,6 +1,6 @@
 {
-  "Status": "WITHIN_DOCUMENTED_FILE_AND_FREE_ALLOWANCE_LIMITS",
-  "LfsPaths": 136,
+  "Status": "PUSH_AND_FRESH_DOWNLOAD_PASS",
+  "LfsPaths": 138,
   "UniqueObjects": 130,
   "UniqueBytes": 276011229,
   "LargestFileBytes": 56585052,
@@ -12,5 +12,5 @@
     "https://docs.github.com/en/repositories/working-with-files/managing-large-files/about-git-large-file-storage"
   ],
   "ActualAccountRemainingQuota": "UNKNOWN: authenticated billing endpoint returned 404; no additional credential scopes were requested",
-  "ActualTransferVerification": "Pending push and fresh remote download; final verification will record real success or failure"
+  "ActualTransferVerification": "130 unique LFS objects uploaded; independent clone, lfs pull and lfs fsck passed"
 }

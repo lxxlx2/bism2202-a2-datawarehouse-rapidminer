@@ -1,0 +1,46 @@
+{
+  "Status": "PASS",
+  "Students": {
+    "A": {
+      "TechnicalDelivery": "PASS",
+      "ReportPages": 45,
+      "WordLimits": "PASS",
+      "WordPdfCompleteTextComparison": "PASS",
+      "NativeReportImages": "PASS",
+      "NativeRapidMinerMainOpenedAndExecuted": "PASS",
+      "NativeRapidMinerMetricsAndIdentitiesMatchFrozenResults": "PASS",
+      "RelocationOutsideRepositoryWithSpaces": "PASS",
+      "PreprocessingLeakageReview": "PASS",
+      "BackupActualRestoreTenTablesCheckdbAndThreeQueries": "PASS",
+      "SsisUnchangedNativeExecutionEvidenceReused": "PASS",
+      "SqlRows": [
+        8,
+        40,
+        15
+      ],
+      "LocalAndRemoteZipCrcAndSha256": "PASS"
+    },
+    "B": {
+      "TechnicalDelivery": "PASS",
+      "ReportPages": 54,
+      "WordLimits": "PASS",
+      "WordPdfCompleteTextComparison": "PASS",
+      "NativeReportImages": "PASS",
+      "NativeRapidMinerMainOpenedAndExecuted": "PASS",
+      "NativeRapidMinerMetricsAndIdentitiesMatchFrozenResults": "PASS",
+      "RelocationOutsideRepositoryWithSpaces": "PASS",
+      "PreprocessingLeakageReview": "PASS",
+      "BackupActualRestoreTenTablesCheckdbAndThreeQueries": "PASS",
+      "SsisUnchangedNativeExecutionEvidenceReused": "PASS",
+      "SqlRows": [
+        8,
+        40,
+        15
+      ],
+      "LocalAndRemoteZipCrcAndSha256": "PASS"
+    }
+  },
+  "StudentIdPlaceholders": "STUDENT_A_ID and STUDENT_B_ID retained as instructed",
+  "SchoolUpload": "Not performed",
+  "NativeSqlScreenshotLimitation": "A Q4.3 native overview displays rows 1\u201311 and the actual 15-row status; all 15 rows are provided in its verified CSV. The obsolete 17-row continuation is archived."
+}

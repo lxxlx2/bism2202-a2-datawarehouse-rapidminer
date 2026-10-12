@@ -1,0 +1,1071 @@
+{
+  "Status": "PASS",
+  "Utc": "2026-10-12T00:49:56.498342+00:00",
+  "RemoteUrl": "https://github.com/lxxlx2/bism2202-a2-datawarehouse-rapidminer.git",
+  "DownloadedCommit": "4efcedc9b573a92da835047b9d372caf60737fc7",
+  "IndependentClone": "/Users/jerson/antigravity-agent-test/bism2202-remote-20261012-ACyKSv",
+  "LocalLfsCacheReused": false,
+  "VerifiedDeliveryFiles": 205,
+  "VerifiedLfsPaths": 138,
+  "VerifiedUniqueLfsObjects": 130,
+  "AllZipMembersMatchDownloadedExpandedFiles": true,
+  "Archives": [
+    {
+      "Path": "submission/BISM2202_Student_A_FINAL.zip",
+      "CRC": "PASS",
+      "Members": 100
+    },
+    {
+      "Path": "submission/Student_A/ssis/STUDENT_A_ID_ssis.zip",
+      "CRC": "PASS",
+      "Members": 12
+    },
+    {
+      "Path": "submission/Student_A/report/STUDENT_A_ID.docx",
+      "CRC": "PASS",
+      "Members": 62
+    },
+    {
+      "Path": "submission/BISM2202_Student_B_FINAL.zip",
+      "CRC": "PASS",
+      "Members": 105
+    },
+    {
+      "Path": "submission/Student_B/ssis/STUDENT_B_ID_ssis.zip",
+      "CRC": "PASS",
+      "Members": 12
+    },
+    {
+      "Path": "submission/Student_B/report/STUDENT_B_ID.docx",
+      "CRC": "PASS",
+      "Members": 71
+    }
+  ],
+  "Files": [
+    {
+      "Path": "submission/Student_A/AI_DISCLOSURE.md",
+      "Sha256": "35bbe6a1c83954f8fd6e3c2bdbc49be2e448cbd2f5cdadbe86c32d08beef5d01",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_A/README.md",
+      "Sha256": "66fa88d789fd13c55a5a8c38a69b9c2526d0369d07a37c957d993de2055309e2",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_A/database/STUDENT_A_ID_dw.bak",
+      "Sha256": "26394c39804afe7cb354c98f164bc84f441d40cbf860f571ce0b7e8d32d58c5f",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_A/diagrams/STUDENT_A_ID_dm.png",
+      "Sha256": "848eb012295875d22379d2b69d99ec9bc4ebb57504c04ae6cc0baecd64cbecd8",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_A/diagrams/STUDENT_A_ID_fact.png",
+      "Sha256": "22872979e244da50d01e11708043635e0dca20c011ea9f8100dd480e5b322bea",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_A/evidence/gui/model1_cv.png",
+      "Sha256": "a15aae16ea51c2ca839371e5e45fcdb7b4e9d8aaa3d1d36c457992afeaa5fefb",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_A/evidence/gui/model1_cv_accuracy.png",
+      "Sha256": "34fcbcf22eaab36f016368e336f7acfe807d4a0bcb3105a48c4f4db309701d5e",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_A/evidence/gui/model1_cv_auc.png",
+      "Sha256": "3a849efb46cde9b1b77109f2119a2d4497f5512dece74aee8c3dd2b0fca3d58e",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_A/evidence/gui/model1_performance.png",
+      "Sha256": "5c7f87c8d1885dce6734c9814b5c5808d14893c32a794cb5bc2205abdec8133d",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_A/evidence/gui/model1_process.png",
+      "Sha256": "bf0cdecd220c9f669837f2f0a2927424879d0866781398e52073af13aa8d0bc4",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_A/evidence/gui/model1_result.png",
+      "Sha256": "d0cbff8c9eea0d680df4c269cd69a907e5a7a13b51fabdbdac817c18d42f3120",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_A/evidence/gui/model2_cv.png",
+      "Sha256": "8e868fc9a586cc4270764092917e14a73eadf161edfcf15e4b08eb9acbb24ef2",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_A/evidence/gui/model2_cv_accuracy.png",
+      "Sha256": "3fe01c5a194dda8e75e9a98b41ed9cd110732c745fe5a409ee402140b0438056",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_A/evidence/gui/model2_performance.png",
+      "Sha256": "2f50fed8102270a18c45f666410c6f1e5a20c585786ce2bb7e0af3db30a2e357",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_A/evidence/gui/model2_result.png",
+      "Sha256": "05e620cb2f1b8898f3772a0ac5efa59e3e31803b8f6edf0d9cb70a8c8cacf065",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_A/evidence/gui/sql_Q4_1.png",
+      "Sha256": "e2d68781ff90cdcbfee5d38be3d6ec44ba4afd3498932f853fde41cba1b5b7e4",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_A/evidence/gui/sql_Q4_2.png",
+      "Sha256": "9dd55cc45991374839251cd1f4afe82099707871d583749ee9086e5522d6d426",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_A/evidence/gui/sql_Q4_2_detail_02.png",
+      "Sha256": "7117a843e0632ccb37bf05444906108db6c92816376471de996eb2346df36379",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_A/evidence/gui/sql_Q4_2_detail_03.png",
+      "Sha256": "569d49d2bc2df6ddd75875902663a9e2fb9945f6118d78db9da1bcd7e1d5f653",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_A/evidence/gui/sql_Q4_2_detail_04.png",
+      "Sha256": "0080d7ba7c8d244c75977b477d5189d38980e9eeaf589b98633f4318c0ec173d",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_A/evidence/gui/sql_Q4_3.png",
+      "Sha256": "1c025c9665ad8d8fbb0bcd06024ff0b4e721308fae6f3f2f936d2d39e622d8f1",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_A/evidence/gui/ssis_customer_lookup_detail.png",
+      "Sha256": "87e19385b88e85c02c750902da93699a996dfed7697692acfab285d9cde3bcbf",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_A/evidence/gui/ssis_customer_output_metadata.png",
+      "Sha256": "52aa3eb0f3ec897fc1797207afb048d6c9a7dfaad8d83bc7bfc99c70ec663713",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_A/evidence/gui/ssis_dimcustomer.png",
+      "Sha256": "9325cb9ad5cfb67bc61890beebddcb33ef8fe5406d10b23e9363338a572830ec",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_A/evidence/gui/ssis_dimdate.png",
+      "Sha256": "2b9e9a82fa5e2b9068252397a5fd9b4644bf6dae8e711354bc036903697666ae",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_A/evidence/gui/ssis_dimdate_detail_01.png",
+      "Sha256": "8abbd8da2c1674a66b634dbdc4560b1dc0a812c0c66223e3d5dba658f1a3e913",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_A/evidence/gui/ssis_dimdate_detail_02.png",
+      "Sha256": "914cd4e0e7650c7de94ad7776c70ed9d930c87f508fbd3e57b8c8d752a8ddae6",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_A/evidence/gui/ssis_dimdate_detail_03.png",
+      "Sha256": "9cdfa43e4c5ef64df4e535a6246386f5ab92c9b7cae435723622d36569f6cbad",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_A/evidence/gui/ssis_dimdate_detail_04.png",
+      "Sha256": "380a64ccdaf861853c647a345b551e0f1078c9bf8a2b471c11555a36fa78e21a",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_A/evidence/gui/ssis_dimproduct.png",
+      "Sha256": "41e592f038a988fda1f13f05a87f96de2dcbaffb8bda64d292a966b890d9808f",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_A/evidence/gui/ssis_dimseller.png",
+      "Sha256": "c590f6776b8185f0f4905699880dcda913a239e18f6366901c42b33929132ddf",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_A/evidence/gui/ssis_execution_success.png",
+      "Sha256": "c5652c7ab9bcf2f8d82719a8bfcb852b38e9188ca7206734b4c0f5278a68cee6",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_A/evidence/gui/ssis_fact.png",
+      "Sha256": "22872979e244da50d01e11708043635e0dca20c011ea9f8100dd480e5b322bea",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_A/evidence/gui/ssis_fact_detail_01.png",
+      "Sha256": "23b58509d813342b3ddde8ea886bc9e0cf7e9be3d0f10bdfe1710e0b42e35cd6",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_A/evidence/gui/ssis_fact_detail_02.png",
+      "Sha256": "f3676c1aa1fb920a271d2cb30d78bc5fd1ce9639d22ab6bf804c11c98b037075",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_A/evidence/gui/ssis_fact_detail_03.png",
+      "Sha256": "e88a2c7d011a46d0323d3a76c6a6fd2ad9a7fa953e2b0bba9251d18e4a48effe",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_A/evidence/gui/ssis_fact_detail_04.png",
+      "Sha256": "42ca3f4ff07e4844de94b027c4151c4b301dbf7448ad6929d90d95e1af2f3bc5",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_A/evidence/gui/ssis_fact_detail_05.png",
+      "Sha256": "064d933b3d8dfc93de4603eb70a9e912323e8ce1e4a042a2bae07ad5a17f8d15",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_A/evidence/gui/ssis_fact_detail_06.png",
+      "Sha256": "9f28ae55e7e5e34cf3a4726e7a7c6d5a0948652e53138e65d0f30e61d111d7d8",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_A/evidence/gui/ssis_fact_detail_07.png",
+      "Sha256": "8c32dcb74144b1f758391ee9dbae1814545bf6cfb18a7d254bfb7b1dbc656897",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_A/evidence/gui/ssis_fact_detail_measures.png",
+      "Sha256": "45361855360853b7d99e42c0f5ba1e5736a18ac917c5f0bc0851118af780d023",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_A/evidence/gui/ssis_geography_customer.png",
+      "Sha256": "08f9214925790eba89fef13bd57b3af17510264f39b9117c51fd2fbd59272c45",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_A/evidence/gui/ssis_geography_seller.png",
+      "Sha256": "359dc5f8ead3567e618bbda51822c7e747136237a2fd4f862a10ccb8cc562850",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_A/evidence/gui/ssis_geography_seller_detail_01.png",
+      "Sha256": "f31bbdbee4f82d6b16e10e5fc451424b2c8b4217c35e04792f4743574f9f6f9c",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_A/evidence/gui/ssis_geography_seller_detail_02.png",
+      "Sha256": "f57ff9e961d178e38a2d3018cc5d779961dd99d166e849e0356468363b5c3f74",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_A/evidence/gui/ssis_geography_seller_detail_03.png",
+      "Sha256": "4c79bf1d176a0b14fb48bd2d039a572fe0f9ce8cda0d83f154f5ffc5e7624509",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_A/evidence/gui/ssis_geography_seller_detail_04.png",
+      "Sha256": "c87a618c61b14a22fbda6024a7fc212744927492bc971e4bb923bdf9c834e50c",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_A/evidence/gui/ssis_geography_seller_detail_05.png",
+      "Sha256": "05daa5edc0644a89eec600e81a56e29947738d55e487fd6c2ef03f7155453080",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_A/evidence/gui/ssis_geography_seller_detail_06.png",
+      "Sha256": "4b5bb5c22b55b57933407f1b01b4cb130240fab260d0aceb3621296dd8379530",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_A/evidence/gui/ssis_project_reopen.png",
+      "Sha256": "469dddf45d46fcce9e61c569e563eb050ed79b321c6b2fe482d5fbddef5d852f",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_A/evidence/native/v2/decision_tree_result_5.txt",
+      "Sha256": "1ec9bdb45a4c3e9ce055c4e323cc4efc466d9b540dcbfefbd65e83681318cb9b",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_A/evidence/native/v2/decision_tree_result_5_metrics.csv",
+      "Sha256": "d7b25efbfd404a2088ff1e1a131ebe8b64b94c8432d3a6da92ee6dc3ec0bf9c8",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_A/evidence/native/v2/decision_tree_result_6.txt",
+      "Sha256": "e57bff1ed2ce20e46f717f2d9f0c9474310433584bcbd2e28d879c4afe70491c",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_A/evidence/native/v2/decision_tree_result_6_metrics.csv",
+      "Sha256": "9c3f718283ec85e2c2de3a67854c50e73ae50ff64783992aac2cc87853cf7162",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_A/evidence/native/v2/decision_tree_result_7.txt",
+      "Sha256": "6ab618dda09fb7680adb64b1f358453de89cb9207d26e045b37c54a6c509dbbf",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_A/evidence/native/v2/decision_tree_result_8_identities.csv",
+      "Sha256": "e0f66e224adf7c66867939e69ad1ef6067d120dab250074138d6dd1eeade0135",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_A/evidence/native/v2/decision_tree_result_8_summary.txt",
+      "Sha256": "27b76113073d1c3c46105fc3e29148a029fc17adf2a064f9df64610e3df32ca8",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_A/evidence/native/v2/decision_tree_result_9_identities.csv",
+      "Sha256": "9f4ddd40ff703be09f79c5ee49d01938f96807df62e912e0083ef24170c84da1",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_A/evidence/native/v2/decision_tree_result_9_summary.txt",
+      "Sha256": "72ef57caae937bb5fa74b98189abc338a2df3f9163a020797f1e7e4e8c9c5c4f",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_A/evidence/native/v2/logistic_regression_result_0.txt",
+      "Sha256": "c97e997d8d918ef315f069e776c13a5e73a4797466d4d973acea3920515faff0",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_A/evidence/native/v2/logistic_regression_result_0_metrics.csv",
+      "Sha256": "6e930ac0d50fd3cc3a8ee3bd0f1eb4d31f0e8f71db79d24e3355882e961b6425",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_A/evidence/native/v2/logistic_regression_result_1.txt",
+      "Sha256": "0cef2b5b056a8c9b2e0a171c0cfb822531dd6a16f3694e8d9446d84511d67c32",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_A/evidence/native/v2/logistic_regression_result_1_metrics.csv",
+      "Sha256": "56c46122e73c8da8284beb7d73de2583222e078a56b868a4aef4726091bb21ff",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_A/evidence/native/v2/logistic_regression_result_2.txt",
+      "Sha256": "770a5eb95a80f7073add2df16084f567a01762cff57829ca8f34102feec5d19e",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_A/evidence/native/v2/logistic_regression_result_3_identities.csv",
+      "Sha256": "fee12226cb1d448dd7573f33480b660225c8759ed9e15a87fb3efc7d4d40c1af",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_A/evidence/native/v2/logistic_regression_result_3_summary.txt",
+      "Sha256": "fa7bab6b41b2ee75f5966e251d4e4c2f0a782be27a8378270bae1a571f686c23",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_A/evidence/native/v2/logistic_regression_result_4_identities.csv",
+      "Sha256": "9f4ddd40ff703be09f79c5ee49d01938f96807df62e912e0083ef24170c84da1",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_A/evidence/native/v2/logistic_regression_result_4_summary.txt",
+      "Sha256": "72ef57caae937bb5fa74b98189abc338a2df3f9163a020797f1e7e4e8c9c5c4f",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_A/evidence/schema/STUDENT_A_ID_dm.png",
+      "Sha256": "848eb012295875d22379d2b69d99ec9bc4ebb57504c04ae6cc0baecd64cbecd8",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_A/evidence/sql/Q4_1-0.csv",
+      "Sha256": "986026fb024f83e91ecab4b5c94b11c6e1b39a9299ea3b8a3d43185413e61e87",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_A/evidence/sql/Q4_2-0.csv",
+      "Sha256": "329e6412f21c43b779bdcbc965724028da8238320da447d71f37a3ca61cc8c81",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_A/evidence/sql/Q4_3-0.csv",
+      "Sha256": "0b126e5a40faf8a357eba827628d015a00a5db7775965bf0a3e81855aea6d178",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_A/rapidminer/README_RUN.md",
+      "Sha256": "6d60ea1bc4ba6006fc00f69ce47bd6182b847357d51bc00054595f0c0f6c069c",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_A/rapidminer/STUDENT_A_ID_rapidminer.rmp",
+      "Sha256": "7a7b40da73ac4ad6163a653575efb8f30358683c5c5be0472208f4d2cd7791ac",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_A/rapidminer/SWITCH_MODELS.md",
+      "Sha256": "cce99716dbb546dbc9f83272ffb352b2e49ebe71260e6bf4547c8967cfeae3a9",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_A/rapidminer/cv_only_decision_tree.rmp",
+      "Sha256": "405d02602cf821ab3d901dce53757761085cc3a8597d45c728b0ec54eaaaf859",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_A/rapidminer/cv_only_logistic_regression.rmp",
+      "Sha256": "83dfca9b70699aba504fbe9ddd1b1a03a3d589df9b7d17cf1f9776608c3ce625",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_A/rapidminer/data/BISM2202_A2_Loan_Data_Set_RapidMiner2026S2.csv",
+      "Sha256": "b333abef401d01dce2b0115b65649400238c01d9362b328c8ca1c4c19876d00a",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_A/rapidminer/holdout_decision_tree.rmp",
+      "Sha256": "6acc37b05f84b82fce64d10c6dd21ac807b64919a3688c0e8f8802e2c91b424e",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_A/rapidminer/holdout_logistic_regression.rmp",
+      "Sha256": "f442231172573a526ed4b29381a5f02cd100618bbfd1b4fe8216e126f7680e4a",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_A/report/STUDENT_A_ID.docx",
+      "Sha256": "afbced8d0c8e1096fda8beace74f675accddae669b4ad8584407f69edca4d88f",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_A/report/STUDENT_A_ID.pdf",
+      "Sha256": "2ce4e7f1884ff473226d33144e8c9569f7a6e5039ec920e2731b73e93d81f680",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_A/sql/Q4_1.sql",
+      "Sha256": "5287db083fefe5bdfa58b09cab9007ebc03007cd01398ed52a3708bd21611855",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_A/sql/Q4_2.sql",
+      "Sha256": "06e34a78184d2aa1d5ed2bd760f007afb053946af4b2c4e55c058566d66922d6",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_A/sql/Q4_3.sql",
+      "Sha256": "3115b1d13f8f178d87b968dca3440c939d56c41beed339afc823167e755d6143",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_A/ssis/README_RUN.md",
+      "Sha256": "8802f64635dac7f3c9f4ebdd4412eff56e1d5953d47a2f61be4f2631f13d0feb",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_A/ssis/STUDENT_A_ID_SSIS/Master.dtsx",
+      "Sha256": "93c9a02fb9eebe6d4cd6d8aedf83d3cda0a3de761826dc5f67449a6e9147dd3d",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_A/ssis/STUDENT_A_ID_SSIS/Project.params",
+      "Sha256": "44f7fa6396dfee103dff509488a062771d33629f28aa1001bd05d42d0101b48a",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_A/ssis/STUDENT_A_ID_SSIS/STUDENT_A_ID_SSIS.database",
+      "Sha256": "7e5830c0d5acdb13a233f299c92be46611ae1a637368e11b616761c94d0063f4",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_A/ssis/STUDENT_A_ID_SSIS/STUDENT_A_ID_SSIS.dtproj",
+      "Sha256": "a05909dbdfa4864f1ec6e5036ef1cadf0cec5a9852decac243c365f14148bed7",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_A/ssis/STUDENT_A_ID_SSIS/STUDENT_A_ID_SSIS.ispac",
+      "Sha256": "5cd567df4630de33c973579b4d0bf1257e3e204b529d164f6f5951da8875cc24",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_A/ssis/STUDENT_A_ID_SSIS/STUDENT_A_ID_SSIS.sln",
+      "Sha256": "b3002557df329e71e4dd91c18840c0fb96a9277f6bc60e082cecd2024a74e666",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_A/ssis/STUDENT_A_ID_SSIS/Support/csv/Age_Table.csv",
+      "Sha256": "97818522d3a9cf23e5b4058ff636519771ccc972fd11da4e26e431d602719299",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_A/ssis/STUDENT_A_ID_SSIS/Support/csv/Customer_Education.csv",
+      "Sha256": "b8d5d338b9997b8a29bdab633c99a089c8cd6be2bf75860d2d90a874bc1e9ad3",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_A/ssis/STUDENT_A_ID_SSIS/Support/csv/State_code.csv",
+      "Sha256": "29a4c16fed0543a06ac53d9407ddff4309988b861d3770dfc571f0cb9372a81a",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_A/ssis/STUDENT_A_ID_SSIS/Support/csv/seller_location.csv",
+      "Sha256": "ba7fec836774b59692342e371597fff9f7006267dae01b8fb68c62f2bdc9b7e7",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_A/ssis/STUDENT_A_ID_SSIS/Support/schema.sql",
+      "Sha256": "38fc9aad1a8822d2e31ad58135b5f3307053f2ae73452b9ff7b9e61d5dbb73a0",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_A/ssis/STUDENT_A_ID_ssis.zip",
+      "Sha256": "8b05a0d30fc6418fd6d5cc2203fcf03ab3eeb9a35166231b8cf14a4376317bef",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/BISM2202_Student_A_FINAL.zip",
+      "Sha256": "bf8506198b98d6f024f62a7b23ead4b476e7f06c44e7b16819f0a50fc50074aa",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_B/AI_DISCLOSURE.md",
+      "Sha256": "b48f608306e5a04ffb83342bc0083f4fa3fb87263fd4f3d26fc6e413d2f4afb5",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_B/README.md",
+      "Sha256": "d82f270fbd17912ddcdad79178d09396a9acfcfe4fd051ea5ee0a137bb54a22c",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_B/database/STUDENT_B_ID_dw.bak",
+      "Sha256": "9a2387133085592470b19f06fe9e1869f8f634cc0315cc06e83d02a67213a23a",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_B/diagrams/STUDENT_B_ID_dm.png",
+      "Sha256": "c8426dd1755f409834576d24b68793c2be6537e2e46de8bda65f8e76d89b07bb",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_B/diagrams/STUDENT_B_ID_fact.png",
+      "Sha256": "4f90cd951bb3fdc20884c8703ee932170f64e75be0036520bcd9288a035b5786",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_B/evidence/gui/model1_cv.png",
+      "Sha256": "e38d9b1861ed94fd72a0162eb0633e35ed44abdd641437d6c01cd873168b9b42",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_B/evidence/gui/model1_cv_accuracy.png",
+      "Sha256": "a028dce6b40b83da00c178f54d495d8b1224c80140fb72198d5c57c06e892a47",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_B/evidence/gui/model1_cv_auc.png",
+      "Sha256": "890ad38c0d161e57f6b02344f0caa8f2971965cb57b4616ba46c5663e2bc3bda",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_B/evidence/gui/model1_performance.png",
+      "Sha256": "0f819b58ec0dafafee59b47680ee9dfe117ea8368d92cd3d7370bf8a71e2bf7e",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_B/evidence/gui/model1_process.png",
+      "Sha256": "4263b559fb6a4043f2d037f1553d4d241c08ac5008811e44cd883975333cea8f",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_B/evidence/gui/model1_result.png",
+      "Sha256": "bde301b3fbc1efd97771452c3fa8ce4405754fd94ebc09b50574884d5bc08c16",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_B/evidence/gui/model2_cv.png",
+      "Sha256": "7c3588c31f4ad9695353dde60fa6ad2b7f419f4e41b373f47434b608683a61f8",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_B/evidence/gui/model2_cv_accuracy.png",
+      "Sha256": "b167d37dcfc420d4d20b388e2ebe69e0d507ef103a55dc7f93ad48437f372a8f",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_B/evidence/gui/model2_performance.png",
+      "Sha256": "7fba3ff545c23071891aab07583f6ec009697fb1a9c97ca42700e426197ca8f2",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_B/evidence/gui/model2_result.png",
+      "Sha256": "8f5a82ff609641d179342086df143415cdf670a6a65b90d2285b94edb68e4afd",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_B/evidence/gui/sql_Q4_1.png",
+      "Sha256": "bad3180d551d7e5fec358ce61c60a6a822d6527e8d1882d94e8defd07f14b198",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_B/evidence/gui/sql_Q4_2.png",
+      "Sha256": "e79fdc81511e0b221d920981ef65504cd3ddda7afffba507901589e427c09e54",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_B/evidence/gui/sql_Q4_2_detail_02.png",
+      "Sha256": "215dc502d743e15c65ea0ed67516b4c1cd07d6144ceb4120d32d3e77a1d5d4ae",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_B/evidence/gui/sql_Q4_2_detail_03.png",
+      "Sha256": "3b7a47fe2d34e662839f0b964cbf550b63f021aa71b652fdb11e27f6e6b2932c",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_B/evidence/gui/sql_Q4_2_detail_04.png",
+      "Sha256": "dc425b1bebc6c0ee9d1b2c87b99b3459bcddac6042491fcad5087b98360573fc",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_B/evidence/gui/sql_Q4_3.png",
+      "Sha256": "9652efdf57395816f1b599688b3c015a01bb0bf9a8a76383c5e42e2ba495858e",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_B/evidence/gui/sql_Q4_3_detail_01.png",
+      "Sha256": "6ccf71e25a2c62a68f9cc06fc04fd1bc20584e7b9bc40c7659944e167570ec64",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_B/evidence/gui/ssis_dimcustomer.png",
+      "Sha256": "67901ff23d53456817a055e831221fcecd3fc17b2ff7b3e0d308e5c15aa5affa",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_B/evidence/gui/ssis_dimcustomer_detail_01.png",
+      "Sha256": "53db7f0e35f9c08885278cfb52120a704fe766bdee094331d3efb645dc688949",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_B/evidence/gui/ssis_dimcustomer_detail_02.png",
+      "Sha256": "423ca4bf1d1d99627761055fe59914dd70fcac58f74d4ba9cf7147a453d3e55d",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_B/evidence/gui/ssis_dimcustomer_detail_03.png",
+      "Sha256": "4a0e5a5953e2ac5dc4fc2d2c1330104dd747a97c0d14b18f64f8a7b433540ae3",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_B/evidence/gui/ssis_dimdate.png",
+      "Sha256": "daed4d2bb80f45725d5dc65247f4d61d6975cc5f4101bb92c9822a81aa11545e",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_B/evidence/gui/ssis_dimdate_detail_01.png",
+      "Sha256": "fe38dcfdd832ea00b4948e3920a7959a008d42d8810fb9a452620b218f10b2a8",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_B/evidence/gui/ssis_dimdate_detail_02.png",
+      "Sha256": "4db3d5b354580ee861af98663e40aa08021376dcd2e2787794c15c5d9926c961",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_B/evidence/gui/ssis_dimdate_detail_03.png",
+      "Sha256": "6d9fb6ec880aa400749e4866d58fd6055b2c1a1245eed710d2af94c7abe15d04",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_B/evidence/gui/ssis_dimdate_detail_04.png",
+      "Sha256": "a6f9ad7e1c9fdc80149922b639ed2695eb1d82a96b41f44d92b1fa656dff76fd",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_B/evidence/gui/ssis_dimproduct.png",
+      "Sha256": "697243e6967bf480f0abca5337c55af0f6f0421974c73c991351258645d62974",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_B/evidence/gui/ssis_dimproduct_detail_01.png",
+      "Sha256": "9d02bba4c8aa445839f476882f4af63bab813a234fb37bdcfbfff02b57440982",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_B/evidence/gui/ssis_dimproduct_detail_02.png",
+      "Sha256": "5b6c6c8db32a1173c97bbae5134b8b0f712ac8b3fc785970a01d1fb6d6433539",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_B/evidence/gui/ssis_dimproduct_detail_03.png",
+      "Sha256": "2dda60a30b0c47015a1f6a8f73132268f8e593fe25122c46a94baaf196f6596e",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_B/evidence/gui/ssis_dimseller.png",
+      "Sha256": "d5588ffe7ef34434fb30e2e28f7513a9a501b3cc198942bcbc7fbda3806dc48a",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_B/evidence/gui/ssis_execution_success.png",
+      "Sha256": "30b9b6144e14f804aa365e1340a74abd8e466b22b710fdddeb5dff515ab6d98d",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_B/evidence/gui/ssis_fact.png",
+      "Sha256": "4f90cd951bb3fdc20884c8703ee932170f64e75be0036520bcd9288a035b5786",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_B/evidence/gui/ssis_fact_detail_01.png",
+      "Sha256": "6be2ba63dc50b47e2fd8626aa1879c877d53e51c6c07cb325dd24d9ff450ffca",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_B/evidence/gui/ssis_fact_detail_02.png",
+      "Sha256": "c25b3ebffd394de7ace55fc2ed3714b3e75f1c0be261af66fc32091836eed088",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_B/evidence/gui/ssis_fact_detail_03.png",
+      "Sha256": "386a23d4d5ecd8c2a58cec752ada01df617161298656aa5e4a0064ab1827c15d",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_B/evidence/gui/ssis_fact_detail_04.png",
+      "Sha256": "a92a759c4c8c845a36a25736fabdf4d73ac0f4659cf6be5d6890125a4b98ac34",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_B/evidence/gui/ssis_fact_detail_05.png",
+      "Sha256": "8eaca7c97bd5cec33e4daec1709d1cf0ce36f2a6b27afb0ed31aecfcf069cf68",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_B/evidence/gui/ssis_fact_detail_06.png",
+      "Sha256": "2a93f244af1470f6675cbab19c8358d1b45b3b8fc78c84f65bdc94548ab1d893",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_B/evidence/gui/ssis_fact_detail_07.png",
+      "Sha256": "6ad1c3cb6ccbe448b71e6fcc6bf482769658ad058c276bcbb93a6ab3a556cb68",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_B/evidence/gui/ssis_fact_detail_08.png",
+      "Sha256": "09e7cb76e306f1a3e5e27c96f09a079080f9618a2f0f2e30838339f024e207fa",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_B/evidence/gui/ssis_geography_customer.png",
+      "Sha256": "b2a7893c864fc437017f586e505ae57802411d0e293194606351a5cb85e92859",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_B/evidence/gui/ssis_geography_customer_detail_01.png",
+      "Sha256": "6e810b3781cc1d25a14ea476fcb8e7b6233e5ac3371836671d3d20e884a32bd2",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_B/evidence/gui/ssis_geography_customer_detail_02.png",
+      "Sha256": "5015eef2d38abdb1fab2dd981035f8fdd71dcd3a523b720d3187d8b65f02a23a",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_B/evidence/gui/ssis_geography_seller.png",
+      "Sha256": "5a97642d53b87fe65e010d8366de6548d7c8b11212072855fa5bd4a99976075f",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_B/evidence/gui/ssis_geography_seller_detail_01.png",
+      "Sha256": "56f7d2eefc9ff0d76c2f63b420a2513b5ed157b1dc901f591ad2aeb66da2648f",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_B/evidence/gui/ssis_geography_seller_detail_02.png",
+      "Sha256": "041c09574c65003d5f5f469d0debe0bd545cbf1e844f5a06d1050531c3bbe9db",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_B/evidence/gui/ssis_geography_seller_detail_03.png",
+      "Sha256": "00745fd9b1f394999af8eff6150b0bed143ff01297605eda2fc41bb2c1399d90",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_B/evidence/gui/ssis_geography_seller_detail_04.png",
+      "Sha256": "4234e5e7e0811729a817eb3fe8eb6ccf8ab033a6d87fb9811528d354b8031eff",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_B/evidence/gui/ssis_geography_seller_detail_05.png",
+      "Sha256": "0a12570b37ce7c8684bbb6e605326faddd7bf2206c41d28a30932de5e1b7f7d2",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_B/evidence/native/v2/logistic_regression_result_0.txt",
+      "Sha256": "ed16ff46e1894577ce0657d073e698beaa09786055ded5fef3feea8c89a9d29f",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_B/evidence/native/v2/logistic_regression_result_0_metrics.csv",
+      "Sha256": "1b6acc538a2c2deb67bd95e573e61258b3e0982fa11f6891480c8d7a49a38958",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_B/evidence/native/v2/logistic_regression_result_1.txt",
+      "Sha256": "8829ee7f76bc53b823748d53a76d97d4bc9b817bb9c2a597c25a220c14025b74",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_B/evidence/native/v2/logistic_regression_result_1_metrics.csv",
+      "Sha256": "38d45359a34538c74a7c3955d8b39c39db39caac46ac9e579b250a4a81d84683",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_B/evidence/native/v2/logistic_regression_result_2.txt",
+      "Sha256": "23c24ca8b545cb5cab1c3547753584dcd3e0585c8c70d71c915fa67d726ea600",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_B/evidence/native/v2/logistic_regression_result_3_identities.csv",
+      "Sha256": "ddfd9624109a14308af065e1e8c1b2ab84556727fb45d3eb692338e30071c539",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_B/evidence/native/v2/logistic_regression_result_3_summary.txt",
+      "Sha256": "ce260276ea0af3915ad96a5f68b0cfc9695e9be35fd25e365bf376691823bc01",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_B/evidence/native/v2/logistic_regression_result_4_identities.csv",
+      "Sha256": "bc271cdc71abe0d4fa167194e97dc114c602a8cde48f83924053cdea0a89f901",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_B/evidence/native/v2/logistic_regression_result_4_summary.txt",
+      "Sha256": "63f53fc437af6400e83958b023071f9df00bd7a6962cfefca6101ce5337e295c",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_B/evidence/native/v2/random_forest_result_5.txt",
+      "Sha256": "6cfcb674464f7ca19965d7540cd88749ddc3859c685c47dff71ec40c64925e46",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_B/evidence/native/v2/random_forest_result_5_metrics.csv",
+      "Sha256": "550b7fbe92f98746945f0bf57760acab6f1d752db6671803d12599e1c138d871",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_B/evidence/native/v2/random_forest_result_6.txt",
+      "Sha256": "78e9c8a8ea4be09878818f2ba84a6e73781dc7c051ffc744d565799b9c6493cc",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_B/evidence/native/v2/random_forest_result_6_metrics.csv",
+      "Sha256": "68d5dec0f42968137824699eed38ea8d6798d71b5e163945692b8f71e71c321d",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_B/evidence/native/v2/random_forest_result_7.txt",
+      "Sha256": "404769cf36993be35791f91e0da332d7cd9ac8b791cfe15371d90f944bdf8495",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_B/evidence/native/v2/random_forest_result_8_identities.csv",
+      "Sha256": "881a3fff3607297225e304e99809b1186c20614c0ff289f4a556075c3192f42b",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_B/evidence/native/v2/random_forest_result_8_summary.txt",
+      "Sha256": "5f5f03290d5d1dddf2c4780473d3a6f34e8294ca743a935a64f1311902056d63",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_B/evidence/native/v2/random_forest_result_9_identities.csv",
+      "Sha256": "bc271cdc71abe0d4fa167194e97dc114c602a8cde48f83924053cdea0a89f901",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_B/evidence/native/v2/random_forest_result_9_summary.txt",
+      "Sha256": "63f53fc437af6400e83958b023071f9df00bd7a6962cfefca6101ce5337e295c",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_B/evidence/schema/STUDENT_B_ID_dm.png",
+      "Sha256": "c8426dd1755f409834576d24b68793c2be6537e2e46de8bda65f8e76d89b07bb",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_B/evidence/sql/Q4_1-0.csv",
+      "Sha256": "986026fb024f83e91ecab4b5c94b11c6e1b39a9299ea3b8a3d43185413e61e87",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_B/evidence/sql/Q4_2-0.csv",
+      "Sha256": "329e6412f21c43b779bdcbc965724028da8238320da447d71f37a3ca61cc8c81",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_B/evidence/sql/Q4_3-0.csv",
+      "Sha256": "0b126e5a40faf8a357eba827628d015a00a5db7775965bf0a3e81855aea6d178",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_B/rapidminer/README_RUN.md",
+      "Sha256": "a1b6917d795b1613f786086578e7230a6fe35fb4774cc9474b18baa024201858",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_B/rapidminer/STUDENT_B_ID_rapidminer.rmp",
+      "Sha256": "fcc22df19bbba9a5b51f95fa3bf11105581bdd96d53ee7151a9bbd88d42bfb87",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_B/rapidminer/SWITCH_MODELS.md",
+      "Sha256": "cce99716dbb546dbc9f83272ffb352b2e49ebe71260e6bf4547c8967cfeae3a9",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_B/rapidminer/cv_only_logistic_regression.rmp",
+      "Sha256": "7eae9395d35cea474feee6d5b4090b579c0431c77b962d0952274fe0cf3d101c",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_B/rapidminer/cv_only_random_forest.rmp",
+      "Sha256": "5e338d5fde65ce9fa3d7ed35f1a9c25f13c49d671a30e7a716a3993082c08269",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_B/rapidminer/data/BISM2202_A2_Loan_Data_Set_RapidMiner2026S2.csv",
+      "Sha256": "b333abef401d01dce2b0115b65649400238c01d9362b328c8ca1c4c19876d00a",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_B/rapidminer/holdout_logistic_regression.rmp",
+      "Sha256": "ff2ebb5a7a7003bbfe48a5ca33b79667a72a0b57a7a10ba5107dae320ba6b4df",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_B/rapidminer/holdout_random_forest.rmp",
+      "Sha256": "29004e152b21c6b7fe3643e81fd0014ca92425cfe130abd26240bce2cd6bc25a",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_B/report/STUDENT_B_ID.docx",
+      "Sha256": "24109c18d24fe3d321bb17295d1fe59f0f75a73ac100d211a6fa152ebfe5717f",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_B/report/STUDENT_B_ID.pdf",
+      "Sha256": "ae4d391e169d4169e316fff17b8a07cd5356ef1caee7915ba5baadd875b76a22",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_B/sql/Q4_1.sql",
+      "Sha256": "cbdc72b9702981fde470b618fcea5cea9f4f4b8530f0ebc7ad09a1ed906541f4",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_B/sql/Q4_2.sql",
+      "Sha256": "8c93a9b3890f5ae2f3338d96eb2840a7ad59b116e4e00f2b3fed5421a8d08b93",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_B/sql/Q4_3.sql",
+      "Sha256": "f8791658599027f1428d07b4996cae294093d5fb8da1b002fae14465904d59b2",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_B/ssis/README_RUN.md",
+      "Sha256": "ea201cb64e30223bbb951095aa629cc280be4c7cf2c075f73bdae79b088eb896",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_B/ssis/STUDENT_B_ID_SSIS/Master.dtsx",
+      "Sha256": "d9ef6d631b946436a77442629986dde6c4ecfeea88cebd539e31ad313c7bc900",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_B/ssis/STUDENT_B_ID_SSIS/Project.params",
+      "Sha256": "44f7fa6396dfee103dff509488a062771d33629f28aa1001bd05d42d0101b48a",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_B/ssis/STUDENT_B_ID_SSIS/STUDENT_B_ID_SSIS.database",
+      "Sha256": "9d215153c5f95b370d66eb2cbc63a4abef8e454a9bc8804b8f763feec2c40fb1",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_B/ssis/STUDENT_B_ID_SSIS/STUDENT_B_ID_SSIS.dtproj",
+      "Sha256": "0ee87a26b8ddc8f7f0f21883d59e1e01369e757fd22c9b63dafce9af52a31777",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_B/ssis/STUDENT_B_ID_SSIS/STUDENT_B_ID_SSIS.ispac",
+      "Sha256": "6340e1e6e11c22a0995dc6d76a5bf236d29d453172ae028a333d0a14416aba19",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_B/ssis/STUDENT_B_ID_SSIS/STUDENT_B_ID_SSIS.sln",
+      "Sha256": "e1a106b865228f3d9dda059540368e6aca244c6cf619f3d7558d81b5577c21e3",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_B/ssis/STUDENT_B_ID_SSIS/Support/csv/Age_Table.csv",
+      "Sha256": "97818522d3a9cf23e5b4058ff636519771ccc972fd11da4e26e431d602719299",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_B/ssis/STUDENT_B_ID_SSIS/Support/csv/Customer_Education.csv",
+      "Sha256": "b8d5d338b9997b8a29bdab633c99a089c8cd6be2bf75860d2d90a874bc1e9ad3",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_B/ssis/STUDENT_B_ID_SSIS/Support/csv/State_code.csv",
+      "Sha256": "29a4c16fed0543a06ac53d9407ddff4309988b861d3770dfc571f0cb9372a81a",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_B/ssis/STUDENT_B_ID_SSIS/Support/csv/seller_location.csv",
+      "Sha256": "ba7fec836774b59692342e371597fff9f7006267dae01b8fb68c62f2bdc9b7e7",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_B/ssis/STUDENT_B_ID_SSIS/Support/schema.sql",
+      "Sha256": "38fc9aad1a8822d2e31ad58135b5f3307053f2ae73452b9ff7b9e61d5dbb73a0",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/Student_B/ssis/STUDENT_B_ID_ssis.zip",
+      "Sha256": "28ecd83bc61a39eff104f305731c13869df754a8a5a4c6c5504ca71e455fe781",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/BISM2202_Student_B_FINAL.zip",
+      "Sha256": "df5e93e7a9b4de811b2ade7a11755a371776ffaefe58b78625d9a99641e04701",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/shared/ai_disclosure/export_manifest.json",
+      "Sha256": "7c7e345e8ee420ce5818915fe97293c4914fc60e4e7b7b7e0ed553da6c3ff717",
+      "Status": "PASS"
+    },
+    {
+      "Path": "submission/shared/ai_disclosure/visible_prompts_and_ai_outputs_record.md",
+      "Sha256": "79e73f5918fe78fa3c9e4816bf999e21c78b040c19c17d861024f899deccba4e",
+      "Status": "PASS"
+    }
+  ]
+}
