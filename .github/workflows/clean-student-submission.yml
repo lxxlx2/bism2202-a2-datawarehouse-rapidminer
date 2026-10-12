@@ -1,0 +1,76 @@
+name: BISM2202 Minimal Student Submissions
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/clean-student-submission.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  pack:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout final files including Git LFS
+        uses: actions/checkout@v4
+        with:
+          lfs: true
+          persist-credentials: false
+      - name: Build student-only archives
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          from zipfile import ZipFile, ZIP_DEFLATED
+          import hashlib
+          root = Path.cwd()
+          out = root / "minimal-submissions"
+          out.mkdir(exist_ok=True)
+          name = "BISM2202_A2_Loan_Data_Set_RapidMiner2026S2.csv"
+          for s in "AB":
+              sid = f"STUDENT_{s}_ID"
+              base = root / f"submission/Student_{s}"
+              files = [
+                  (f"report/{sid}.docx", f"{sid}.docx"),
+                  (f"ssis/{sid}_ssis.zip", f"{sid}_ssis.zip"),
+                  (f"database/{sid}_dw.bak", f"{sid}_dw.bak"),
+                  (f"diagrams/{sid}_dm.png", f"{sid}_dm.png"),
+                  (f"diagrams/{sid}_fact.png", f"{sid}_fact.png"),
+                  (f"rapidminer/{sid}_rapidminer.rmp", f"{sid}_rapidminer.rmp"),
+                  (f"rapidminer/data/{name}", f"data/{name}"),
+                  ("AI_DISCLOSURE.md", "AI_DISCLOSURE.md"),
+              ]
+              shared = root / "submission/shared/ai_disclosure/visible_prompts_and_ai_outputs_record.md"
+              if not shared.is_file():
+                  raise RuntimeError(f"Missing AI prompts/outputs record: {shared}")
+              archive = out / f"BISM2202_Student_{s}_SUBMIT_ONLY.zip"
+              with ZipFile(archive, "w", compression=ZIP_DEFLATED, compresslevel=6) as z:
+                  for src, dest in files:
+                      p = base / src
+                      if not p.is_file() or p.stat().st_size < 30:
+                          raise RuntimeError(f"Required submission file missing: {p}")
+                      if p.open("rb").read(60).startswith(b"version https://git-lfs.github.com/spec/"):
+                          raise RuntimeError(f"Git LFS not materialized: {p}")
+                      z.write(p, dest)
+                  z.write(shared, "AI_PROMPTS_OUTPUTS.md")
+              with ZipFile(archive) as z:
+                  assert z.testzip() is None
+                  for src, dest in files:
+                      assert hashlib.sha256(z.read(dest)).digest() == hashlib.sha256((base / src).read_bytes()).digest()
+                  assert z.read("AI_PROMPTS_OUTPUTS.md") == shared.read_bytes()
+              print(f"{archive.name} bytes={archive.stat().st_size} files={len(files)+1} sha256={hashlib.sha256(archive.read_bytes()).hexdigest()} CRC=PASS")
+          PY
+      - name: Upload Student A
+        uses: actions/upload-artifact@v4
+        with:
+          name: BISM2202-Student-A-SUBMIT-ONLY
+          path: minimal-submissions/BISM2202_Student_A_SUBMIT_ONLY.zip
+          if-no-files-found: error
+          retention-days: 30
+      - name: Upload Student B
+        uses: actions/upload-artifact@v4
+        with:
+          name: BISM2202-Student-B-SUBMIT-ONLY
+          path: minimal-submissions/BISM2202_Student_B_SUBMIT_ONLY.zip
+          if-no-files-found: error
+          retention-days: 30
