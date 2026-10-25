@@ -44,11 +44,11 @@ if($folder){
 $state=if($childExit -eq 0 -and $folder){'CAPTURE FINISHED - REVIEW REQUIRED'}else{'CAPTURE FAILED OR INCOMPLETE'}
 $details=@(
     $state,
-    'PNG saved: '+$pngCount+' (NB='+$nbCount+', GBT='+$gbtCount+')',
-    'Warnings: '+$warnings.Count,
-    'Child exit code: '+$childExit,
-    'Screenshots: '+$(if($folder){$folder}else{'NOT FOUND'}),
-    'Completed: '+$finished.ToString('o')
+    ('PNG saved: '+$pngCount+' (NB='+$nbCount+', GBT='+$gbtCount+')'),
+    ('Warnings: '+$warnings.Count),
+    ('Child exit code: '+$childExit),
+    ('Screenshots: '+$(if($folder){$folder}else{'NOT FOUND'})),
+    ('Completed: '+$finished.ToString('o'))
 )
 if($errorText){$details+=('Error: '+$errorText)}
 $stamp=$finished.ToString('yyyyMMdd_HHmmss')
@@ -65,18 +65,18 @@ $form.StartPosition='CenterScreen'
 $form.FormBorderStyle='FixedDialog'
 $form.MaximizeBox=$false
 $form.MinimizeBox=$false
-$form.ClientSize=New-Object System.Drawing.Size(650,240)
+$form.ClientSize=[System.Drawing.Size]::new(650,240)
 $label=New-Object System.Windows.Forms.Label
 $label.AutoSize=$false
-$label.Location=New-Object System.Drawing.Point(16,15)
-$label.Size=New-Object System.Drawing.Size(615,170)
-$label.Font=New-Object System.Drawing.Font('Segoe UI',10)
+$label.Location=[System.Drawing.Point]::new(16,15)
+$label.Size=[System.Drawing.Size]::new(615,170)
+$label.Font=[System.Drawing.Font]::new('Segoe UI',10)
 $label.Text=($details -join [Environment]::NewLine)
 $form.Controls.Add($label)
 $button=New-Object System.Windows.Forms.Button
 $button.Text='OK - Close'
-$button.Location=New-Object System.Drawing.Point(500,195)
-$button.Size=New-Object System.Drawing.Size(125,30)
+$button.Location=[System.Drawing.Point]::new(500,195)
+$button.Size=[System.Drawing.Size]::new(125,30)
 $button.Add_Click({$form.Close()})
 $form.Controls.Add($button)
 [void]$form.ShowDialog()
