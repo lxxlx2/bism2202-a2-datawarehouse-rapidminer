@@ -320,8 +320,29 @@ try {
     [Environment]::NewLine+'Unresolved items: '+$script:missing.Count+
     [Environment]::NewLine+'The images still require review.'+
     [Environment]::NewLine+'ZIP: '+$archive
-   [void][System.Windows.Forms.MessageBox]::Show($msg,'BISM2202 Capture Finished',
-    [System.Windows.Forms.MessageBoxButtons]::OK,[System.Windows.Forms.MessageBoxIcon]::Information)
+   $dialog=New-Object System.Windows.Forms.Form
+   $dialog.Text='BISM2202 Capture Finished'
+   $dialog.TopMost=$true
+   $dialog.ShowInTaskbar=$true
+   $dialog.StartPosition='CenterScreen'
+   $dialog.FormBorderStyle='FixedDialog'
+   $dialog.Size=[System.Drawing.Size]::new(740,235)
+   $dialog.MaximizeBox=$false
+   $dialog.MinimizeBox=$false
+   $label=New-Object System.Windows.Forms.Label
+   $label.Location=[System.Drawing.Point]::new(14,14)
+   $label.Size=[System.Drawing.Size]::new(700,143)
+   $label.Text=$msg
+   $label.Font=[System.Drawing.Font]::new('Segoe UI',9)
+   $dialog.Controls.Add($label)
+   $button=New-Object System.Windows.Forms.Button
+   $button.Location=[System.Drawing.Point]::new(600,161)
+   $button.Size=[System.Drawing.Size]::new(110,28)
+   $button.Text='OK - Finished'
+   $button.Add_Click({$dialog.Close()})
+   $dialog.Controls.Add($button)
+   [void]$dialog.ShowDialog()
+   $dialog.Dispose()
   }catch{}
  }
 }
