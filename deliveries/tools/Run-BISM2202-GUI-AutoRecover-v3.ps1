@@ -23,7 +23,7 @@ public static class BismClick {
 '@
 if(-not (Test-Path -LiteralPath $Root -PathType Container)){throw 'PROJECT_ROOT_NOT_FOUND'}
 $stamp=Get-Date -Format 'yyyyMMdd_HHmmss'
-$out=Join-Path $Root ('GBT_GUI_Review_'+$stamp)
+$out=Join-Path $Root ('BISM2202_GUI_Review_'+$stamp)
 New-Item -ItemType Directory -Path $out -Force | Out-Null
 $script:log=Join-Path $out 'execution.log'
 $script:images=New-Object 'System.Collections.Generic.List[string]'
@@ -124,7 +124,7 @@ function Recent([string]$model,[int]$row) {
  return $true
 }
 function ClearOldCompletion {
- foreach($title in @('BISM2202 GBT Capture Finished','BISM2202 Capture Finished')){
+ foreach($title in @('BISM2202 Capture Finished','BISM2202 Capture Finished')){
   $h=[BismClick]::FindWindow($null,$title)
   if($h -ne [IntPtr]::Zero){
    [void][BismClick]::SendMessage($h,16,[IntPtr]::Zero,[IntPtr]::Zero)
