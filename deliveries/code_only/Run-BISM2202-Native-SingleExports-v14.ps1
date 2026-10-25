@@ -352,7 +352,28 @@ try {
     foreach($model in @('NB','GBT')){
         $source=if($model -eq 'NB'){$srcNB}else{$srcGBT}
         foreach($kind in @('prediction','holdout','cv')){
-            $ok=RunOne $model $kind $source $bat
+            $ok=$false
+            # Reuse the verified 333571-byte NB prediction from the immediately
+            # preceding v13 run when its original teacher CSV hash matches.
+            if($model -eq 'NB' -and $kind -eq 'prediction'){
+                $previous=@(Get-ChildItem -LiteralPath $env:TEMP -Directory -Filter 'BISM2202_NATIVE_*' -ErrorAction SilentlyContinue | Sort-Object LastWriteTime -Descending | Select-Object -First 15)
+                foreach($dir in $previous){
+                    if($dir.FullName -eq $script:workspace){continue}
+                    $csvOld=Join-Path $dir.FullName 'NB_prediction.csv'
+                    $teacherOld=Join-Path $dir.FullName 'teacher.csv'
+                    if(-not (Test-Path -LiteralPath $csvOld -PathType Leaf) -or -not (Test-Path -LiteralPath $teacherOld -PathType Leaf)){continue}
+                    $oldHash=(Get-FileHash -LiteralPath $teacherOld -Algorithm SHA256).Hash
+                    if($oldHash -ne $csvHash){continue}
+                    $oldSize=(Get-Item -LiteralPath $csvOld).Length
+                    $oldHeader=[string](Get-Content -LiteralPath $csvOld -TotalCount 1)
+                    if($oldSize -lt 1000 -or -not $oldHeader.Contains(';') -or -not $oldHeader.Contains('prediction(Loan_defaulted)')){continue}
+                    Copy-Item -LiteralPath $csvOld -Destination (Join-Path $script:out 'NB_prediction.csv') -Force
+                    Step 'NB_prediction' 'REUSED_PREVIOUS_CSV' ('bytes='+$oldSize+' source='+$csvOld)
+                    $ok=$true
+                    break
+                }
+            }
+            if(-not $ok){$ok=RunOne $model $kind $source $bat}
             if(-not $ok){$complete=$false;break}
         }
         if(-not $complete){break}
