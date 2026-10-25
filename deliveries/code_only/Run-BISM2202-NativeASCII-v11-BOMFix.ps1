@@ -157,7 +157,7 @@ function RunOne([string]$name,[string]$source,[string]$bat) {
     # Java batch fails at SAX parser line 1 column 1 with that BOM.
     # Write using an explicit UTF8Encoding(false), then verify the actual bytes.
     $settings = New-Object System.Xml.XmlWriterSettings
-    $settings.Encoding = New-Object System.Text.UTF8Encoding($false)
+    $settings.Encoding = [System.Text.UTF8Encoding]::new($false)
     $settings.Indent = $true
     $settings.CloseOutput = $true
     $writer = [System.Xml.XmlWriter]::Create($working, $settings)
