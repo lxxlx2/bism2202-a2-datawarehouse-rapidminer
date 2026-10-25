@@ -155,21 +155,177 @@ function OpenProcess($model,$file) {
  [System.Windows.Forms.Clipboard]::SetText($file)
  Send '^v'
  Send '{ENTER}'
+ $deadline=(Get-Date).AddSeconds([math]::Min(14,$OpenTimeoutSeconds))
+ $pattern=if($model -eq 'NB'){'NaiveBayes'}else{'GradientBoostedTrees'}
+ do {
+  Start-Sleep -Seconds 2
+  $p=Get-Rapid
+  if($p){$p.Refresh();if($p.MainWindowTitle -match $pattern){
+   Note ('MODEL_TITLE_CONFIRMED '+$model+' '+$p.MainWindowTitle);return $true
+  }}
+ }while((Get-Date) -lt $deadline)
+ # Java file choosers sometimes ignore Alt+N. Retry using the actual
+ # named dialog's file-name edit field instead of typing into the folder list.
+ $dialog=$null
+ $search=[BismWindow+EnumCallback]{
+  param([IntPtr]$h,[IntPtr]$v)
+  $sb=New-Object System.Text.StringBuilder 256
+  [void][BismWindow]::GetWindowText($h,$sb,256)
+  if($sb.ToString() -match '^(Import Process|Open Process|Open File)
+}
+function CaptureModel($model) {
+ $path=Prepare $model
+ if(-not (OpenProcess $model $path)) {
+  [void]$script:missing.Add($model+': model import')
+  return
+ }
+ $p=Get-Rapid
+ [void](Focus-Rapid $p)
+ Click $p .382 .070
+ Start-Sleep -Seconds 2
+ # Use RapidMiner fit-to-view button, and keep the original GUI window in view.
+ try{Click $p .633 .170}catch{Note ('FIT_TO_VIEW_FAILED '+$model)}
+ [void](Snapshot $p $model '01_Design_Overall_REVIEW')
+ # CV candidate location: fit-to-view of the frozen full pipeline.
+ try{
+  Click $p .575 .327 2
+  [void](Snapshot $p $model '02_CV_Inner_Candidate_REVIEW')
+  # If inner CV is visible, the Training and Testing selections differ.
+  Click $p .202 .320
+  [void](Snapshot $p $model '03_CV_Training_Candidate_REVIEW')
+  Click $p .202 .400
+  [void](Snapshot $p $model '04_CV_Testing_Candidate_REVIEW')
+ }catch{Note ('CV_NAVIGATION_UNVERIFIED '+$model+' '+$_.Exception.Message)}
+ # Run only the actual loaded process, not a reconstructed image or model.
+ Click $p .382 .070
+ Click $p .149 .073
+ Note ('GUI_RUN_REQUESTED '+$model)
+ $deadline=(Get-Date).AddSeconds($(if($model -eq 'GBT'){$RunTimeoutSeconds}else{35}))
+ Start-Sleep -Seconds 8
+ while((Get-Date) -lt $deadline){
+  $p=Get-Rapid
+  if(-not $p){break}
+  $p.Refresh()
+  # Explicit time limit instead of looping forever or promising model completion.
+  Start-Sleep -Seconds 3
+ }
+ if(-not $p) { [void]$script:missing.Add($model+': RapidMiner window missing after run');return }
+ [void](Focus-Rapid $p)
+ Click $p .445 .070
+ Start-Sleep -Seconds 2
+ [void](Snapshot $p $model '05_Results_Start_REVIEW')
+ # Tab labels can occupy one or two rows depending on resolution.
+ # Capture multiple real views with neutral names, then classify from images.
+ $points=@(
+   @(0.29,0.145),@(0.59,0.145),@(0.30,0.185),@(0.61,0.185),
+   @(0.44,0.145),@(0.73,0.145),@(0.47,0.185),@(0.77,0.185)
+ )
+ for($i=0;$i -lt $points.Count;$i++){
+  try{
+   Click $p $points[$i][0] $points[$i][1]
+   [void](Snapshot $p $model ('06_ResultTab_'+('{0:D2}' -f ($i+1))+'_REVIEW'))
+  }catch{Note ('RESULT_TAB_FAILED '+$model+' '+$i+' '+$_.Exception.Message)}
+ }
+ Note ('MODEL_CAPTURE_FINISHED '+$model)
+}
+function WindowInventory {
+ foreach($pattern in @('SSMS','SQL Server Management Studio','Microsoft Visual Studio','Integration Services')){
+  $found=@(Get-Process -ErrorAction SilentlyContinue | Where-Object { $_.MainWindowTitle -match [regex]::Escape($pattern) })
+  if($found.Count){Note ('EXTERNAL_APP_PRESENT '+$pattern+' '+$found.Count)}
+ }
+ $ssis=@(Get-ChildItem -LiteralPath (Join-Path $script:root 'program\ssis') -File -Filter '*.dtsx' -ErrorAction SilentlyContinue)
+ if($ssis.Count -eq 0){[void]$script:missing.Add('SSIS: no built .dtsx project in the supplied package')}
+ try{
+  $c=New-Object System.Data.SqlClient.SqlConnection('Server=.;Database=BISM2202_A2_dw;Integrated Security=True;Connect Timeout=3;Encrypt=False')
+  $c.Open();$c.Close();$c.Dispose()
+  Note 'WAREHOUSE_DATABASE_CONNECTION=PASS'
+  [void]$script:missing.Add('SQL: native SSMS screenshots require executing the report queries in SSMS')
+ }catch{
+  Note ('WAREHOUSE_DATABASE_CONNECTION=FAILED '+$_.Exception.Message)
+  [void]$script:missing.Add('SQL: school DW database unavailable; no SSMS query screenshots')
+ }
+}
+$exitStatus='INCOMPLETE_REVIEW_REQUIRED'
+try {
+ $script:root=Get-Project
+ $stamp=Get-Date -Format 'yyyyMMdd_HHmmss'
+ $script:out=Join-Path $script:root ('BISM2202_Report_Evidence_'+$stamp)
+ New-Item -ItemType Directory -Path $script:out -Force | Out-Null
+ Note ('PROJECT='+$script:root)
+ Note ('OUTPUT='+$script:out)
+ foreach($model in @('NB','GBT')){
+  try { CaptureModel $model }
+  catch {
+   Note ('MODEL_EXCEPTION '+$model+' '+$_.Exception.Message+' LINE='+$_.InvocationInfo.ScriptLineNumber)
+   [void]$script:missing.Add($model+': capture error '+$_.Exception.Message)
+  }
+ }
+ WindowInventory
+} catch {
+ if($script:out){Note ('FATAL '+$_.Exception.Message+' LINE='+$_.InvocationInfo.ScriptLineNumber)}
+ else{Write-Host ('FATAL '+$_.Exception.Message)}
+} finally {
+ if($script:out -and (Test-Path -LiteralPath $script:out)){
+  $evidence=[ordered]@{
+   status=$exitStatus; started=$script:started.ToString('o'); finished=(Get-Date).ToString('o')
+   screenshot_count=$script:captures.Count; screenshots=@($script:captures.ToArray())
+   missing=@($script:missing.ToArray()); result_note='All screenshots are unverified candidates until reviewed against native UI'
+  }
+  $json=$evidence | ConvertTo-Json -Depth 8
+  [IO.File]::WriteAllText((Join-Path $script:out 'evidence_manifest.json'),$json,[Text.UTF8Encoding]::new($false))
+  $archive=$script:out+'.zip'
+  try { Compress-Archive -Path (Join-Path $script:out '*') -DestinationPath $archive -CompressionLevel Optimal -Force }
+  catch { Note ('ZIP_FAILED '+$_.Exception.Message) }
+  $notice=Join-Path $script:root ('BISM2202_CAPTURE_FINISHED_'+(Get-Date -Format 'yyyyMMdd_HHmmss')+'.txt')
+  $final=@('EXECUTION_FINISHED',('SCREENSHOT_COUNT='+$script:captures.Count),('MISSING_COUNT='+$script:missing.Count),('ZIP='+$archive),'REVIEW_REQUIRED')
+  [IO.File]::WriteAllLines($notice,[string[]]$final,[Text.UTF8Encoding]::new($false))
+  Write-Host ('CAPTURE_EXECUTION_FINISHED screenshot_count='+$script:captures.Count+' missing='+$script:missing.Count) -ForegroundColor Cyan
+  Write-Host ('RESULT_ZIP='+$archive)
+  try{[System.Media.SystemSounds]::Asterisk.Play()}catch{}
+  try{
+   $msg='Capture execution finished.'+[Environment]::NewLine+'Images: '+$script:captures.Count+
+    [Environment]::NewLine+'Unresolved items: '+$script:missing.Count+
+    [Environment]::NewLine+'The images still require review.'+
+    [Environment]::NewLine+'ZIP: '+$archive
+   [void][System.Windows.Forms.MessageBox]::Show($msg,'BISM2202 Capture Finished',
+    [System.Windows.Forms.MessageBoxButtons]::OK,[System.Windows.Forms.MessageBoxIcon]::Information)
+  }catch{}
+ }
+}
+){$script:dialogFound=$h;return $false}
+  return $true
+ }
+ $script:dialogFound=[IntPtr]::Zero
+ [void][BismWindow]::EnumWindows($search,[IntPtr]::Zero)
+ if($script:dialogFound -ne [IntPtr]::Zero){
+  $dr=New-Object 'BismWindow+RECT'
+  if([BismWindow]::GetWindowRect($script:dialogFound,[ref]$dr)){
+   [void][BismWindow]::ShowWindow($script:dialogFound,9)
+   [void][BismWindow]::SetForegroundWindow($script:dialogFound)
+   $dx=$dr.Left+[int](($dr.Right-$dr.Left)*0.32)
+   $dy=$dr.Top+[int](($dr.Bottom-$dr.Top)*0.82)
+   [void][BismWindow]::SetCursorPos($dx,$dy)
+   [BismWindow]::mouse_event(2,0,0,0,[UIntPtr]::Zero)
+   [BismWindow]::mouse_event(4,0,0,0,[UIntPtr]::Zero)
+   Start-Sleep -Milliseconds 400
+   Send '^a'
+   [System.Windows.Forms.Clipboard]::SetText($file)
+   Send '^v'
+   Send '{ENTER}'
+   Note ('DIALOG_FILE_FIELD_RETRY '+$model)
+  }
+ } else {Note ('OPEN_DIALOG_NOT_FOUND '+$model)}
  $deadline=(Get-Date).AddSeconds($OpenTimeoutSeconds)
  do {
   Start-Sleep -Seconds 2
   $p=Get-Rapid
-  if($p){
-   $p.Refresh()
-   $pattern=if($model -eq 'NB'){'NaiveBayes'}else{'GradientBoostedTrees'}
-   if($p.MainWindowTitle -match $pattern){
-    Note ('MODEL_TITLE_CONFIRMED '+$model+' '+$p.MainWindowTitle)
-    return $true
-   }
-  }
+  if($p){$p.Refresh();if($p.MainWindowTitle -match $pattern){
+   Note ('MODEL_TITLE_CONFIRMED '+$model+' '+$p.MainWindowTitle);return $true
+  }}
  }while((Get-Date) -lt $deadline)
- if($p) {
-  try { [void](Snapshot $p $model 'DIAGNOSTIC_Open_Failed') }catch{Note ('DIAGNOSTIC_CAPTURE_FAILED '+$_.Exception.Message)}
+ if($p){
+  try {[void](Snapshot $p $model 'DIAGNOSTIC_Open_Failed')}
+  catch {Note ('DIAGNOSTIC_CAPTURE_FAILED '+$_.Exception.Message)}
  }
  Note ('MODEL_TITLE_NOT_CONFIRMED '+$model)
  return $false
