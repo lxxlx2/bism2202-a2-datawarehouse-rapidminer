@@ -14,7 +14,7 @@ if ! command -v screencapture >/dev/null 2>&1; then
   exit 2
 fi
 
-if [ "\${1:-}" != "" ]; then
+if [ "${1:-}" != "" ]; then
   ROOT="$1"
 elif [ -d "$PWD/rapidminer" ]; then
   ROOT="$PWD/rapidminer"
@@ -33,7 +33,7 @@ for name in NaiveBayes_CV.rmp NaiveBayes_Full.rmp GradientBoostedTrees_CV.rmp Gr
   fi
 done
 
-TEMP_SCRIPT="$(mktemp "\${TMPDIR:-/tmp/}bism2202-mac-check.XXXXXX")"
+TEMP_SCRIPT="$(mktemp "${TMPDIR:-/tmp/}bism2202-mac-check.XXXXXX")"
 trap 'rm -f "$TEMP_SCRIPT"' EXIT
 CHECK_URL='https://raw.githubusercontent.com/lxxlx2/bism2202-a2-datawarehouse-rapidminer/a82ffa696234c981a42840c35c80100e11729bbc/deliveries/tools/Repair-RapidMiner-Mac.py'
 if ! curl -fsSL "$CHECK_URL" -o "$TEMP_SCRIPT"; then
@@ -84,9 +84,9 @@ if [ "$start" = s ] || [ "$start" = S ]; then
   exit 0
 fi
 printf '文件名\t状态\n' > "$OUT/截图记录.tsv"
-for item in "\${STAGES[@]}"; do
-  name="\${item%%|*}"
-  instruction="\${item#*|}"
+for item in "${STAGES[@]}"; do
+  name="${item%%|*}"
+  instruction="${item#*|}"
   printf '\n[%s] %s\n按 Enter 进入系统截图选区（输入 q 结束）：' "$name" "$instruction"
   IFS= read -r response || response=q
   if [ "$response" = q ] || [ "$response" = Q ]; then
