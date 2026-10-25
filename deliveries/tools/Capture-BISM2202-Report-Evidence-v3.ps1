@@ -115,7 +115,8 @@ function Snapshot($p,[string]$model,[string]$stage,[string]$suffix=''){
   return $false
  }
  $script:seen[$sha]=$rel
- $pop=@(Popups)
+ $pop=@()
+ try {$pop=@(Popups)}catch {Note ('POPUP_SCAN_UNAVAILABLE '+$_.Exception.Message)}
  $status=if($pop.Count){'DIALOG_REVIEW'}else{'CAPTURE_REVIEW'}
  $title=(Get-Rapid).MainWindowTitle
  [void]$script:captures.Add([pscustomobject]@{file=$rel;model=$model;stage=$stage;status=$status;title=$title;sha256=$sha;popup=($pop -join '|')})
@@ -164,6 +165,15 @@ function OpenProcess($model,$file) {
    Note ('MODEL_TITLE_CONFIRMED '+$model+' '+$p.MainWindowTitle);return $true
   }}
  }while((Get-Date) -lt $deadline)
+ # A previous failed keystroke may have opened the Create Folder error dialog.
+ # Close that modal first; never paste the path while an error is on top.
+ $before=@()
+ try {$before=@(Popups)}catch{}
+ if(($before -join '|') -match '(Create Folder|Error)'){
+  Send '{ESC}'
+  Start-Sleep -Seconds 1
+  Note ('MODAL_ERROR_DISMISSED '+$model)
+ }
  # Java file choosers sometimes ignore Alt+N. Retry using the actual
  # named dialog's file-name edit field instead of typing into the folder list.
  $dialog=$null
