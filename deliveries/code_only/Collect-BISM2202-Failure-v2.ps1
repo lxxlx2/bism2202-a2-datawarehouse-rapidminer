@@ -129,7 +129,7 @@ try {
             $summary.AddRange([string[]]@(Get-Content -LiteralPath $l.FullName -Tail 120 -ErrorAction SilentlyContinue))
         }
     }
-    [IO.File]::WriteAllLines((Join-Path $out 'summary.txt'),[string[]]$summary.ToArray(),(New-Object Text.UTF8Encoding($true)))
+    [IO.File]::WriteAllLines((Join-Path $out 'summary.txt'),[string[]]$summary.ToArray(),([Text.UTF8Encoding]::new($true)))
     if ($files.Count -eq 0) { throw 'SOURCE_OPENED_BUT_NO_DIAGNOSTIC_FILES_FOUND' }
     Compress-Archive -Path (Join-Path $out '*') -DestinationPath $zipOut -CompressionLevel Optimal
     if (-not (Test-Path -LiteralPath $zipOut) -or (Get-Item -LiteralPath $zipOut).Length -le 0) { throw 'DIAGNOSTIC_ZIP_WRITE_FAILED' }
