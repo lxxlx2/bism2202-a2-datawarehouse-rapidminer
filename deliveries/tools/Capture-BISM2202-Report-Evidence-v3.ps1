@@ -48,6 +48,29 @@ function Get-Rapid {
  if($p.Count -eq 0){return $null}
  return $p[0]
 }
+function Ensure-Rapid {
+ $p=Get-Rapid
+ if($p){return $p}
+ $folders=@('C:\Program Files\RapidMiner\RapidMiner Studio','C:\Program Files\Altair\AI Studio','C:\Program Files\RapidMiner')
+ $exes=@()
+ foreach($f in $folders){
+  if(Test-Path -LiteralPath $f -PathType Container){
+   $exes+=@(Get-ChildItem -LiteralPath $f -File -Filter '*.exe' -ErrorAction SilentlyContinue |
+    Where-Object {$_.Name -match '(RapidMiner|AI Studio|RapidMiner Studio)'})
+  }
+ }
+ if($exes.Count -eq 0){Note 'RAPIDMINER_GUI_EXE_NOT_FOUND';return $null}
+ try {
+  Start-Process -FilePath $exes[0].FullName
+  Note ('RAPIDMINER_GUI_START_REQUESTED '+$exes[0].FullName)
+ } catch{Note ('RAPIDMINER_GUI_START_FAILED '+$_.Exception.Message);return $null}
+ $deadline=(Get-Date).AddSeconds(75)
+ do{
+  Start-Sleep -Seconds 3
+  $p=Get-Rapid
+ }while(-not $p -and (Get-Date) -lt $deadline)
+ return $p
+}
 function WindowBounds($p) {
  $p.Refresh()
  $r=New-Object 'BismWindow+RECT'
@@ -144,7 +167,7 @@ function Prepare($model) {
  return $target
 }
 function OpenProcess($model,$file) {
- $p=Get-Rapid
+ $p=Ensure-Rapid
  if(-not $p){Note ('BLOCKED_RAPIDMINER_NOT_OPEN '+$model);return $false}
  [void](Focus-Rapid $p)
  Note ('OPEN_START '+$model+' '+$file)
