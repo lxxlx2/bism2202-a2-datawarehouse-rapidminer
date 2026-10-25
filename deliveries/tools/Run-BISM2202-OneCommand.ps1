@@ -1,4 +1,4 @@
-param([string]$Root = '',[switch]$SkipScreenshots)
+﻿param([string]$Root = '',[switch]$SkipScreenshots)
 $ErrorActionPreference = 'Stop'
 Set-StrictMode -Version Latest
 $stamp = Get-Date -Format 'yyyyMMdd_HHmmss'
