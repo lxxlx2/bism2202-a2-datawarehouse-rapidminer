@@ -225,10 +225,44 @@ function Result-Captures([string]$name) {
   Shot ($name+'_'+$t.name) ('tab_click_approx_'+$t.name)
  }
 }
+function Try-Accessibility-Click([string]$target,[int]$clickCount=1) {
+ try {
+  Add-Type -AssemblyName UIAutomationClient -ErrorAction Stop
+  Add-Type -AssemblyName UIAutomationTypes -ErrorAction Stop
+  $p=Rapid-Process
+  $rootEl=[System.Windows.Automation.AutomationElement]::FromHandle($p.MainWindowHandle)
+  $all=$rootEl.FindAll([System.Windows.Automation.TreeScope]::Descendants,[System.Windows.Automation.Condition]::TrueCondition)
+  for($i=0;$i -lt $all.Count;$i++) {
+   $el=$all.Item($i);$name=$el.Current.Name
+   if($name -ne $target){continue}
+   $rect=$el.Current.BoundingRectangle
+   if($rect.IsEmpty -or $rect.Width -lt 8 -or $rect.Height -lt 8){continue}
+   $w=Window-Rect
+   Win-Click (($rect.Left+$rect.Width/2)-$w.Left) (($rect.Top+$rect.Height/2)-$w.Top) $clickCount
+   Log "UIA_CLICK $target"
+   return $true
+  }
+ }catch{Warn "UIA_UNAVAILABLE $target $($_.Exception.Message)"}
+ return $false
+}
+function Try-Capture-CV([string]$code) {
+ if(-not (Try-Accessibility-Click 'Five-Fold Training CV' 2)) {
+  Warn "$code CV_INNER_NOT_CAPTURED: Java accessibility name not exposed to Windows UI Automation"
+  return
+ }
+ Start-Sleep -Seconds 2
+ if(Try-Accessibility-Click 'Training' 1){Shot ($code+'_CV_training') 'cv_training_accessible_tab'}
+ else{Warn "$code CV_TRAINING_TAB_NOT_FOUND"}
+ if(Try-Accessibility-Click 'Testing' 1){Shot ($code+'_CV_testing') 'cv_testing_accessible_tab'}
+ else{Warn "$code CV_TESTING_TAB_NOT_FOUND"}
+ if(-not (Try-Accessibility-Click 'Process' 1)) {Win-Click 315 205;Warn "$code CV_RETURN_USED_APPROX_BREADCRUMB"}
+ Start-Sleep -Seconds 1
+}
 function Run-And-Capture([string]$code,[string]$file) {
  [void](Focus-Rapid)
  if(-not (Import-File $file)){return}
  Go-Design; Shot ($code+'_design') 'design'
+ Try-Capture-CV $code
  if($DiagnosticsOnly){return}
  if(-not $NoRun) {
   $before=Tab-Pixel
