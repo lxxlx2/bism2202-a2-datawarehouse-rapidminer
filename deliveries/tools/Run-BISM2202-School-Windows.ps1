@@ -153,6 +153,13 @@ function ModalTitles {
  [void][BismWin32]::EnumWindows($cb,[IntPtr]::Zero)
  return @($script:foundModals)
 }
+function TabColor {
+ $r=Rect;$x=$r.Left+[int](($r.Right-$r.Left)*0.47);$y=$r.Top+[int](($r.Bottom-$r.Top)*0.096)
+ $bmp=New-Object Drawing.Bitmap(1,1)
+ $g=[Drawing.Graphics]::FromImage($bmp)
+ try {$g.CopyFromScreen($x,$y,0,0,$bmp.Size);return $bmp.GetPixel(0,0).ToArgb()}
+ finally {$g.Dispose();$bmp.Dispose()}
+}
 function Open-Process([string]$file,[string]$code) {
  [void](Activate)
  $saved='';try{$saved=[System.Windows.Forms.Clipboard]::GetText()}catch{}
@@ -195,25 +202,29 @@ function Run-Model([string]$code,[string]$path){
  Note ('BEGIN_MODEL '+$code)
  if(-not (Open-Process $path $code)){return}
  Design;Start-Sleep -Seconds 1
+ Click 0.645 0.17
+ Start-Sleep -Milliseconds 700
  Shot $code 'design' ($code+'_01_Process_Overview.png')
  # A full CV flow should be around the 70% portion of the editor after auto-fit.
  # Probe a double click and capture; contents must still be visually verified.
- Click 0.66 0.29 2
+ Click 0.56 0.29 2
  Shot $code 'cv_probe' ($code+'_02_CV_Training_Check.png')
  Click 0.59 0.20
  Shot $code 'cv_other_probe' ($code+'_03_CV_Testing_Check.png')
  Key '{ESC}';Design;Start-Sleep -Seconds 1
  if($PrepareOnly){Record $code 'run' 'SKIPPED_PREPARE_ONLY' '';return}
  # The 10.3 Run Process Locally toolbar button is near x=0.15,y=0.085.
+ $tabBefore=TabColor
  Click 0.152 0.085
  Record $code 'run' 'REQUESTED_NOT_VERIFIED' ''
  $end=(Get-Date).AddSeconds($RunSeconds)
- $detected=$false
+ $tabChanged=0
  while((Get-Date) -lt $end){
   Start-Sleep -Seconds 5
   $m=@(ModalTitles)
-  if($m.Count -gt 0){Shot $code 'runtime_dialog' ($code+'_08_Runtime_Dialog.png');Record $code 'run' 'DIALOG_DETECTED' ($m -join '|');return}
-  # UI has no reliable external Java result-ready API; avoid classifying by time only.
+  if($m.Count -gt 0){Shot $code 'runtime_dialog' ($code+'_09_Runtime_Dialog.png');Record $code 'run' 'DIALOG_DETECTED' ($m -join '|');return}
+  if((TabColor) -ne $tabBefore){$tabChanged++} else {$tabChanged=0}
+  if($tabChanged -ge 3){Note 'Results tab color changed; capturing UI (not proof of training completion).';break}
  }
  Results;Start-Sleep -Seconds 2
  Shot $code 'results_overview' ($code+'_04_Results_Overview.png')
