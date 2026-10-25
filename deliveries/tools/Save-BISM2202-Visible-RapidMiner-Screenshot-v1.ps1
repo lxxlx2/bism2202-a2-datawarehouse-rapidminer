@@ -45,18 +45,26 @@ $width=$rect.Right-$rect.Left
 $height=$rect.Bottom-$rect.Top
 if($width -lt 800 -or $height -lt 500){throw ('WINDOW_TOO_SMALL '+$width+'x'+$height+'; maximize RapidMiner manually.')}
 $screen=[System.Windows.Forms.SystemInformation]::VirtualScreen
-if($rect.Left -lt $screen.Left -or $rect.Top -lt $screen.Top -or $rect.Right -gt $screen.Right -or $rect.Bottom -gt $screen.Bottom){
- throw 'WINDOW_PARTIALLY_OUTSIDE_SCREEN: move RapidMiner fully into the visible desktop before retrying.'
+$left=[Math]::Max($rect.Left,$screen.Left)
+$top=[Math]::Max($rect.Top,$screen.Top)
+$right=[Math]::Min($rect.Right,$screen.Right)
+$bottom=[Math]::Min($rect.Bottom,$screen.Bottom)
+$visibleWidth=$right-$left
+$visibleHeight=$bottom-$top
+if($visibleWidth -lt 800 -or $visibleHeight -lt 500 -or ($visibleWidth/$width) -lt .95 -or ($visibleHeight/$height) -lt .94){
+ throw 'WINDOW_CLIPPED: move the whole RapidMiner window onto the visible desktop before retrying.'
 }
+$width=$visibleWidth
+$height=$visibleHeight
 $saveTo=Join-Path $dir ($Name+'.png')
 if(Test-Path -LiteralPath $saveTo -PathType Leaf){
- $saveTo=Join-Path $dir ($Name+'_'+(Get-Date -Format 'HHmmss')+'.png')
+ $saveTo=Join-Path $dir ($Name+'_'+(Get-Date -Format 'HHmmssfff')+'.png')
 }
 $bmp=[System.Drawing.Bitmap]::new($width,$height)
 $graphics=[System.Drawing.Graphics]::FromImage($bmp)
 try {
- $graphics.CopyFromScreen($rect.Left,$rect.Top,0,0,$bmp.Size)
- $colorSet=New-Object 'System.Collections.Generic.HashSet[int]'
+ $graphics.CopyFromScreen($left,$top,0,0,$bmp.Size)
+ $colorSet=[System.Collections.Generic.HashSet[int]]::new()
  foreach($fractionX in @(.08,.24,.50,.76,.92)){
   foreach($fractionY in @(.07,.22,.43,.67,.88)){
    $x=[int](($width-1)*$fractionX)
