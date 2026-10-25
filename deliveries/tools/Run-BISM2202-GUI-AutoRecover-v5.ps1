@@ -177,14 +177,16 @@ function OpenModel([string]$model) {
  Start-Sleep -Milliseconds 450
  [System.Windows.Forms.SendKeys]::SendWait('m')
  Start-Sleep -Seconds 2
- if(-not (NativeChooser $model)){
+ $submitted=NativeChooser $model
+ if(-not $submitted){
   Say ('IMPORT_MENU_SHORTCUT_NOT_CONFIRMED '+$model)
   # Retry opening the File menu by clicking its visible top-left location.
   ClickXY .018 .047
   [System.Windows.Forms.SendKeys]::SendWait('m')
   Start-Sleep -Seconds 2
+  $submitted=NativeChooser $model
  }
- if(NativeChooser $model){
+ if($submitted){
   if(ModelReady $model 30){return $true}
   Say ('IMPORT_SUBMITTED_TITLE_UNCONFIRMED '+$model)
   Diagnostic ($model+'_00_After_Import')
