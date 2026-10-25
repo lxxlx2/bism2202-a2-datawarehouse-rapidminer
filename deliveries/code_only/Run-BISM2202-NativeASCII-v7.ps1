@@ -137,12 +137,14 @@ try {
     $stderr=Join-Path $out ($code+'_NativeBatch.err')
     $p=Start-Process -FilePath 'cmd.exe' -ArgumentList @('/d','/c',('"'+$cmdFile+'"')) -PassThru -RedirectStandardOutput $stdout -RedirectStandardError $stderr -WindowStyle Hidden
     $deadline=(Get-Date).AddMinutes($TimeoutMinutes)
+    $lastProgress=Get-Date
     while (-not $p.HasExited -and (Get-Date) -lt $deadline) {
       Start-Sleep -Seconds 5
       $p.Refresh()
+      if (((Get-Date)-$lastProgress).TotalSeconds -ge 30) { Say ($code+' BATCH_STILL_RUNNING elapsed_seconds='+[int]((Get-Date)-($deadline.AddMinutes(-$TimeoutMinutes))).TotalSeconds); $lastProgress=Get-Date }
     }
     if (-not $p.HasExited) {
-      try { $p.Kill() } catch {}
+      try { & taskkill.exe /PID $p.Id /T /F *> $null } catch { try { $p.Kill() } catch {} }
       Stage $code 'TIMEOUT' ('batch exceeded '+$TimeoutMinutes+' minutes; check logs')
       $failed=$true; continue
     }
