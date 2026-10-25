@@ -15,6 +15,7 @@ public static class BismClick {
  [DllImport("user32.dll",CharSet=CharSet.Unicode)] public static extern IntPtr FindWindow(string className,string windowName);
  [DllImport("user32.dll",CharSet=CharSet.Unicode)] public static extern int GetWindowText(IntPtr h,System.Text.StringBuilder b,int max);
  [DllImport("user32.dll")] public static extern bool EnumWindows(Callback cb,IntPtr param);
+ [DllImport("user32.dll")] public static extern IntPtr SendMessage(IntPtr h,uint msg,IntPtr w,IntPtr l);
  [DllImport("user32.dll")] public static extern bool IsWindowVisible(IntPtr h);
  [DllImport("user32.dll")] public static extern uint GetWindowThreadProcessId(IntPtr h,out uint pid);
  public delegate bool Callback(IntPtr h,IntPtr param);
@@ -122,6 +123,38 @@ function Recent([string]$model,[int]$row) {
  Say ('WELCOME_RECENT_SELECT '+$model+' row='+$row)
  return $true
 }
+function ClearOldCompletion {
+ foreach($title in @('BISM2202 GBT Capture Finished','BISM2202 Capture Finished')){
+  $h=[BismClick]::FindWindow($null,$title)
+  if($h -ne [IntPtr]::Zero){
+   [void][BismClick]::SendMessage($h,16,[IntPtr]::Zero,[IntPtr]::Zero)
+   Say ('OLD_FINISHED_DIALOG_CLOSED '+$title)
+  }
+ }
+}
+function NativeChooser([string]$model) {
+ $dialogs=@(OtherWindows|Where-Object {$_.title -match '^(Import Process|Open Process|Open File)$'})
+ if($dialogs.Count -eq 0){return $false}
+ $dlg=$dialogs[0];$r=[BismClick+RECT]::new()
+ if(-not [BismClick]::GetWindowRect($dlg.handle,[ref]$r)){return $false}
+ $w=$r.Right-$r.Left;$h=$r.Bottom-$r.Top
+ if($w -lt 450 -or $h -lt 350){return $false}
+ $name=if($model -eq 'GBT'){'GradientBoostedTrees_Full.rmp'}else{'NaiveBayes_Full.rmp'}
+ $file=Join-Path $Root ('program\rapidminer\'+$name)
+ if(-not (Test-Path -LiteralPath $file -PathType Leaf)){throw ('MODEL_FILE_MISSING '+$file)}
+ [void][BismClick]::SetForegroundWindow($dlg.handle)
+ Start-Sleep -Milliseconds 550
+ [void][BismClick]::SetCursorPos(($r.Left+[int]($w*.35)),($r.Top+[int]($h*.844)))
+ [BismClick]::mouse_event(2,0,0,0,[UIntPtr]::Zero)
+ [BismClick]::mouse_event(4,0,0,0,[UIntPtr]::Zero)
+ [System.Windows.Forms.SendKeys]::SendWait('^a')
+ [System.Windows.Forms.Clipboard]::SetText($file)
+ [System.Windows.Forms.SendKeys]::SendWait('^v')
+ [System.Windows.Forms.SendKeys]::SendWait('{ENTER}')
+ Say ('NATIVE_FILE_CHOOSER_SUBMITTED '+$model)
+ return $true
+}
+
 function OpenModel([string]$model) {
  $p=EnsureGui
  if(ModelReady $model 2){return $true}
@@ -130,6 +163,7 @@ function OpenModel([string]$model) {
  [void][BismClick]::SetForegroundWindow($p.MainWindowHandle)
  [System.Windows.Forms.SendKeys]::SendWait('^o')
  Start-Sleep -Seconds 3
+ if(NativeChooser $model){if(ModelReady $model 22){return $true}}
  foreach($row in @(1,2)){
   if(Recent $model $row){
    if(ModelReady $model 19){return $true}
@@ -198,6 +232,8 @@ function ClickXY([double]$x,[double]$y,[int]$n=1){
 }
 function Image([string]$name) {
  SafeDialogs
+ $block=@(OtherWindows|Where-Object{$_.title -match '^(Import Process|Open Process|Create Folder|Welcome to RapidMiner Studio!|Save Changes)$'})
+ if($block.Count){Say ('CAPTURE_BLOCKED_DIALOG '+$name+' '+$block[0].title);return}
  $w=FocusGui
  $p=Join-Path $out ($name+'.png')
  $bmp=[System.Drawing.Bitmap]::new($w.width,$w.height)
@@ -228,6 +264,7 @@ function WaitGbt([int]$seconds) {
 }
 try {
  Say ('BEGIN PROJECT='+$Root)
+ ClearOldCompletion
  $script:state='PARTIAL_DONE_REVIEW_REQUIRED'
  $okGBT=$false;$okNB=$false
  try{$okGBT=CollectModel 'GBT'}catch{Say ('GBT_ERROR '+$_.Exception.Message)}
